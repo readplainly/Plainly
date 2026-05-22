@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="theme-color" content="#FAF8F4" />
   <title>Plainly — AI, put plainly.</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
   <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <!-- Load only the weights we actually use, non-blocking -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
   <style>
     :root {
       --orange:       #FF6719;
@@ -769,12 +773,9 @@
 
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
+      from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .masthead-logo-large { animation: fadeUp 0.65s ease both; }
-    .masthead-tagline { animation: fadeUp 0.65s 0.1s ease both; }
-    .masthead-nav     { animation: fadeUp 0.65s 0.18s ease both; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
@@ -905,7 +906,7 @@
 
           <article class="lead-main">
             <div class="lead-image-wrap">
-              <img src="images/story-lead.jpg" alt="A patient checks in at a pharmacy counter — AI tools are now handling prescription renewals in Utah without a doctor" class="lead-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
+              <img loading="lazy" decoding="async" src="images/story-lead.jpg" alt="A patient checks in at a pharmacy counter — AI tools are now handling prescription renewals in Utah without a doctor" class="lead-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
               <p class="img-caption">A Utah startup called Legion Health is now authorized to renew psychiatric prescriptions via AI chatbot for $19 a month — no physician required.</p>
             </div>
             <span class="tag tag-coral">Regulation</span>
@@ -919,7 +920,7 @@
           <aside class="lead-sidebar">
             <article class="sidebar-story">
               <div class="sb-image-wrap">
-                <img src="images/story-gpt54.jpg" alt="A person using ChatGPT on a laptop — the tool millions use daily just got a major upgrade" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
+                <img loading="lazy" decoding="async" src="images/story-gpt54.jpg" alt="A person using ChatGPT on a laptop — the tool millions use daily just got a major upgrade" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
               </div>
               <span class="tag tag-blue">Business</span>
               <h3><a href="#">GPT-5.4 is now the engine running your ChatGPT — and most people have no idea what changed</a></h3>
@@ -928,7 +929,7 @@
             </article>
             <article class="sidebar-story">
               <div class="sb-image-wrap">
-                <img src="images/story-agents.jpg" alt="A small business owner reviews a tablet showing automated customer messages from an AI agent" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
+                <img loading="lazy" decoding="async" src="images/story-agents.jpg" alt="A small business owner reviews a tablet showing automated customer messages from an AI agent" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
               </div>
               <span class="tag tag-orange">Small Business</span>
               <h3><a href="#">AI agents are becoming digital co-workers — and the small business case is now real</a></h3>
@@ -937,7 +938,7 @@
             </article>
             <article class="sidebar-story">
               <div class="sb-image-wrap">
-                <img src="images/story-turbo.jpg" alt="A smartphone displaying an AI assistant interface — new Google research could bring powerful AI to phones without an internet connection" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
+                <img loading="lazy" decoding="async" src="images/story-turbo.jpg" alt="A smartphone displaying an AI assistant interface — new Google research could bring powerful AI to phones without an internet connection" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
               </div>
               <span class="tag tag-green">Business</span>
               <h3><a href="#">Google's TurboQuant could put real AI on your phone — no internet, no subscription, no data sent to a server</a></h3>
@@ -958,7 +959,7 @@
 
           <article class="col-story">
             <div class="col-image-wrap">
-              <img src="images/story-retail.jpg" alt="A person shopping online on a laptop — AI virtual try-on tools are cutting the $849 billion returns problem for retailers" class="col-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback col-img-fallback law-bg')" />
+              <img loading="lazy" decoding="async" src="images/story-retail.jpg" alt="A person shopping online on a laptop — AI virtual try-on tools are cutting the $849 billion returns problem for retailers" class="col-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback col-img-fallback law-bg')" />
             </div>
             <span class="tag tag-blue">Small Business</span>
             <h3><a href="#">AI is solving retail's $849 billion returns problem — and it's coming to where you already shop</a></h3>
@@ -968,7 +969,7 @@
 
           <article class="col-story">
             <div class="col-image-wrap">
-              <img src="images/story-music.jpg" alt="A music producer at a professional mixing desk — the Grammy rules just changed for AI-generated songs" class="col-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback col-img-fallback arts-bg')" />
+              <img loading="lazy" decoding="async" src="images/story-music.jpg" alt="A music producer at a professional mixing desk — the Grammy rules just changed for AI-generated songs" class="col-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback col-img-fallback arts-bg')" />
             </div>
             <span class="tag tag-pink">Arts & Music</span>
             <h3><a href="#">The Grammy rules just got rewritten for the AI era. Here's what the new definition of "human-made" actually means.</a></h3>
@@ -978,7 +979,7 @@
 
           <article class="col-story">
             <div class="col-image-wrap">
-              <img src="images/story-job-market.jpg" alt="A new graduate reviews job postings on a laptop — some fields are seeing a real surge in demand because of AI" class="col-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback col-img-fallback career-bg')" />
+              <img loading="lazy" decoding="async" src="images/story-job-market.jpg" alt="A new graduate reviews job postings on a laptop — some fields are seeing a real surge in demand because of AI" class="col-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback col-img-fallback career-bg')" />
             </div>
             <span class="tag tag-amber">Careers</span>
             <h3><a href="#">The job market for new graduates in 2026: what's actually being hired for — and what the postings aren't telling you</a></h3>
