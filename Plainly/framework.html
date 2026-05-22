@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Framework — Plainly</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange:       #FF6719;
+      --orange-light: #FFF0E8;
+      --orange-mid:   #FFCFB0;
+      --orange-dark:  #C44A00;
+      --orange-deep:  #8B3300;
+      --ink:          #1C1A17;
+      --ink-soft:     #3A3630;
+      --ink-muted:    #6B6560;
+      --ink-faint:    #A09890;
+      --paper:        #FAF8F4;
+      --paper-warm:   #F5F1EA;
+      --paper-rule:   #E8E2D8;
+      --serif-display: 'Playfair Display', Georgia, serif;
+      --serif-body:    'Source Serif 4', Georgia, serif;
+      --sans:          'DM Sans', system-ui, sans-serif;
+      --mono:          'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--serif-body); background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+    /* ─── TOPBAR ─── */
+    .topbar { background: var(--ink); padding: 7px 0; }
+    .topbar-inner { display: flex; gap: 28px; justify-content: center; }
+    .topbar-inner a { font-family: var(--sans); font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; transition: color 0.15s; }
+    .topbar-inner a:hover { color: var(--orange); }
+
+    /* ─── NAV ─── */
+    .nav { border-bottom: 1px solid var(--paper-rule); padding: 13px 0; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-family: var(--serif-display); font-size: 26px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 12.5px; color: var(--ink-muted); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-links a.active { color: var(--orange); }
+    .nav-cta { font-family: var(--sans); font-size: 12px; font-weight: 500; background: var(--orange); color: white; padding: 8px 20px; border-radius: 3px; transition: background 0.15s; white-space: nowrap; }
+    .nav-cta:hover { background: var(--orange-dark); }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header { border-bottom: 3px double var(--ink); padding: 48px 0 36px; text-align: center; }
+    .ph-eyebrow { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; animation: fadeUp 0.5s ease both; }
+    .ph-title { font-family: var(--serif-display); font-size: clamp(36px, 6vw, 64px); font-weight: 900; color: var(--ink); letter-spacing: -2px; line-height: 1; margin-bottom: 14px; animation: fadeUp 0.55s 0.08s ease both; }
+    .ph-title span { color: var(--orange); font-style: italic; }
+    .ph-sub { font-family: var(--serif-body); font-size: 17px; color: var(--ink-muted); font-style: italic; font-weight: 300; max-width: 580px; margin: 0 auto 24px; line-height: 1.55; animation: fadeUp 0.55s 0.15s ease both; }
+    .ph-meta { font-family: var(--sans); font-size: 12px; color: var(--ink-faint); display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.55s 0.2s ease both; }
+    .ph-meta-item { display: flex; align-items: center; gap: 6px; }
+    .ph-dot { width: 4px; height: 4px; background: var(--orange); border-radius: 50%; }
+
+    /* ─── PROGRESS ─── */
+    .progress-section { padding: 28px 0; border-bottom: 1px solid var(--paper-rule); background: var(--paper-warm); }
+    .progress-inner { display: flex; align-items: center; gap: 0; }
+    .prog-step { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; padding: 8px 4px; border-radius: 6px; transition: background 0.15s; }
+    .prog-step:hover { background: var(--paper-rule); }
+    .prog-circle {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 2px solid var(--paper-rule);
+      background: var(--paper);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--sans); font-size: 14px; font-weight: 500;
+      color: var(--ink-faint);
+      transition: all 0.2s;
+      position: relative;
+    }
+    .prog-step.active .prog-circle { background: var(--orange); border-color: var(--orange); color: white; }
+    .prog-step.done .prog-circle { background: var(--orange-light); border-color: var(--orange); color: var(--orange-dark); }
+    .prog-label { font-family: var(--sans); font-size: 11px; font-weight: 500; color: var(--ink-faint); text-align: center; line-height: 1.3; }
+    .prog-step.active .prog-label { color: var(--orange-dark); }
+    .prog-step.done .prog-label { color: var(--orange); }
+    .prog-connector { height: 2px; width: 32px; background: var(--paper-rule); flex-shrink: 0; margin-bottom: 18px; transition: background 0.3s; }
+    .prog-connector.done { background: var(--orange-mid); }
+
+    /* ─── STAGE AREA ─── */
+    .stage-area { padding: 52px 0; }
+    .stage-grid { display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: start; }
+
+    /* ─── STAGE CONTENT ─── */
+    .stage-content { display: none; }
+    .stage-content.active { display: block; }
+
+    .stage-num-label { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .stage-badge {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--orange); color: white;
+      font-family: var(--serif-display); font-size: 22px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .stage-meta { }
+    .stage-kicker { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 3px; }
+    .stage-title { font-family: var(--serif-display); font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: var(--ink); letter-spacing: -0.5px; line-height: 1.15; }
+
+    .stage-body { font-family: var(--serif-body); font-size: 16px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 24px; }
+    .stage-body p { margin-bottom: 14px; }
+    .stage-body p:last-child { margin-bottom: 0; }
+    .stage-body strong { color: var(--ink); font-weight: 600; }
+
+    /* insight box */
+    .insight {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--orange-light);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .insight-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; color: var(--orange-dark); }
+    .insight p { font-family: var(--sans); font-size: 14px; color: var(--orange-deep); line-height: 1.65; margin: 0; }
+    .insight p strong { color: var(--orange-dark); font-weight: 500; }
+
+    /* example tabs */
+    .example-block { background: var(--paper-warm); border: 1px solid var(--paper-rule); border-radius: 8px; padding: 20px; margin-bottom: 28px; }
+    .example-label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+    .example-tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+    .ex-tab {
+      font-family: var(--sans); font-size: 12px; font-weight: 500;
+      padding: 5px 14px; border-radius: 20px;
+      border: 1px solid var(--paper-rule);
+      background: transparent; color: var(--ink-muted);
+      cursor: pointer; transition: all 0.15s;
+    }
+    .ex-tab.active { background: var(--orange); color: white; border-color: var(--orange); }
+    .ex-content { display: none; font-family: var(--sans); font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+    .ex-content.active { display: block; }
+    .ex-content strong { color: var(--ink); font-weight: 500; }
+
+    /* prompt box */
+    .prompt-box { border: 1px solid var(--paper-rule); border-left: 3px solid var(--orange); border-radius: 4px; padding: 20px; margin-bottom: 24px; background: var(--paper); }
+    .prompt-label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+    .prompt-text { font-family: var(--mono); font-size: 13px; color: var(--ink); line-height: 1.7; white-space: pre-wrap; margin-bottom: 12px; }
+    .prompt-note { font-family: var(--sans); font-size: 13px; color: var(--ink-muted); line-height: 1.6; }
+
+    /* copy button */
+    .copy-btn {
+      font-family: var(--sans); font-size: 12px; font-weight: 500;
+      padding: 6px 14px; border-radius: 4px;
+      border: 1px solid var(--paper-rule);
+      background: transparent; color: var(--ink-muted);
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      transition: all 0.15s; margin-top: 4px;
+    }
+    .copy-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .copy-btn.copied { border-color: var(--orange); color: var(--orange); }
+
+    /* nav buttons */
+    .stage-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--paper-rule); margin-top: 8px; }
+    .btn-back { font-family: var(--sans); font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 4px; border: 1px solid var(--paper-rule); background: transparent; color: var(--ink-muted); cursor: pointer; transition: all 0.15s; }
+    .btn-back:hover { border-color: var(--ink-muted); color: var(--ink); }
+    .btn-next { font-family: var(--sans); font-size: 13px; font-weight: 500; padding: 10px 24px; border-radius: 4px; border: none; background: var(--orange); color: white; cursor: pointer; transition: background 0.15s; }
+    .btn-next:hover { background: var(--orange-dark); }
+    .stage-counter { font-family: var(--sans); font-size: 12px; color: var(--ink-faint); }
+
+    /* completion */
+    .completion { text-align: center; padding: 24px 0; display: none; }
+    .completion.active { display: block; }
+    .comp-icon { width: 72px; height: 72px; background: var(--orange-light); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; }
+    .comp-icon svg { color: var(--orange); }
+    .completion h2 { font-family: var(--serif-display); font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.5px; }
+    .completion p { font-family: var(--serif-body); font-size: 16px; color: var(--ink-muted); max-width: 480px; margin: 0 auto 24px; line-height: 1.7; }
+    .comp-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-outline { font-family: var(--sans); font-size: 13px; font-weight: 500; padding: 10px 22px; border-radius: 4px; border: 1px solid var(--paper-rule); background: transparent; color: var(--ink); cursor: pointer; transition: all 0.15s; }
+    .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* ─── SIDEBAR ─── */
+    .fw-sidebar { display: flex; flex-direction: column; gap: 20px; }
+    .fw-card { background: var(--paper-warm); border: 1px solid var(--paper-rule); border-radius: 8px; padding: 22px; }
+    .fw-card-label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+    .fw-card-title { font-family: var(--serif-display); font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.2px; }
+    .fw-card-body { font-family: var(--sans); font-size: 13px; color: var(--ink-muted); line-height: 1.6; }
+    .fw-steps-list { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+    .fw-step-item { display: flex; gap: 10px; align-items: flex-start; }
+    .fw-step-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--orange-light); border: 1px solid var(--orange-mid); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 10px; font-weight: 500; color: var(--orange-dark); flex-shrink: 0; margin-top: 1px; }
+    .fw-step-dot.done { background: var(--orange); border-color: var(--orange); color: white; }
+    .fw-step-text { font-family: var(--sans); font-size: 13px; color: var(--ink-soft); line-height: 1.5; padding-top: 2px; }
+    .fw-step-text.done { color: var(--ink-faint); text-decoration: line-through; }
+    .rctf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+    .rctf-item { background: var(--paper); border: 1px solid var(--paper-rule); border-radius: 4px; padding: 10px; }
+    .rctf-letter { font-family: var(--serif-display); font-size: 20px; font-weight: 900; color: var(--orange); line-height: 1; margin-bottom: 2px; }
+    .rctf-word { font-family: var(--sans); font-size: 12px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+    .rctf-desc { font-family: var(--sans); font-size: 11px; color: var(--ink-muted); line-height: 1.4; }
+
+    /* ─── NEWSLETTER ─── */
+    .newsletter { padding: 64px 0; text-align: center; background: var(--ink); position: relative; overflow: hidden; }
+    .newsletter::before { content: 'Plainly.'; position: absolute; font-family: var(--serif-display); font-size: 260px; font-weight: 900; color: rgba(255,255,255,0.03); top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none; letter-spacing: -8px; }
+    .newsletter-inner { position: relative; z-index: 1; }
+    .nl-eyebrow { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+    .newsletter h2 { font-family: var(--serif-display); font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: white; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
+    .newsletter h2 em { font-style: italic; color: var(--orange); }
+    .newsletter p { font-family: var(--serif-body); font-size: 15px; color: rgba(255,255,255,0.5); max-width: 400px; margin: 0 auto 28px; line-height: 1.65; font-style: italic; }
+    .nl-form { display: flex; gap: 0; max-width: 400px; margin: 0 auto 12px; border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden; }
+    .nl-form input { flex: 1; font-family: var(--sans); font-size: 14px; background: rgba(255,255,255,0.06); border: none; padding: 0 16px; height: 46px; color: white; outline: none; }
+    .nl-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .nl-form button { font-family: var(--sans); font-size: 13px; font-weight: 500; background: var(--orange); color: white; border: none; padding: 0 22px; height: 46px; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+    .nl-form button:hover { background: var(--orange-dark); }
+    .nl-note { font-family: var(--sans); font-size: 11.5px; color: rgba(255,255,255,0.3); }
+
+    /* ─── FOOTER ─── */
+    .footer { border-top: 3px double var(--ink); padding: 40px 0 24px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--serif-display); font-size: 28px; font-weight: 900; color: var(--ink); letter-spacing: -1px; margin-bottom: 4px; }
+    .footer-logo span { color: var(--orange); }
+    .footer-tagline { font-family: var(--serif-body); font-size: 13px; color: var(--ink-faint); font-style: italic; }
+    .footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col h5 { font-family: var(--sans); font-size: 9.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+    .footer-col a { display: block; font-family: var(--sans); font-size: 13px; color: var(--ink-muted); margin-bottom: 8px; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--orange); }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--paper-rule); flex-wrap: wrap; gap: 8px; }
+    .footer-legal { font-family: var(--sans); font-size: 11.5px; color: var(--ink-faint); }
+    .footer-credit { font-family: var(--sans); font-size: 11.5px; color: var(--ink-faint); }
+    .footer-credit span { color: var(--orange); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 860px) {
+      .stage-grid { grid-template-columns: 1fr; }
+      .fw-sidebar { order: -1; }
+      .nav-links { display: none; }
+      .progress-inner { gap: 0; }
+      .prog-label { font-size: 9px; }
+    }
+    @media (max-width: 560px) {
+      .container { padding: 0 18px; }
+      .prog-circle { width: 32px; height: 32px; font-size: 12px; }
+      .prog-connector { width: 16px; }
+      .nl-form { flex-direction: column; }
+      .nl-form input, .nl-form button { height: 46px; width: 100%; border-radius: 3px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a href="index.html">Home</a>
+        <a href="#">Business</a>
+        <a href="#">Law</a>
+        <a href="#">Careers</a>
+        <a href="#">Regulation</a>
+        <a href="prompts.html">Prompts</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Plainly<span>.</span></a>
+        <ul class="nav-links">
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Law</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Academia</a></li>
+          <li><a href="#">Arts & Music</a></li>
+          <li><a href="#">Regulation</a></li>
+          <li><a href="prompts.html">Prompts</a></li>
+          <li><a href="framework.html" class="active">The Framework</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="#newsletter" class="nav-cta">Subscribe free →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <div class="ph-eyebrow">The Framework</div>
+      <div class="ph-title">A new way to think<br><span>about AI.</span></div>
+      <div class="ph-sub">Five stages. No coding required. By the end you'll have a working AI approach you can use in your job — or your life — tomorrow.</div>
+      <div class="ph-meta">
+        <div class="ph-meta-item"><div class="ph-dot"></div><span>5 stages</span></div>
+        <div class="ph-meta-item"><div class="ph-dot"></div><span>15 minutes</span></div>
+        <div class="ph-meta-item"><div class="ph-dot"></div><span>No technical knowledge needed</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-section">
+    <div class="container">
+      <div class="progress-inner">
+        <div class="prog-step active" id="ps1" onclick="goTo(1)">
+          <div class="prog-circle">1</div>
+          <div class="prog-label">Understand</div>
+        </div>
+        <div class="prog-connector" id="pc1"></div>
+        <div class="prog-step" id="ps2" onclick="goTo(2)">
+          <div class="prog-circle">2</div>
+          <div class="prog-label">Identify</div>
+        </div>
+        <div class="prog-connector" id="pc2"></div>
+        <div class="prog-step" id="ps3" onclick="goTo(3)">
+          <div class="prog-circle">3</div>
+          <div class="prog-label">Prompt</div>
+        </div>
+        <div class="prog-connector" id="pc3"></div>
+        <div class="prog-step" id="ps4" onclick="goTo(4)">
+          <div class="prog-circle">4</div>
+          <div class="prog-label">Refine</div>
+        </div>
+        <div class="prog-connector" id="pc4"></div>
+        <div class="prog-step" id="ps5" onclick="goTo(5)">
+          <div class="prog-circle">5</div>
+          <div class="prog-label">Build</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE AREA -->
+  <section class="stage-area">
+    <div class="container">
+      <div class="stage-grid">
+
+        <!-- MAIN CONTENT -->
+        <div>
+
+          <!-- STAGE 1 -->
+          <div class="stage-content active" id="stage1">
+            <div class="stage-num-label">
+              <div class="stage-badge">1</div>
+              <div class="stage-meta">
+                <div class="stage-kicker">Stage one</div>
+                <div class="stage-title">Understand what AI is actually doing</div>
+              </div>
+            </div>
+            <div class="stage-body">
+              <p>Before you can use AI well, you need a mental model for what it actually is — not the sci-fi version, not the hype version. <strong>AI is a pattern-completion engine.</strong> It has processed an enormous amount of human text, and when you give it instructions, it produces the most useful response it can based on what it's learned.</p>
+              <p>That means it's incredibly good at tasks that involve language: summarizing, drafting, explaining, restructuring, translating ideas. It's less reliable when it needs to verify real-time facts or perform complex calculations without help.</p>
+              <p>The good news: you don't need to understand any of the technology underneath. You just need to understand the <strong>relationship</strong> — you're the expert on your situation, AI is the expert on language. Together you're more powerful than either alone.</p>
+            </div>
+            <div class="insight">
+              <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <p><strong>Key insight:</strong> AI doesn't "know" things the way you do. It produces responses based on patterns. Your job is to give it enough context that those patterns produce something genuinely useful for you.</p>
+            </div>
+            <div class="example-block">
+              <div class="example-label">Real-world examples</div>
+              <div class="example-tabs">
+                <button class="ex-tab active" onclick="switchEx('s1', 0, this)">Law student</button>
+                <button class="ex-tab" onclick="switchEx('s1', 1, this)">Small business</button>
+                <button class="ex-tab" onclick="switchEx('s1', 2, this)">Job seeker</button>
+              </div>
+              <div class="ex-content active" id="s1-0">A law student uses AI not to cite cases — AI can hallucinate those — but to <strong>summarize dense readings, explain concepts three different ways, and test their understanding</strong> before an exam. The student brings the legal judgment; AI brings the language.</div>
+              <div class="ex-content" id="s1-1">A small business owner uses AI not to run their business — they know it better than any AI — but to <strong>draft emails, write product descriptions, and summarize customer feedback</strong> in a fraction of the time. They bring the knowledge; AI brings the speed.</div>
+              <div class="ex-content" id="s1-2">A job seeker uses AI not to apply for jobs — only they can decide what's right — but to <strong>tailor cover letters, decode job descriptions, and practice interview answers</strong> on demand. They bring the ambition; AI brings the polish.</div>
+            </div>
+            <div class="stage-nav">
+              <div class="stage-counter">Stage 1 of 5</div>
+              <button class="btn-next" onclick="goTo(2)">Next: Identify →</button>
+            </div>
+          </div>
+
+          <!-- STAGE 2 -->
+          <div class="stage-content" id="stage2">
+            <div class="stage-num-label">
+              <div class="stage-badge">2</div>
+              <div class="stage-meta">
+                <div class="stage-kicker">Stage two</div>
+                <div class="stage-title">Identify where AI fits in your work</div>
+              </div>
+            </div>
+            <div class="stage-body">
+              <p>Not every task benefits from AI equally. The fastest wins come from identifying work you do that is <strong>repetitive, language-heavy, and time-consuming</strong> — but doesn't require your unique judgment to initiate.</p>
+              <p>Think about tasks you do every week: drafting emails, summarizing documents, writing reports, explaining things to others, researching topics, structuring ideas. These are your starting points.</p>
+              <p>The goal at this stage is simple: <strong>make a list of five tasks</strong> in your work or daily life that fit this pattern. You don't need to change anything yet — just see where the opportunity is.</p>
+            </div>
+            <div class="insight">
+              <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <p><strong>Key insight:</strong> The best first AI tasks are ones where a "pretty good" first draft saves you significant time — even if you edit it heavily afterward. Done is better than perfect when the alternative is starting from nothing.</p>
+            </div>
+            <div class="example-block">
+              <div class="example-label">Finding your best AI tasks</div>
+              <div class="example-tabs">
+                <button class="ex-tab active" onclick="switchEx('s2', 0, this)">Law student</button>
+                <button class="ex-tab" onclick="switchEx('s2', 1, this)">Small business</button>
+                <button class="ex-tab" onclick="switchEx('s2', 2, this)">Job seeker</button>
+              </div>
+              <div class="ex-content active" id="s2-0">A law student identifies that making <strong>study guides from lecture notes</strong> takes two hours and follows a consistent format every time. That's a perfect AI task — consistent structure, language-heavy, doesn't require legal judgment to produce.</div>
+              <div class="ex-content" id="s2-1">A small business owner identifies that <strong>responding to customer enquiries</strong> takes 30 minutes a day and covers the same ten questions repeatedly. AI can draft those replies in seconds — leaving more time for actual business decisions.</div>
+              <div class="ex-content" id="s2-2">A job seeker identifies that <strong>tailoring their CV for each role</strong> takes an hour per application. AI can do a strong first draft in minutes — they just need to review and personalize it.</div>
+            </div>
+            <div class="stage-nav">
+              <button class="btn-back" onclick="goTo(1)">← Back</button>
+              <div class="stage-counter">Stage 2 of 5</div>
+              <button class="btn-next" onclick="goTo(3)">Next: Prompt →</button>
+            </div>
+          </div>
+
+          <!-- STAGE 3 -->
+          <div class="stage-content" id="stage3">
+            <div class="stage-num-label">
+              <div class="stage-badge">3</div>
+              <div class="stage-meta">
+                <div class="stage-kicker">Stage three</div>
+                <div class="stage-title">Write prompts that actually work</div>
+              </div>
+            </div>
+            <div class="stage-body">
+              <p>A prompt is just an instruction. But <strong>the quality of your instruction determines the quality of the output.</strong> Most people write vague prompts and get vague results — then blame the AI.</p>
+              <p>The Plainly prompting method has four parts, remembered as <strong>RCTF</strong>: <strong>Role</strong> (tell AI who it's being), <strong>Context</strong> (give it relevant background), <strong>Task</strong> (say exactly what you need), <strong>Format</strong> (specify how you want the output). You don't always need all four — but the more you include, the better the result.</p>
+            </div>
+            <div class="insight">
+              <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <p><strong>Key insight:</strong> Treat AI like a brilliant assistant on their first day. They're capable — but they need context. The more you explain your situation and what "good" looks like, the better they perform.</p>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-label">Try this prompt — copy and paste it into any AI tool</div>
+              <div class="prompt-text" id="prompt3-text">You are a [your role — e.g. law student / small business owner / marketing manager]. I need help with [describe your task]. Here is the relevant background: [paste any notes, documents, or context]. Please produce [describe the output — e.g. a 200-word summary / a bullet point list / a draft email]. Keep the tone [professional / friendly / concise].</div>
+              <button class="copy-btn" id="copy3-btn" onclick="copyPrompt('prompt3-text', 'copy3-btn')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy prompt
+              </button>
+              <div class="prompt-note" style="margin-top: 12px;">Notice the structure: Role → Context → Task → Format. Fill in the brackets with your own details and you have a strong prompt for almost any situation.</div>
+            </div>
+            <div class="example-block">
+              <div class="example-label">Weak vs. strong prompts</div>
+              <div class="example-tabs">
+                <button class="ex-tab active" onclick="switchEx('s3', 0, this)">Weak prompt</button>
+                <button class="ex-tab" onclick="switchEx('s3', 1, this)">Strong prompt</button>
+              </div>
+              <div class="ex-content active" id="s3-0"><strong>Weak:</strong> "Write me a cover letter."<br><br>This produces a generic letter that could be for anyone, applying for anything. Completely unusable without major rewriting.</div>
+              <div class="ex-content" id="s3-1"><strong>Strong:</strong> "You are a career coach helping a recent law graduate apply for a trainee solicitor role at a commercial law firm. Using the job description below and my CV summary, write a compelling 250-word cover letter that highlights my research experience and interest in corporate law. Keep the tone professional but not stiff."<br><br>This produces something you can almost send immediately.</div>
+            </div>
+            <div class="stage-nav">
+              <button class="btn-back" onclick="goTo(2)">← Back</button>
+              <div class="stage-counter">Stage 3 of 5</div>
+              <button class="btn-next" onclick="goTo(4)">Next: Refine →</button>
+            </div>
+          </div>
+
+          <!-- STAGE 4 -->
+          <div class="stage-content" id="stage4">
+            <div class="stage-num-label">
+              <div class="stage-badge">4</div>
+              <div class="stage-meta">
+                <div class="stage-kicker">Stage four</div>
+                <div class="stage-title">Refine through conversation</div>
+              </div>
+            </div>
+            <div class="stage-body">
+              <p>Most people try a prompt once, don't love the result, and give up. <strong>That's the wrong approach.</strong> The first output from AI is a starting point, not a final answer. The real power comes from the conversation that follows.</p>
+              <p>Think of it like editing with a collaborator. You can say: "Make this shorter." "Rewrite the second paragraph to be more direct." "Give me three alternative versions of the opening." "Now make it sound less formal." AI responds to all of these — immediately, without complaint.</p>
+              <p>The skill of refinement is learning <strong>how to diagnose what's wrong</strong> with an output and translate that into a clear instruction. This improves quickly with practice.</p>
+            </div>
+            <div class="insight">
+              <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <p><strong>Key insight:</strong> A conversation with AI is like an editing session. Each message is a revision instruction. The quality of your final output depends on how well you guide the process — not just the first prompt.</p>
+            </div>
+            <div class="example-block">
+              <div class="example-label">A real refinement conversation</div>
+              <div class="example-tabs">
+                <button class="ex-tab active" onclick="switchEx('s4', 0, this)">Step 1</button>
+                <button class="ex-tab" onclick="switchEx('s4', 1, this)">Step 2</button>
+                <button class="ex-tab" onclick="switchEx('s4', 2, this)">Step 3</button>
+              </div>
+              <div class="ex-content active" id="s4-0"><strong>You:</strong> "Draft a short bio for my LinkedIn. I'm a second-year law student interested in tech law and I did a summer internship at a startup."<br><br><strong>AI gives you</strong> a generic, formal bio that sounds like everyone else's.</div>
+              <div class="ex-content" id="s4-1"><strong>You:</strong> "Good start — but make it sound less like a CV and more like a real person wrote it. Add a specific detail about why I'm interested in tech law."<br><br><strong>AI revises</strong> — now it's warmer and more specific, but still a bit long.</div>
+              <div class="ex-content" id="s4-2"><strong>You:</strong> "Cut it to 80 words and put the most interesting sentence first."<br><br><strong>Result:</strong> Something you'd actually post. Three exchanges. Under five minutes. You directed every step — AI did the language work.</div>
+            </div>
+            <div class="stage-nav">
+              <button class="btn-back" onclick="goTo(3)">← Back</button>
+              <div class="stage-counter">Stage 4 of 5</div>
+              <button class="btn-next" onclick="goTo(5)">Next: Build →</button>
+            </div>
+          </div>
+
+          <!-- STAGE 5 -->
+          <div class="stage-content" id="stage5">
+            <div class="stage-num-label">
+              <div class="stage-badge">5</div>
+              <div class="stage-meta">
+                <div class="stage-kicker">Stage five</div>
+                <div class="stage-title">Build a repeatable workflow</div>
+              </div>
+            </div>
+            <div class="stage-body">
+              <p>Once you've found prompts that work, <strong>save them.</strong> A prompt that produces great results once will produce great results every time you use it with similar inputs. This is how you go from "I used AI once" to "AI is part of how I work."</p>
+              <p>A workflow is a sequence: a trigger (something happens), an AI step (you apply your prompt), and an output (something useful is produced). The simplest workflows are just one step. More advanced ones chain multiple prompts together.</p>
+              <p>Start with <strong>one workflow</strong> from your Stage 2 list. Run it for two weeks. Refine it. Then add a second. Within a month, you'll have a personal AI system built around your actual life.</p>
+            </div>
+            <div class="insight">
+              <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <p><strong>Key insight:</strong> The goal isn't to use AI for everything. It's to identify the 20% of your tasks where AI saves 80% of the effort — and systematize those. That's where the real gain lives.</p>
+            </div>
+            <div class="example-block">
+              <div class="example-label">Example workflows</div>
+              <div class="example-tabs">
+                <button class="ex-tab active" onclick="switchEx('s5', 0, this)">Law student</button>
+                <button class="ex-tab" onclick="switchEx('s5', 1, this)">Small business</button>
+                <button class="ex-tab" onclick="switchEx('s5', 2, this)">Job seeker</button>
+              </div>
+              <div class="ex-content active" id="s5-0"><strong>Trigger:</strong> Lecture or reading session ends.<br><strong>Step 1:</strong> Paste notes into saved prompt → AI creates a structured study guide with key terms and concepts.<br><strong>Step 2:</strong> Ask AI to generate 10 practice questions from the material.<br><strong>Result:</strong> Study materials ready in minutes instead of hours.</div>
+              <div class="ex-content" id="s5-1"><strong>Trigger:</strong> New customer enquiry arrives.<br><strong>Step 1:</strong> Paste the enquiry into saved prompt → AI drafts a warm, professional reply.<br><strong>Step 2:</strong> Quick review and personalize → send.<br><strong>Result:</strong> 20 minutes of daily email time cut to 5.</div>
+              <div class="ex-content" id="s5-2"><strong>Trigger:</strong> Find a job posting you like.<br><strong>Step 1:</strong> Paste posting + CV summary into saved prompt → AI tailors your cover letter to the role.<br><strong>Step 2:</strong> Review, adjust the personal details → submit.<br><strong>Result:</strong> Applications that took an hour now take 15 minutes.</div>
+            </div>
+            <div class="stage-nav">
+              <button class="btn-back" onclick="goTo(4)">← Back</button>
+              <div class="stage-counter">Stage 5 of 5</div>
+              <button class="btn-next" onclick="complete()">Complete the Framework ✓</button>
+            </div>
+          </div>
+
+          <!-- COMPLETION -->
+          <div class="completion" id="completion">
+            <div class="comp-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h2>You've completed The Framework.</h2>
+            <p>You now have a mental model for AI, a method for prompting it, and a path to building workflows that save real time. The next step is putting it into practice — starting with one task, this week.</p>
+            <div class="comp-actions">
+              <button class="btn-outline" onclick="restart()">Start over</button>
+              <a href="prompts.html" class="btn-next" style="display:inline-flex; align-items:center; gap:6px; text-decoration:none; padding: 10px 24px; border-radius:4px; font-family:var(--sans); font-size:13px; font-weight:500; background:var(--orange); color:white;">Explore the Prompts Library →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="fw-sidebar">
+
+          <div class="fw-card">
+            <div class="fw-card-label">Your progress</div>
+            <div class="fw-card-title">Five stages to a working AI system</div>
+            <div class="fw-steps-list" id="sidebar-steps">
+              <div class="fw-step-item"><div class="fw-step-dot done" id="sd1">1</div><div class="fw-step-text" id="st1">Understand what AI is doing</div></div>
+              <div class="fw-step-item"><div class="fw-step-dot" id="sd2">2</div><div class="fw-step-text" id="st2">Identify where it fits your work</div></div>
+              <div class="fw-step-item"><div class="fw-step-dot" id="sd3">3</div><div class="fw-step-text" id="st3">Write prompts that work</div></div>
+              <div class="fw-step-item"><div class="fw-step-dot" id="sd4">4</div><div class="fw-step-text" id="st4">Refine through conversation</div></div>
+              <div class="fw-step-item"><div class="fw-step-dot" id="sd5">5</div><div class="fw-step-text" id="st5">Build a repeatable workflow</div></div>
+            </div>
+          </div>
+
+          <div class="fw-card">
+            <div class="fw-card-label">The RCTF method</div>
+            <div class="fw-card-title">Plainly's prompting framework</div>
+            <div class="fw-card-body" style="margin-bottom:12px;">Four ingredients for a prompt that actually works.</div>
+            <div class="rctf-grid">
+              <div class="rctf-item"><div class="rctf-letter">R</div><div class="rctf-word">Role</div><div class="rctf-desc">Tell AI who it's being</div></div>
+              <div class="rctf-item"><div class="rctf-letter">C</div><div class="rctf-word">Context</div><div class="rctf-desc">Give relevant background</div></div>
+              <div class="rctf-item"><div class="rctf-letter">T</div><div class="rctf-word">Task</div><div class="rctf-desc">Say exactly what you need</div></div>
+              <div class="rctf-item"><div class="rctf-letter">F</div><div class="rctf-word">Format</div><div class="rctf-desc">Specify the output style</div></div>
+            </div>
+          </div>
+
+          <div class="fw-card">
+            <div class="fw-card-label">Next step</div>
+            <div class="fw-card-title">Ready-to-use prompts</div>
+            <div class="fw-card-body">Once you've finished the Framework, head to the Prompts Library for real prompts across law, business, academia, and more — ready to copy and use today.</div>
+            <a href="prompts.html" style="display:inline-block; margin-top:14px; font-family:var(--sans); font-size:12px; font-weight:500; color:var(--orange); border-bottom:1px solid var(--orange-mid); padding-bottom:1px;">Browse the Prompts Library →</a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week's most important AI developments — broken down clearly, sorted by the sector that matters to you.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" aria-label="Email address" />
+          <button type="button" onclick="subscribeEmail()">Subscribe →</button>
+        </div>
+        <div id="nl-success" style="display:none; color:#FF6719; font-family:var(--sans); font-size:15px; font-weight:500; margin-bottom:14px;">You're in! Welcome to Plainly. 🎉</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. · readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="#">Business</a>
+            <a href="#">Law</a>
+            <a href="#">Regulation</a>
+            <a href="#">Careers</a>
+            <a href="#">Academia</a>
+            <a href="#">Arts & Music</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="framework.html">The Framework</a>
+            <a href="prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+            <a href="#">Privacy policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">© 2026 Plainly · readplainly.com · All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>·</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var current = 1;
+
+    function goTo(n) {
+      document.getElementById('stage' + current).classList.remove('active');
+      document.getElementById('completion').classList.remove('active');
+      current = n;
+      document.getElementById('stage' + n).classList.add('active');
+      updateProgress();
+      window.scrollTo({ top: document.querySelector('.progress-section').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    function complete() {
+      document.getElementById('stage' + current).classList.remove('active');
+      document.getElementById('completion').classList.add('active');
+      current = 6;
+      updateProgress();
+      window.scrollTo({ top: document.querySelector('.stage-area').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    function restart() {
+      document.getElementById('completion').classList.remove('active');
+      current = 1;
+      document.getElementById('stage1').classList.add('active');
+      updateProgress();
+      window.scrollTo({ top: document.querySelector('.progress-section').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    function updateProgress() {
+      for (var i = 1; i <= 5; i++) {
+        var step = document.getElementById('ps' + i);
+        step.classList.remove('active', 'done');
+        var dot = document.getElementById('sd' + i);
+        var txt = document.getElementById('st' + i);
+        dot.classList.remove('done');
+        txt.classList.remove('done');
+        if (i < current) {
+          step.classList.add('done');
+          dot.classList.add('done');
+          txt.classList.add('done');
+          if (i < 5) document.getElementById('pc' + i).classList.add('done');
+        } else if (i === current && current <= 5) {
+          step.classList.add('active');
+          if (i > 1) document.getElementById('pc' + (i-1)).classList.remove('done');
+        } else {
+          if (i > 1) document.getElementById('pc' + (i-1)).classList.remove('done');
+        }
+      }
+      if (current > 5) {
+        for (var j = 1; j <= 5; j++) {
+          document.getElementById('ps' + j).classList.add('done');
+          document.getElementById('sd' + j).classList.add('done');
+          document.getElementById('st' + j).classList.add('done');
+          if (j < 5) document.getElementById('pc' + j).classList.add('done');
+        }
+      }
+    }
+
+    function switchEx(stage, idx, btn) {
+      var tabs = btn.parentElement.querySelectorAll('.ex-tab');
+      var contents = btn.parentElement.parentElement.querySelectorAll('.ex-content');
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      contents.forEach(function(c) { c.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById(stage + '-' + idx).classList.add('active');
+    }
+
+    function copyPrompt(textId, btnId) {
+      var text = document.getElementById(textId).innerText;
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById(btnId);
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy prompt';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    function subscribeEmail() {
+      var email = document.getElementById('nl-email').value;
+      if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+      var btn = document.querySelector('#nl-form button');
+      btn.textContent = 'Subscribing...';
+      btn.disabled = true;
+      var formData = new FormData();
+      formData.append('email', email);
+      fetch('https://readplainly.beehiiv.com/create', { method: 'POST', body: formData })
+        .then(function() {
+          document.getElementById('nl-form').style.display = 'none';
+          document.getElementById('nl-success').style.display = 'block';
+        })
+        .catch(function() {
+          document.getElementById('nl-form').style.display = 'none';
+          document.getElementById('nl-success').style.display = 'block';
+        });
+    }
+    document.getElementById('nl-email').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') subscribeEmail();
+    });
+  </script>
+
+</body>
+</html>

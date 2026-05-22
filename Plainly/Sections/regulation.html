@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regulation — Plainly</title>
+  <meta name="description" content="AI and regulation — covered plainly. AI policy, government, and the rules being written right now." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange:       #FF6719;
+      --orange-light: #FFF0E8;
+      --orange-mid:   #FFCFB0;
+      --orange-dark:  #C44A00;
+      --ink:          #1C1A17;
+      --ink-soft:     #3A3630;
+      --ink-muted:    #6B6560;
+      --ink-faint:    #A09890;
+      --paper:        #FAF8F4;
+      --paper-warm:   #F5F1EA;
+      --paper-rule:   #E8E2D8;
+      --section-color: #FF6719;
+      --section-bg:    #FFF0E8;
+      --serif-display: 'Playfair Display', Georgia, serif;
+      --serif-body:    'Source Serif 4', Georgia, serif;
+      --sans:          'DM Sans', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--serif-body); background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    /* ─── TICKER ─── */
+    .topbar { background: var(--ink); height: 32px; overflow: hidden; display: flex; align-items: center; }
+    .topbar-scroll { display: flex; animation: tickerScroll 40s linear infinite; white-space: nowrap; align-items: center; }
+    @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker-item { display: flex; align-items: center; gap: 10px; padding: 0 24px 0 0; }
+    .ticker-dot { width: 4px; height: 4px; background: var(--orange); border-radius: 50%; flex-shrink: 0; }
+    .ticker-item span { font-family: var(--sans); font-size: 11px; color: rgba(255,255,255,0.7); }
+    .ticker-item strong { color: var(--orange); font-weight: 500; }
+
+    /* ─── MASTHEAD ─── */
+    .masthead { padding: 22px 0 0; text-align: center; background: var(--paper); position: sticky; top: 0; z-index: 100; border-bottom: 3px double var(--ink); transition: padding 0.25s ease, box-shadow 0.25s ease; }
+    .masthead.scrolled { padding: 10px 0 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .masthead-top { display: flex; align-items: center; justify-content: space-between; padding: 0 28px 10px; }
+    .masthead-date-line { font-family: var(--sans); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-faint); transition: all 0.25s ease; overflow: hidden; max-height: 30px; opacity: 1; }
+    .masthead.scrolled .masthead-date-line { max-height: 0; opacity: 0; }
+    .masthead-logo { font-family: var(--serif-display); font-size: clamp(28px, 5vw, 44px); font-weight: 900; color: var(--ink); letter-spacing: -2px; line-height: 1; transition: font-size 0.25s ease; }
+    .masthead.scrolled .masthead-logo { font-size: clamp(20px, 3vw, 26px); letter-spacing: -1px; }
+    .masthead-logo span { color: var(--orange); }
+    .masthead-tagline { font-family: var(--serif-body); font-size: 13px; color: var(--ink-muted); font-style: italic; font-weight: 300; transition: all 0.25s ease; overflow: hidden; max-height: 30px; opacity: 1; }
+    .masthead.scrolled .masthead-tagline { max-height: 0; opacity: 0; }
+    .masthead-nav-wrap { display: flex; align-items: center; justify-content: space-between; padding: 9px 28px; border-top: 1px solid var(--paper-rule); }
+    .masthead-nav { display: flex; align-items: center; gap: 0; flex: 1; min-width: 0; }
+    .masthead-nav a { font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-muted); padding: 0 8px; border-right: 1px solid var(--paper-rule); line-height: 1; white-space: nowrap; transition: color 0.15s; }
+    .masthead-nav a.active { color: var(--orange); }
+    .masthead-nav a:last-child { border-right: none; }
+    .masthead-nav a:hover { color: var(--orange); }
+    .masthead-nav .nav-divider { width: 1px; height: 13px; background: var(--ink-muted); opacity: 0.35; margin: 0 4px; flex-shrink: 0; }
+    .masthead-nav a.nav-tool { color: var(--orange-dark); }
+    .masthead-nav a.nav-tool:hover { color: var(--orange); }
+    .masthead-cta { font-family: var(--sans); font-size: 11px; font-weight: 500; background: var(--orange); color: white; padding: 7px 16px; border-radius: 3px; white-space: nowrap; margin-left: 16px; flex-shrink: 0; transition: background 0.15s; }
+    .masthead-cta:hover { background: var(--orange-dark); }
+
+    /* ─── SECTION HEADER ─── */
+    .section-header {
+      padding: 32px 0 0;
+    }
+    .section-header-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .section-rule-top {
+      width: 100%;
+      height: 1px;
+      background: var(--ink);
+      margin-bottom: 18px;
+    }
+    .section-name {
+      font-family: var(--serif-display);
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -2px;
+      line-height: 1;
+      white-space: nowrap;
+      margin-bottom: 18px;
+    }
+    .section-rule-bottom {
+      width: 100%;
+      height: 1px;
+      background: var(--ink);
+      margin-bottom: 0;
+    }
+    .section-rule-line { display: none; }
+    .section-count { display: none; }
+
+    /* ─── TAGS ─── */
+    .tag { display: inline-block; font-family: var(--sans); font-size: 9.5px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; margin-bottom: 10px; }
+    .tag-section { background: var(--section-bg); color: var(--section-color); }
+    .tag-blue   { background: #E8F0FB; color: #1A4A8A; }
+    .tag-coral  { background: #FAE8E0; color: #8A2800; }
+    .tag-amber  { background: #FBF0E0; color: #7A4A00; }
+    .tag-green  { background: #E8F5E8; color: #1A6A1A; }
+    .tag-pink   { background: #FAE8F0; color: #8A2050; }
+    .tag-orange { background: #FFF0E8; color: #C44A00; }
+
+    /* ─── LEAD STORY ─── */
+    .lead-section { padding: 36px 0; border-bottom: 1px solid var(--paper-rule); }
+    .lead-grid { display: grid; grid-template-columns: 1.75fr 1fr; gap: 40px; align-items: start; }
+    .lead-img-wrap { margin-bottom: 18px; }
+    .lead-img { width: 100%; height: 320px; object-fit: cover; object-position: center; border-radius: 3px; display: block; background: var(--paper-warm); }
+    .lead-img-caption { font-family: var(--sans); font-size: 10.5px; color: var(--ink-faint); font-style: italic; margin-top: 7px; line-height: 1.5; }
+    .lead-hed { font-family: var(--serif-display); font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; color: var(--ink); line-height: 1.18; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .lead-hed a:hover { color: var(--orange); }
+    .lead-dek { font-family: var(--serif-body); font-size: 15px; color: var(--ink-muted); line-height: 1.7; margin-bottom: 14px; font-style: italic; }
+    .lead-meta { font-family: var(--sans); font-size: 11px; color: var(--ink-faint); }
+    .read-more { display: inline-block; margin-top: 14px; font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--orange); border-bottom: 1px solid var(--orange-mid); padding-bottom: 1px; transition: border-color 0.15s; }
+    .read-more:hover { border-color: var(--orange); }
+
+    /* Lead sidebar */
+    .lead-sidebar { border-left: 1px solid var(--paper-rule); padding-left: 32px; display: flex; flex-direction: column; gap: 0; }
+    .lead-sidebar-story { padding: 18px 0; border-bottom: 1px solid var(--paper-rule); }
+    .lead-sidebar-story:first-child { padding-top: 0; }
+    .lead-sidebar-story:last-child { border-bottom: none; padding-bottom: 0; }
+    .lss-img { width: 100%; height: 110px; object-fit: cover; border-radius: 3px; margin-bottom: 10px; display: block; background: var(--paper-warm); }
+    .lss-hed { font-family: var(--serif-display); font-size: 16px; font-weight: 700; color: var(--ink); line-height: 1.28; margin-bottom: 6px; letter-spacing: -0.1px; }
+    .lss-hed a:hover { color: var(--orange); }
+    .lss-dek { font-family: var(--sans); font-size: 12px; color: var(--ink-muted); line-height: 1.55; }
+    .lss-meta { font-family: var(--sans); font-size: 10.5px; color: var(--ink-faint); margin-top: 5px; }
+
+    /* ─── STORY GRID ─── */
+    .grid-section { padding: 36px 0 48px; }
+    .grid-section-rule { font-family: var(--sans); font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ink-faint); border-top: 1.5px solid var(--ink); padding-top: 9px; margin-bottom: 28px; }
+    .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 28px; }
+    .story-card { }
+    .sc-img { width: 100%; height: 150px; object-fit: cover; border-radius: 3px; margin-bottom: 13px; display: block; background: var(--paper-warm); }
+    .sc-hed { font-family: var(--serif-display); font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.25; letter-spacing: -0.2px; margin-bottom: 8px; }
+    .sc-hed a:hover { color: var(--orange); }
+    .sc-dek { font-family: var(--sans); font-size: 13px; color: var(--ink-muted); line-height: 1.6; }
+    .sc-meta { font-family: var(--sans); font-size: 10.5px; color: var(--ink-faint); margin-top: 7px; }
+    .sc-divider { border-left: 1px solid var(--paper-rule); padding-left: 24px; }
+
+    /* ─── NEWSLETTER ─── */
+    .newsletter { padding: 64px 0; text-align: center; background: var(--ink); position: relative; overflow: hidden; }
+    .newsletter::before { content: 'Plainly.'; position: absolute; font-family: var(--serif-display); font-size: 260px; font-weight: 900; color: rgba(255,255,255,0.03); top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none; letter-spacing: -8px; }
+    .newsletter-inner { position: relative; z-index: 1; }
+    .nl-eyebrow { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+    .newsletter h2 { font-family: var(--serif-display); font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: white; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
+    .newsletter h2 em { font-style: italic; color: var(--orange); }
+    .newsletter p { font-family: var(--serif-body); font-size: 15px; color: rgba(255,255,255,0.5); max-width: 400px; margin: 0 auto 28px; line-height: 1.65; font-style: italic; }
+    .nl-form { display: flex; max-width: 400px; margin: 0 auto 12px; border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden; }
+    .nl-form input { flex: 1; font-family: var(--sans); font-size: 14px; background: rgba(255,255,255,0.06); border: none; padding: 0 16px; height: 46px; color: white; outline: none; }
+    .nl-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .nl-form button { font-family: var(--sans); font-size: 13px; font-weight: 500; background: var(--orange); color: white; border: none; padding: 0 22px; height: 46px; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+    .nl-form button:hover { background: var(--orange-dark); }
+    .nl-note { font-family: var(--sans); font-size: 11.5px; color: rgba(255,255,255,0.3); }
+
+    /* ─── FOOTER ─── */
+    .footer { border-top: 3px double var(--ink); padding: 40px 0 24px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--serif-display); font-size: 28px; font-weight: 900; color: var(--ink); letter-spacing: -1px; margin-bottom: 4px; }
+    .footer-logo span { color: var(--orange); }
+    .footer-tagline { font-family: var(--serif-body); font-size: 13px; color: var(--ink-faint); font-style: italic; }
+    .footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col h5 { font-family: var(--sans); font-size: 9.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+    .footer-col a { display: block; font-family: var(--sans); font-size: 13px; color: var(--ink-muted); margin-bottom: 8px; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--orange); }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--paper-rule); flex-wrap: wrap; gap: 8px; }
+    .footer-legal { font-family: var(--sans); font-size: 11.5px; color: var(--ink-faint); }
+    .footer-credit { font-family: var(--sans); font-size: 11.5px; color: var(--ink-faint); }
+    .footer-credit span { color: var(--orange); }
+
+    @media (max-width: 860px) {
+      .lead-grid { grid-template-columns: 1fr; }
+      .lead-sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--paper-rule); padding-top: 24px; }
+      .story-grid { grid-template-columns: 1fr 1fr; }
+      .sc-divider { border-left: none; padding-left: 0; }
+    }
+    @media (max-width: 560px) {
+      .container { padding: 0 18px; }
+      .story-grid { grid-template-columns: 1fr; }
+      .nl-form { flex-direction: column; }
+      .nl-form input, .nl-form button { height: 46px; width: 100%; border-radius: 3px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TICKER -->
+  <div class="topbar">
+    <div class="topbar-scroll">
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> EU AI Act now in force — first compliance deadline passes, fines expected Q3</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> Utah becomes second state to delegate clinical prescribing authority to an AI system</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> AnthroPAC: Anthropic forms employee-funded political action committee</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> EU AI Act now in force — first compliance deadline passes, fines expected Q3</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> Utah becomes second state to delegate clinical prescribing authority to an AI system</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> AnthroPAC: Anthropic forms employee-funded political action committee</span></div>
+    </div>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead" id="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date-line">April 18, 2026 &nbsp;·&nbsp; AI News & Education</div>
+      <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
+      <div class="masthead-tagline">AI, put plainly.</div>
+    </div>
+    <div class="masthead-nav-wrap">
+      <nav class="masthead-nav">
+        <a href="../sections/business.html">Business</a>
+        <a href="../sections/law.html">Law</a>
+        <a href="../sections/small-business.html">Small Business</a>
+        <a href="../sections/regulation.html" class="active">Regulation</a>
+        <a href="../sections/sports.html">Sports</a>
+        <a href="../sections/careers.html">Careers</a>
+        <a href="../sections/academia.html">Academia</a>
+        <a href="../sections/arts-music.html">Arts & Music</a>
+        <a href="../sections/regulation.html" class="active">Regulation</a>
+        <div class="nav-divider"></div>
+        <a href="../about.html" class="nav-tool">About</a>
+        <a href="../framework.html" class="nav-tool">The Framework</a>
+        <a href="../prompts.html" class="nav-tool">Prompts</a>
+      </nav>
+      <a href="#newsletter" class="masthead-cta">Subscribe free →</a>
+    </div>
+  </header>
+
+  <!-- SECTION HEADER -->
+  <div class="section-header">
+    <div class="container">
+      <div class="section-header-inner">
+        <div class="section-rule-top"></div>
+        <h1 class="section-name">Regulation</h1>
+        <div class="section-rule-bottom"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEAD STORY -->
+  <section class="lead-section">
+    <div class="container">
+      <div class="lead-grid">
+
+        <article>
+          <div class="lead-img-wrap">
+            <img src="../images/reg-lead.jpg" alt="The European Parliament building in Brussels" class="lead-img" onerror="this.style.display='none'" />
+            <p class="lead-img-caption">The EU AI Act is now in force — and the first enforcement actions are expected before the end of Q3 2026. Here's what businesses need to know.</p>
+          </div>
+          <span class="tag tag-section">Regulation</span>
+          <h2 class="lead-hed"><a href="#">The EU's AI Act is now in force. Here's what it actually requires — and who it affects</a></h2>
+          <p class="lead-dek">Most coverage assumes you already know what the Act says. We start from scratch: what it covers, who it applies to, what it requires, and what happens if you don't comply.</p>
+          <div class="lead-meta">By Plainly Staff &nbsp;·&nbsp; April 5, 2026 &nbsp;·&nbsp; 4 min read</div>
+          <a href="#" class="read-more">Continue reading →</a>
+        </article>
+
+        <aside class="lead-sidebar">
+          <div class="lead-sidebar-story">
+            <img src="../images/story-lead.jpg" alt="A pharmacy counter — AI prescription renewals in Utah" class="lss-img" onerror="this.style.display='none'; this.style.height='0'" />
+            <span class="tag tag-section">Regulation</span>
+            <div class="lss-hed"><a href="#">Utah said yes to AI prescriptions. What happens when the first patient is harmed?</a></div>
+            <div class="lss-dek">The regulatory framework for AI in healthcare is being written in real time. We look at the gaps Utah's pilot has already exposed.</div>
+            <div class="lss-meta">6 min read</div>
+          </div>
+          <div class="lead-sidebar-story">
+            <img src="../images/reg-pac.jpg" alt="The US Capitol building in Washington DC" class="lss-img" onerror="this.style.display='none'; this.style.height='0'" />
+            <span class="tag tag-section">Regulation</span>
+            <div class="lss-hed"><a href="#">AnthroPAC: Anthropic just formed a political action committee. Here's why it matters.</a></div>
+            <div class="lss-dek">As AI regulation accelerates, the companies building it are starting to spend on politics. A plain-English explainer of what a PAC is and what this signals.</div>
+            <div class="lss-meta">7 min read</div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY GRID -->
+  <section class="grid-section">
+    <div class="container">
+      <div class="grid-section-rule">More from Regulation</div>
+      <div class="story-grid">
+
+        <div class="story-card">
+          <img src="../images/regulation-grid-1.jpg" alt="Placeholder" class="sc-img" onerror="this.style.background='var(--paper-warm)'; this.removeAttribute('src')" />
+          <span class="tag tag-section">Regulation</span>
+          <div class="sc-hed"><a href="#">What the EU AI Act actually bans — and what it just requires you to disclose</a></div>
+          <div class="sc-dek">The Act draws a hard line in some areas and a softer line in others. Here's the practical breakdown of what falls where.</div>
+          <div class="sc-meta">By Plainly Staff &nbsp;·&nbsp; Coming soon</div>
+        </div>
+
+        <div class="story-card sc-divider">
+          <img src="../images/regulation-grid-2.jpg" alt="Placeholder" class="sc-img" onerror="this.style.background='var(--paper-warm)'; this.removeAttribute('src')" />
+          <span class="tag tag-section">Regulation</span>
+          <div class="sc-hed"><a href="#">How states are becoming the testing ground for AI regulation in America</a></div>
+          <div class="sc-dek">Utah, Texas, Arizona, Missouri — states are moving faster than the federal government on AI rules. Here's the map of what's happening where.</div>
+          <div class="sc-meta">By Plainly Staff &nbsp;·&nbsp; Coming soon</div>
+        </div>
+
+        <div class="story-card sc-divider">
+          <img src="../images/regulation-grid-3.jpg" alt="Placeholder" class="sc-img" onerror="this.style.background='var(--paper-warm)'; this.removeAttribute('src')" />
+          <span class="tag tag-section">Regulation</span>
+          <div class="sc-hed"><a href="#">The AI regulation glossary: 12 terms you need to understand to follow this story</a></div>
+          <div class="sc-dek">From 'high-risk system' to 'transparency obligation' — the regulatory language explained in plain English.</div>
+          <div class="sc-meta">By Plainly Staff &nbsp;·&nbsp; Coming soon</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week's most important AI developments — broken down clearly, in plain English.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" />
+          <button type="button" onclick="subscribeEmail()">Subscribe →</button>
+        </div>
+        <div id="nl-success" style="display:none; color:#FF6719; font-family:var(--sans); font-size:15px; font-weight:500; margin-bottom:14px;">You're in! Welcome to Plainly. 🎉</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. · readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="business.html">Business</a>
+            <a href="law.html">Law</a>
+            <a href="small-business.html">Small Business</a>
+            <a href="real-estate.html">Regulation</a>
+            <a href="sports.html">Sports</a>
+            <a href="careers.html">Careers</a>
+            <a href="academia.html">Academia</a>
+            <a href="arts-music.html">Arts & Music</a>
+            <a href="regulation.html" style="color:var(--orange);font-weight:600;">Regulation</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="../framework.html">The Framework</a>
+            <a href="../prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="../about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+            <a href="#">Privacy policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">© 2026 Plainly · readplainly.com · All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>·</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var masthead = document.getElementById('masthead');
+    window.addEventListener('scroll', function() {
+      masthead.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    function subscribeEmail() {
+      var email = document.getElementById('nl-email').value;
+      if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+      var btn = document.querySelector('#nl-form button');
+      btn.textContent = 'Subscribing...'; btn.disabled = true;
+      var fd = new FormData(); fd.append('email', email);
+      fetch('https://readplainly.beehiiv.com/create', { method: 'POST', body: fd })
+        .then(function() { document.getElementById('nl-form').style.display = 'none'; document.getElementById('nl-success').style.display = 'block'; })
+        .catch(function() { document.getElementById('nl-form').style.display = 'none'; document.getElementById('nl-success').style.display = 'block'; });
+    }
+    document.getElementById('nl-email').addEventListener('keypress', function(e) { if (e.key === 'Enter') subscribeEmail(); });
+  </script>
+
+</body>
+</html>

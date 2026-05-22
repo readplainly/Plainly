@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompts Library — Plainly</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange:       #FF6719;
+      --orange-light: #FFF0E8;
+      --orange-mid:   #FFCFB0;
+      --orange-dark:  #C44A00;
+      --orange-deep:  #8B3300;
+      --ink:          #1C1A17;
+      --ink-soft:     #3A3630;
+      --ink-muted:    #6B6560;
+      --ink-faint:    #A09890;
+      --paper:        #FAF8F4;
+      --paper-warm:   #F5F1EA;
+      --paper-rule:   #E8E2D8;
+      --serif-display: 'Playfair Display', Georgia, serif;
+      --serif-body:    'Source Serif 4', Georgia, serif;
+      --sans:          'DM Sans', system-ui, sans-serif;
+      --mono:          'DM Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+    /* ─── TOPBAR ─── */
+    .topbar { background: var(--ink); padding: 7px 0; }
+    .topbar-inner { display: flex; gap: 28px; justify-content: center; }
+    .topbar-inner a { font-family: var(--sans); font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; transition: color 0.15s; }
+    .topbar-inner a:hover { color: var(--orange); }
+
+    /* ─── NAV ─── */
+    .nav { border-bottom: 1px solid var(--paper-rule); padding: 13px 0; background: var(--paper); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-family: var(--serif-display); font-size: 26px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 12.5px; color: var(--ink-muted); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-links a.active { color: var(--orange); }
+    .nav-cta { font-family: var(--sans); font-size: 12px; font-weight: 500; background: var(--orange); color: white; padding: 8px 20px; border-radius: 3px; transition: background 0.15s; white-space: nowrap; }
+    .nav-cta:hover { background: var(--orange-dark); }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header { border-bottom: 3px double var(--ink); padding: 48px 0 36px; text-align: center; }
+    .ph-eyebrow { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; animation: fadeUp 0.5s ease both; }
+    .ph-title { font-family: var(--serif-display); font-size: clamp(36px, 6vw, 64px); font-weight: 900; color: var(--ink); letter-spacing: -2px; line-height: 1; margin-bottom: 14px; animation: fadeUp 0.55s 0.08s ease both; }
+    .ph-title span { color: var(--orange); font-style: italic; }
+    .ph-sub { font-family: var(--serif-body); font-size: 17px; color: var(--ink-muted); font-style: italic; font-weight: 300; max-width: 560px; margin: 0 auto 24px; line-height: 1.55; animation: fadeUp 0.55s 0.15s ease both; }
+    .ph-meta { font-family: var(--sans); font-size: 12px; color: var(--ink-faint); display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.55s 0.2s ease both; }
+    .ph-meta-item { display: flex; align-items: center; gap: 6px; }
+    .ph-dot { width: 4px; height: 4px; background: var(--orange); border-radius: 50%; }
+
+    /* ─── CONTROLS ─── */
+    .controls { padding: 24px 0; border-bottom: 1px solid var(--paper-rule); background: var(--paper-warm); position: sticky; top: 57px; z-index: 90; }
+    .controls-inner { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .search-wrap { position: relative; flex: 1; min-width: 220px; }
+    .search-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--ink-faint); pointer-events: none; }
+    .search-input { width: 100%; height: 40px; border: 1px solid var(--paper-rule); border-radius: 4px; padding: 0 12px 0 36px; font-family: var(--sans); font-size: 14px; background: var(--paper); color: var(--ink); outline: none; transition: border-color 0.15s; }
+    .search-input:focus { border-color: var(--orange); }
+    .search-input::placeholder { color: var(--ink-faint); }
+    .filters { display: flex; gap: 6px; flex-wrap: wrap; }
+    .filter-btn { font-family: var(--sans); font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; border: 1px solid var(--paper-rule); background: transparent; color: var(--ink-muted); cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+    .filter-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .filter-btn.active { background: var(--orange); color: white; border-color: var(--orange); }
+    .results-count { font-family: var(--sans); font-size: 12px; color: var(--ink-faint); white-space: nowrap; margin-left: auto; }
+
+    /* ─── MAIN LAYOUT ─── */
+    .library-body { padding: 40px 0 60px; }
+    .library-grid { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+    /* ─── SECTION NAV ─── */
+    .section-nav { position: sticky; top: 130px; }
+    .section-nav-label { font-family: var(--sans); font-size: 9.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+    .section-nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 4px; margin-bottom: 2px; cursor: pointer; transition: background 0.15s; }
+    .section-nav-item:hover { background: var(--paper-warm); }
+    .section-nav-item.active { background: var(--orange-light); }
+    .sni-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .sni-text { font-family: var(--sans); font-size: 13px; color: var(--ink-muted); }
+    .section-nav-item.active .sni-text { color: var(--orange-dark); font-weight: 500; }
+    .sni-count { font-family: var(--sans); font-size: 11px; color: var(--ink-faint); margin-left: auto; }
+
+    /* ─── PROMPT SECTIONS ─── */
+    .prompt-section { margin-bottom: 52px; }
+    .ps-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
+    .ps-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ps-title { font-family: var(--serif-display); font-size: 24px; font-weight: 700; color: var(--ink); letter-spacing: -0.3px; }
+    .ps-count { font-family: var(--sans); font-size: 12px; color: var(--ink-faint); margin-left: auto; white-space: nowrap; }
+
+    /* ─── PROMPT CARDS ─── */
+    .prompt-list { display: flex; flex-direction: column; gap: 1px; background: var(--paper-rule); border: 1px solid var(--paper-rule); border-radius: 8px; overflow: hidden; }
+    .prompt-card { background: var(--paper); transition: background 0.15s; }
+    .prompt-card:hover { background: var(--paper-warm); }
+    .prompt-card.open { background: var(--paper-warm); }
+    .prompt-top { display: flex; align-items: center; gap: 12px; padding: 16px 20px; cursor: pointer; }
+    .p-tag { font-family: var(--sans); font-size: 9.5px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; flex-shrink: 0; }
+    .p-title { font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--ink); flex: 1; line-height: 1.3; }
+    .p-diff { font-family: var(--sans); font-size: 11px; color: var(--ink-faint); flex-shrink: 0; }
+    .p-chevron { width: 16px; height: 16px; color: var(--ink-faint); flex-shrink: 0; transition: transform 0.2s; }
+    .prompt-card.open .p-chevron { transform: rotate(180deg); }
+
+    .prompt-body { display: none; padding: 0 20px 20px; }
+    .prompt-card.open .prompt-body { display: block; }
+    .p-desc { font-family: var(--sans); font-size: 13.5px; color: var(--ink-muted); line-height: 1.6; margin-bottom: 14px; }
+    .p-text { font-family: var(--mono); font-size: 12.5px; color: var(--ink); background: var(--paper); border: 1px solid var(--paper-rule); border-left: 3px solid var(--orange); border-radius: 4px; padding: 16px 18px; line-height: 1.75; white-space: pre-wrap; margin-bottom: 12px; }
+    .p-actions { display: flex; align-items: center; gap: 10px; }
+    .copy-btn { font-family: var(--sans); font-size: 12px; font-weight: 500; padding: 7px 16px; border-radius: 4px; border: 1px solid var(--paper-rule); background: transparent; color: var(--ink-muted); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s; }
+    .copy-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .copy-btn.copied { border-color: var(--orange); color: var(--orange); }
+    .p-level { font-family: var(--sans); font-size: 11px; color: var(--ink-faint); margin-left: auto; }
+
+    /* empty state */
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--ink-faint); }
+    .empty-state p { font-family: var(--sans); font-size: 15px; margin-bottom: 8px; }
+    .empty-state small { font-size: 13px; }
+
+    /* ─── NEWSLETTER ─── */
+    .newsletter { padding: 64px 0; text-align: center; background: var(--ink); position: relative; overflow: hidden; }
+    .newsletter::before { content: 'Plainly.'; position: absolute; font-family: var(--serif-display); font-size: 260px; font-weight: 900; color: rgba(255,255,255,0.03); top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none; letter-spacing: -8px; }
+    .newsletter-inner { position: relative; z-index: 1; }
+    .nl-eyebrow { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+    .newsletter h2 { font-family: var(--serif-display); font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: white; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
+    .newsletter h2 em { font-style: italic; color: var(--orange); }
+    .newsletter p { font-family: var(--serif-body); font-size: 15px; color: rgba(255,255,255,0.5); max-width: 400px; margin: 0 auto 28px; line-height: 1.65; font-style: italic; }
+    .nl-form { display: flex; max-width: 400px; margin: 0 auto 12px; border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden; }
+    .nl-form input { flex: 1; font-family: var(--sans); font-size: 14px; background: rgba(255,255,255,0.06); border: none; padding: 0 16px; height: 46px; color: white; outline: none; }
+    .nl-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .nl-form button { font-family: var(--sans); font-size: 13px; font-weight: 500; background: var(--orange); color: white; border: none; padding: 0 22px; height: 46px; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+    .nl-form button:hover { background: var(--orange-dark); }
+    .nl-note { font-family: var(--sans); font-size: 11.5px; color: rgba(255,255,255,0.3); }
+
+    /* ─── FOOTER ─── */
+    .footer { border-top: 3px double var(--ink); padding: 40px 0 24px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--serif-display); font-size: 28px; font-weight: 900; color: var(--ink); letter-spacing: -1px; margin-bottom: 4px; }
+    .footer-logo span { color: var(--orange); }
+    .footer-tagline { font-family: var(--serif-body); font-size: 13px; color: var(--ink-faint); font-style: italic; }
+    .footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col h5 { font-family: var(--sans); font-size: 9.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+    .footer-col a { display: block; font-family: var(--sans); font-size: 13px; color: var(--ink-muted); margin-bottom: 8px; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--orange); }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--paper-rule); flex-wrap: wrap; gap: 8px; }
+    .footer-legal { font-family: var(--sans); font-size: 11.5px; color: var(--ink-faint); }
+    .footer-credit { font-family: var(--sans); font-size: 11.5px; color: var(--ink-faint); }
+    .footer-credit span { color: var(--orange); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 860px) {
+      .library-grid { grid-template-columns: 1fr; }
+      .section-nav { display: none; }
+      .controls { top: 57px; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .container { padding: 0 16px; }
+      .nl-form { flex-direction: column; }
+      .nl-form input, .nl-form button { height: 46px; width: 100%; border-radius: 3px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a href="index.html">Home</a>
+        <a href="#">Business</a>
+        <a href="#">Law</a>
+        <a href="#">Real Estate</a>
+        <a href="framework.html">The Framework</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Plainly<span>.</span></a>
+        <ul class="nav-links">
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Law</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Academia</a></li>
+          <li><a href="#">Arts & Music</a></li>
+          <li><a href="#">Regulation</a></li>
+          <li><a href="prompts.html" class="active">Prompts</a></li>
+          <li><a href="framework.html">The Framework</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="#newsletter" class="nav-cta">Subscribe free →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <div class="ph-eyebrow">Prompts Library</div>
+      <div class="ph-title">Ready to use.<br><span>Right now.</span></div>
+      <div class="ph-sub">Copy any prompt, paste it into an AI tool, and fill in the brackets. Built for real people doing real work.</div>
+      <div class="ph-meta">
+        <div class="ph-meta-item"><div class="ph-dot"></div><span id="total-count">48 prompts</span></div>
+        <div class="ph-meta-item"><div class="ph-dot"></div><span>6 sections</span></div>
+        <div class="ph-meta-item"><div class="ph-dot"></div><span>Free to use</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <div class="container">
+      <div class="controls-inner">
+        <div class="search-wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="search-input" id="searchInput" type="text" placeholder="Search prompts..." oninput="filterAll()" />
+        </div>
+        <div class="filters">
+          <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+          <button class="filter-btn" onclick="setFilter('small-business',this)">Small Business</button>
+          <button class="filter-btn" onclick="setFilter('legal',this)">Legal Research</button>
+          <button class="filter-btn" onclick="setFilter('real-estate',this)">Real Estate</button>
+          <button class="filter-btn" onclick="setFilter('music',this)">Music & Creative</button>
+          <button class="filter-btn" onclick="setFilter('academic',this)">Academic</button>
+          <button class="filter-btn" onclick="setFilter('career',this)">Career</button>
+        </div>
+        <div class="results-count" id="resultsCount">Showing all 48</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIBRARY BODY -->
+  <div class="library-body">
+    <div class="container">
+      <div class="library-grid">
+
+        <!-- SECTION NAV -->
+        <aside class="section-nav">
+          <div class="section-nav-label">Jump to section</div>
+          <div class="section-nav-item active" onclick="scrollTo('sec-small-business')"><div class="sni-dot" style="background:#FF6719;"></div><div class="sni-text">Small Business</div><div class="sni-count">8</div></div>
+          <div class="section-nav-item" onclick="scrollTo('sec-legal')"><div class="sni-dot" style="background:#185FA5;"></div><div class="sni-text">Legal Research</div><div class="sni-count">8</div></div>
+          <div class="section-nav-item" onclick="scrollTo('sec-real-estate')"><div class="sni-dot" style="background:#1D9E75;"></div><div class="sni-text">Real Estate</div><div class="sni-count">8</div></div>
+          <div class="section-nav-item" onclick="scrollTo('sec-music')"><div class="sni-dot" style="background:#993556;"></div><div class="sni-text">Music & Creative</div><div class="sni-count">8</div></div>
+          <div class="section-nav-item" onclick="scrollTo('sec-academic')"><div class="sni-dot" style="background:#3B6D11;"></div><div class="sni-text">Academic</div><div class="sni-count">8</div></div>
+          <div class="section-nav-item" onclick="scrollTo('sec-career')"><div class="sni-dot" style="background:#854F0B;"></div><div class="sni-text">Career & Job Search</div><div class="sni-count">8</div></div>
+        </aside>
+
+        <!-- PROMPTS -->
+        <div id="promptsContainer"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week's most important AI developments — broken down clearly, sorted by the sector that matters to you.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" aria-label="Email address" />
+          <button type="button" onclick="subscribeEmail()">Subscribe →</button>
+        </div>
+        <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;margin-bottom:14px;">You're in! Welcome to Plainly. 🎉</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. · readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="#">Business</a>
+            <a href="#">Law</a>
+            <a href="#">Regulation</a>
+            <a href="#">Careers</a>
+            <a href="#">Academia</a>
+            <a href="#">Arts & Music</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="framework.html">The Framework</a>
+            <a href="prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+            <a href="#">Privacy policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">© 2026 Plainly · readplainly.com · All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>·</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+const sections = [
+  {
+    id: 'small-business',
+    title: 'Small Business',
+    color: '#FF6719',
+    bg: '#FFF0E8',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6719" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    prompts: [
+      {
+        title: 'Customer complaint response generator',
+        desc: 'Turn a difficult customer complaint into a professional, empathetic response that keeps the relationship intact and resolves the issue.',
+        level: 'Beginner',
+        text: `You are a customer service expert helping a small business owner. A customer has sent the following complaint: [paste complaint here].
+
+Draft a professional, warm, and empathetic response that:
+1. Acknowledges the customer's frustration without being defensive
+2. Apologizes sincerely for the experience
+3. Clearly explains what went wrong (if known) or what you're doing to find out
+4. Offers a specific resolution: [describe what you're willing to offer — refund, replacement, discount, etc.]
+5. Ends by reinforcing your commitment to their satisfaction
+
+Keep the tone human and genuine — not corporate. Maximum 150 words.`
+      },
+      {
+        title: 'Business idea validator',
+        desc: 'Get an honest, structured critique of a new business idea before you invest time or money into it.',
+        level: 'Beginner',
+        text: `You are a seasoned business strategist with experience advising small businesses and startups. I have a business idea I want you to evaluate critically and honestly.
+
+My idea: [describe your business idea in 2–3 sentences]
+My target customer: [who you're selling to]
+My rough price point: [what you plan to charge]
+My location / market: [city, region, or online]
+
+Please give me:
+1. The three strongest aspects of this idea
+2. The three biggest risks or weaknesses
+3. The one question I need to answer before moving forward
+4. A competitor or existing solution I should study
+
+Be direct. I want honest feedback, not encouragement.`
+      },
+      {
+        title: 'Social media content calendar',
+        desc: 'Generate a month of social media content ideas tailored to your business and audience — so you never stare at a blank screen again.',
+        level: 'Beginner',
+        text: `You are a social media strategist for small businesses. I need a 4-week content calendar for my business.
+
+About my business: [describe what you do and what you sell]
+My target audience: [describe your ideal customer — age, interests, situation]
+Platforms I use: [e.g. Instagram, Facebook, LinkedIn, TikTok]
+My brand tone: [e.g. friendly and informal / professional / witty / warm]
+
+Create a 4-week calendar with 3 posts per week. For each post include:
+- The day and platform
+- The content type (e.g. tip, behind-the-scenes, testimonial, product feature, question)
+- A specific post idea or hook (first line of the caption)
+
+Prioritize content that builds trust, shows personality, and occasionally promotes — not the other way around.`
+      },
+      {
+        title: 'Pricing strategy analyser',
+        desc: 'Get clear guidance on whether your pricing is right and how to position it more effectively.',
+        level: 'Intermediate',
+        text: `You are a pricing consultant who works with small businesses. I want your help thinking through my pricing strategy.
+
+My business: [describe what you sell — product or service]
+My current price: [what you currently charge]
+My main costs: [list your main costs per unit or per month]
+My target customer: [who buys from you and what they value]
+My main competitors: [name 2–3 competitors and their approximate prices]
+
+Please give me:
+1. An honest assessment of whether my pricing is too low, too high, or about right — and why
+2. The psychological pricing principle most relevant to my situation
+3. One pricing change I could test in the next 30 days with low risk
+4. How I should communicate my price to make it feel like great value`
+      },
+      {
+        title: 'Job listing writer',
+        desc: 'Write a job posting that attracts the right candidates and reflects your business culture — not a generic corporate template.',
+        level: 'Beginner',
+        text: `You are a hiring consultant who specializes in helping small businesses attract great candidates without big HR budgets.
+
+I need to write a job listing for: [job title]
+What this person will actually do day-to-day: [describe the main tasks]
+Must-have skills or experience: [list them]
+Nice-to-have: [list them]
+Salary or hourly range: [your range]
+Work style: [remote / in-person / hybrid, full-time / part-time]
+One thing that makes working here genuinely good: [be honest]
+
+Write a job posting that:
+- Opens with the most interesting or compelling aspect of the role
+- Uses plain language, not corporate jargon
+- Describes the team and culture honestly
+- Ends with a clear, low-friction application instruction
+- Is under 400 words`
+      },
+      {
+        title: 'Email marketing campaign planner',
+        desc: 'Plan a short email campaign that nurtures leads or re-engages existing customers around a specific offer or event.',
+        level: 'Intermediate',
+        text: `You are an email marketing strategist for small businesses. Help me plan a short email campaign.
+
+My business: [describe what you do]
+The goal of this campaign: [e.g. promote a sale, launch a new product, re-engage lapsed customers, fill appointment slots]
+My audience for this campaign: [who will receive it]
+Campaign duration: [e.g. 1 week, 2 weeks]
+Number of emails: [how many you want to send]
+
+For each email in the sequence, give me:
+1. The send day
+2. The subject line (write 2 options)
+3. The main goal of that email
+4. The key message in 1–2 sentences
+5. The call to action
+
+End with one tip for improving open rates for this specific audience.`
+      },
+      {
+        title: 'Business grant research assistant',
+        desc: 'Get a structured starting point for finding grants and funding relevant to your specific business.',
+        level: 'Intermediate',
+        text: `You are a small business funding advisor. Help me identify potential grants and funding sources for my business.
+
+About my business:
+- What I do: [describe]
+- Industry / sector: [e.g. food, tech, retail, creative arts]
+- Business stage: [e.g. pre-revenue, early stage, established]
+- Location: [city and state/country]
+- Owner background: [e.g. woman-owned, minority-owned, veteran-owned — if applicable]
+- Annual revenue (approximate): [or "pre-revenue"]
+
+Please give me:
+1. Three types of grants I'm most likely to qualify for based on this profile
+2. The best places to search for grants relevant to my situation (specific websites or databases)
+3. The most common reasons small businesses are rejected for grants
+4. Three things I should have ready before applying for any grant`
+      },
+      {
+        title: 'One-page business plan',
+        desc: 'Generate a concise, clear one-page business plan you can use for your own clarity, for a bank, or for a potential partner.',
+        level: 'Intermediate',
+        text: `You are a business plan consultant. Help me write a concise one-page business plan.
+
+Here is the information about my business:
+- Business name: [name]
+- What I sell: [product or service]
+- Who I sell to: [target customer]
+- How I make money: [revenue model]
+- My main competitors: [2–3 names]
+- What makes me different: [your key differentiator]
+- My 12-month goal: [specific and measurable if possible]
+- My biggest challenge right now: [be honest]
+- Funding needed (if any): [amount and what for]
+
+Write a one-page business plan with the following sections: Business Overview, Problem & Solution, Target Market, Revenue Model, Competitive Advantage, 12-Month Goals, Key Risks. Use plain professional language. Keep each section to 2–4 sentences.`
+      }
+    ]
+  },
+  {
+    id: 'legal',
+    title: 'Legal Research',
+    color: '#185FA5',
+    bg: '#E8F0FB',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+    prompts: [
+      {
+        title: 'Case law summariser',
+        desc: 'Paste in a case and get a clean, structured summary covering the key facts, legal issues, holding, and reasoning — ideal for memos and briefs.',
+        level: 'Beginner',
+        text: `You are a senior law clerk with expertise in legal research and writing. I will paste a legal case below. Please provide a structured summary with the following sections:
+
+1. Case citation and court
+2. Key facts (4–6 bullet points — only the facts that matter legally)
+3. Legal issue(s) presented
+4. Holding (what the court decided)
+5. Reasoning (how the court reached its conclusion — 3–5 sentences)
+6. Significance (why this case matters — one sentence)
+
+Use precise legal language but keep each section concise. Flag any dissenting opinions briefly at the end.
+
+[Paste case text here]`
+      },
+      {
+        title: 'Legal memo drafter',
+        desc: 'Draft a professional legal memorandum on a specific legal question using the IRAC structure.',
+        level: 'Intermediate',
+        text: `You are a legal associate at a law firm drafting an internal research memorandum. 
+
+Question presented: [state the specific legal question you need to answer]
+Jurisdiction: [e.g. New York, federal, California]
+Relevant facts: [summarize the client's situation in 3–5 sentences]
+Any cases or statutes I've already identified: [list them, or write "none yet"]
+
+Draft a legal memorandum using the IRAC structure:
+- Issue
+- Rule (relevant statutes, cases, and legal standards)
+- Application (apply the rule to the specific facts)
+- Conclusion
+
+Keep the memo under 600 words. Use formal legal language. Flag any areas where the law is unsettled or where I should verify the current state of the law before relying on this memo.`
+      },
+      {
+        title: 'Contract clause plain-language explainer',
+        desc: 'Paste in any contract clause and get a plain-English explanation of what it means, what it requires, and any red flags to watch for.',
+        level: 'Beginner',
+        text: `You are a contract attorney who specializes in explaining complex legal language clearly. I will paste a contract clause below.
+
+Please give me:
+1. Plain-English summary: What does this clause actually mean? (2–3 sentences, no jargon)
+2. What it requires of each party
+3. Red flags: Any terms that are unusually one-sided, vague, or potentially problematic
+4. Questions to ask before signing: 2–3 specific questions I should raise with the other party or my attorney
+5. Overall risk level for this clause: Low / Medium / High — with a one-sentence explanation
+
+[Paste contract clause here]`
+      },
+      {
+        title: 'Statutory interpretation analyser',
+        desc: 'Work through a statutory interpretation problem using the major canons and approaches courts apply.',
+        level: 'Advanced',
+        text: `You are a law professor specializing in statutory interpretation. Help me analyze the following statutory interpretation problem.
+
+The statute at issue: [paste the relevant statutory text]
+Jurisdiction: [federal / state — specify which state]
+The interpretive question: [what does the statute mean in this specific context?]
+The competing interpretations: [describe the two or more possible readings]
+Any relevant legislative history I know of: [or write "none identified"]
+
+Please analyze this problem using:
+1. Textualist approach: What does the plain text say?
+2. Purposivist approach: What was Congress/the legislature trying to achieve?
+3. Relevant canons of construction that apply here
+4. How a court in this jurisdiction has typically approached similar ambiguities
+5. Your assessment of which interpretation is most likely to prevail — and why
+
+Be precise and flag where the analysis is uncertain.`
+      },
+      {
+        title: 'Opposing argument anticipator',
+        desc: "Given your legal position, generate the strongest counterarguments the other side is likely to make — so you can prepare before they do.",
+        level: 'Intermediate',
+        text: `You are a litigation strategist preparing for oral argument or trial. I need to anticipate the strongest arguments against my position.
+
+My client's position: [describe what you're arguing]
+Key facts supporting my position: [list them]
+The legal standard that applies: [e.g. summary judgment, motion to dismiss, preponderance]
+Jurisdiction: [specify]
+Opposing party's likely interests: [what outcome do they want and why]
+
+Generate the 4 strongest arguments opposing counsel is likely to make against my position. For each argument:
+1. State the argument clearly and forcefully — as if you were opposing counsel
+2. Rate how damaging it could be: Low / Medium / High
+3. Suggest a brief rebuttal strategy
+
+Do not soften the opposing arguments. I need to prepare for the worst case.`
+      },
+      {
+        title: 'Law school exam answer outliner',
+        desc: 'Given a law school exam hypothetical, generate a structured issue-spotting outline so you never miss a legal issue under time pressure.',
+        level: 'Beginner',
+        text: `You are a law school academic advisor and bar prep tutor. I have a law school exam hypothetical that I need to analyze under time pressure.
+
+Subject area: [e.g. Contracts, Torts, Constitutional Law, Criminal Law, Property]
+The hypothetical: [paste the fact pattern here]
+
+Please give me a structured exam answer outline:
+1. All legal issues present in this fact pattern (issue-spotting — be thorough)
+2. For each issue: the relevant rule, how it applies to these facts, and the likely outcome
+3. Any issues where reasonable arguments exist on both sides
+4. The order I should address issues in for maximum marks
+
+Format this as a clear outline I can follow when writing my answer. Flag the 2–3 most important issues I should spend the most time on.`
+      },
+      {
+        title: 'Client intake call summariser',
+        desc: 'Turn rough notes from a client intake call into a clean, structured legal summary with identified issues and next steps.',
+        level: 'Beginner',
+        text: `You are a legal associate at a law firm. I will paste my notes from a client intake call. Convert them into a structured internal summary.
+
+Please produce:
+1. Client background (2–3 sentences — who they are and their relevant situation)
+2. Key facts of the matter (bullet points — legally relevant facts only)
+3. Potential legal issues identified (list each issue and the area of law it involves)
+4. Immediate next steps (numbered action items with suggested owner — attorney or client)
+5. Open questions (things we need to clarify before advising further)
+6. Urgency level: Low / Medium / High — with reason (e.g. statute of limitations concern)
+
+Use formal legal language. Keep the summary under 400 words.
+
+[Paste intake notes here]`
+      },
+      {
+        title: 'Jurisdiction-specific research roadmap',
+        desc: 'Get a structured research plan for a legal issue in a specific jurisdiction — so you know exactly where to look and in what order.',
+        level: 'Intermediate',
+        text: `You are a legal research librarian and attorney. Help me build a research plan for the following legal issue.
+
+Legal issue: [describe the legal question you're researching]
+Jurisdiction: [federal / state — specify which state]
+Context: [briefly describe the client situation or why this is being researched]
+Deadline: [when do you need this by]
+Research tools I have access to: [e.g. Westlaw, LexisNexis, free sources like Google Scholar, Casetext]
+
+Please give me a step-by-step research roadmap:
+1. The primary sources I should find first (constitutions, statutes, regulations)
+2. The secondary sources that will orient me fastest (treatises, law review articles, practice guides)
+3. The key search terms and Boolean strings I should try
+4. The leading cases I should look for in this area
+5. How I'll know when my research is complete (signs of saturation)
+6. Pitfalls to avoid in researching this specific issue`
+      }
+    ]
+  },
+  {
+    id: 'real-estate',
+    title: 'Real Estate',
+    color: '#1D9E75',
+    bg: '#E1F5EE',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    prompts: [
+      {
+        title: 'Investment property quick analyser',
+        desc: 'Paste in the basics of a potential investment property and get a structured first-pass analysis before you spend more time on due diligence.',
+        level: 'Intermediate',
+        text: `You are a real estate investment analyst. Help me evaluate a potential investment property.
+
+Property details:
+- Address / location: [city, neighborhood]
+- Property type: [single family / multi-family / commercial / mixed-use]
+- Asking price: [price]
+- Estimated rental income (monthly): [amount or "unknown"]
+- Estimated monthly expenses (taxes, insurance, maintenance): [amount or "unknown"]
+- Condition: [excellent / good / needs work — describe briefly]
+- My investment strategy: [buy and hold / fix and flip / BRRRR / short-term rental]
+- My financing plan: [cash / conventional loan / hard money — estimated down payment]
+
+Please give me:
+1. Estimated gross rent multiplier (GRM) if rent data is available
+2. Estimated cap rate if expense data is available
+3. Key due diligence questions I should answer before making an offer
+4. Red flags in what I've described
+5. A preliminary verdict: Worth pursuing further / Proceed with caution / Pass — with reason`
+      },
+      {
+        title: 'Rental property underwriting template',
+        desc: 'Walk through a full underwriting analysis of a rental property with all the key metrics an investor needs to make a decision.',
+        level: 'Advanced',
+        text: `You are a commercial real estate underwriter. Help me underwrite the following rental property investment.
+
+Property information:
+- Purchase price: [amount]
+- Property type and unit count: [e.g. 4-unit multifamily]
+- Location: [city, state]
+- Current monthly rents per unit: [list each unit's rent]
+- Vacancy rate assumption: [% or use market standard]
+- Annual property taxes: [amount]
+- Annual insurance: [amount]
+- Monthly HOA (if applicable): [amount]
+- Estimated annual maintenance and repairs: [amount or % of value]
+- Property management fee: [% of rents or flat fee]
+- Financing: [loan amount, interest rate, term, amortization period]
+
+Calculate and present:
+1. Gross rental income (annual)
+2. Effective gross income (after vacancy)
+3. Total operating expenses
+4. Net operating income (NOI)
+5. Cap rate
+6. Gross rent multiplier (GRM)
+7. Annual debt service (mortgage payments)
+8. Cash flow before tax (annual and monthly)
+9. Cash-on-cash return
+10. Assessment: Is this a good investment at this price? What price would make it pencil at a [target cap rate]% cap rate?`
+      },
+      {
+        title: 'Neighborhood due diligence researcher',
+        desc: 'Get a structured framework for evaluating a neighborhood before investing — covering the factors that actually predict long-term returns.',
+        level: 'Intermediate',
+        text: `You are a real estate market analyst. Help me evaluate the investment potential of a specific neighborhood.
+
+Neighborhood / area: [city, neighborhood name or zip code]
+Property type I'm considering: [e.g. single family rental, small multifamily, short-term rental]
+My investment horizon: [e.g. 5 years, 10 years, long-term hold]
+
+Give me a structured due diligence framework covering:
+1. Population and demographic trends to research (and where to find this data)
+2. Economic indicators to look up (employment, major employers, income trends)
+3. Real estate market signals (days on market, price trends, rental vacancy rates)
+4. Infrastructure and development signals (what to look for that indicates growth)
+5. Risk factors specific to this type of neighborhood
+6. The 5 best free or low-cost data sources for researching this area
+7. Green flags and red flags I should be looking for`
+      },
+      {
+        title: 'Motivated seller outreach letter',
+        desc: 'Write a personalized, genuine letter to a property owner you want to approach about a potential off-market purchase.',
+        level: 'Beginner',
+        text: `You are a real estate investor who specializes in finding off-market deals by building genuine relationships with property owners.
+
+I want to write a letter to the owner of: [describe the property — address, type, condition]
+Why I'm interested in this property: [be specific — e.g. location, size, I invest in this area]
+What I know about the owner's situation (if anything): [e.g. they've owned it for 30 years, it appears vacant, there was a probate filing, etc.]
+My approach: [cash buyer / investor looking for a fair deal — be honest]
+
+Write a personal, genuine letter (not a template) that:
+- Introduces me as a real person, not a corporation
+- Shows I've paid attention to the specific property
+- Expresses genuine interest without being pushy
+- Makes it easy to respond (phone, email, or no pressure)
+- Does NOT mention price — this is about opening a conversation
+Keep it under 200 words. Make it sound like a real human wrote it.`
+      },
+      {
+        title: 'Fix and flip deal evaluator',
+        desc: 'Analyse a potential fix-and-flip opportunity by working through the numbers every flipper needs before making an offer.',
+        level: 'Advanced',
+        text: `You are a real estate investor specializing in fix-and-flip projects. Help me evaluate this potential flip.
+
+Property details:
+- Purchase price (or asking price): [amount]
+- Location: [city, neighborhood, general market strength]
+- Property type and size: [e.g. 3-bed, 2-bath, 1,400 sq ft single family]
+- Current condition: [describe the main issues]
+- Estimated repair costs: [your estimate, or "unknown — help me think through this"]
+- After repair value (ARV) estimate: [your estimate based on comps, or describe recent sales]
+- Financing: [cash / hard money loan — terms if known]
+- Estimated hold time: [months]
+- Selling costs assumption: [e.g. 6% agent commissions + 1% closing costs]
+
+Please calculate:
+1. Maximum allowable offer (MAO) using the 70% rule
+2. Projected profit if purchased at asking price
+3. Projected return on investment
+4. Monthly carrying costs (if financing)
+5. Break-even selling price
+6. The two biggest risks in this deal
+7. Your verdict: Strong deal / Marginal / Pass — with the key reason`
+      },
+      {
+        title: 'Short-term rental market analyser',
+        desc: 'Evaluate whether a property in a specific market is viable as a short-term rental before committing to the investment.',
+        level: 'Intermediate',
+        text: `You are a short-term rental (Airbnb/VRBO) investment analyst. Help me evaluate the STR potential of a property.
+
+Property details:
+- Location: [city, neighborhood — be specific]
+- Property type: [e.g. 2-bed condo, 3-bed house, cabin]
+- Purchase price: [amount]
+- Estimated furnishing cost: [amount]
+- Any known local STR regulations: [permit requirements, caps, restrictions — or "unknown"]
+- Nearby demand drivers: [e.g. beach, ski resort, convention center, university]
+- Estimated nightly rate: [your research, or "unknown"]
+- Estimated occupancy rate: [your research, or "unknown"]
+
+Please give me:
+1. Key demand drivers and risk factors for this specific market
+2. Estimated annual gross revenue (based on nightly rate × occupancy × 365)
+3. Estimated operating expenses (cleaning, supplies, platform fees, management)
+4. Estimated annual NOI and cash-on-cash return
+5. The most important regulatory risk to research before buying
+6. How this compares to a traditional long-term rental strategy for this property
+7. Verdict: Strong STR market / Proceed carefully / Avoid — with reason`
+      },
+      {
+        title: 'Property management system builder',
+        desc: 'Build a simple AI-assisted property management workflow for a landlord managing their own rentals.',
+        level: 'Intermediate',
+        text: `You are an experienced property manager who now consults with small landlords on running their rentals efficiently.
+
+My situation:
+- Number of units I manage: [number]
+- Property types: [e.g. single family homes, small multifamily]
+- Do I use property management software? [yes — which one / no]
+- My biggest time drains right now: [e.g. tenant communication, maintenance coordination, rent collection]
+- My goal: [e.g. spend less time managing, scale to more units, reduce vacancies]
+
+Help me build a simple property management system using AI. Give me:
+1. The 3 tasks where AI can save me the most time as a landlord
+2. Ready-to-use prompt templates for: (a) responding to maintenance requests, (b) sending rent reminders, (c) screening tenant enquiries
+3. A simple monthly checklist for staying on top of my properties
+4. One software tool or free resource I should be using that I'm probably not`
+      },
+      {
+        title: 'Real estate negotiation prep',
+        desc: 'Prepare for a real estate negotiation by anticipating the other side\'s position and identifying your best leverage points.',
+        level: 'Intermediate',
+        text: `You are a real estate negotiation coach with 20 years of experience on both sides of property transactions.
+
+My situation:
+- I am the: [buyer / seller / investor making an offer]
+- Property type: [describe]
+- My offer / asking price: [amount]
+- The other side's position: [asking price if I'm buying, offer received if I'm selling]
+- Key facts working in my favor: [e.g. all-cash, flexible closing, pre-approved, motivated seller]
+- Key weaknesses in my position: [be honest — e.g. need financing, tight timeline, competing offers]
+- My walk-away point: [the number or terms beyond which you won't proceed]
+- Anything I know about the other party's motivation: [e.g. they need to sell fast, they're emotionally attached]
+
+Please give me:
+1. My strongest 3 negotiating points
+2. The 3 objections or counters I'm most likely to face
+3. How to respond to each objection
+4. The one concession I should offer first (that costs me least but means most to them)
+5. My opening strategy — what to say and what to hold back`
+      }
+    ]
+  },
+  {
+    id: 'music',
+    title: 'Music & Creative',
+    color: '#993556',
+    bg: '#FAE8F0',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+    prompts: [
+      {
+        title: 'Song concept developer',
+        desc: 'Turn a vague feeling, story, or idea into a fully developed song concept with theme, narrative arc, and emotional core.',
+        level: 'Beginner',
+        text: `You are a professional songwriter and creative director with experience across multiple genres.
+
+I have the seed of a song idea:
+- The feeling or story I want to capture: [describe in your own words — raw and honest is fine]
+- Genre or sound reference: [e.g. modern R&B, indie folk, drill, country pop — or describe a reference artist]
+- The emotional journey I want the listener to go on: [beginning, middle, end — or "help me figure this out"]
+- Any lines or phrases I already have: [paste them, or write "none yet"]
+- Who this song is for or about: [the subject — yourself, someone else, a general feeling]
+
+Please give me:
+1. A refined central theme (one sentence — the heart of what this song is about)
+2. A narrative arc (verse 1 → chorus → verse 2 → bridge → final chorus — what happens at each stage)
+3. Three possible title options
+4. The emotional tone for each section
+5. One unexpected angle or twist I haven't considered that could make this song more memorable`
+      },
+      {
+        title: 'Artist bio writer',
+        desc: 'Write a compelling artist biography for press kits, streaming platforms, and social media — in two lengths.',
+        level: 'Beginner',
+        text: `You are a music publicist who writes artist biographies for independent and signed artists.
+
+About the artist:
+- Name / artist name: [name]
+- Genre(s): [describe]
+- Origin / location: [city]
+- Career stage: [emerging / independent / signed / established]
+- Notable achievements: [releases, performances, placements, press — list what you have]
+- Sound description: [how would you describe the music in plain language]
+- One thing that makes this artist genuinely different: [be specific, not generic]
+- Tone I want: [e.g. warm and personal / cool and minimal / bold and confident]
+
+Write two versions:
+1. Short bio (60–80 words) — for streaming platforms and press kits
+2. Long bio (200–250 words) — for website and EPK
+
+Avoid clichés like "genre-defying," "soulful," "unique sound," and "passionate about music." Make it specific, vivid, and true.`
+      },
+      {
+        title: 'Music pitch email writer',
+        desc: 'Write a concise, professional pitch email to a playlist curator, blog, label, or sync supervisor.',
+        level: 'Beginner',
+        text: `You are a music PR professional who pitches artists to blogs, playlists, labels, and sync supervisors.
+
+I need to pitch:
+- Who I'm pitching to: [playlist curator / music blog / record label / sync supervisor / festival]
+- Recipient name and outlet (if known): [name and publication/platform]
+- My artist name: [name]
+- The song or project I'm pitching: [title, release date]
+- Genre and sound: [describe concisely]
+- Why this is relevant to them specifically: [why does this fit their audience or taste?]
+- One notable thing about the release: [e.g. charted on X, featured in Y, produced by Z, has X streams]
+- Link to music: [streaming link or private link]
+
+Write a pitch email that:
+- Is under 150 words
+- Opens with why this is relevant to THEM specifically — not a generic intro
+- Includes one compelling fact about the artist or release
+- Ends with a clear, low-pressure ask
+- Sounds like it was written by a human, not a template generator`
+      },
+      {
+        title: 'Sync licensing opportunity researcher',
+        desc: 'Get a structured strategy for pursuing sync licensing opportunities for your music in TV, film, advertising, and games.',
+        level: 'Intermediate',
+        text: `You are a music sync licensing consultant who helps independent artists and producers place their music in TV, film, advertising, and games.
+
+About my music:
+- Genre and sub-genre: [be specific]
+- Instrumentation: [e.g. vocals + live band / electronic / orchestral / lo-fi beats]
+- Mood tags: [e.g. uplifting, melancholic, tense, nostalgic, energetic]
+- Lyrics: [yes — describe themes / instrumental only]
+- Catalogue size: [approximate number of finished tracks available]
+- Any prior placements: [list them, or "none yet"]
+
+Please give me:
+1. The 3 most realistic sync categories for my music (e.g. indie TV dramas, ads, video games)
+2. The top music libraries I should submit to for my specific sound (name them)
+3. How to prepare my catalogue for sync submissions (technical and metadata requirements)
+4. What sync supervisors are looking for that most artists get wrong
+5. One specific type of TV show, game, or brand that would be a natural fit for my sound — and how to approach them`
+      },
+      {
+        title: 'Creative project pitch deck writer',
+        desc: 'Draft a compelling pitch for a creative project — album, EP, tour, or collaboration — to present to labels, investors, or partners.',
+        level: 'Intermediate',
+        text: `You are a creative strategist who helps musicians and artists pitch projects to labels, investors, brands, and collaborators.
+
+My project:
+- What I'm pitching: [e.g. debut album, EP, headline tour, brand partnership, creative collaboration]
+- Artist name: [name]
+- The core idea or concept: [describe the project in your own words]
+- Target audience: [who this is for]
+- Why now: [why is this the right moment for this project?]
+- What I need from this pitch: [funding / distribution deal / co-sign / press / brand partnership]
+- What I'm offering in return: [what does the other party get?]
+- My strongest proof points: [streaming numbers, social following, live track record, press — be specific]
+
+Draft a pitch narrative with:
+1. Opening hook (why this project matters — 2 sentences)
+2. The concept (what it is and why it's compelling)
+3. The audience and market opportunity
+4. Why me / why now
+5. What I need and what you get
+6. The ask (specific and clear)
+
+Keep it under 400 words. Make every sentence earn its place.`
+      },
+      {
+        title: 'Music producer client brief interpreter',
+        desc: 'Turn a vague client brief into a clear creative direction so you can deliver exactly what they want the first time.',
+        level: 'Beginner',
+        text: `You are a professional music producer who works with artists across multiple genres. Help me interpret a client brief before I start producing.
+
+The brief I received from my client:
+[Paste the brief here — even if it's vague, emotional, or uses non-musical language]
+
+Additional context:
+- Genre they mentioned: [if any]
+- Reference tracks they gave me: [list titles and artists]
+- Their intended use for this music: [e.g. EP release, sync, content, demo]
+- Any technical specifications: [BPM, key, length, instrumentation notes]
+
+Please give me:
+1. What I think they're actually asking for (translated into producer language)
+2. The mood, energy, and emotional arc they want
+3. Production elements I should prioritize (instrumentation, texture, tempo, arrangement style)
+4. The 3 questions I should ask them before I start to avoid a revision nightmare
+5. One creative direction they probably haven't considered that might excite them`
+      },
+      {
+        title: 'Social media content strategy for musicians',
+        desc: 'Build a practical social media content strategy for an artist or producer who wants to grow an audience without burning out.',
+        level: 'Beginner',
+        text: `You are a digital marketing strategist who specializes in helping independent musicians build audiences on social media.
+
+About me:
+- Artist name: [name]
+- Genre: [describe]
+- Current following (approximate): [numbers by platform]
+- Platforms I'm on or want to be on: [list]
+- How much time I can spend on content per week: [hours]
+- My goal in the next 6 months: [e.g. grow to X followers, release an EP, get sync placements, grow email list]
+- What I've tried already: [or "nothing consistent yet"]
+- What I hate doing: [e.g. being on camera, writing captions, dancing trends]
+
+Please give me:
+1. The 2 platforms I should focus on first for my genre and goal — and why
+2. A simple weekly content rhythm I can actually sustain
+3. Three content formats that work well for musicians in my genre right now
+4. One type of content I should avoid (that feels obvious but rarely works)
+5. How to turn each release or milestone into a month of content`
+      },
+      {
+        title: 'Royalty and rights explainer',
+        desc: 'Get a plain-English explanation of how music royalties work for a specific situation — so you know what you\'re owed and how to collect it.',
+        level: 'Beginner',
+        text: `You are a music business advisor who helps independent artists understand royalties, rights, and how to maximize their income.
+
+My situation:
+- My role: [artist / songwriter / producer / all three]
+- Type of music I make: [genre, released or unreleased]
+- How I release music: [distributor name / label / unsigned / not released yet]
+- The specific situation I need explained: [e.g. "I placed a song in a TV show — what royalties do I get and how?", "I co-wrote a song with someone else — how do splits work?", "What's the difference between a master and publishing royalty?"]
+- PRO (performing rights organization) I'm registered with: [ASCAP / BMI / SESAC / not registered yet]
+
+Please explain:
+1. The specific royalty streams relevant to my situation in plain English
+2. Who owes me money and how it gets paid
+3. What I need to set up or register to make sure I collect everything I'm owed
+4. One common mistake artists in my situation make that costs them money
+5. One action I should take this week based on my situation`
+      }
+    ]
+  },
+  {
+    id: 'academic',
+    title: 'Academic',
+    color: '#3B6D11',
+    bg: '#E8F5E8',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+    prompts: [
+      {
+        title: 'Lecture notes to study guide',
+        desc: 'Turn a wall of lecture notes into a clean, scannable study guide with key concepts, definitions, and practice questions.',
+        level: 'Beginner',
+        text: `You are an expert academic tutor and study skills coach.
+
+Subject: [subject name]
+Course level: [e.g. undergraduate / postgraduate / high school]
+Topic covered in these notes: [topic name]
+
+I will paste my lecture notes below. Please convert them into a structured study guide with:
+1. The 5–7 key concepts explained in plain language (2–3 sentences each)
+2. Important terms and definitions in a clear list
+3. How the main ideas connect to each other (the "thread" running through the lecture)
+4. 5 practice questions based on the material — ranging from recall to application
+5. One thing from these notes that is likely to appear on an exam — and why
+
+Format for easy scanning: use headers, short paragraphs, and bullet points.
+
+[Paste lecture notes here]`
+      },
+      {
+        title: 'Research paper outline generator',
+        desc: 'Go from a topic or thesis idea to a fully structured research paper outline — so you always know exactly where you\'re headed.',
+        level: 'Intermediate',
+        text: `You are an academic writing coach with experience across disciplines.
+
+Paper details:
+- Subject / discipline: [e.g. sociology, economics, history, biology]
+- Course level: [undergraduate / postgraduate / PhD]
+- Approximate word count required: [length]
+- My topic or working thesis: [describe your argument or area of inquiry]
+- Key sources I've already identified: [list them, or "none yet"]
+- Any specific requirements from my professor: [e.g. must include primary sources, specific formatting]
+
+Please produce:
+1. A refined thesis statement (one sentence — clear and arguable)
+2. A full paper outline with section headings and 3–4 bullet points per section showing what each section will argue or cover
+3. Suggested types of evidence or sources for each main section
+4. Potential weaknesses in my thesis I should address
+5. One counterargument I should acknowledge and rebut`
+      },
+      {
+        title: 'Difficult concept explainer (three ways)',
+        desc: 'Get a confusing academic concept explained three different ways — analogy, example, and technical — until one finally clicks.',
+        level: 'Beginner',
+        text: `You are a gifted academic tutor who can explain any concept in multiple ways until it clicks.
+
+Subject: [subject name]
+The concept I'm struggling with: [name the concept]
+What I already understand about it: [what you do get so far]
+What specifically confuses me: [what isn't clicking]
+My level: [e.g. first-year undergrad / A-level / postgrad]
+
+Please explain this concept three different ways:
+1. Analogy explanation: Use an everyday real-world comparison that someone with no subject knowledge could follow
+2. Example explanation: Walk me through a concrete specific example step by step
+3. Technical explanation: Use the proper academic language and connect it to related concepts in this field
+
+After all three, give me:
+- One question I can ask myself to test whether I've understood it
+- One common misconception about this concept that students often have`
+      },
+      {
+        title: 'Essay argument strengthener',
+        desc: 'Paste in a draft essay or argument and get specific, actionable feedback on how to make it more compelling and rigorous.',
+        level: 'Intermediate',
+        text: `You are an academic writing tutor at a university writing center. I need honest, specific feedback on my essay argument.
+
+Subject and level: [e.g. second-year history essay]
+The essay question or prompt: [paste the question]
+My central argument (thesis): [state your main argument]
+My draft or key paragraphs: [paste the section you want feedback on]
+
+Please give me:
+1. Clarity: Is my argument clear and specific, or is it vague? How can I sharpen it?
+2. Evidence: Am I using evidence effectively? What's missing or underused?
+3. Logic: Are there gaps or leaps in my reasoning I haven't addressed?
+4. Counterarguments: What's the strongest objection to my argument that I haven't handled?
+5. One specific sentence or paragraph I should rewrite — and a suggested rewrite
+6. Overall: What is the single most important change I could make to improve this essay?
+
+Be honest and direct. Good feedback is more useful than encouragement.`
+      },
+      {
+        title: 'Citation and bibliography formatter',
+        desc: 'Format your references correctly in any citation style — and get help finding the right format for unusual source types.',
+        level: 'Beginner',
+        text: `You are an academic librarian who specializes in citation formatting.
+
+Citation style required: [e.g. APA 7th edition, MLA 9th edition, Chicago, Harvard, OSCOLA]
+I need help formatting the following sources:
+
+[List each source with as much detail as you have — author, title, publication, date, URL, etc.]
+
+For each source, please:
+1. Provide the correctly formatted citation in the requested style
+2. Flag any information that's missing that I need to find
+3. Explain any unusual formatting decisions I should know about
+
+Additionally, I have a question about this specific citation situation: [describe any unusual source — e.g. a tweet, a government report, a podcast episode, an AI-generated source — and how to cite it]`
+      },
+      {
+        title: 'Dissertation chapter planner',
+        desc: 'Break down a dissertation or long thesis into manageable chapters with clear objectives, arguments, and word count allocations.',
+        level: 'Advanced',
+        text: `You are a doctoral supervisor and dissertation coach. Help me plan my dissertation or thesis.
+
+Details:
+- Subject / discipline: [field]
+- Research question: [your main question]
+- Methodology: [e.g. qualitative / quantitative / mixed methods / theoretical / archival]
+- Total word count: [required length]
+- Deadline: [when it's due]
+- Where I am now: [e.g. just starting / have research / writing up / stuck on a chapter]
+
+Please give me:
+1. A recommended chapter structure with a title, 2-sentence description, and suggested word count for each chapter
+2. The logical argument that should run through the entire dissertation (the "golden thread")
+3. The chapter I should write first — and why
+4. Common structural mistakes in dissertations in my field I should avoid
+5. A realistic writing schedule based on my deadline`
+      },
+      {
+        title: 'Seminar discussion prep',
+        desc: 'Prepare for a seminar, tutorial, or discussion class by generating sharp questions, key arguments, and potential debate points from your reading.',
+        level: 'Beginner',
+        text: `You are an academic discussion facilitator and critical thinking coach.
+
+Subject: [subject]
+Seminar topic or reading: [title and author, or paste key excerpts]
+My level: [year of study and course]
+What I found most interesting or confusing in the reading: [your honest reaction]
+
+Help me prepare for this seminar by giving me:
+1. The 3 most important arguments or ideas in this reading (in my own words)
+2. The 3 best questions I could raise in discussion — that will show genuine engagement, not just summarising
+3. One point of disagreement or tension in the reading I could push back on
+4. How this reading connects to other things we've studied in this course
+5. One thing I should avoid saying in seminar — a common surface-level observation that won't impress anyone`
+      },
+      {
+        title: 'Grant and scholarship application writer',
+        desc: 'Write a compelling personal statement or application essay for an academic grant, scholarship, or fellowship.',
+        level: 'Intermediate',
+        text: `You are an academic grant writing consultant who has helped hundreds of students win competitive scholarships and fellowships.
+
+About me:
+- Name: [optional]
+- Current level of study: [undergrad / masters / PhD / postdoc]
+- Field of study: [subject]
+- The grant or scholarship I'm applying for: [name and brief description]
+- Word limit: [if specified]
+- The application prompt or question: [paste it here]
+- My academic background and achievements: [list the key ones]
+- My research interests or career goals: [describe]
+- Why this specific grant matters to me: [be honest and specific]
+- What I'll do with the funding: [specific plan]
+
+Draft a personal statement that:
+1. Opens with a compelling specific scene, question, or insight — not "I have always been passionate about..."
+2. Clearly connects my background to my future goals
+3. Shows I understand what this grant is specifically for
+4. Demonstrates intellectual maturity and self-awareness
+5. Ends with a memorable forward-looking statement`
+      }
+    ]
+  },
+  {
+    id: 'career',
+    title: 'Career & Job Search',
+    color: '#854F0B',
+    bg: '#FBF0E0',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
+    prompts: [
+      {
+        title: 'CV tailorer for a specific role',
+        desc: 'Tailor your CV to a specific job posting so your most relevant experience leads — and you pass applicant tracking systems.',
+        level: 'Beginner',
+        text: `You are a professional CV writer and career coach. Help me tailor my CV for a specific role.
+
+The job I'm applying for:
+[Paste the full job description here]
+
+My current CV summary or key experience:
+[Paste your current CV or a summary of your experience, skills, and achievements]
+
+Please give me:
+1. The 5 most important keywords and phrases from this job description I should make sure appear in my CV
+2. The 3 experiences or achievements from my background that are most relevant to this role — and how to reframe them to match the job's language
+3. What to move to the top of my CV for this specific application
+4. One thing currently on my CV that is irrelevant and should be cut or deprioritized for this role
+5. A rewritten professional summary (3–4 sentences) tailored specifically to this job`
+      },
+      {
+        title: 'Cover letter writer',
+        desc: 'Write a cover letter that sounds like you, not a template — and actually makes someone want to interview you.',
+        level: 'Beginner',
+        text: `You are a career coach who writes cover letters that get people interviews.
+
+The role I'm applying for: [job title and company]
+Job description (paste key points): [relevant parts of the JD]
+My background in brief: [2–3 sentences about your experience and skills]
+One specific thing I've done that's relevant: [a concrete achievement or experience]
+Why I actually want this job at this company: [be honest — what genuinely interests you]
+Tone I want: [professional but human / confident / warm / direct]
+Word limit: [if specified, or "no limit — keep it under 300 words"]
+
+Write a cover letter that:
+- Does NOT start with "I am writing to apply for..."
+- Opens with the most compelling reason I'm right for this role
+- Uses specific details, not generic claims ("I'm a hard worker")
+- Shows I've thought about what this company actually does
+- Ends with a confident, clear call to action`
+      },
+      {
+        title: 'Interview answer builder (STAR method)',
+        desc: 'Turn a rough experience into a polished, structured behavioral interview answer that lands.',
+        level: 'Beginner',
+        text: `You are an interview coach who specializes in behavioral interview preparation.
+
+The interview question I need to answer: [paste the question — e.g. "Tell me about a time you dealt with a difficult colleague"]
+The experience I want to use: [describe the situation in rough notes — don't worry about polish]
+The role I'm interviewing for: [job title and company]
+What skills this question is testing: [e.g. leadership, conflict resolution, problem-solving — or "I'm not sure"]
+
+Using the STAR method (Situation → Task → Action → Result), write a polished interview answer that:
+- Takes 60–90 seconds to say aloud (approx 180–220 words)
+- Opens by setting the scene quickly — not too much context
+- Focuses most of the time on what I specifically did (the Action)
+- Ends with a quantified or concrete result where possible
+- Sounds like a real person talking, not a rehearsed speech
+
+Then: tell me the one thing I should emphasize most for this specific role.`
+      },
+      {
+        title: 'LinkedIn profile rewriter',
+        desc: 'Rewrite your LinkedIn headline, about section, and experience bullets so your profile actually gets noticed by recruiters.',
+        level: 'Beginner',
+        text: `You are a LinkedIn profile specialist and personal branding expert.
+
+My current LinkedIn About section (or notes about myself):
+[Paste your current About section or bullet points about your background]
+
+My current headline: [paste it]
+My target role or industry: [what you're looking for]
+My top 3 skills or strengths: [list them]
+One achievement I'm most proud of: [describe it]
+Am I actively job searching or just building my profile? [specify]
+
+Please rewrite:
+1. Headline (under 220 characters) — that says what I do and who I help, not just my job title
+2. About section (150–200 words) — written in first person, sounds like a real person, opens with a hook, ends with what I'm looking for or open to
+3. Three bullet points for my most recent role — using the format "Did X by doing Y, resulting in Z"
+
+Avoid: "passionate," "results-driven," "dynamic," "thought leader," or any other LinkedIn clichés.`
+      },
+      {
+        title: 'Salary negotiation script',
+        desc: 'Prepare for a salary negotiation conversation with a script, talking points, and responses to the most common pushbacks.',
+        level: 'Intermediate',
+        text: `You are a salary negotiation coach. Help me prepare for a compensation negotiation conversation.
+
+My situation:
+- I am negotiating: [a job offer / a raise at my current job]
+- The offer or current salary: [amount]
+- What I want to achieve: [target salary or raise amount]
+- My justification: [why I deserve more — experience, market data, achievements, competing offer]
+- My walk-away point: [the minimum you'd accept]
+- The person I'll be speaking with: [recruiter / direct manager / HR]
+- My biggest fear in this conversation: [what makes you nervous about asking]
+
+Please give me:
+1. An opening line to initiate the negotiation (confident but not aggressive)
+2. My core pitch (2–3 sentences making my case)
+3. How to respond if they say "this is our best offer"
+4. How to respond if they say "I need to check with my manager"
+5. How to respond if they offer a non-salary benefit instead (extra vacation, remote work)
+6. A closing line if they agree — that locks it in professionally`
+      },
+      {
+        title: 'Career pivot strategy planner',
+        desc: 'Plan a realistic career transition from your current field to a new one — with a step-by-step action plan.',
+        level: 'Intermediate',
+        text: `You are a career transition coach who has helped hundreds of professionals successfully switch industries and roles.
+
+My situation:
+- Current role and industry: [describe]
+- Where I want to go: [target role, industry, or type of work]
+- Why I want to make this change: [honest answer]
+- My transferable skills: [what you're good at that applies across fields]
+- My gaps: [what you don't have yet that the new field requires]
+- My timeline: [how quickly do you want / need to make this move]
+- My constraints: [financial, geographic, family, other — be honest]
+
+Please give me:
+1. An honest assessment of how realistic this pivot is — and the main challenges
+2. The transferable skills from my background that are most valuable in the target field
+3. The 3 most important gaps I need to close — and the most efficient way to close each one
+4. A 6-month action plan with specific milestones
+5. One unconventional way to break into this field that most people overlook`
+      },
+      {
+        title: 'Job description decoder',
+        desc: 'Paste in a job posting and get a plain-English breakdown of what they actually want — beyond what the listing says.',
+        level: 'Beginner',
+        text: `You are a hiring manager and career coach who knows how to read between the lines of job descriptions.
+
+[Paste the full job description here]
+
+Please give me:
+1. What this role actually involves day-to-day — translated from corporate language into plain English
+2. The 3–4 skills or experiences that are genuinely essential vs. the ones that are wishlist items
+3. What kind of person or personality this company seems to be looking for — based on the language they use
+4. Any red flags in the listing I should investigate before applying or accepting an offer
+5. The 5 keywords I must include in my application to pass ATS screening
+6. One smart question I could ask in an interview that would impress them — based on what's in this listing`
+      },
+      {
+        title: 'Professional email writer',
+        desc: 'Write a professional email for any career situation — following up, requesting a meeting, declining an offer, or reconnecting with a contact.',
+        level: 'Beginner',
+        text: `You are a professional communications coach. Help me write a professional email for the following situation.
+
+The situation: [describe exactly what you need to say — e.g. "following up after an interview I had 5 days ago," "asking a former manager to be a reference," "declining a job offer professionally," "reaching out to someone I met at a conference"]
+
+Key details:
+- Who I'm emailing: [their role and our relationship]
+- What outcome I want from this email: [be specific]
+- Tone I want: [formal / warm / concise / grateful]
+- Anything sensitive I need to handle carefully: [e.g. I'm turning down an offer from someone I might work with in future]
+
+Write:
+1. Subject line (two options)
+2. The email (under 150 words unless the situation requires more)
+
+Make it sound like a real person wrote it. No "I hope this email finds you well."`
+      }
+    ]
+  }
+];
+
+let activeFilter = 'all';
+let searchQuery = '';
+
+function renderAll() {
+  const container = document.getElementById('promptsContainer');
+  const filtered = filterSections();
+  if (filtered.length === 0 || filtered.every(s => s.prompts.length === 0)) {
+    container.innerHTML = '<div class="empty-state"><p>No prompts match your search.</p><small>Try a different keyword or clear the filter.</small></div>';
+    document.getElementById('resultsCount').textContent = 'No results';
+    return;
+  }
+  let total = 0;
+  container.innerHTML = filtered.map(sec => {
+    if (sec.prompts.length === 0) return '';
+    total += sec.prompts.length;
+    return `
+      <div class="prompt-section" id="sec-${sec.id}" data-section="${sec.id}">
+        <div class="ps-header">
+          <div class="ps-icon" style="background:${sec.bg};">${sec.icon}</div>
+          <div class="ps-title">${sec.title}</div>
+          <div class="ps-count">${sec.prompts.length} prompt${sec.prompts.length !== 1 ? 's' : ''}</div>
+        </div>
+        <div class="prompt-list">
+          ${sec.prompts.map((p, i) => `
+            <div class="prompt-card" id="card-${sec.id}-${i}">
+              <div class="prompt-top" onclick="toggleCard('${sec.id}',${i})">
+                <span class="p-tag" style="background:${sec.bg};color:${sec.color};">${sec.title}</span>
+                <span class="p-title">${p.title}</span>
+                <span class="p-diff">${p.level}</span>
+                <svg class="p-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="prompt-body">
+                <div class="p-desc">${p.desc}</div>
+                <div class="p-text" id="pt-${sec.id}-${i}">${p.text}</div>
+                <div class="p-actions">
+                  <button class="copy-btn" id="cb-${sec.id}-${i}" onclick="copyP('${sec.id}',${i})">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    Copy prompt
+                  </button>
+                  <span class="p-level">${p.level}</span>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('resultsCount').textContent = `Showing ${total} prompt${total !== 1 ? 's' : ''}`;
+}
+
+function filterSections() {
+  return sections.map(sec => {
+    if (activeFilter !== 'all' && sec.id !== activeFilter) return { ...sec, prompts: [] };
+    if (!searchQuery) return sec;
+    const q = searchQuery.toLowerCase();
+    return {
+      ...sec,
+      prompts: sec.prompts.filter(p =>
+        p.title.toLowerCase().includes(q) ||
+        p.desc.toLowerCase().includes(q) ||
+        p.text.toLowerCase().includes(q)
+      )
+    };
+  });
+}
+
+function setFilter(cat, btn) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.section-nav-item').forEach((item, i) => {
+    item.classList.remove('active');
+    if (cat === 'all' || sections[i] && sections[i].id === cat) item.classList.add('active');
+  });
+  renderAll();
+}
+
+function filterAll() {
+  searchQuery = document.getElementById('searchInput').value;
+  renderAll();
+}
+
+function toggleCard(secId, idx) {
+  const card = document.getElementById('card-' + secId + '-' + idx);
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.prompt-card.open').forEach(c => c.classList.remove('open'));
+  if (!isOpen) card.classList.add('open');
+}
+
+function copyP(secId, idx) {
+  const sec = sections.find(s => s.id === secId);
+  const text = sec.prompts[idx].text;
+  const btn = document.getElementById('cb-' + secId + '-' + idx);
+  navigator.clipboard.writeText(text).then(() => {
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy prompt';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  document.querySelectorAll('.section-nav-item').forEach(item => item.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+}
+
+function subscribeEmail() {
+  var email = document.getElementById('nl-email').value;
+  if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  var btn = document.querySelector('#nl-form button');
+  btn.textContent = 'Subscribing...'; btn.disabled = true;
+  var fd = new FormData(); fd.append('email', email);
+  fetch('https://readplainly.beehiiv.com/create', { method: 'POST', body: fd })
+    .then(() => { document.getElementById('nl-form').style.display = 'none'; document.getElementById('nl-success').style.display = 'block'; })
+    .catch(() => { document.getElementById('nl-form').style.display = 'none'; document.getElementById('nl-success').style.display = 'block'; });
+}
+document.getElementById('nl-email').addEventListener('keypress', e => { if (e.key === 'Enter') subscribeEmail(); });
+
+renderAll();
+</script>
+
+</body>
+</html>

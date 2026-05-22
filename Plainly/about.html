@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Plainly</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange:       #FF6719;
+      --orange-light: #FFF0E8;
+      --orange-mid:   #FFCFB0;
+      --orange-dark:  #C44A00;
+      --orange-deep:  #8B3300;
+      --ink:          #1C1A17;
+      --ink-soft:     #3A3630;
+      --ink-muted:    #6B6560;
+      --ink-faint:    #A09890;
+      --paper:        #FAF8F4;
+      --paper-warm:   #F5F1EA;
+      --paper-rule:   #E8E2D8;
+      --serif-display: 'Playfair Display', Georgia, serif;
+      --serif-body:    'Source Serif 4', Georgia, serif;
+      --sans:          'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--serif-body);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+    /* ─── TOPBAR ─── */
+    .topbar { background: var(--ink); padding: 7px 0; }
+    .topbar-inner { display: flex; gap: 28px; justify-content: center; }
+    .topbar-inner a {
+      font-family: var(--sans);
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .topbar-inner a:hover { color: var(--orange); }
+
+    /* ─── NAV ─── */
+    .nav {
+      border-bottom: 1px solid var(--paper-rule);
+      padding: 13px 0;
+      background: var(--paper);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-family: var(--serif-display); font-size: 26px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 12.5px; color: var(--ink-muted); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-links a.active { color: var(--orange); }
+    .nav-cta {
+      font-family: var(--sans); font-size: 12px; font-weight: 500;
+      background: var(--orange); color: white;
+      padding: 8px 20px; border-radius: 3px;
+      transition: background 0.15s; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--orange-dark); }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      border-bottom: 3px double var(--ink);
+      padding: 48px 0 36px;
+      text-align: center;
+    }
+    .ph-eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .ph-title {
+      font-family: var(--serif-display);
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .ph-title span { color: var(--orange); font-style: italic; }
+    .ph-sub {
+      font-family: var(--serif-body);
+      font-size: 18px;
+      color: var(--ink-muted);
+      font-style: italic;
+      font-weight: 300;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ─── MAIN CONTENT ─── */
+    .about-body { padding: 56px 0; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* ─── ESSAY ─── */
+    .essay {}
+    .essay-section { margin-bottom: 40px; }
+    .essay-label {
+      font-family: var(--sans);
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      border-top: 1px solid var(--ink);
+      padding-top: 10px;
+      margin-bottom: 20px;
+    }
+    .essay h2 {
+      font-family: var(--serif-display);
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+    .essay p {
+      font-family: var(--serif-body);
+      font-size: 16px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .essay p:last-child { margin-bottom: 0; }
+    .essay strong { color: var(--ink); font-weight: 600; }
+    .essay em { font-style: italic; color: var(--ink-muted); }
+
+    /* pull quote */
+    .pull {
+      border-left: 3px solid var(--orange);
+      padding: 4px 0 4px 24px;
+      margin: 28px 0;
+    }
+    .pull p {
+      font-family: var(--serif-display);
+      font-size: 20px;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 0;
+    }
+    .pull p span { color: var(--orange); }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar { display: flex; flex-direction: column; gap: 0; }
+
+    .sidebar-card {
+      background: var(--paper-warm);
+      border: 1px solid var(--paper-rule);
+      border-radius: 6px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .sc-label {
+      font-family: var(--sans);
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .sc-title {
+      font-family: var(--serif-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      letter-spacing: -0.2px;
+      line-height: 1.3;
+    }
+    .sc-body {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* principles list */
+    .principles { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+    .principle { display: flex; gap: 12px; align-items: flex-start; }
+    .pr-num {
+      width: 24px; height: 24px;
+      background: var(--orange);
+      color: white;
+      border-radius: 50%;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pr-text { font-family: var(--sans); font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+    .pr-text strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: 1px; }
+
+    /* sections covered */
+    .sections-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+    .section-pill {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    /* contact */
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--orange);
+      border-bottom: 1px solid var(--orange-mid);
+      padding-bottom: 1px;
+      margin-top: 10px;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider { border: none; border-top: 1px solid var(--paper-rule); margin: 0; }
+
+    /* ─── NEWSLETTER ─── */
+    .newsletter {
+      padding: 64px 0;
+      text-align: center;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+    .newsletter::before {
+      content: 'Plainly.';
+      position: absolute;
+      font-family: var(--serif-display);
+      font-size: 260px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: -8px;
+    }
+    .newsletter-inner { position: relative; z-index: 1; }
+    .nl-eyebrow { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+    .newsletter h2 { font-family: var(--serif-display); font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: white; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
+    .newsletter h2 em { font-style: italic; color: var(--orange); }
+    .newsletter p { font-family: var(--serif-body); font-size: 15px; color: rgba(255,255,255,0.5); max-width: 400px; margin: 0 auto 28px; line-height: 1.65; font-style: italic; }
+    .nl-form { display: flex; gap: 0; max-width: 400px; margin: 0 auto 12px; border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden; }
+    .nl-form input { flex: 1; font-family: var(--sans); font-size: 14px; background: rgba(255,255,255,0.06); border: none; padding: 0 16px; height: 46px; color: white; outline: none; }
+    .nl-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .nl-form button { font-family: var(--sans); font-size: 13px; font-weight: 500; background: var(--orange); color: white; border: none; padding: 0 22px; height: 46px; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+    .nl-form button:hover { background: var(--orange-dark); }
+    .nl-note { font-family: var(--sans); font-size: 11.5px; color: rgba(255,255,255,0.3); }
+
+    /* ─── FOOTER ─── */
+    .footer { border-top: 3px double var(--ink); padding: 40px 0 24px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 32px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--serif-display); font-size: 28px; font-weight: 900; color: var(--ink); letter-spacing: -1px; margin-bottom: 4px; }
+    .footer-logo span { color: var(--orange); }
+    .footer-tagline { font-family: var(--serif-body); font-size: 13px; color: var(--ink-faint); font-style: italic; }
+    .footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+    .footer-col h5 { font-family: var(--sans); font-size: 9.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+    .footer-col a { display: block; font-family: var(--sans); font-size: 13px; color: var(--ink-muted); margin-bottom: 8px; transition: color 0.15s; }
+    .footer-col a:hover { color: var(--orange); }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--paper-rule); flex-wrap: wrap; gap: 8px; }
+    .footer-legal { font-family: var(--sans); font-size: 11.5px; color: var(--ink-faint); }
+    .footer-credit { font-family: var(--sans); font-size: 11.5px; color: var(--ink-faint); }
+    .footer-credit span { color: var(--orange); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .ph-eyebrow { animation: fadeUp 0.5s ease both; }
+    .ph-title   { animation: fadeUp 0.55s 0.08s ease both; }
+    .ph-sub     { animation: fadeUp 0.55s 0.15s ease both; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 860px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .sidebar { order: -1; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .container { padding: 0 18px; }
+      .nl-form { flex-direction: column; }
+      .nl-form input, .nl-form button { height: 46px; width: 100%; border-radius: 3px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a href="index.html">Home</a>
+        <a href="#">Business</a>
+        <a href="#">Law</a>
+        <a href="#">Careers</a>
+        <a href="#">Regulation</a>
+        <a href="prompts.html">Prompts</a>
+        <a href="framework.html">The Framework</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Plainly<span>.</span></a>
+        <ul class="nav-links">
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Law</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Academia</a></li>
+          <li><a href="#">Arts & Music</a></li>
+          <li><a href="#">Regulation</a></li>
+          <li><a href="prompts.html">Prompts</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+        </ul>
+        <a href="#newsletter" class="nav-cta">Subscribe free →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <div class="ph-eyebrow">About Plainly</div>
+      <div class="ph-title">Written by someone<br><span>figuring it out.</span></div>
+      <div class="ph-sub">No experts here. Just a curious law student paying attention to the most important thing happening right now.</div>
+    </div>
+  </header>
+
+  <!-- MAIN BODY -->
+  <main class="about-body">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- ESSAY -->
+        <article class="essay">
+
+          <div class="essay-section">
+            <div class="essay-label">How this started</div>
+            <h2>I'm a 24-year-old law student who started using AI — and couldn't believe what I was missing.</h2>
+            <p>It started simply. I was using AI as a study tool — summarizing dense readings, testing myself on case law, drafting outlines before exams. And it worked. Really well. Better than I expected, and faster than almost anything else I'd tried.</p>
+            <p>So I started reading more about it. What else could it do? Where was it headed? What did it mean for law, for business, for the industries my friends were entering? The more I read, the more frustrated I got — not with AI, but with how it was being written about.</p>
+            <p>Most of what I found felt gatekept. Written by people who seemed to assume you already had a technical background, already understood the terminology, already knew why any of it mattered. The information was out there, but it wasn't for everyone. It was for a specific kind of reader — and that reader wasn't most people.</p>
+            <div class="pull">
+              <p>The truth I kept coming back to: <span>it doesn't take a lot to get a lot out of AI.</span> Most people just haven't been shown how.</p>
+            </div>
+            <p>That gap — between what AI can actually do for ordinary people and what most people think it can do — felt like the real story. So I decided to write it. Plainly, for everyone.</p>
+          </div>
+
+          <div class="essay-section">
+            <div class="essay-label">What Plainly is</div>
+            <h2>A place for every age, every background, every level of curiosity.</h2>
+            <p>Plainly exists to do two things. First, to report on AI developments clearly — tracking the news as it happens and translating it into plain English that actually connects to daily life. Not abstract. Not technical. Just: here's what happened, here's why it matters, here's what it means for you.</p>
+            <p>Second, to help people get more comfortable actually using AI. Because the gap isn't just in understanding the news — it's in realizing how much is already available, right now, that could genuinely help. Small business owners who don't know where to start. Students who could be studying smarter. People trying to get more done in less time who have no idea what tools exist.</p>
+            <p>AI doesn't discriminate by age or technical ability. A 65-year-old running a small business and a 19-year-old in their first semester have equal access to the same tools. <strong>What they often don't have equal access to is a clear explanation of how to use them.</strong> That's what Plainly is here for.</p>
+            <p>We cover the news — law, business, academia, arts, regulation, careers. We report on how AI is reshaping each sector. And alongside that, we offer practical tools: prompts you can copy and use today, a framework for thinking about AI that doesn't require any technical knowledge, and writing that meets you wherever you are.</p>
+          </div>
+
+          <div class="essay-section">
+            <div class="essay-label">A note on anonymity</div>
+            <h2>Why I'm not putting my name on it.</h2>
+            <p>Plainly is about the ideas, not about me. The story — a 24-year-old law student who noticed AI was reshaping his field and every other field, and decided to write about it honestly — is more interesting than any bio I could offer. And being a student means I'm still learning. That's exactly the point.</p>
+            <p>If you want to get in touch, reach out. I read everything.</p>
+            <a href="mailto:hello@readplainly.com" class="contact-link">hello@readplainly.com →</a>
+          </div>
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+          <div class="sidebar-card">
+            <div class="sc-label">The editorial principles</div>
+            <div class="sc-title">What Plainly stands for</div>
+            <div class="principles">
+              <div class="principle">
+                <div class="pr-num">1</div>
+                <div class="pr-text"><strong>Plain English, always</strong> If a 16-year-old can't follow it, we rewrite it. No jargon without explanation.</div>
+              </div>
+              <div class="principle">
+                <div class="pr-num">2</div>
+                <div class="pr-text"><strong>Honest about uncertainty</strong> AI is moving faster than anyone can fully track. We say when we don't know.</div>
+              </div>
+              <div class="principle">
+                <div class="pr-num">3</div>
+                <div class="pr-text"><strong>Follow it everywhere</strong> AI doesn't stay in one industry. Neither do we.</div>
+              </div>
+              <div class="principle">
+                <div class="pr-num">4</div>
+                <div class="pr-text"><strong>No hype, no doom</strong> Both are lazy. We report what's actually happening.</div>
+              </div>
+              <div class="principle">
+                <div class="pr-num">5</div>
+                <div class="pr-text"><strong>Practical, not theoretical</strong> Every story should tell you something you can use or act on.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sc-label">What we cover</div>
+            <div class="sc-title">Six sections. One through-line.</div>
+            <div class="sc-body" style="margin-bottom: 14px;">AI is reshaping every major field. We follow it sector by sector.</div>
+            <div class="sections-grid">
+              <div class="section-pill" style="background:#E8F0FB; color:#1A4A8A;">Law</div>
+              <div class="section-pill" style="background:#FFF0E8; color:#C44A00;">Business</div>
+              <div class="section-pill" style="background:#FBF0E0; color:#7A4A00;">Careers</div>
+              <div class="section-pill" style="background:#E8F5E8; color:#1A6A1A;">Academia</div>
+              <div class="section-pill" style="background:#FAE8F0; color:#8A2050;">Arts & Music</div>
+              <div class="section-pill" style="background:#FAE8E0; color:#8A2800;">Regulation</div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sc-label">The Framework</div>
+            <div class="sc-title">New to AI? Start here.</div>
+            <div class="sc-body">A step-by-step walkthrough for using AI in your work — no coding required. Built for curious people, not engineers.</div>
+            <a href="framework.html" class="contact-link">Start the walkthrough →</a>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sc-label">Get in touch</div>
+            <div class="sc-title">Questions, tips, or just want to say hi?</div>
+            <div class="sc-body">I read every email. If you have a story tip, a question, or want to tell me I got something wrong — reach out.</div>
+            <a href="mailto:hello@readplainly.com" class="contact-link">hello@readplainly.com →</a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <hr class="divider" />
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week's most important AI developments — broken down clearly, sorted by the sector that matters to you.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" aria-label="Email address" />
+          <button type="button" onclick="subscribeEmail()">Subscribe →</button>
+        </div>
+        <div id="nl-success" style="display:none; color:#FF6719; font-family:var(--sans); font-size:15px; font-weight:500; margin-bottom:14px;">You're in! Welcome to Plainly. 🎉</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. · readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="#">Business</a>
+            <a href="#">Law</a>
+            <a href="#">Regulation</a>
+            <a href="#">Careers</a>
+            <a href="#">Academia</a>
+            <a href="#">Arts & Music</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="framework.html">The Framework</a>
+            <a href="prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+            <a href="#">Privacy policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">© 2026 Plainly · readplainly.com · All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>·</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function subscribeEmail() {
+      var email = document.getElementById('nl-email').value;
+      if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+      var btn = document.querySelector('#nl-form button');
+      btn.textContent = 'Subscribing...';
+      btn.disabled = true;
+      var formData = new FormData();
+      formData.append('email', email);
+      fetch('https://readplainly.beehiiv.com/create', { method: 'POST', body: formData })
+        .then(function() {
+          document.getElementById('nl-form').style.display = 'none';
+          document.getElementById('nl-success').style.display = 'block';
+        })
+        .catch(function() {
+          document.getElementById('nl-form').style.display = 'none';
+          document.getElementById('nl-success').style.display = 'block';
+        });
+    }
+    document.getElementById('nl-email').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') subscribeEmail();
+    });
+  </script>
+
+</body>
+</html>
