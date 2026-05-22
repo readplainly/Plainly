@@ -222,6 +222,32 @@
       .masthead-cta-sections { display: none; }
       .masthead-cta { display: block; opacity: 1; pointer-events: auto; }
     }
+  
+    /* ─── MOBILE NAV — horizontal swipe ─── */
+    @media (max-width: 768px) {
+      .masthead-nav-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 8px 0;
+      }
+      .masthead-nav-wrap::-webkit-scrollbar { display: none; }
+      .masthead-nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        min-width: max-content;
+      }
+      .masthead-nav::-webkit-scrollbar { display: none; }
+      .masthead-nav a {
+        flex-shrink: 0;
+        font-size: 11px;
+        padding: 0 10px;
+      }
+      .masthead-cta { flex-shrink: 0; }
+    }
   </style>
 </head>
 <body>
