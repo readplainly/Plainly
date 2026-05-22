@@ -240,6 +240,38 @@
       .nl-form { flex-direction: column; }
       .nl-form input, .nl-form button { height: 46px; width: 100%; border-radius: 3px; }
     }
+  
+    /* ─── MOBILE NAV — horizontal swipe ─── */
+    @media (max-width: 768px) {
+      .sticky-nav-sections {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        padding: 7px 0;
+      }
+      .sticky-nav-sections::-webkit-scrollbar { display: none; }
+      .masthead-nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        min-width: max-content;
+      }
+      .masthead-nav::-webkit-scrollbar { display: none; }
+      .masthead-nav a {
+        flex-shrink: 0;
+        font-size: 11px;
+        padding: 0 10px;
+      }
+      .sticky-nav-top {
+        padding: 0 16px;
+      }
+      .masthead-cta-sections { display: none; }
+      .masthead-cta { display: block; opacity: 1; pointer-events: auto; }
+    }
   </style>
 </head>
 <body>
