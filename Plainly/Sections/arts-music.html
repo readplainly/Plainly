@@ -8,7 +8,8 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
   <style>
     :root {
       --orange:       #FF6719;
@@ -221,7 +222,7 @@
         <a href="../sections/sports.html">Sports</a>
         <a href="../sections/careers.html">Careers</a>
         <a href="../sections/academia.html">Academia</a>
-        <a href="../sections/arts-music.html" class="active">Arts & Music</a>
+        <a href="../sections/arts-music.html">Arts & Music</a>
         <a href="../sections/regulation.html">Regulation</a>
         <div class="nav-divider"></div>
         <a href="../about.html" class="nav-tool">About</a>
@@ -250,7 +251,7 @@
 
         <article>
           <div class="lead-img-wrap">
-            <img src="../images/story-music.jpg" alt="A music producer at a professional mixing desk in a recording studio" class="lead-img" onerror="this.style.display='none'" />
+            <img loading="lazy" decoding="async" src="../images/story-music.jpg" alt="A music producer at a professional mixing desk in a recording studio" class="lead-img" onerror="this.style.display='none'" />
             <p class="lead-img-caption">The Recording Academy has drawn a line on what counts as 'human-made' music. Working musicians are now navigating the new rules in real time.</p>
           </div>
           <span class="tag tag-section">Arts & Music</span>
@@ -262,14 +263,14 @@
 
         <aside class="lead-sidebar">
           <div class="lead-sidebar-story">
-            <img src="../images/arts-sync.jpg" alt="An independent musician at a home studio setup" class="lss-img" onerror="this.style.display='none'; this.style.height='0'" />
+            <img loading="lazy" decoding="async" src="../images/arts-sync.jpg" alt="An independent musician at a home studio setup" class="lss-img" onerror="this.style.display='none'; this.style.height='0'" />
             <span class="tag tag-section">Arts & Music</span>
             <div class="lss-hed"><a href="#">The sync licensing gold rush: how AI is helping independent artists get their music placed in TV and film</a></div>
             <div class="lss-dek">Sync licensing used to require expensive connections. New AI tools are changing who gets access and how quickly.</div>
             <div class="lss-meta">5 min read</div>
           </div>
           <div class="lead-sidebar-story">
-            <img src="../images/arts-tools.jpg" alt="A music producer using AI tools on a laptop" class="lss-img" onerror="this.style.display='none'; this.style.height='0'" />
+            <img loading="lazy" decoding="async" src="../images/arts-tools.jpg" alt="A music producer using AI tools on a laptop" class="lss-img" onerror="this.style.display='none'; this.style.height='0'" />
             <span class="tag tag-section">Arts & Music</span>
             <div class="lss-hed"><a href="#">AI music tools are giving independent artists access to sounds that used to cost a studio budget</a></div>
             <div class="lss-dek">A hands-on look at what the tools actually produce, what they can't do, and which ones working musicians actually recommend.</div>
@@ -288,7 +289,7 @@
       <div class="story-grid">
 
         <div class="story-card">
-          <img src="../images/arts-music-grid-1.jpg" alt="Placeholder" class="sc-img" onerror="this.style.background='var(--paper-warm)'; this.removeAttribute('src')" />
+          <img loading="lazy" decoding="async" src="../images/arts-music-grid-1.jpg" alt="Placeholder" class="sc-img" onerror="this.style.background='var(--paper-warm)'; this.removeAttribute('src')" />
           <span class="tag tag-section">Arts & Music</span>
           <div class="sc-hed"><a href="#">How to use AI to build a social media strategy that actually grows your audience as a musician</a></div>
           <div class="sc-dek">The artists gaining followers aren't posting more. They're posting smarter. Here's the strategy — and the prompts to build it.</div>
@@ -296,7 +297,7 @@
         </div>
 
         <div class="story-card sc-divider">
-          <img src="../images/arts-music-grid-2.jpg" alt="Placeholder" class="sc-img" onerror="this.style.background='var(--paper-warm)'; this.removeAttribute('src')" />
+          <img loading="lazy" decoding="async" src="../images/arts-music-grid-2.jpg" alt="Placeholder" class="sc-img" onerror="this.style.background='var(--paper-warm)'; this.removeAttribute('src')" />
           <span class="tag tag-section">Arts & Music</span>
           <div class="sc-hed"><a href="#">What AI means for the future of music copyright — and why it's more complicated than it looks</a></div>
           <div class="sc-dek">Who owns a song when AI wrote the melody, a human wrote the lyrics, and the production was generated? Nobody fully knows yet.</div>
@@ -304,7 +305,7 @@
         </div>
 
         <div class="story-card sc-divider">
-          <img src="../images/arts-music-grid-3.jpg" alt="Placeholder" class="sc-img" onerror="this.style.background='var(--paper-warm)'; this.removeAttribute('src')" />
+          <img loading="lazy" decoding="async" src="../images/arts-music-grid-3.jpg" alt="Placeholder" class="sc-img" onerror="this.style.background='var(--paper-warm)'; this.removeAttribute('src')" />
           <span class="tag tag-section">Arts & Music</span>
           <div class="sc-hed"><a href="#">The AI artist bio generator is not going to save you — here's how to write one that actually works</a></div>
           <div class="sc-dek">Generic AI bios are everywhere. Here's how to use AI as a starting point and end up with something that sounds like you.</div>
