@@ -225,7 +225,7 @@
       opacity: 0.35;
       flex-shrink: 0;
     }
-    .masthead-nav a.nav-tool { color: var(--orange-dark); }
+    .masthead-nav a.nav-tool { color: var(--orange-dark); font-style: italic; }
     .masthead-nav a.nav-tool:hover { color: var(--orange); }
     .masthead-cta {
       font-family: var(--sans);
@@ -542,7 +542,7 @@
       padding-bottom: 1px;
       white-space: nowrap;
     }
-    .prompts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .prompts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .prompt-card {
       background: var(--paper);
       border: 1px solid var(--paper-rule);
@@ -1012,36 +1012,52 @@
         </div>
         <div class="prompts-grid">
           <div class="prompt-card">
+            <div class="p-icon" style="background:#FFF0E8;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C44A00" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h4>Small Business</h4>
+            <p>Customer complaints, pricing strategy, business plans, grant research.</p>
+            <div class="p-count">8 prompts</div>
+          </div>
+          <div class="prompt-card">
             <div class="p-icon" style="background:#E8F0FB;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             </div>
-            <h4>Legal research</h4>
-            <p>Case summaries, contract review, and memo drafting prompts.</p>
-            <div class="p-count">12 prompts</div>
+            <h4>Legal Research</h4>
+            <p>Case summaries, contract review, memo drafting, exam outlines.</p>
+            <div class="p-count">8 prompts</div>
           </div>
           <div class="prompt-card">
-            <div class="p-icon" style="background:#FBF0E0;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <div class="p-icon" style="background:#E1F5EE;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
-            <h4>Business strategy</h4>
-            <p>Competitive analysis, SWOT reports, executive summaries.</p>
-            <div class="p-count">9 prompts</div>
-          </div>
-          <div class="prompt-card">
-            <div class="p-icon" style="background:#E8F5E8;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A6A1A" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h4>Academic writing</h4>
-            <p>Research outlines, citation help, and study guide creation.</p>
+            <h4>Real Estate</h4>
+            <p>Investment analysis, underwriting, neighborhood due diligence, negotiation.</p>
             <div class="p-count">8 prompts</div>
           </div>
           <div class="prompt-card">
             <div class="p-icon" style="background:#FAE8F0;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A2050" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
             </div>
-            <h4>Creative & media</h4>
-            <p>Pitches, scripts, artist briefs, and content planning.</p>
-            <div class="p-count">11 prompts</div>
+            <h4>Music & Creative</h4>
+            <p>Song concepts, artist bios, sync licensing, social media strategy.</p>
+            <div class="p-count">8 prompts</div>
+          </div>
+          <div class="prompt-card">
+            <div class="p-icon" style="background:#E8F5E8;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A6A1A" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <h4>Academic</h4>
+            <p>Study guides, research outlines, dissertation planning, grant applications.</p>
+            <div class="p-count">8 prompts</div>
+          </div>
+          <div class="prompt-card">
+            <div class="p-icon" style="background:#FBF0E0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h4>Career & Job Search</h4>
+            <p>CV tailoring, cover letters, salary negotiation, interview answers.</p>
+            <div class="p-count">8 prompts</div>
           </div>
         </div>
       </div>
