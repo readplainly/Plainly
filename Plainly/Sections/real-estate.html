@@ -271,7 +271,7 @@
   <!-- MASTHEAD -->
   <header class="masthead" id="masthead">
     <div class="masthead-top">
-      <div class="masthead-date-line">April 18, 2026 &nbsp;·&nbsp; AI News & Education</div>
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News & Education</div>
       <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
       <div class="masthead-tagline">AI, put plainly.</div>
     </div>
@@ -457,5 +457,15 @@
     document.getElementById('nl-email').addEventListener('keypress', function(e) { if (e.key === 'Enter') subscribeEmail(); });
   </script>
 
+  <script>
+    (function() {
+      var el = document.getElementById('auto-date');
+      if (el) {
+        var now = new Date();
+        var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        el.textContent = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+      }
+    })();
+  </script>
 </body>
 </html>
