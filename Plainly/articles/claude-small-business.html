@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthropic's new small-business toolkit is free — if you already pay for Claude — Plainly</title>
+  <meta name="description" content="Anthropic's new small-business toolkit promises to handle invoicing, payroll prep, and marketing inside the apps you already use. Here's what it actually does and what it costs." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root{--orange:#FF6719;--orange-light:#FFF0E8;--orange-mid:#FFCFB0;--orange-dark:#C44A00;--ink:#1C1A17;--ink-soft:#3A3630;--ink-muted:#6B6560;--ink-faint:#A09890;--paper:#FAF8F4;--paper-warm:#F5F1EA;--paper-rule:#E8E2D8;--serif-display:'Playfair Display',Georgia,serif;--serif-body:'Source Serif 4',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{font-family:var(--serif-body);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .container-narrow{max-width:720px;margin:0 auto;padding:0 28px;}
+    .masthead{padding:22px 0 0;text-align:center;background:var(--paper);position:sticky;top:0;z-index:100;border-bottom:3px double var(--ink);transition:padding .25s ease,box-shadow .25s ease;}
+    .masthead.scrolled{padding:10px 0 0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+    .masthead-top{display:flex;align-items:center;justify-content:space-between;padding:0 28px 10px;}
+    .masthead-date-line{font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-date-line{max-height:0;opacity:0;}
+    .masthead-logo{font-family:var(--serif-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--ink);letter-spacing:-2px;line-height:1;transition:font-size .25s ease;}
+    .masthead.scrolled .masthead-logo{font-size:clamp(20px,3vw,26px);letter-spacing:-1px;}
+    .masthead-logo span{color:var(--orange);}
+    .masthead-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-muted);font-style:italic;font-weight:300;transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-tagline{max-height:0;opacity:0;}
+    .masthead-nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;border-top:1px solid var(--paper-rule);}
+    .masthead-nav{display:flex;align-items:center;gap:0;flex:1;min-width:0;}
+    .masthead-nav a{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);padding:0 8px;border-right:1px solid var(--paper-rule);line-height:1;white-space:nowrap;transition:color .15s;}
+    .masthead-nav a:last-child{border-right:none;}
+    .masthead-nav a:hover,.masthead-nav a.active{color:var(--orange);}
+    .masthead-nav .nav-divider{width:1px;height:13px;background:var(--ink-muted);opacity:.35;margin:0 4px;flex-shrink:0;}
+    .masthead-nav a.nav-tool{color:var(--orange-dark);}
+    .masthead-nav a.nav-tool:hover{color:var(--orange);}
+    .masthead-cta{font-family:var(--sans);font-size:11px;font-weight:500;background:var(--orange);color:white;padding:7px 16px;border-radius:3px;white-space:nowrap;margin-left:16px;flex-shrink:0;transition:background .15s;}
+    .masthead-cta:hover{background:var(--orange-dark);}
+    @media(max-width:768px){.masthead-nav-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 16px;}.masthead-nav-wrap::-webkit-scrollbar{display:none;}.masthead-nav{flex-wrap:nowrap;overflow-x:auto;min-width:max-content;}.masthead-nav a{flex-shrink:0;font-size:11px;padding:0 10px;}}
+    .article-header{padding:52px 0 0;}
+    .article-section-tag{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:18px;background:#FFF0E8;color:#C44A00;}
+    .article-hed{font-family:var(--serif-display);font-size:clamp(28px,5vw,52px);font-weight:900;color:var(--ink);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;}
+    .article-dek{font-family:var(--serif-body);font-size:20px;color:var(--ink-muted);font-style:italic;font-weight:300;line-height:1.5;margin-bottom:24px;max-width:680px;}
+    .article-meta{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--paper-rule);border-bottom:1px solid var(--paper-rule);margin-bottom:36px;flex-wrap:wrap;}
+    .meta-byline{font-family:var(--sans);font-size:12px;color:var(--ink-soft);font-weight:500;}
+    .meta-byline span{color:var(--orange);}
+    .meta-dot{width:3px;height:3px;background:var(--ink-faint);border-radius:50%;}
+    .meta-date,.meta-time{font-family:var(--sans);font-size:12px;color:var(--ink-faint);}
+    .meta-share{margin-left:auto;}
+    .share-btn{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-muted);border:1px solid var(--paper-rule);padding:5px 12px;border-radius:3px;background:transparent;cursor:pointer;transition:all .15s;}
+    .share-btn:hover{border-color:var(--orange);color:var(--orange);}
+    .article-hero{margin-bottom:40px;}
+    .article-hero img{width:100%;max-height:520px;object-fit:cover;object-position:center;border-radius:3px;display:block;}
+    .hero-caption{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;margin-top:8px;line-height:1.5;}
+    .article-body{padding-bottom:56px;}
+    .article-grid{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start;}
+    .article-copy p{font-family:var(--serif-body);font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:26px;}
+    .article-copy p:first-child::first-letter{font-family:var(--serif-display);font-size:72px;font-weight:900;color:var(--ink);float:left;line-height:.75;margin:8px 10px 0 0;}
+    .article-copy h2{font-family:var(--serif-display);font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.2;margin:40px 0 16px;padding-top:32px;border-top:1px solid var(--paper-rule);}
+    .article-copy strong{color:var(--ink);font-weight:600;}
+    .article-copy a{color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .article-copy ul{margin:0 0 26px 24px;}
+    .article-copy ul li{font-family:var(--serif-body);font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:8px;}
+    .pull-quote{border-left:3px solid var(--orange);padding:6px 0 6px 24px;margin:36px 0;}
+    .pull-quote p{font-family:var(--serif-display)!important;font-size:22px!important;font-weight:500!important;font-style:italic!important;color:var(--ink)!important;line-height:1.4!important;margin-bottom:0!important;}
+    .pull-quote p::first-letter{all:unset;}
+    .pull-quote cite{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;margin-top:10px;}
+    .article-sidebar{position:sticky;top:120px;display:flex;flex-direction:column;gap:20px;}
+    .sidebar-card{background:var(--paper-warm);border:1px solid var(--paper-rule);border-radius:6px;padding:20px;}
+    .sc-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+    .sc-title{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.2px;line-height:1.3;}
+    .sc-body{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .sc-link{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .nl-inline{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .nl-inline input{font-family:var(--sans);font-size:13px;border:1px solid var(--paper-rule);border-radius:3px;padding:9px 12px;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;}
+    .nl-inline input:focus{border-color:var(--orange);}
+    .nl-inline input::placeholder{color:var(--ink-faint);}
+    .nl-inline button{font-family:var(--sans);font-size:12px;font-weight:500;background:var(--orange);color:white;border:none;border-radius:3px;padding:9px 14px;cursor:pointer;transition:background .15s;}
+    .nl-inline button:hover{background:var(--orange-dark);}
+    .author-section{border-top:2px solid var(--ink);border-bottom:1px solid var(--paper-rule);padding:28px 0;margin-bottom:48px;display:flex;gap:20px;align-items:flex-start;}
+    .author-badge{width:52px;height:52px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .author-badge-logo{font-family:var(--serif-display);font-size:22px;font-weight:900;color:var(--orange);letter-spacing:-1px;}
+    .author-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+    .author-bio{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .author-bio a{color:var(--orange);border-bottom:1px solid var(--orange-mid);}
+    .related-section{padding:40px 0;border-top:1.5px solid var(--ink);}
+    .related-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .related-img{width:100%;height:130px;object-fit:cover;border-radius:3px;margin-bottom:12px;display:block;background:var(--paper-warm);}
+    .related-tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;}
+    .tag-blue{background:#E8F0FB;color:#1A4A8A;}.tag-coral{background:#FAE8E0;color:#8A2800;}.tag-amber{background:#FBF0E0;color:#7A4A00;}.tag-green{background:#E8F5E8;color:#1A6A1A;}.tag-pink{background:#FAE8F0;color:#8A2050;}.tag-orange{background:#FFF0E8;color:#C44A00;}
+    .related-hed{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.28;margin-bottom:6px;}
+    .related-hed a:hover{color:var(--orange);}
+    .related-dek{font-family:var(--sans);font-size:12px;color:var(--ink-muted);line-height:1.55;}
+    .related-meta{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);margin-top:6px;}
+    .related-divider{border-left:1px solid var(--paper-rule);padding-left:24px;}
+    .newsletter{padding:64px 0;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+    .newsletter::before{content:'Plainly.';position:absolute;font-family:var(--serif-display);font-size:260px;font-weight:900;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-8px;}
+    .newsletter-inner{position:relative;z-index:1;}
+    .nl-eyebrow{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .newsletter h2{font-family:var(--serif-display);font-size:clamp(28px,4vw,42px);font-weight:700;color:white;letter-spacing:-1px;line-height:1.1;margin-bottom:12px;}
+    .newsletter h2 em{font-style:italic;color:var(--orange);}
+    .newsletter p{font-family:var(--serif-body);font-size:15px;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 28px;line-height:1.65;font-style:italic;}
+    .nl-form{display:flex;max-width:400px;margin:0 auto 12px;border:1px solid rgba(255,255,255,.15);border-radius:3px;overflow:hidden;}
+    .nl-form input{flex:1;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.06);border:none;padding:0 16px;height:46px;color:white;outline:none;}
+    .nl-form input::placeholder{color:rgba(255,255,255,.3);}
+    .nl-form button{font-family:var(--sans);font-size:13px;font-weight:500;background:var(--orange);color:white;border:none;padding:0 22px;height:46px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+    .nl-form button:hover{background:var(--orange-dark);}
+    .nl-note{font-family:var(--sans);font-size:11.5px;color:rgba(255,255,255,.3);}
+    .footer{border-top:3px double var(--ink);padding:40px 0 24px;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:32px;flex-wrap:wrap;}
+    .footer-logo{font-family:var(--serif-display);font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-1px;margin-bottom:4px;}
+    .footer-logo span{color:var(--orange);}
+    .footer-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-faint);font-style:italic;}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col h5{font-family:var(--sans);font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+    .footer-col a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-muted);margin-bottom:8px;transition:color .15s;}
+    .footer-col a:hover{color:var(--orange);}
+    .footer-bottom{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid var(--paper-rule);flex-wrap:wrap;gap:8px;}
+    .footer-legal,.footer-credit{font-family:var(--sans);font-size:11.5px;color:var(--ink-faint);}
+    .footer-credit span{color:var(--orange);}
+    @media(max-width:860px){.article-grid{grid-template-columns:1fr;}.article-sidebar{position:static;}.related-grid{grid-template-columns:1fr;}.related-divider{border-left:none;padding-left:0;border-top:1px solid var(--paper-rule);padding-top:24px;}}
+    @media(max-width:560px){.container,.container-narrow{padding:0 18px;}.article-hed{font-size:clamp(24px,7vw,36px);}.article-dek{font-size:17px;}.article-copy p{font-size:16px;}.nl-form{flex-direction:column;}.nl-form input,.nl-form button{height:46px;width:100%;border-radius:3px;}}
+  </style>
+</head>
+<body>
+
+  <header class="masthead" id="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News &amp; Education</div>
+      <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
+      <div class="masthead-tagline">AI, put plainly.</div>
+    </div>
+    <div class="masthead-nav-wrap">
+      <nav class="masthead-nav">
+        <a href="../sections/business.html">Business</a>
+        <a href="../sections/law.html">Law</a>
+        <a href="../sections/small-business.html" class="active">Small Business</a>
+        <a href="../sections/real-estate.html">Real Estate</a>
+        <a href="../sections/sports.html">Sports</a>
+        <a href="../sections/careers.html">Careers</a>
+        <a href="../sections/academia.html">Academia</a>
+        <a href="../sections/arts-music.html">Arts &amp; Music</a>
+        <a href="../sections/regulation.html">Regulation</a>
+        <div class="nav-divider"></div>
+        <a href="../about.html" class="nav-tool">About</a>
+        <a href="../framework.html" class="nav-tool">The Framework</a>
+        <a href="../prompts.html" class="nav-tool">Prompts</a>
+      </nav>
+      <a href="#newsletter" class="masthead-cta">Subscribe free &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <div class="article-header">
+        <span class="article-section-tag">Small Business</span>
+        <h1 class="article-hed">Anthropic&rsquo;s new small-business toolkit is free &mdash; if you already pay for Claude</h1>
+        <p class="article-dek">Anthropic&rsquo;s new small-business toolkit promises to handle invoicing, payroll prep, and marketing inside the apps you already use. Here&rsquo;s what it actually does, what it costs, and where the free training stops next.</p>
+        <div class="article-meta">
+          <div class="meta-byline">By <span>Plainly Staff</span></div>
+          <div class="meta-dot"></div>
+          <div class="meta-date">May 26, 2026</div>
+          <div class="meta-dot"></div>
+          <div class="meta-time">7 min read</div>
+          <div class="meta-share"><button class="share-btn" onclick="copyLink()">Copy link</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+      <div class="article-hero">
+        <img loading="lazy" decoding="async" src="../images/claude-smb.jpg" alt="A small business owner working at a cluttered back-office desk in the early morning with a laptop open beside paper invoices and a coffee cup" onerror="this.style.display='none'" />
+        <p class="hero-caption">Most small-business owners do the books after hours. Anthropic is betting that an AI assistant plugged into QuickBooks, PayPal, and the rest of the software they already pay for can take some of that work off their plates.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="article-grid">
+          <div class="article-copy">
+
+            <p>On May 13, Anthropic &mdash; the San Francisco company behind the Claude AI assistant &mdash; switched on a new feature called Claude for Small Business. It is designed to do the back-office work that piles up after closing time: chasing unpaid invoices, prepping payroll, drafting marketing emails, reconciling the books. Anthropic says it plugs directly into QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, and Microsoft 365, and it costs nothing extra if you already subscribe to a paid Claude plan.</p>
+
+            <p>It is the first time one of the major AI companies has packaged a curated set of workflows and connectors squarely for the small-business market: the 50-person landscaper, the neighborhood restaurant, the two-person bookkeeping shop. Whether it lives up to the pitch is a separate question &mdash; and one worth taking seriously before you sign up.</p>
+
+            <h2>What it actually is</h2>
+
+            <p>Claude for Small Business is not a new app. It is a setting you switch on inside an existing Anthropic product called Claude Cowork &mdash; a version of Claude that runs on your desktop and can read your files and operate other apps on your behalf, rather than just answer questions in a chat window. Think of regular Claude as a smart assistant who can talk; Cowork is the same assistant given hands.</p>
+
+            <p>The small-business setting adds two things to that assistant: 15 pre-built workflows and connectors to the software you probably already pay for. A workflow is a recipe Claude can run end to end &mdash; for example, &ldquo;go through last month&rsquo;s invoices, find the ones that are 30 days overdue, and draft a polite follow-up email to each customer.&rdquo; A connector is the bridge that lets Claude actually reach into QuickBooks or HubSpot or your inbox to do the work, instead of asking you to copy and paste.</p>
+
+            <p>Anthropic says the workflows cover payroll planning, monthly bookkeeping close, invoice follow-ups, expense categorization, marketing drafts, contract review, and customer outreach, among others.</p>
+
+            <h2>What it costs</h2>
+
+            <p>The product itself is free if you have a paid Claude plan. According to Anthropic&rsquo;s pricing page, that means $20 a month for Claude Pro, $100 or $200 a month for Claude Max, or $25 per seat per month for Claude Team. The Free plan does not include it.</p>
+
+            <p>You also still pay for whatever software it connects to &mdash; QuickBooks, HubSpot, Canva and the rest are not included. Anthropic is not selling you new accounting or marketing software. It is selling you an assistant that knows how to use the ones you already have.</p>
+
+            <div class="pull-quote">
+              <p>&ldquo;Claude caught 17 of the 20 problems hidden in the financial data in less than six minutes.&rdquo;</p>
+              <cite>The New Stack&rsquo;s independent test of Claude for Small Business</cite>
+            </div>
+
+            <h2>What it can do on a Tuesday morning</h2>
+
+            <p>The clearest way to think about Claude for Small Business is by the kind of task it takes off your desk.</p>
+
+            <p>Say it is Tuesday at 7 a.m. and you own a small salon. According to Anthropic&rsquo;s product demonstrations, you can ask Claude to pull last month&rsquo;s revenue from QuickBooks, compare it to the same month last year, and email a one-paragraph summary to your business partner &mdash; and it will do all of that. You can ask it to look through QuickBooks for any invoice over 30 days late and draft a friendly reminder to each client. You can ask it to design an Instagram post in Canva announcing a promotion, in your usual brand colors.</p>
+
+            <p>One independent test offers a useful reality check. Jessica Wachtel, a reporter for the tech publication The New Stack, deliberately planted 20 problems &mdash; accounting errors and anomalies of varying types &mdash; in a fake profit-and-loss statement and asked Claude to find them. Claude caught 17 in under six minutes. It missed three, which Wachtel described as the most forensic items on the list &mdash; the kind of red flags that would make an expert pause and ask why something looked too clean. Her conclusion: useful, fast, real &mdash; but not a replacement for a human reviewing the work.</p>
+
+            <p>That is a fair summary of where the product sits today.</p>
+
+            <h2>The free training tour</h2>
+
+            <p>Alongside the launch, Anthropic is running a free 10-city U.S. workshop tour through late June, co-hosted with a firm called Tenex.co. Three stops &mdash; Chicago, Tulsa, and Dallas &mdash; have already taken place. Seven remain. Each half-day workshop is open to roughly 100 local small-business owners, and attendees get a free one-month Claude Max subscription (worth about $100). Anthropic has said more cities will be added in the fall.</p>
+
+            <p>The remaining 2026 dates: Hamilton Township, NJ (June 3), Baton Rouge (June 10), Birmingham, AL (June 12), Salt Lake City (June 16), Baltimore (June 18), San Jose (June 22), and Indianapolis (June 26).</p>
+
+            <p>Anthropic has also released a free online course called AI Fluency for Small Business, co-developed with PayPal. It is hosted on the training platform Skilljar and is open to anyone &mdash; not just paying Claude customers.</p>
+
+            <h2>What to be careful about</h2>
+
+            <p>A few things deserve a closer look before you hand any AI access to your books.</p>
+
+            <p>The privacy default is worth reading carefully. Anthropic&rsquo;s launch page says it &ldquo;doesn&rsquo;t train on your data by default&rdquo; on its Team and Enterprise plans. The British tech publication The Register, reporting on launch day, noted that Pro and Max plan users should check whether the data-training setting is on by default. There is some ambiguity between Anthropic&rsquo;s own framing and how third-party reporters have read it &mdash; and the small-business owners most likely to land on those plans are precisely the ones who will want to confirm where they stand.</p>
+
+            <p>Anthropic has not published adoption numbers. The company has not said how many small businesses are using the product, how much time it saves on average, or what share of workflows complete without human correction. The customer stories on its website come from Anthropic itself, not from independent reporters.</p>
+
+            <p>Mistakes in financial workflows are not theoretical. AI assistants still occasionally produce confident-sounding wrong answers &mdash; the industry calls these &ldquo;hallucinations.&rdquo; For a marketing draft, that is annoying. For a payroll calculation or an invoice, it can be expensive. Every serious review of the product, including Anthropic&rsquo;s own training course, makes the same point: a human still needs to check the work.</p>
+
+            <h2>How it stacks up against the alternatives</h2>
+
+            <p>Microsoft and Google already sell AI assistants bundled into their office software &mdash; Copilot inside Microsoft 365, Gemini inside Google Workspace. Both are tightly integrated with their respective ecosystems, which makes them a natural fit if your business runs primarily on one of them. OpenAI sells ChatGPT Business for around $25 per seat per month, comparable to Claude Team.</p>
+
+            <p>What Anthropic is betting on is breadth. By shipping connectors to QuickBooks, PayPal, HubSpot, Canva, DocuSign, and the major office suites in one place, it is trying to be the assistant that works regardless of which specific apps you happen to use. Whether that bet pays off depends on how reliably those connectors hold up under daily use &mdash; something only time and independent testing will reveal.</p>
+
+            <h2>What this means for you</h2>
+
+            <p>If you are running a small business and already pay for any version of Claude, you can try Claude for Small Business right now at no extra cost. Enable the Small Business plugin from within the Cowork section of your Claude account.</p>
+
+            <p>A few practical suggestions: Start with one workflow, not 15. Pick the task you most resent doing &mdash; chasing invoices, categorizing expenses, drafting the same marketing email every week &mdash; and see whether Claude can handle it end to end. If it can, add a second workflow next month.</p>
+
+            <p>Before you connect QuickBooks or PayPal, go into your Claude account settings and check the data-training option. The default may not be what you expect, particularly on Pro and Max plans.</p>
+
+            <p>Treat anything financial as a draft. Have Claude prep payroll; have a human approve it. Have Claude flag late invoices; you press send on the reminder. The product is fast enough at the first 80% of a task to be genuinely useful, but it is not yet trustworthy enough to be the last set of eyes.</p>
+
+            <p>If you want to learn the basics with no commitment, the PayPal&ndash;Anthropic course is free, and the workshop tour costs nothing but an afternoon. What to watch next is whether Anthropic publishes hard numbers &mdash; adoption, accuracy, time saved &mdash; or whether those remain marketing claims. The bigger story underneath this launch is whether AI tools can finally close the long-running gap between what small businesses and large ones can afford to do. Claude for Small Business is the first serious attempt by a major AI company to push it closed altogether. Whether it works will not be clear from the launch press. It will be clear from your books, six months from now.</p>
+
+            <div class="author-section">
+              <div class="author-badge"><div class="author-badge-logo">P.</div></div>
+              <div>
+                <div class="author-name">Plainly Staff</div>
+                <div class="author-bio">Plainly covers AI&rsquo;s real-world impact across law, business, real estate, careers, and more &mdash; written for curious people of every age and background. No jargon. No hype. Just AI, put plainly. Questions or tips: <a href="mailto:hello@readplainly.com">hello@readplainly.com</a></div>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="article-sidebar">
+            <div class="sidebar-card">
+              <div class="sc-label">Newsletter</div>
+              <div class="sc-title">Get the week&rsquo;s biggest AI stories &mdash; plainly explained.</div>
+              <div class="nl-inline" id="sb-nl-form">
+                <input type="email" id="sb-email" placeholder="your@email.com" />
+                <button onclick="subscribeSidebar()">Subscribe free &rarr;</button>
+              </div>
+              <div id="sb-success" style="display:none;font-family:var(--sans);font-size:13px;color:var(--orange);font-weight:500;margin-top:8px;">You&rsquo;re in! Welcome to Plainly.</div>
+              <div class="sc-body" style="margin-top:8px;">No spam. Unsubscribe any time.</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">Prompts for small business</div>
+              <div class="sc-title">Ready-to-use prompts for your work</div>
+              <div class="sc-body">8 prompts specifically for small business owners &mdash; customer complaints, pricing strategy, business plans, and more. Copy, paste, fill in the brackets.</div>
+              <a href="../prompts.html" class="sc-link">Browse all prompts &rarr;</a>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">New to AI?</div>
+              <div class="sc-title">The Framework &mdash; a plain-English guide to using AI</div>
+              <div class="sc-body">Five stages, no coding required. Learn how to find your best AI tasks and build a workflow that saves real time.</div>
+              <a href="../framework.html" class="sc-link">Start the walkthrough &rarr;</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="related-section">
+        <div class="related-label">More from Plainly</div>
+        <div class="related-grid">
+          <div>
+            <img loading="lazy" src="../images/kpmg-anthropic.jpg" alt="KPMG Anthropic" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Business</span>
+            <div class="related-hed"><a href="kpmg-anthropic.html">KPMG is embedding an AI system into the software 276,000 employees use for client work</a></div>
+            <div class="related-dek">The accounting giant is wiring Claude directly into the platform that handles its global tax work.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/gemini-spark.jpg" alt="Gemini Spark" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Business</span>
+            <div class="related-hed"><a href="gemini-spark.html">Google&rsquo;s new 24/7 AI assistant can read your Gmail &mdash; but only if you pay $100 a month</a></div>
+            <div class="related-dek">What Gemini Spark actually does, what it costs, and whether non-subscribers are about to fall behind.</div>
+            <div class="related-meta">6 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/take-it-down.jpg" alt="TAKE IT DOWN Act" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-coral">Regulation</span>
+            <div class="related-hed"><a href="take-it-down-act.html">The 48-hour rule: a new federal law lets you force websites to remove deepfake nudes</a></div>
+            <div class="related-dek">The TAKE IT DOWN Act&rsquo;s enforcement mechanism just kicked in. Here&rsquo;s what it means for you.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week&rsquo;s most important AI developments &mdash; broken down clearly, in plain English.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" />
+          <button type="button" onclick="subscribeEmail()">Subscribe &rarr;</button>
+        </div>
+        <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;margin-bottom:14px;">You&rsquo;re in! Welcome to Plainly. &#127881;</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. &middot; readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="../sections/business.html">Business</a>
+            <a href="../sections/law.html">Law</a>
+            <a href="../sections/small-business.html">Small Business</a>
+            <a href="../sections/real-estate.html">Real Estate</a>
+            <a href="../sections/sports.html">Sports</a>
+            <a href="../sections/careers.html">Careers</a>
+            <a href="../sections/academia.html">Academia</a>
+            <a href="../sections/arts-music.html">Arts &amp; Music</a>
+            <a href="../sections/regulation.html">Regulation</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="../framework.html">The Framework</a>
+            <a href="../prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="../about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">&copy; 2026 Plainly &middot; readplainly.com &middot; All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>&middot;</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var el=document.getElementById('auto-date');if(el){var now=new Date();var m=['January','February','March','April','May','June','July','August','September','October','November','December'];el.textContent=m[now.getMonth()]+' '+now.getDate()+', '+now.getFullYear();}})();
+    var masthead=document.getElementById('masthead');
+    window.addEventListener('scroll',function(){masthead.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+    function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var b=document.querySelector('.share-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link';},2000);});}
+    function subscribeEmail(){var e=document.getElementById('nl-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';}).catch(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';});}
+    document.getElementById('nl-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeEmail();});
+    function subscribeSidebar(){var e=document.getElementById('sb-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#sb-nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';}).catch(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';});}
+    document.getElementById('sb-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeSidebar();});
+  </script>
+</body>
+</html>

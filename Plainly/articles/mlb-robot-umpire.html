@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The robot umpire is overruling the human about half the time — and catchers are paying for it — Plainly</title>
+  <meta name="description" content="Eight weeks into baseball's first season with the Automatic Ball-Strike system, the league's best pitch framer has already been traded — and the data hint at a quiet reshuffling of who matters behind the plate." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root{--orange:#FF6719;--orange-light:#FFF0E8;--orange-mid:#FFCFB0;--orange-dark:#C44A00;--ink:#1C1A17;--ink-soft:#3A3630;--ink-muted:#6B6560;--ink-faint:#A09890;--paper:#FAF8F4;--paper-warm:#F5F1EA;--paper-rule:#E8E2D8;--serif-display:'Playfair Display',Georgia,serif;--serif-body:'Source Serif 4',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{font-family:var(--serif-body);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .container-narrow{max-width:720px;margin:0 auto;padding:0 28px;}
+    .masthead{padding:22px 0 0;text-align:center;background:var(--paper);position:sticky;top:0;z-index:100;border-bottom:3px double var(--ink);transition:padding .25s ease,box-shadow .25s ease;}
+    .masthead.scrolled{padding:10px 0 0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+    .masthead-top{display:flex;align-items:center;justify-content:space-between;padding:0 28px 10px;}
+    .masthead-date-line{font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-date-line{max-height:0;opacity:0;}
+    .masthead-logo{font-family:var(--serif-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--ink);letter-spacing:-2px;line-height:1;transition:font-size .25s ease;}
+    .masthead.scrolled .masthead-logo{font-size:clamp(20px,3vw,26px);letter-spacing:-1px;}
+    .masthead-logo span{color:var(--orange);}
+    .masthead-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-muted);font-style:italic;font-weight:300;transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-tagline{max-height:0;opacity:0;}
+    .masthead-nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;border-top:1px solid var(--paper-rule);}
+    .masthead-nav{display:flex;align-items:center;gap:0;flex:1;min-width:0;}
+    .masthead-nav a{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);padding:0 8px;border-right:1px solid var(--paper-rule);line-height:1;white-space:nowrap;transition:color .15s;}
+    .masthead-nav a:last-child{border-right:none;}
+    .masthead-nav a:hover,.masthead-nav a.active{color:var(--orange);}
+    .masthead-nav .nav-divider{width:1px;height:13px;background:var(--ink-muted);opacity:.35;margin:0 4px;flex-shrink:0;}
+    .masthead-nav a.nav-tool{color:var(--orange-dark);}
+    .masthead-nav a.nav-tool:hover{color:var(--orange);}
+    .masthead-cta{font-family:var(--sans);font-size:11px;font-weight:500;background:var(--orange);color:white;padding:7px 16px;border-radius:3px;white-space:nowrap;margin-left:16px;flex-shrink:0;transition:background .15s;}
+    .masthead-cta:hover{background:var(--orange-dark);}
+    @media(max-width:768px){.masthead-nav-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 16px;}.masthead-nav-wrap::-webkit-scrollbar{display:none;}.masthead-nav{flex-wrap:nowrap;overflow-x:auto;min-width:max-content;}.masthead-nav a{flex-shrink:0;font-size:11px;padding:0 10px;}}
+    .article-header{padding:52px 0 0;}
+    .article-section-tag{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:18px;background:#E8F5E8;color:#1A6A1A;}
+    .article-hed{font-family:var(--serif-display);font-size:clamp(28px,5vw,52px);font-weight:900;color:var(--ink);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;}
+    .article-dek{font-family:var(--serif-body);font-size:20px;color:var(--ink-muted);font-style:italic;font-weight:300;line-height:1.5;margin-bottom:24px;max-width:680px;}
+    .article-meta{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--paper-rule);border-bottom:1px solid var(--paper-rule);margin-bottom:36px;flex-wrap:wrap;}
+    .meta-byline{font-family:var(--sans);font-size:12px;color:var(--ink-soft);font-weight:500;}
+    .meta-byline span{color:var(--orange);}
+    .meta-dot{width:3px;height:3px;background:var(--ink-faint);border-radius:50%;}
+    .meta-date,.meta-time{font-family:var(--sans);font-size:12px;color:var(--ink-faint);}
+    .meta-share{margin-left:auto;}
+    .share-btn{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-muted);border:1px solid var(--paper-rule);padding:5px 12px;border-radius:3px;background:transparent;cursor:pointer;transition:all .15s;}
+    .share-btn:hover{border-color:var(--orange);color:var(--orange);}
+    .article-hero{margin-bottom:40px;}
+    .article-hero img{width:100%;max-height:520px;object-fit:cover;object-position:center;border-radius:3px;display:block;}
+    .hero-caption{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;margin-top:8px;line-height:1.5;}
+    .article-body{padding-bottom:56px;}
+    .article-grid{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start;}
+    .article-copy p{font-family:var(--serif-body);font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:26px;}
+    .article-copy p:first-child::first-letter{font-family:var(--serif-display);font-size:72px;font-weight:900;color:var(--ink);float:left;line-height:.75;margin:8px 10px 0 0;}
+    .article-copy h2{font-family:var(--serif-display);font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.2;margin:40px 0 16px;padding-top:32px;border-top:1px solid var(--paper-rule);}
+    .article-copy strong{color:var(--ink);font-weight:600;}
+    .article-copy a{color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .key-facts{background:var(--paper-warm);border:1px solid var(--paper-rule);border-left:3px solid var(--orange);border-radius:4px;padding:20px 24px;margin:36px 0;}
+    .key-facts-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:12px;}
+    .key-facts ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+    .key-facts li{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;display:flex;gap:10px;align-items:flex-start;}
+    .key-facts li::before{content:'→';color:var(--orange);font-weight:500;flex-shrink:0;margin-top:1px;}
+    .pull-quote{border-left:3px solid var(--orange);padding:6px 0 6px 24px;margin:36px 0;}
+    .pull-quote p{font-family:var(--serif-display)!important;font-size:20px!important;font-weight:500!important;font-style:italic!important;color:var(--ink)!important;line-height:1.4!important;margin-bottom:0!important;}
+    .pull-quote p::first-letter{all:unset;}
+    .pull-quote cite{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;margin-top:10px;}
+    .article-sidebar{position:sticky;top:120px;display:flex;flex-direction:column;gap:20px;}
+    .sidebar-card{background:var(--paper-warm);border:1px solid var(--paper-rule);border-radius:6px;padding:20px;}
+    .sc-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+    .sc-title{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.2px;line-height:1.3;}
+    .sc-body{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .sc-link{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .nl-inline{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .nl-inline input{font-family:var(--sans);font-size:13px;border:1px solid var(--paper-rule);border-radius:3px;padding:9px 12px;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;}
+    .nl-inline input:focus{border-color:var(--orange);}
+    .nl-inline input::placeholder{color:var(--ink-faint);}
+    .nl-inline button{font-family:var(--sans);font-size:12px;font-weight:500;background:var(--orange);color:white;border:none;border-radius:3px;padding:9px 14px;cursor:pointer;transition:background .15s;}
+    .nl-inline button:hover{background:var(--orange-dark);}
+    .author-section{border-top:2px solid var(--ink);border-bottom:1px solid var(--paper-rule);padding:28px 0;margin-bottom:48px;display:flex;gap:20px;align-items:flex-start;}
+    .author-badge{width:52px;height:52px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .author-badge-logo{font-family:var(--serif-display);font-size:22px;font-weight:900;color:var(--orange);letter-spacing:-1px;}
+    .author-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+    .author-bio{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .author-bio a{color:var(--orange);border-bottom:1px solid var(--orange-mid);}
+    .related-section{padding:40px 0;border-top:1.5px solid var(--ink);}
+    .related-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .related-img{width:100%;height:130px;object-fit:cover;border-radius:3px;margin-bottom:12px;display:block;background:var(--paper-warm);}
+    .related-tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;}
+    .tag-blue{background:#E8F0FB;color:#1A4A8A;}.tag-coral{background:#FAE8E0;color:#8A2800;}.tag-amber{background:#FBF0E0;color:#7A4A00;}.tag-green{background:#E8F5E8;color:#1A6A1A;}.tag-pink{background:#FAE8F0;color:#8A2050;}.tag-orange{background:#FFF0E8;color:#C44A00;}
+    .related-hed{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.28;margin-bottom:6px;}
+    .related-hed a:hover{color:var(--orange);}
+    .related-dek{font-family:var(--sans);font-size:12px;color:var(--ink-muted);line-height:1.55;}
+    .related-meta{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);margin-top:6px;}
+    .related-divider{border-left:1px solid var(--paper-rule);padding-left:24px;}
+    .newsletter{padding:64px 0;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+    .newsletter::before{content:'Plainly.';position:absolute;font-family:var(--serif-display);font-size:260px;font-weight:900;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-8px;}
+    .newsletter-inner{position:relative;z-index:1;}
+    .nl-eyebrow{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .newsletter h2{font-family:var(--serif-display);font-size:clamp(28px,4vw,42px);font-weight:700;color:white;letter-spacing:-1px;line-height:1.1;margin-bottom:12px;}
+    .newsletter h2 em{font-style:italic;color:var(--orange);}
+    .newsletter p{font-family:var(--serif-body);font-size:15px;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 28px;line-height:1.65;font-style:italic;}
+    .nl-form{display:flex;max-width:400px;margin:0 auto 12px;border:1px solid rgba(255,255,255,.15);border-radius:3px;overflow:hidden;}
+    .nl-form input{flex:1;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.06);border:none;padding:0 16px;height:46px;color:white;outline:none;}
+    .nl-form input::placeholder{color:rgba(255,255,255,.3);}
+    .nl-form button{font-family:var(--sans);font-size:13px;font-weight:500;background:var(--orange);color:white;border:none;padding:0 22px;height:46px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+    .nl-form button:hover{background:var(--orange-dark);}
+    .nl-note{font-family:var(--sans);font-size:11.5px;color:rgba(255,255,255,.3);}
+    .footer{border-top:3px double var(--ink);padding:40px 0 24px;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:32px;flex-wrap:wrap;}
+    .footer-logo{font-family:var(--serif-display);font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-1px;margin-bottom:4px;}
+    .footer-logo span{color:var(--orange);}
+    .footer-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-faint);font-style:italic;}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col h5{font-family:var(--sans);font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+    .footer-col a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-muted);margin-bottom:8px;transition:color .15s;}
+    .footer-col a:hover{color:var(--orange);}
+    .footer-bottom{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid var(--paper-rule);flex-wrap:wrap;gap:8px;}
+    .footer-legal,.footer-credit{font-family:var(--sans);font-size:11.5px;color:var(--ink-faint);}
+    .footer-credit span{color:var(--orange);}
+    @media(max-width:860px){.article-grid{grid-template-columns:1fr;}.article-sidebar{position:static;}.related-grid{grid-template-columns:1fr;}.related-divider{border-left:none;padding-left:0;border-top:1px solid var(--paper-rule);padding-top:24px;}}
+    @media(max-width:560px){.container,.container-narrow{padding:0 18px;}.article-hed{font-size:clamp(24px,7vw,36px);}.article-dek{font-size:17px;}.article-copy p{font-size:16px;}.nl-form{flex-direction:column;}.nl-form input,.nl-form button{height:46px;width:100%;border-radius:3px;}}
+  </style>
+</head>
+<body>
+
+  <header class="masthead" id="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News &amp; Education</div>
+      <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
+      <div class="masthead-tagline">AI, put plainly.</div>
+    </div>
+    <div class="masthead-nav-wrap">
+      <nav class="masthead-nav">
+        <a href="../sections/business.html">Business</a>
+        <a href="../sections/law.html">Law</a>
+        <a href="../sections/small-business.html">Small Business</a>
+        <a href="../sections/real-estate.html">Real Estate</a>
+        <a href="../sections/sports.html" class="active">Sports</a>
+        <a href="../sections/careers.html">Careers</a>
+        <a href="../sections/academia.html">Academia</a>
+        <a href="../sections/arts-music.html">Arts &amp; Music</a>
+        <a href="../sections/regulation.html">Regulation</a>
+        <div class="nav-divider"></div>
+        <a href="../about.html" class="nav-tool">About</a>
+        <a href="../framework.html" class="nav-tool">The Framework</a>
+        <a href="../prompts.html" class="nav-tool">Prompts</a>
+      </nav>
+      <a href="#newsletter" class="masthead-cta">Subscribe free &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <div class="article-header">
+        <span class="article-section-tag">Sports</span>
+        <h1 class="article-hed">The robot umpire is overruling the human about half the time &mdash; and catchers are paying for it</h1>
+        <p class="article-dek">Eight weeks into baseball&rsquo;s first season with the Automatic Ball-Strike system, the league&rsquo;s best pitch framer has already been traded &mdash; and the data hint at a quiet reshuffling of who matters behind the plate.</p>
+        <div class="article-meta">
+          <div class="meta-byline">By <span>Plainly Staff</span></div>
+          <div class="meta-dot"></div>
+          <div class="meta-date">May 27, 2026</div>
+          <div class="meta-dot"></div>
+          <div class="meta-time">7 min read</div>
+          <div class="meta-share"><button class="share-btn" onclick="copyLink()">Copy link</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+      <div class="article-hero">
+        <img loading="lazy" decoding="async" src="../images/mlb-robot-umpire.jpg" alt="A wide shot from behind home plate during a 2026 MLB game showing a catcher in his crouch, the batter, and the home plate umpire with the stadium scoreboard visible in the background" onerror="this.style.display='none'" />
+        <p class="hero-caption">A challenged pitch under review in 2026 &mdash; the Automatic Ball-Strike system&rsquo;s verdict, displayed on the scoreboard, now decides about 1% of pitches each game and overrules the umpire roughly half the time.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="article-grid">
+          <div class="article-copy">
+
+            <p>When a Major League Baseball player taps the top of his cap or helmet this season, a computer takes over. Within about 15 seconds, the system delivers a verdict on whether the pitch was a ball or a strike &mdash; and the umpire&rsquo;s call shows up on the scoreboard either confirmed or overturned. Through the first eight weeks of the 2026 season, the computer has overruled the human roughly 54% of the time it has been asked. And one position in baseball is already feeling the consequences.</p>
+
+            <p>On May 9, the San Francisco Giants traded Patrick Bailey &mdash; widely regarded as the best pitch framer in baseball &mdash; to the Cleveland Guardians for a minor-league pitcher and a draft pick. Less than two months earlier, that trade would have been almost unthinkable. Bailey&rsquo;s specific defensive skill, honed over years, had suddenly become less valuable, almost overnight.</p>
+
+            <h2>What ABS actually is</h2>
+
+            <p>The Automatic Ball-Strike system, or ABS, is baseball&rsquo;s version of the line-calling technology used in tennis. A dozen high-speed Sony cameras track the baseball&rsquo;s exact path as it crosses home plate. The system compares that path to a digital strike zone calibrated to each batter&rsquo;s height: 17 inches wide, with the top set at 53.5% of the batter&rsquo;s height and the bottom at 27%.</p>
+
+            <p>The human umpire still calls every pitch in real time. But on any given pitch, the batter, pitcher, or catcher can tap his cap or helmet within about two seconds to challenge the call. The computer&rsquo;s verdict &mdash; confirm or overturn &mdash; appears on the scoreboard. Each team gets two challenges per game and keeps them if they win.</p>
+
+            <p>Roughly 1% of all pitches end up getting challenged. That distinction matters, and we&rsquo;ll come back to it.</p>
+
+            <h2>Why the 54% number needs a caveat</h2>
+
+            <p>&ldquo;The robot overrules the human more than half the time&rdquo; makes for a punchy headline, but it doesn&rsquo;t mean umpires are getting half their calls wrong. Players save their challenges for pitches they&rsquo;re confident were missed. The 54% figure &mdash; roughly 1,600 successful challenges out of nearly 3,000 attempts through May 18, according to numbers tracked by Baseball Savant, MLB&rsquo;s official statistics and tracking site, and reported by Athlon Sports &mdash; is the success rate on those deliberately chosen, borderline calls.</p>
+
+            <p>The bigger picture looks different. MLB Senior Vice President Michael Hill told The Athletic&rsquo;s Ken Rosenthal that umpires are calling balls and strikes correctly 93.5% of the time this season, up slightly from 92.7% at the same point in 2025. So umpires aren&rsquo;t suddenly bad. They&rsquo;re being checked, very selectively, on the pitches most likely to have been wrong &mdash; and even then, they&rsquo;re only being overturned about half the time.</p>
+
+            <div class="pull-quote">
+              <p>&ldquo;As with a lot of the new things over the years that MLB has implemented, there&rsquo;s a lot of talk about it, and then you&rsquo;re two weeks into the season, it feels totally normal.&rdquo;</p>
+              <cite>Kevin Cash, Tampa Bay Rays manager, to ESPN</cite>
+            </div>
+
+            <p>Defensive players &mdash; catchers and pitchers &mdash; win their challenges more often than batters do. Defenders are succeeding around 59 to 61% of the time, batters around 47%, according to numbers from ESPN&rsquo;s player survey and Rosenthal&rsquo;s reporting.</p>
+
+            <h2>The skill that&rsquo;s quietly losing value</h2>
+
+            <p>For roughly 15 years, catchers have been paid for a skill called pitch framing. It is the art of catching a borderline pitch in a way that nudges the umpire toward calling it a strike &mdash; sticking the glove still, keeping the body quiet, and presenting the ball as if it crossed the heart of the plate. Analysts have estimated that the best framers in the league were worth two to three extra wins per season just on their receiving skill alone. That is roughly the value of an All-Star hitter.</p>
+
+            <p>According to a model maintained by the analytics site FanGraphs and cited by ESPN&rsquo;s Bradford Doolittle on May 19, the value catchers create through framing has dropped about 20% from last year. By FanGraphs&rsquo; measure &mdash; which estimates how many runs a catcher saves his team through skilled receiving &mdash; the top 30 catchers averaged 0.704 such runs per 100 innings in 2025; this year, that figure is 0.565.</p>
+
+            <p>The logic is intuitive. If a catcher steals a strike on a pitch that was actually a ball, the batter can now simply tap his helmet and take it back.</p>
+
+            <p>Two notes of caution: that drop is from an eight-week sample, and FanGraphs has not published an updated explanation of how its framing model treats challenged versus unchallenged pitches in the ABS era. The trend is real and pointing in the direction you would expect, but how big and how lasting it turns out to be is still an open question.</p>
+
+            <h2>Bailey, Kelly, and two different stories</h2>
+
+            <p>Patrick Bailey is the cleanest example of what&rsquo;s changing. From 2018 through 2025, Baseball Savant credited him with 65 framing runs &mdash; second only to Austin Hedges among all catchers. His ability to coax called strikes from pitches just off the edge was, by most accounts, unmatched. Then ABS arrived. His &ldquo;shadow strike rate&rdquo; &mdash; the share of pitches just off the edge of the strike zone that he managed to turn into called strikes &mdash; fell from 50% (first in MLB) in 2024&ndash;25 to 47.7% (23rd) in 2026. The Giants traded him for a minor-league left-hander and a draft pick.</p>
+
+            <p>&ldquo;I just felt like I was losing opportunities, losing at-bats,&rdquo; Bailey told NBC Sports Bay Area after the trade. &ldquo;I saw the writing was on the wall.&rdquo;</p>
+
+            <p>But the story isn&rsquo;t entirely about catchers losing ground. Cubs catcher Carson Kelly, a 31-year-old journeyman, is leading the league in something brand new: knowing which pitches to challenge. He has won 21 of 25 challenges as a catcher &mdash; 84% &mdash; and added an estimated 2.6 runs of value just from his work with the system. ESPN&rsquo;s Doolittle has nicknamed him the &ldquo;King of ABS.&rdquo; It is a skill that did not exist eight weeks ago.</p>
+
+            <p>Some thoughtful analysts caution against declaring framing dead. Writing for The Ringer, Ben Lindbergh argued that catchers can actually use their framing skill to fool batters into wasting challenges on pitches that were, in fact, strikes. Cleveland&rsquo;s willingness to give up real assets for Bailey suggests at least one front office still believes elite framers are worth paying for.</p>
+
+            <h2>What the players and managers actually think</h2>
+
+            <p>The debate over robot umpires is genuinely unsettled. According to a poll of 134 players reportedly conducted by The Athletic, 63% of players opposed ABS and 17% favored it. Three of four player representatives on the rules committee voted to approve it; one voted no. Bill Miller, the umpires&rsquo; representative, voted no.</p>
+
+            <p>Some in baseball love it. &ldquo;I think it keeps everybody accountable,&rdquo; Phillies manager Rob Thomson told the AP. Others are skeptical. Retired crew chief Joe West told The Ringer flatly: &ldquo;They haven&rsquo;t proven it&rsquo;s as accurate as they say it is.&rdquo;</p>
+
+            <p>Fans seem to enjoy the spectacle. &ldquo;The thing I&rsquo;m most surprised about is the fan interaction,&rdquo; pitcher Kevin Gausman said in an ESPN survey. &ldquo;Seems like the fans really enjoy telling the umpire whether it was a strike or not a strike.&rdquo;</p>
+
+            <h2>What this means for you</h2>
+
+            <div class="key-facts">
+              <div class="key-facts-label">Depending on who you are</div>
+              <ul>
+                <li><strong>If you watch the game:</strong> Pay attention to the cap-tap. Each team only gets two challenges, so when one happens late in a tight game, the stakes are real. Games are running about four minutes longer on average (2 hours 42 minutes versus 2 hours 38). The walk rate has also spiked to about 9.9% &mdash; higher than any season since 1950, according to ESPN&rsquo;s Jeff Passan.</li>
+                <li><strong>If you play or work in baseball:</strong> The skill that built a generation of catcher contracts is being repriced in real time. The next free-agent class includes several catchers &mdash; Kelly, Ryan Jeffers, Tyler Stephenson, Travis d&rsquo;Arnaud, Kyle Higashioka &mdash; whose deals will test how front offices now value framing versus the new skill of knowing which calls to challenge.</li>
+                <li><strong>If you&rsquo;re curious about AI overruling humans:</strong> Baseball is one of the first high-stakes public arenas where a camera-and-computer system is publicly second-guessing human judgment on national television. Notice what MLB chose to do: not full automation, but a hybrid where humans still call every pitch and the machine only steps in on appeal. That design tradeoff &mdash; preserving the human role while adding a check &mdash; will shape AI in courts, in medicine, and in workplaces. Watch how players, fans, and umpires adapt over the next year.</li>
+              </ul>
+            </div>
+
+            <p>The eight-week sample is still small. Three things will tell us whether this is a permanent shift or an early-season correction: whether the 54% overturn rate holds as players get better at picking their spots, whether the walk-rate spike persists into the second half of the season, and whether catcher contracts in the 2026&ndash;27 offseason actually move in the direction the early data suggests.</p>
+
+            <p>For now, the most reliable signal isn&rsquo;t a number on a leaderboard. It&rsquo;s a trade. The best framer in baseball just changed teams for less than market value, eight weeks into a new era. Whoever signs the next big catching contract will tell us what the league really thinks framing is worth now.</p>
+
+            <div class="author-section">
+              <div class="author-badge"><div class="author-badge-logo">P.</div></div>
+              <div>
+                <div class="author-name">Plainly Staff</div>
+                <div class="author-bio">Plainly covers AI&rsquo;s real-world impact across law, business, real estate, careers, and more &mdash; written for curious people of every age and background. No jargon. No hype. Just AI, put plainly. Questions or tips: <a href="mailto:hello@readplainly.com">hello@readplainly.com</a></div>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="article-sidebar">
+            <div class="sidebar-card">
+              <div class="sc-label">Newsletter</div>
+              <div class="sc-title">Get the week&rsquo;s biggest AI stories &mdash; plainly explained.</div>
+              <div class="nl-inline" id="sb-nl-form">
+                <input type="email" id="sb-email" placeholder="your@email.com" />
+                <button onclick="subscribeSidebar()">Subscribe free &rarr;</button>
+              </div>
+              <div id="sb-success" style="display:none;font-family:var(--sans);font-size:13px;color:var(--orange);font-weight:500;margin-top:8px;">You&rsquo;re in! Welcome to Plainly.</div>
+              <div class="sc-body" style="margin-top:8px;">No spam. Unsubscribe any time.</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">New to AI?</div>
+              <div class="sc-title">The Framework &mdash; a plain-English guide to using AI</div>
+              <div class="sc-body">Five stages, no coding required. Learn how to find your best AI tasks and build a workflow that saves real time.</div>
+              <a href="../framework.html" class="sc-link">Start the walkthrough &rarr;</a>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">Prompts Library</div>
+              <div class="sc-title">Ready-to-use prompts for your work</div>
+              <div class="sc-body">48 prompts across law, business, real estate, music, academia, and careers. Copy, paste, fill in the brackets.</div>
+              <a href="../prompts.html" class="sc-link">Browse all prompts &rarr;</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="related-section">
+        <div class="related-label">More from Plainly</div>
+        <div class="related-grid">
+          <div>
+            <img loading="lazy" src="../images/meta-layoffs.jpg" alt="Meta layoffs" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-amber">Careers</span>
+            <div class="related-hed"><a href="meta-layoffs.html">Meta cut 8,000 jobs and called it an AI pivot. Here&rsquo;s what that actually means.</a></div>
+            <div class="related-dek">What companies actually mean when they blame AI for layoffs &mdash; and what the numbers do and don&rsquo;t tell us.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/kpmg-anthropic.jpg" alt="KPMG Anthropic" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Business</span>
+            <div class="related-hed"><a href="kpmg-anthropic.html">KPMG is embedding an AI system into the software 276,000 employees use for client work</a></div>
+            <div class="related-dek">The accounting giant is wiring Claude directly into the platform that handles its global tax work.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/take-it-down.jpg" alt="TAKE IT DOWN Act" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-coral">Regulation</span>
+            <div class="related-hed"><a href="take-it-down-act.html">The 48-hour rule: a new federal law lets you force websites to remove deepfake nudes</a></div>
+            <div class="related-dek">The TAKE IT DOWN Act&rsquo;s enforcement mechanism just kicked in.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week&rsquo;s most important AI developments &mdash; broken down clearly, in plain English.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" />
+          <button type="button" onclick="subscribeEmail()">Subscribe &rarr;</button>
+        </div>
+        <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;margin-bottom:14px;">You&rsquo;re in! Welcome to Plainly. &#127881;</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. &middot; readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="../sections/business.html">Business</a>
+            <a href="../sections/law.html">Law</a>
+            <a href="../sections/small-business.html">Small Business</a>
+            <a href="../sections/real-estate.html">Real Estate</a>
+            <a href="../sections/sports.html">Sports</a>
+            <a href="../sections/careers.html">Careers</a>
+            <a href="../sections/academia.html">Academia</a>
+            <a href="../sections/arts-music.html">Arts &amp; Music</a>
+            <a href="../sections/regulation.html">Regulation</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="../framework.html">The Framework</a>
+            <a href="../prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="../about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">&copy; 2026 Plainly &middot; readplainly.com &middot; All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>&middot;</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var el=document.getElementById('auto-date');if(el){var now=new Date();var m=['January','February','March','April','May','June','July','August','September','October','November','December'];el.textContent=m[now.getMonth()]+' '+now.getDate()+', '+now.getFullYear();}})();
+    var masthead=document.getElementById('masthead');
+    window.addEventListener('scroll',function(){masthead.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+    function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var b=document.querySelector('.share-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link';},2000);});}
+    function subscribeEmail(){var e=document.getElementById('nl-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';}).catch(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';});}
+    document.getElementById('nl-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeEmail();});
+    function subscribeSidebar(){var e=document.getElementById('sb-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#sb-nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';}).catch(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';});}
+    document.getElementById('sb-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeSidebar();});
+  </script>
+</body>
+</html>

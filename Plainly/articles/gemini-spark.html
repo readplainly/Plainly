@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google's new 24/7 AI assistant can read your Gmail — but only if you pay $100 a month — Plainly</title>
+  <meta name="description" content="Gemini Spark, unveiled at Google I/O 2026, is a personal agent that keeps working after you close your laptop. Here's what it actually does and who can get it." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root {
+      --orange:#FF6719;--orange-light:#FFF0E8;--orange-mid:#FFCFB0;--orange-dark:#C44A00;
+      --ink:#1C1A17;--ink-soft:#3A3630;--ink-muted:#6B6560;--ink-faint:#A09890;
+      --paper:#FAF8F4;--paper-warm:#F5F1EA;--paper-rule:#E8E2D8;
+      --serif-display:'Playfair Display',Georgia,serif;
+      --serif-body:'Source Serif 4',Georgia,serif;
+      --sans:'DM Sans',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{font-family:var(--serif-body);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .container-narrow{max-width:720px;margin:0 auto;padding:0 28px;}
+    .masthead{padding:22px 0 0;text-align:center;background:var(--paper);position:sticky;top:0;z-index:100;border-bottom:3px double var(--ink);transition:padding .25s ease,box-shadow .25s ease;}
+    .masthead.scrolled{padding:10px 0 0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+    .masthead-top{display:flex;align-items:center;justify-content:space-between;padding:0 28px 10px;}
+    .masthead-date-line{font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-date-line{max-height:0;opacity:0;}
+    .masthead-logo{font-family:var(--serif-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--ink);letter-spacing:-2px;line-height:1;transition:font-size .25s ease;}
+    .masthead.scrolled .masthead-logo{font-size:clamp(20px,3vw,26px);letter-spacing:-1px;}
+    .masthead-logo span{color:var(--orange);}
+    .masthead-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-muted);font-style:italic;font-weight:300;transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-tagline{max-height:0;opacity:0;}
+    .masthead-nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;border-top:1px solid var(--paper-rule);}
+    .masthead-nav{display:flex;align-items:center;gap:0;flex:1;min-width:0;}
+    .masthead-nav a{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);padding:0 8px;border-right:1px solid var(--paper-rule);line-height:1;white-space:nowrap;transition:color .15s;}
+    .masthead-nav a:last-child{border-right:none;}
+    .masthead-nav a:hover{color:var(--orange);}
+    .masthead-nav a.active{color:var(--orange);}
+    .masthead-nav .nav-divider{width:1px;height:13px;background:var(--ink-muted);opacity:.35;margin:0 4px;flex-shrink:0;}
+    .masthead-nav a.nav-tool{color:var(--orange-dark);}
+    .masthead-nav a.nav-tool:hover{color:var(--orange);}
+    .masthead-cta{font-family:var(--sans);font-size:11px;font-weight:500;background:var(--orange);color:white;padding:7px 16px;border-radius:3px;white-space:nowrap;margin-left:16px;flex-shrink:0;transition:background .15s;}
+    .masthead-cta:hover{background:var(--orange-dark);}
+    @media(max-width:768px){
+      .masthead-nav-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 16px;}
+      .masthead-nav-wrap::-webkit-scrollbar{display:none;}
+      .masthead-nav{flex-wrap:nowrap;overflow-x:auto;min-width:max-content;}
+      .masthead-nav a{flex-shrink:0;font-size:11px;padding:0 10px;}
+    }
+    .article-header{padding:52px 0 0;}
+    .article-section-tag{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:18px;background:#E8F0FB;color:#1A4A8A;}
+    .article-hed{font-family:var(--serif-display);font-size:clamp(28px,5vw,52px);font-weight:900;color:var(--ink);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;}
+    .article-dek{font-family:var(--serif-body);font-size:20px;color:var(--ink-muted);font-style:italic;font-weight:300;line-height:1.5;margin-bottom:24px;max-width:680px;}
+    .article-meta{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--paper-rule);border-bottom:1px solid var(--paper-rule);margin-bottom:36px;flex-wrap:wrap;}
+    .meta-byline{font-family:var(--sans);font-size:12px;color:var(--ink-soft);font-weight:500;}
+    .meta-byline span{color:var(--orange);}
+    .meta-dot{width:3px;height:3px;background:var(--ink-faint);border-radius:50%;}
+    .meta-date,.meta-time{font-family:var(--sans);font-size:12px;color:var(--ink-faint);}
+    .meta-share{margin-left:auto;}
+    .share-btn{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-muted);border:1px solid var(--paper-rule);padding:5px 12px;border-radius:3px;background:transparent;cursor:pointer;transition:all .15s;}
+    .share-btn:hover{border-color:var(--orange);color:var(--orange);}
+    .article-hero{margin-bottom:40px;}
+    .article-hero img{width:100%;max-height:520px;object-fit:cover;object-position:center;border-radius:3px;display:block;}
+    .hero-caption{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;margin-top:8px;line-height:1.5;}
+    .article-body{padding-bottom:56px;}
+    .article-grid{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start;}
+    .article-copy p{font-family:var(--serif-body);font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:26px;}
+    .article-copy p:first-child::first-letter{font-family:var(--serif-display);font-size:72px;font-weight:900;color:var(--ink);float:left;line-height:.75;margin:8px 10px 0 0;}
+    .article-copy h2{font-family:var(--serif-display);font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.2;margin:40px 0 16px;padding-top:32px;border-top:1px solid var(--paper-rule);}
+    .article-copy strong{color:var(--ink);font-weight:600;}
+    .article-copy a{color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .pull-quote{border-left:3px solid var(--orange);padding:6px 0 6px 24px;margin:36px 0;}
+    .pull-quote p{font-family:var(--serif-display)!important;font-size:20px!important;font-weight:500!important;font-style:italic!important;color:var(--ink)!important;line-height:1.4!important;margin-bottom:0!important;}
+    .pull-quote p::first-letter{all:unset;}
+    .pull-quote cite{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;margin-top:10px;}
+    .article-sidebar{position:sticky;top:120px;display:flex;flex-direction:column;gap:20px;}
+    .sidebar-card{background:var(--paper-warm);border:1px solid var(--paper-rule);border-radius:6px;padding:20px;}
+    .sc-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+    .sc-title{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.2px;line-height:1.3;}
+    .sc-body{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .sc-link{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .nl-inline{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .nl-inline input{font-family:var(--sans);font-size:13px;border:1px solid var(--paper-rule);border-radius:3px;padding:9px 12px;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;}
+    .nl-inline input:focus{border-color:var(--orange);}
+    .nl-inline input::placeholder{color:var(--ink-faint);}
+    .nl-inline button{font-family:var(--sans);font-size:12px;font-weight:500;background:var(--orange);color:white;border:none;border-radius:3px;padding:9px 14px;cursor:pointer;transition:background .15s;}
+    .nl-inline button:hover{background:var(--orange-dark);}
+    .author-section{border-top:2px solid var(--ink);border-bottom:1px solid var(--paper-rule);padding:28px 0;margin-bottom:48px;display:flex;gap:20px;align-items:flex-start;}
+    .author-badge{width:52px;height:52px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .author-badge-logo{font-family:var(--serif-display);font-size:22px;font-weight:900;color:var(--orange);letter-spacing:-1px;}
+    .author-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+    .author-bio{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .author-bio a{color:var(--orange);border-bottom:1px solid var(--orange-mid);}
+    .related-section{padding:40px 0;border-top:1.5px solid var(--ink);}
+    .related-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .related-img{width:100%;height:130px;object-fit:cover;border-radius:3px;margin-bottom:12px;display:block;background:var(--paper-warm);}
+    .related-tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;}
+    .tag-blue{background:#E8F0FB;color:#1A4A8A;}.tag-coral{background:#FAE8E0;color:#8A2800;}.tag-amber{background:#FBF0E0;color:#7A4A00;}.tag-green{background:#E8F5E8;color:#1A6A1A;}.tag-pink{background:#FAE8F0;color:#8A2050;}.tag-orange{background:#FFF0E8;color:#C44A00;}
+    .related-hed{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.28;margin-bottom:6px;}
+    .related-hed a:hover{color:var(--orange);}
+    .related-dek{font-family:var(--sans);font-size:12px;color:var(--ink-muted);line-height:1.55;}
+    .related-meta{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);margin-top:6px;}
+    .related-divider{border-left:1px solid var(--paper-rule);padding-left:24px;}
+    .newsletter{padding:64px 0;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+    .newsletter::before{content:'Plainly.';position:absolute;font-family:var(--serif-display);font-size:260px;font-weight:900;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-8px;}
+    .newsletter-inner{position:relative;z-index:1;}
+    .nl-eyebrow{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .newsletter h2{font-family:var(--serif-display);font-size:clamp(28px,4vw,42px);font-weight:700;color:white;letter-spacing:-1px;line-height:1.1;margin-bottom:12px;}
+    .newsletter h2 em{font-style:italic;color:var(--orange);}
+    .newsletter p{font-family:var(--serif-body);font-size:15px;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 28px;line-height:1.65;font-style:italic;}
+    .nl-form{display:flex;max-width:400px;margin:0 auto 12px;border:1px solid rgba(255,255,255,.15);border-radius:3px;overflow:hidden;}
+    .nl-form input{flex:1;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.06);border:none;padding:0 16px;height:46px;color:white;outline:none;}
+    .nl-form input::placeholder{color:rgba(255,255,255,.3);}
+    .nl-form button{font-family:var(--sans);font-size:13px;font-weight:500;background:var(--orange);color:white;border:none;padding:0 22px;height:46px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+    .nl-form button:hover{background:var(--orange-dark);}
+    .nl-note{font-family:var(--sans);font-size:11.5px;color:rgba(255,255,255,.3);}
+    .footer{border-top:3px double var(--ink);padding:40px 0 24px;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:32px;flex-wrap:wrap;}
+    .footer-logo{font-family:var(--serif-display);font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-1px;margin-bottom:4px;}
+    .footer-logo span{color:var(--orange);}
+    .footer-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-faint);font-style:italic;}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col h5{font-family:var(--sans);font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+    .footer-col a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-muted);margin-bottom:8px;transition:color .15s;}
+    .footer-col a:hover{color:var(--orange);}
+    .footer-bottom{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid var(--paper-rule);flex-wrap:wrap;gap:8px;}
+    .footer-legal,.footer-credit{font-family:var(--sans);font-size:11.5px;color:var(--ink-faint);}
+    .footer-credit span{color:var(--orange);}
+    @media(max-width:860px){.article-grid{grid-template-columns:1fr;}.article-sidebar{position:static;}.related-grid{grid-template-columns:1fr;}.related-divider{border-left:none;padding-left:0;border-top:1px solid var(--paper-rule);padding-top:24px;}}
+    @media(max-width:560px){.container,.container-narrow{padding:0 18px;}.article-hed{font-size:clamp(24px,7vw,36px);}.article-dek{font-size:17px;}.article-copy p{font-size:16px;}.nl-form{flex-direction:column;}.nl-form input,.nl-form button{height:46px;width:100%;border-radius:3px;}}
+  </style>
+</head>
+<body>
+
+  <header class="masthead" id="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News &amp; Education</div>
+      <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
+      <div class="masthead-tagline">AI, put plainly.</div>
+    </div>
+    <div class="masthead-nav-wrap">
+      <nav class="masthead-nav">
+        <a href="../sections/business.html" class="active">Business</a>
+        <a href="../sections/law.html">Law</a>
+        <a href="../sections/small-business.html">Small Business</a>
+        <a href="../sections/real-estate.html">Real Estate</a>
+        <a href="../sections/sports.html">Sports</a>
+        <a href="../sections/careers.html">Careers</a>
+        <a href="../sections/academia.html">Academia</a>
+        <a href="../sections/arts-music.html">Arts &amp; Music</a>
+        <a href="../sections/regulation.html">Regulation</a>
+        <div class="nav-divider"></div>
+        <a href="../about.html" class="nav-tool">About</a>
+        <a href="../framework.html" class="nav-tool">The Framework</a>
+        <a href="../prompts.html" class="nav-tool">Prompts</a>
+      </nav>
+      <a href="#newsletter" class="masthead-cta">Subscribe free &#8594;</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <div class="article-header">
+        <span class="article-section-tag">Business</span>
+        <h1 class="article-hed">Google's new 24/7 AI assistant can read your Gmail &mdash; but only if you pay $100 a month</h1>
+        <p class="article-dek">Gemini Spark, unveiled at Google I/O 2026, is a personal agent that keeps working after you close your laptop. The catch: it's locked behind Google's most expensive plan, available only in the U.S., and comes with a warning that it may share your information or make purchases without asking.</p>
+        <div class="article-meta">
+          <div class="meta-byline">By <span>Plainly Staff</span></div>
+          <div class="meta-dot"></div>
+          <div class="meta-date">May 24, 2026</div>
+          <div class="meta-dot"></div>
+          <div class="meta-time">6 min read</div>
+          <div class="meta-share"><button class="share-btn" onclick="copyLink()">Copy link</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+      <div class="article-hero">
+        <img loading="lazy" decoding="async" src="../images/gemini-spark.jpg" alt="Google CEO Sundar Pichai on stage at Google I/O 2026 unveiling Gemini Spark" onerror="this.style.display='none'" />
+        <p class="hero-caption">Google CEO Sundar Pichai unveils Gemini Spark, the company's new 24/7 personal AI agent, during the Google I/O 2026 keynote on May 19, 2026.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="article-grid">
+          <div class="article-copy">
+
+            <p>Google has built an AI that watches your inbox, drafts your emails, books your dinner reservations, and keeps running even after you close your laptop. It is called Gemini Spark, and Google announced it on May 19, 2026, at its annual developer conference. But unlike the free AI chatbots most people have tried, Spark is not for everyone. It costs at least $100 a month, it is U.S.-only at launch, and Google itself warns that it &ldquo;may do things like share your info or make purchases without asking.&rdquo;</p>
+
+            <p>Spark is what the tech industry calls an &ldquo;agent&rdquo; &mdash; software that doesn&rsquo;t just answer your questions but takes actions for you, like a very fast, very tireless personal assistant. It runs not on your phone or laptop but on dedicated computers inside Google&rsquo;s cloud, which is why it can keep working after you close your screen. And it has been given the keys to your Gmail, your calendar, your Google Docs, and a growing list of outside apps like Canva, OpenTable, and Instacart.</p>
+
+            <p>The rollout is deliberately narrow. Spark began going out to a small group of testers the week of the announcement, with a wider test release &mdash; what the industry calls a &ldquo;beta,&rdquo; meaning early access to unfinished software &mdash; opening to U.S. subscribers of Google AI Ultra, Google&rsquo;s top-tier plan, the following week. To get in, you must be 18 or older, live in the United States, and pay $100 a month for the new entry-level Ultra plan or $200 for the higher tier. The plan that most casual users are likely to choose, Google AI Pro at $20 a month, does not include Spark and has not been promised it.</p>
+
+            <h2>What Spark actually does</h2>
+
+            <p>In his keynote address, Google CEO Sundar Pichai described Spark as &ldquo;your personal AI agent that helps you navigate your digital life, taking action on your behalf and under your direction.&rdquo; The example Google keeps returning to is email. Spark can read across your Gmail, Docs, Sheets, and Slides, pull together the relevant facts, and draft a status update to your boss. It can watch your inbox for messages from specific customers. It can plan a trip by reading reservations across your calendar and recent emails, then book a restaurant through OpenTable or order groceries through Instacart.</p>
+
+            <p>The reason Spark can reach those outside apps is a technical standard called the Model Context Protocol, or MCP. Think of it as a common language &mdash; originally developed by the AI company Anthropic &mdash; that lets AI agents plug into third-party services. Canva, OpenTable, and Instacart are live at launch. Google says Spotify, Booking.com, DoorDash, and others are on the way.</p>
+
+            <p>What Spark cannot yet do is spend your money. Google says it will eventually be able to authorize payments using a separate system called the Agent Payments Protocol, which uses math-based digital signatures to set hard limits on what an AI can buy on your behalf. Josh Woodward, the Google vice president who leads the Gemini app, compared the approach to &ldquo;giving a teenager their first debit card. There&rsquo;s sort of limits and sort of constraints around it.&rdquo; That feature is coming &ldquo;in the months ahead,&rdquo; not at launch.</p>
+
+            <div class="pull-quote">
+              <p>&ldquo;Gemini Spark is experimental. While it is designed to ask for your permission before taking sensitive actions, it may do things like share your info or make purchases without asking.&rdquo;</p>
+              <cite>Google&rsquo;s own onboarding warning for Spark, surfaced by 9to5Google before the official launch</cite>
+            </div>
+
+            <h2>A sharp line between free, $20, and $100</h2>
+
+            <p>The most important thing to understand about this announcement is the pricing structure Google has built around it. There are now four tiers of Gemini, and they get very different products.</p>
+
+            <p>The free Gemini app, which Google said in its I/O keynote now has 900 million monthly users across 230 countries, gets a visual redesign and a faster underlying model. It does not get an agent. The $7.99-a-month AI Plus tier adds a &ldquo;Daily Brief,&rdquo; a simpler agent that produces a morning summary from your inbox and calendar, plus an AI-powered inbox in Gmail. The $19.99 AI Pro tier &mdash; the one most paying subscribers are likely to land on &mdash; adds more storage, deeper research tools, and access to longer documents. It does not include Spark, and Google has made no commitment to ever add it.</p>
+
+            <p>Only the $100 and $200 AI Ultra tiers get Spark. Google quietly cut the top Ultra tier from $250 to $200 at the same event, while introducing the new $100 entry point. The effect is to draw a clear line. A true 24/7 AI assistant &mdash; the headline product of Google I/O 2026 &mdash; is a premium good. Casual users get a chatbot. Power users, and businesses that decide it is worth the cost, get an employee.</p>
+
+            <h2>The privacy tradeoff Google is asking you to make</h2>
+
+            <p>To do its job, Spark needs deep access to the most personal parts of your digital life. Google&rsquo;s own privacy hub confirms that Spark stores your connected-app data &mdash; including files, emails, and what Google calls &ldquo;Personal Intelligence&rdquo; &mdash; on what it describes as a &ldquo;remote computer&rdquo; in Google Cloud. That data, the hub notes, &ldquo;can include data you find sensitive.&rdquo; Some of it flows to third-party apps when Spark takes actions on your behalf.</p>
+
+            <p>Clarence Lee, a visiting lecturer at the Cornell SC Johnson College of Business, told CBS News that the shift is real and significant. &ldquo;There is a paradigm shift happening right now where AI is going from a chat interface to actually being able to do things for you,&rdquo; he said. &ldquo;It&rsquo;s like having a team that you can delegate things to.&rdquo;</p>
+
+            <p>But delegating to a team that lives inside Google&rsquo;s cloud &mdash; and that, by Google&rsquo;s own admission, may occasionally act without asking &mdash; is a new kind of decision. Spark&rsquo;s architecture is more cloud-dependent than its main competitors. Anthropic&rsquo;s Claude Cowork, which became generally available in April 2026, runs as a desktop app on the user&rsquo;s own Mac or Windows machine, with local file access plus connections to cloud services through MCP. OpenAI&rsquo;s ChatGPT Agent, which launched in July 2025, uses a cloud-based virtual computer but is invoked task by task. Spark, by contrast, is designed to be always on.</p>
+
+            <h2>What this means for you</h2>
+
+            <p>If you use the free Gemini app, almost nothing changes today. You will see a redesigned interface and a faster default model, but no agent will be reading your email on your behalf.</p>
+
+            <p>If you pay $20 a month for AI Pro, you are not getting the product Google spent its keynote selling. You get useful upgrades &mdash; including a daily brief, smarter inbox features in Gmail, and longer document handling &mdash; but not Spark. If you assumed your $20 subscription would unlock the 24/7 assistant Pichai demonstrated on stage, it does not. There is currently no path from Pro to Spark short of upgrading to the $100 Ultra plan.</p>
+
+            <p>If you are willing to pay $100 a month and live in the United States, you can try Spark in beta. Before you do, read Google&rsquo;s onboarding warning carefully. The company is telling you, in plain terms, that this is experimental software, that it may take actions without asking, and that you should not rely on it for medical, legal, or financial advice. Treat it like a capable but unsupervised intern &mdash; not a finished product.</p>
+
+            <p>If you live outside the United States, you are watching from outside the window. Google has not given any timeline for launching Spark in Europe, the United Kingdom, Canada, India, or anywhere else.</p>
+
+            <p>Several of the features Google demonstrated are not yet shipping. Spark is supposed to arrive in the Chrome browser and on macOS desktops &ldquo;later this summer,&rdquo; with payment authorization months away. The bigger question is whether Spark stays a $100 product. Google could keep it locked to Ultra as a way to justify the higher tier, or it could eventually let it trickle down to Pro subscribers, the way premium features often do once the technology matures. For now, the company has made no promises. The 24/7 AI assistant is real, it is here, and most people &mdash; by Google&rsquo;s own choice &mdash; will not be using it any time soon.</p>
+
+            <div class="author-section">
+              <div class="author-badge"><div class="author-badge-logo">P.</div></div>
+              <div>
+                <div class="author-name">Plainly Staff</div>
+                <div class="author-bio">Plainly covers AI&rsquo;s real-world impact across law, business, real estate, careers, and more &mdash; written for curious people of every age and background. No jargon. No hype. Just AI, put plainly. Questions or tips: <a href="mailto:hello@readplainly.com">hello@readplainly.com</a></div>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="article-sidebar">
+            <div class="sidebar-card">
+              <div class="sc-label">Newsletter</div>
+              <div class="sc-title">Get the week's biggest AI stories &mdash; plainly explained.</div>
+              <div class="nl-inline" id="sb-nl-form">
+                <input type="email" id="sb-email" placeholder="your@email.com" />
+                <button onclick="subscribeSidebar()">Subscribe free &#8594;</button>
+              </div>
+              <div id="sb-success" style="display:none;font-family:var(--sans);font-size:13px;color:var(--orange);font-weight:500;margin-top:8px;">You're in! Welcome to Plainly.</div>
+              <div class="sc-body" style="margin-top:8px;">No spam. Unsubscribe any time.</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">New to AI?</div>
+              <div class="sc-title">The Framework &mdash; a plain-English guide to using AI</div>
+              <div class="sc-body">Five stages, no coding required. Learn how to find your best AI tasks, write prompts that work, and build a workflow that saves real time.</div>
+              <a href="../framework.html" class="sc-link">Start the walkthrough &#8594;</a>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">Prompts Library</div>
+              <div class="sc-title">Ready-to-use prompts for your work</div>
+              <div class="sc-body">48 prompts across law, business, real estate, music, academia, and careers. Copy, paste, fill in the brackets.</div>
+              <a href="../prompts.html" class="sc-link">Browse all prompts &#8594;</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="related-section">
+        <div class="related-label">More from Plainly</div>
+        <div class="related-grid">
+          <div>
+            <img loading="lazy" src="../images/kpmg-anthropic.jpg" alt="KPMG Anthropic" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Business</span>
+            <div class="related-hed"><a href="kpmg-anthropic.html">Your accountant may now have an AI co-pilot &mdash; what KPMG's Claude rollout means for you</a></div>
+            <div class="related-dek">KPMG has embedded Anthropic's Claude across its 276,000-person tax practice.</div>
+            <div class="related-meta">5 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/take-it-down.jpg" alt="TAKE IT DOWN Act" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-coral">Regulation</span>
+            <div class="related-hed"><a href="take-it-down-act.html">The 48-hour rule: a new federal law lets you force websites to remove deepfake nudes</a></div>
+            <div class="related-dek">The TAKE IT DOWN Act's enforcement mechanism just kicked in. Here's what it means for you.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/claude-smb.jpg" alt="Claude for Small Business" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-orange">Small Business</span>
+            <div class="related-hed"><a href="claude-small-business.html">A new AI built for small businesses can run your invoicing, payroll, and marketing</a></div>
+            <div class="related-dek">Here's what it does, what it costs, and where the free training tour stops next.</div>
+            <div class="related-meta">5 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week's most important AI developments &mdash; broken down clearly, in plain English.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" />
+          <button type="button" onclick="subscribeEmail()">Subscribe &#8594;</button>
+        </div>
+        <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;margin-bottom:14px;">You're in! Welcome to Plainly. &#127881;</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. &middot; readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="../sections/business.html">Business</a>
+            <a href="../sections/law.html">Law</a>
+            <a href="../sections/small-business.html">Small Business</a>
+            <a href="../sections/real-estate.html">Real Estate</a>
+            <a href="../sections/sports.html">Sports</a>
+            <a href="../sections/careers.html">Careers</a>
+            <a href="../sections/academia.html">Academia</a>
+            <a href="../sections/arts-music.html">Arts &amp; Music</a>
+            <a href="../sections/regulation.html">Regulation</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="../framework.html">The Framework</a>
+            <a href="../prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="../about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">&copy; 2026 Plainly &middot; readplainly.com &middot; All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>&middot;</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var el=document.getElementById('auto-date');if(el){var now=new Date();var m=['January','February','March','April','May','June','July','August','September','October','November','December'];el.textContent=m[now.getMonth()]+' '+now.getDate()+', '+now.getFullYear();}})();
+    var masthead=document.getElementById('masthead');
+    window.addEventListener('scroll',function(){masthead.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+    function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var b=document.querySelector('.share-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link';},2000);});}
+    function subscribeEmail(){var e=document.getElementById('nl-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';}).catch(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';});}
+    document.getElementById('nl-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeEmail();});
+    function subscribeSidebar(){var e=document.getElementById('sb-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#sb-nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';}).catch(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';});}
+    document.getElementById('sb-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeSidebar();});
+  </script>
+</body>
+</html>

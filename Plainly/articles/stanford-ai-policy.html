@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stanford first-years asked their provost for AI rules. Here's what they want. — Plainly</title>
+  <meta name="description" content="A class of more than 1,200 students voted on how their university should handle ChatGPT in coursework. Their answer: short, in-person check-ins that prove you actually learned the material." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root{--orange:#FF6719;--orange-light:#FFF0E8;--orange-mid:#FFCFB0;--orange-dark:#C44A00;--ink:#1C1A17;--ink-soft:#3A3630;--ink-muted:#6B6560;--ink-faint:#A09890;--paper:#FAF8F4;--paper-warm:#F5F1EA;--paper-rule:#E8E2D8;--serif-display:'Playfair Display',Georgia,serif;--serif-body:'Source Serif 4',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{font-family:var(--serif-body);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .container-narrow{max-width:720px;margin:0 auto;padding:0 28px;}
+    .masthead{padding:22px 0 0;text-align:center;background:var(--paper);position:sticky;top:0;z-index:100;border-bottom:3px double var(--ink);transition:padding .25s ease,box-shadow .25s ease;}
+    .masthead.scrolled{padding:10px 0 0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+    .masthead-top{display:flex;align-items:center;justify-content:space-between;padding:0 28px 10px;}
+    .masthead-date-line{font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-date-line{max-height:0;opacity:0;}
+    .masthead-logo{font-family:var(--serif-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--ink);letter-spacing:-2px;line-height:1;transition:font-size .25s ease;}
+    .masthead.scrolled .masthead-logo{font-size:clamp(20px,3vw,26px);letter-spacing:-1px;}
+    .masthead-logo span{color:var(--orange);}
+    .masthead-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-muted);font-style:italic;font-weight:300;transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-tagline{max-height:0;opacity:0;}
+    .masthead-nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;border-top:1px solid var(--paper-rule);}
+    .masthead-nav{display:flex;align-items:center;gap:0;flex:1;min-width:0;}
+    .masthead-nav a{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);padding:0 8px;border-right:1px solid var(--paper-rule);line-height:1;white-space:nowrap;transition:color .15s;}
+    .masthead-nav a:last-child{border-right:none;}
+    .masthead-nav a:hover,.masthead-nav a.active{color:var(--orange);}
+    .masthead-nav .nav-divider{width:1px;height:13px;background:var(--ink-muted);opacity:.35;margin:0 4px;flex-shrink:0;}
+    .masthead-nav a.nav-tool{color:var(--orange-dark);}
+    .masthead-nav a.nav-tool:hover{color:var(--orange);}
+    .masthead-cta{font-family:var(--sans);font-size:11px;font-weight:500;background:var(--orange);color:white;padding:7px 16px;border-radius:3px;white-space:nowrap;margin-left:16px;flex-shrink:0;transition:background .15s;}
+    .masthead-cta:hover{background:var(--orange-dark);}
+    @media(max-width:768px){.masthead-nav-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 16px;}.masthead-nav-wrap::-webkit-scrollbar{display:none;}.masthead-nav{flex-wrap:nowrap;overflow-x:auto;min-width:max-content;}.masthead-nav a{flex-shrink:0;font-size:11px;padding:0 10px;}}
+    .article-header{padding:52px 0 0;}
+    .article-section-tag{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:18px;background:#E8F5E8;color:#1A6A1A;}
+    .article-hed{font-family:var(--serif-display);font-size:clamp(28px,5vw,52px);font-weight:900;color:var(--ink);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;}
+    .article-dek{font-family:var(--serif-body);font-size:20px;color:var(--ink-muted);font-style:italic;font-weight:300;line-height:1.5;margin-bottom:24px;max-width:680px;}
+    .article-meta{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--paper-rule);border-bottom:1px solid var(--paper-rule);margin-bottom:36px;flex-wrap:wrap;}
+    .meta-byline{font-family:var(--sans);font-size:12px;color:var(--ink-soft);font-weight:500;}
+    .meta-byline span{color:var(--orange);}
+    .meta-dot{width:3px;height:3px;background:var(--ink-faint);border-radius:50%;}
+    .meta-date,.meta-time{font-family:var(--sans);font-size:12px;color:var(--ink-faint);}
+    .meta-share{margin-left:auto;}
+    .share-btn{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-muted);border:1px solid var(--paper-rule);padding:5px 12px;border-radius:3px;background:transparent;cursor:pointer;transition:all .15s;}
+    .share-btn:hover{border-color:var(--orange);color:var(--orange);}
+    .article-hero{margin-bottom:40px;}
+    .article-hero img{width:100%;max-height:520px;object-fit:cover;object-position:center;border-radius:3px;display:block;}
+    .hero-caption{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;margin-top:8px;line-height:1.5;}
+    .article-body{padding-bottom:56px;}
+    .article-grid{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start;}
+    .article-copy p{font-family:var(--serif-body);font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:26px;}
+    .article-copy p:first-child::first-letter{font-family:var(--serif-display);font-size:72px;font-weight:900;color:var(--ink);float:left;line-height:.75;margin:8px 10px 0 0;}
+    .article-copy h2{font-family:var(--serif-display);font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.2;margin:40px 0 16px;padding-top:32px;border-top:1px solid var(--paper-rule);}
+    .article-copy strong{color:var(--ink);font-weight:600;}
+    .article-copy a{color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .pull-quote{border-left:3px solid var(--orange);padding:6px 0 6px 24px;margin:36px 0;}
+    .pull-quote p{font-family:var(--serif-display)!important;font-size:22px!important;font-weight:500!important;font-style:italic!important;color:var(--ink)!important;line-height:1.4!important;margin-bottom:0!important;}
+    .pull-quote p::first-letter{all:unset;}
+    .pull-quote cite{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;margin-top:10px;}
+    .key-facts{background:var(--paper-warm);border:1px solid var(--paper-rule);border-left:3px solid var(--orange);border-radius:4px;padding:20px 24px;margin:36px 0;}
+    .key-facts-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:12px;}
+    .key-facts ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+    .key-facts li{font-family:var(--sans);font-size:14px;color:var(--ink-soft);line-height:1.55;display:flex;gap:10px;align-items:flex-start;}
+    .key-facts li::before{content:'→';color:var(--orange);font-weight:500;flex-shrink:0;margin-top:1px;}
+    .article-sidebar{position:sticky;top:120px;display:flex;flex-direction:column;gap:20px;}
+    .sidebar-card{background:var(--paper-warm);border:1px solid var(--paper-rule);border-radius:6px;padding:20px;}
+    .sc-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+    .sc-title{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.2px;line-height:1.3;}
+    .sc-body{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .sc-link{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .nl-inline{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .nl-inline input{font-family:var(--sans);font-size:13px;border:1px solid var(--paper-rule);border-radius:3px;padding:9px 12px;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;}
+    .nl-inline input:focus{border-color:var(--orange);}
+    .nl-inline input::placeholder{color:var(--ink-faint);}
+    .nl-inline button{font-family:var(--sans);font-size:12px;font-weight:500;background:var(--orange);color:white;border:none;border-radius:3px;padding:9px 14px;cursor:pointer;transition:background .15s;}
+    .nl-inline button:hover{background:var(--orange-dark);}
+    .author-section{border-top:2px solid var(--ink);border-bottom:1px solid var(--paper-rule);padding:28px 0;margin-bottom:48px;display:flex;gap:20px;align-items:flex-start;}
+    .author-badge{width:52px;height:52px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .author-badge-logo{font-family:var(--serif-display);font-size:22px;font-weight:900;color:var(--orange);letter-spacing:-1px;}
+    .author-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+    .author-bio{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .author-bio a{color:var(--orange);border-bottom:1px solid var(--orange-mid);}
+    .related-section{padding:40px 0;border-top:1.5px solid var(--ink);}
+    .related-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .related-img{width:100%;height:130px;object-fit:cover;border-radius:3px;margin-bottom:12px;display:block;background:var(--paper-warm);}
+    .related-tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;}
+    .tag-blue{background:#E8F0FB;color:#1A4A8A;}.tag-coral{background:#FAE8E0;color:#8A2800;}.tag-amber{background:#FBF0E0;color:#7A4A00;}.tag-green{background:#E8F5E8;color:#1A6A1A;}.tag-pink{background:#FAE8F0;color:#8A2050;}.tag-orange{background:#FFF0E8;color:#C44A00;}
+    .related-hed{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.28;margin-bottom:6px;}
+    .related-hed a:hover{color:var(--orange);}
+    .related-dek{font-family:var(--sans);font-size:12px;color:var(--ink-muted);line-height:1.55;}
+    .related-meta{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);margin-top:6px;}
+    .related-divider{border-left:1px solid var(--paper-rule);padding-left:24px;}
+    .newsletter{padding:64px 0;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+    .newsletter::before{content:'Plainly.';position:absolute;font-family:var(--serif-display);font-size:260px;font-weight:900;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-8px;}
+    .newsletter-inner{position:relative;z-index:1;}
+    .nl-eyebrow{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .newsletter h2{font-family:var(--serif-display);font-size:clamp(28px,4vw,42px);font-weight:700;color:white;letter-spacing:-1px;line-height:1.1;margin-bottom:12px;}
+    .newsletter h2 em{font-style:italic;color:var(--orange);}
+    .newsletter p{font-family:var(--serif-body);font-size:15px;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 28px;line-height:1.65;font-style:italic;}
+    .nl-form{display:flex;max-width:400px;margin:0 auto 12px;border:1px solid rgba(255,255,255,.15);border-radius:3px;overflow:hidden;}
+    .nl-form input{flex:1;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.06);border:none;padding:0 16px;height:46px;color:white;outline:none;}
+    .nl-form input::placeholder{color:rgba(255,255,255,.3);}
+    .nl-form button{font-family:var(--sans);font-size:13px;font-weight:500;background:var(--orange);color:white;border:none;padding:0 22px;height:46px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+    .nl-form button:hover{background:var(--orange-dark);}
+    .nl-note{font-family:var(--sans);font-size:11.5px;color:rgba(255,255,255,.3);}
+    .footer{border-top:3px double var(--ink);padding:40px 0 24px;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:32px;flex-wrap:wrap;}
+    .footer-logo{font-family:var(--serif-display);font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-1px;margin-bottom:4px;}
+    .footer-logo span{color:var(--orange);}
+    .footer-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-faint);font-style:italic;}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col h5{font-family:var(--sans);font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+    .footer-col a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-muted);margin-bottom:8px;transition:color .15s;}
+    .footer-col a:hover{color:var(--orange);}
+    .footer-bottom{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid var(--paper-rule);flex-wrap:wrap;gap:8px;}
+    .footer-legal,.footer-credit{font-family:var(--sans);font-size:11.5px;color:var(--ink-faint);}
+    .footer-credit span{color:var(--orange);}
+    @media(max-width:860px){.article-grid{grid-template-columns:1fr;}.article-sidebar{position:static;}.related-grid{grid-template-columns:1fr;}.related-divider{border-left:none;padding-left:0;border-top:1px solid var(--paper-rule);padding-top:24px;}}
+    @media(max-width:560px){.container,.container-narrow{padding:0 18px;}.article-hed{font-size:clamp(24px,7vw,36px);}.article-dek{font-size:17px;}.article-copy p{font-size:16px;}.nl-form{flex-direction:column;}.nl-form input,.nl-form button{height:46px;width:100%;border-radius:3px;}}
+  </style>
+</head>
+<body>
+
+  <header class="masthead" id="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News &amp; Education</div>
+      <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
+      <div class="masthead-tagline">AI, put plainly.</div>
+    </div>
+    <div class="masthead-nav-wrap">
+      <nav class="masthead-nav">
+        <a href="../sections/business.html">Business</a>
+        <a href="../sections/law.html">Law</a>
+        <a href="../sections/small-business.html">Small Business</a>
+        <a href="../sections/real-estate.html">Real Estate</a>
+        <a href="../sections/sports.html">Sports</a>
+        <a href="../sections/careers.html">Careers</a>
+        <a href="../sections/academia.html" class="active">Academia</a>
+        <a href="../sections/arts-music.html">Arts &amp; Music</a>
+        <a href="../sections/regulation.html">Regulation</a>
+        <div class="nav-divider"></div>
+        <a href="../about.html" class="nav-tool">About</a>
+        <a href="../framework.html" class="nav-tool">The Framework</a>
+        <a href="../prompts.html" class="nav-tool">Prompts</a>
+      </nav>
+      <a href="#newsletter" class="masthead-cta">Subscribe free &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <div class="article-header">
+        <span class="article-section-tag">Academia</span>
+        <h1 class="article-hed">Stanford first-years asked their provost for AI rules. Here&rsquo;s what they want.</h1>
+        <p class="article-dek">A class of more than 1,200 students voted on how their university should handle ChatGPT in coursework. Their answer: short, in-person check-ins that prove you actually learned the material.</p>
+        <div class="article-meta">
+          <div class="meta-byline">By <span>Plainly Staff</span></div>
+          <div class="meta-dot"></div>
+          <div class="meta-date">May 27, 2026</div>
+          <div class="meta-dot"></div>
+          <div class="meta-time">7 min read</div>
+          <div class="meta-share"><button class="share-btn" onclick="copyLink()">Copy link</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+      <div class="article-hero">
+        <img loading="lazy" decoding="async" src="../images/stanford-ai.jpg" alt="A sunlit university seminar room with a student seated across a table from an instructor, a notebook and pen between them" onerror="this.style.display='none'" />
+        <p class="hero-caption">Stanford first-year students have proposed that universities verify learning through short, in-person conversations rather than written work alone &mdash; an idea individual faculty at Cornell, NYU, and Harvard are also exploring.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="article-grid">
+          <div class="article-copy">
+
+            <p>On May 4, 17 Stanford first-years sat down to lunch with the university&rsquo;s provost &mdash; the senior academic officer who oversees teaching and faculty across the university &mdash; and pitched her an idea for handling AI in the classroom. They did not want a ban. They did not want surveillance software. They wanted what they call an &ldquo;understanding check&rdquo; &mdash; a short, in-person conversation or supervised problem-solving session, repeated throughout a course, designed to verify that a student personally grasps the material, even if they used AI to help write the paper.</p>
+
+            <p>The proposal is not official Stanford policy, and the students knew going in that it would not become one. But it is a rare thing: a detailed, student-authored AI policy that more than 1,200 of their classmates voted to send up the chain. And the basic idea behind it &mdash; that the cure for AI cheating is not catching students, but talking to them &mdash; is an idea faculty at Cornell, NYU, Harvard, and UC San Diego have been independently exploring.</p>
+
+            <h2>What an &ldquo;understanding check&rdquo; actually is</h2>
+
+            <p>The students&rsquo; proposal, drafted as a 350-word policy memo for a required first-year course called Citizenship in the 21st Century, asks Stanford departments to add brief, periodic in-person assessments to existing classes. In a science or math course, a student might sit down with a teaching assistant for a few minutes and walk through a homework problem out loud, explaining each step. In a humanities course, a student might be given a prompt and asked to outline an argument under supervision &mdash; no laptop, no phone, no AI.</p>
+
+            <p>Each check would be worth 2% to 3% of the final grade. Together, they would add up to 15% to 20%. The point is not to catch cheaters in a single high-stakes exam. The point is to spread small, frequent moments of verification across a semester, so a student who quietly outsources every essay to ChatGPT eventually has to demonstrate, face to face, that they actually understand what was in those essays.</p>
+
+            <p>&ldquo;By evaluating students&rsquo; ability to articulate their thought-processes, these assessments measure learning rather than potentially dishonest results,&rdquo; the memo states. The text is published on Stanford&rsquo;s COLLEGE program website.</p>
+
+            <h2>How this proposal got to the provost</h2>
+
+            <p>The memo came out of a class assignment. More than 1,200 first-year students taking Citizenship in the 21st Century this past winter quarter were asked to draft policy memos on how Stanford should handle AI in coursework. According to Stanford Report &mdash; the university&rsquo;s in-house publication and the originating source for this story &mdash; students produced 109 memos in small groups, then voted across more than 70 sections on which one should represent the class.</p>
+
+            <p>The winner, written by 17 students from a single section, was the top choice of five of the eight reviewing sections and the runner-up in two more. On May 4, the authors carried it to Provost Jenny Martinez, Vice Provost for Undergraduate Education Jay Hamilton, and Cassandra Volpe Horii, who runs Stanford&rsquo;s Center for Teaching and Learning.</p>
+
+            <p>&ldquo;I was impressed by the students&rsquo; thoughtful approach to arriving at a smart, nuanced recommendation,&rdquo; Martinez told Stanford Report. &ldquo;As the ones grappling with these issues in the classroom and on assignments every day, their perspective is uniquely valuable when it comes to solutions that will actually work for their peers.&rdquo;</p>
+
+            <div class="pull-quote">
+              <p>&ldquo;You have to work to develop your writing skills, your personal voice, your opinions. You can&rsquo;t outsource critical thinking.&rdquo;</p>
+              <cite>Ariadne Vidalakis, Stanford Class of 2029, memo co-author</cite>
+            </div>
+
+            <p>The students themselves were blunt about why a ban would not work. &ldquo;It would be very difficult to convince students not to use these tools at their disposal,&rdquo; memo co-author Neel Ahuja, a computer science major, told Stanford Report. Survey data backs him up: a September 2025 report from Copyleaks found that 90% of U.S. college students surveyed use AI for academic work, and nearly one in three use it daily.</p>
+
+            <h2>How settled is this &mdash; really</h2>
+
+            <p>Here is the honest version. This is a proposal from first-year students at one university. It is not Stanford policy. The provost was complimentary but made no commitment. Stanford Report stated plainly that &ldquo;students knew from the outset that their proposals would not become official university policy.&rdquo;</p>
+
+            <p>It is also worth noting that nearly every detail of the May 4 meeting comes from a single Stanford Report article. No outside news organization had picked up the story as of late May.</p>
+
+            <p>What is verifiable, and what makes the proposal worth paying attention to, is the broader pattern. Stanford&rsquo;s Vice Provost Hamilton publicly cited the &ldquo;understanding checks&rdquo; idea in April when his office launched a new initiative called PACE &mdash; meaning a senior administrator was already pointing to the student memo before the lunch even happened. Stanford&rsquo;s Academic Integrity Working Group separately recommended in October 2025 that high-stakes assessments shift toward &ldquo;in-person formats such as oral exams and in-class writing assignments.&rdquo; And by April 26, every governing body at Stanford had voted to permit in-person exam proctoring beginning this fall, ending a 105-year tradition of unproctored exams.</p>
+
+            <p>In other words: the students proposed a small, frequent version of an idea that faculty and administrators across higher education are already gravitating toward.</p>
+
+            <h2>The same idea, from other directions</h2>
+
+            <p>The Associated Press reported in March that Cornell biomedical engineering professor Chris Schaffer has begun using oral defenses &mdash; spoken examinations in which a student has to explain their work face to face &mdash; in his courses. &ldquo;You won&rsquo;t be able to AI your way through an oral exam,&rdquo; he told the AP. The same article quoted Clay Shirky, NYU&rsquo;s vice provost for AI and technology in education: &ldquo;Instructors are saying, &lsquo;I need to look my students in the eye and ask, &ldquo;Do you know this material?&rdquo;&rsquo;&rdquo; Harvard Kennedy School senior lecturer Teddy Svoronos has experimented with AI-facilitated oral exams. UC San Diego engineering professor Huihui Qi has been running a multi-year research project on oral exams.</p>
+
+            <p>The catch, as Kyle Maclean of Canada&rsquo;s Ivey Business School told CBC News in December, is time: &ldquo;If your goal is to limit AI use, oral exams are very effective. The challenge is the time commitment &mdash; it could take 20 hours to get through all your students.&rdquo; The Stanford memo tries to solve that problem by making each check brief &mdash; a few minutes, repeated often &mdash; rather than one long final examination.</p>
+
+            <p>The students&rsquo; proposal also acknowledges, in one sentence, a fairness concern: that oral formats may unfairly burden introverted students. The memo argues conversational skill is itself a professional skill worth practicing. It does not address how the format would work for students with speech-related disabilities, processing differences, or language-learner accommodations &mdash; a gap any school adopting the idea would need to close.</p>
+
+            <h2>What this means for you</h2>
+
+            <div class="key-facts">
+              <div class="key-facts-label">Depending on who you are</div>
+              <ul>
+                <li><strong>If you are a college student:</strong> Ask your professors, in writing, what their AI policy actually is &mdash; not what the university says, but what they personally allow in their class. Get clarity in week one, not week ten. And if your school is moving toward more oral or in-person components, ask early how those formats will work.</li>
+                <li><strong>If you are a parent:</strong> The useful question to ask your child&rsquo;s school is not &ldquo;Do you allow AI?&rdquo; It is &ldquo;How do you verify that students personally understand the material they turn in?&rdquo; The shift toward verification by conversation is a meaningful signal that an institution is engaging with the problem at the level of classroom design.</li>
+                <li><strong>If you are a teacher or professor:</strong> The Stanford memo is freely available online and is short &mdash; 350 words. It is a useful starting template. The harder design problems it leaves open are the ones worth your time: how to keep oral check-ins brief enough to scale, how to make them low-stakes enough to reduce anxiety, and how to accommodate students whose existing disability accommodations were built for written work.</li>
+              </ul>
+            </div>
+
+            <p>Whether the specific &ldquo;understanding check&rdquo; format spreads beyond Stanford is unknown. The proposal is not Stanford policy, and no other university has announced plans to adopt the format. But individual faculty at Cornell, NYU, Harvard Kennedy School, UC San Diego, and Ivey are experimenting with oral and in-person assessments. The signal to watch for at your own school is small and specific: a syllabus that lists a series of short in-person check-ins worth a few percent each. If you see one this fall, you are seeing a version of the idea Stanford&rsquo;s first-years put on paper &mdash; arriving, perhaps, by an entirely different route.</p>
+
+            <div class="author-section">
+              <div class="author-badge"><div class="author-badge-logo">P.</div></div>
+              <div>
+                <div class="author-name">Plainly Staff</div>
+                <div class="author-bio">Plainly covers AI&rsquo;s real-world impact across law, business, real estate, careers, and more &mdash; written for curious people of every age and background. No jargon. No hype. Just AI, put plainly. Questions or tips: <a href="mailto:hello@readplainly.com">hello@readplainly.com</a></div>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="article-sidebar">
+            <div class="sidebar-card">
+              <div class="sc-label">Newsletter</div>
+              <div class="sc-title">Get the week&rsquo;s biggest AI stories &mdash; plainly explained.</div>
+              <div class="nl-inline" id="sb-nl-form">
+                <input type="email" id="sb-email" placeholder="your@email.com" />
+                <button onclick="subscribeSidebar()">Subscribe free &rarr;</button>
+              </div>
+              <div id="sb-success" style="display:none;font-family:var(--sans);font-size:13px;color:var(--orange);font-weight:500;margin-top:8px;">You&rsquo;re in! Welcome to Plainly.</div>
+              <div class="sc-body" style="margin-top:8px;">No spam. Unsubscribe any time.</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">Academic Prompts</div>
+              <div class="sc-title">Ready-to-use prompts for students</div>
+              <div class="sc-body">Study guides, research outlines, dissertation planning, and grant applications. Copy, paste, fill in the brackets.</div>
+              <a href="../prompts.html" class="sc-link">Browse all prompts &rarr;</a>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">New to AI?</div>
+              <div class="sc-title">The Framework &mdash; a plain-English guide to using AI</div>
+              <div class="sc-body">Five stages, no coding required. Learn how to find your best AI tasks and build a workflow that saves real time.</div>
+              <a href="../framework.html" class="sc-link">Start the walkthrough &rarr;</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="related-section">
+        <div class="related-label">More from Plainly</div>
+        <div class="related-grid">
+          <div>
+            <img loading="lazy" src="../images/meta-layoffs.jpg" alt="Meta layoffs" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-amber">Careers</span>
+            <div class="related-hed"><a href="meta-layoffs.html">When companies blame AI for layoffs, what are they actually saying?</a></div>
+            <div class="related-dek">Meta cut 8,000 jobs and called it an AI pivot. Here&rsquo;s what the numbers do and don&rsquo;t tell us.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/ai-lawyer-sanctions.jpg" alt="AI lawyer sanctions" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Law</span>
+            <div class="related-hed"><a href="ai-lawyer-sanctions.html">A federal judge fined two lawyers $110,000 for citing cases that don&rsquo;t exist</a></div>
+            <div class="related-dek">The Oregon ruling is the largest known U.S. sanction tied to AI-fabricated legal citations.</div>
+            <div class="related-meta">6 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/take-it-down.jpg" alt="TAKE IT DOWN Act" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-coral">Regulation</span>
+            <div class="related-hed"><a href="take-it-down-act.html">The 48-hour rule: a new federal law lets you force websites to remove deepfake nudes</a></div>
+            <div class="related-dek">The TAKE IT DOWN Act&rsquo;s enforcement mechanism just kicked in. Here&rsquo;s what it means for you.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week&rsquo;s most important AI developments &mdash; broken down clearly, in plain English.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" />
+          <button type="button" onclick="subscribeEmail()">Subscribe &rarr;</button>
+        </div>
+        <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;margin-bottom:14px;">You&rsquo;re in! Welcome to Plainly. &#127881;</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. &middot; readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="../sections/business.html">Business</a>
+            <a href="../sections/law.html">Law</a>
+            <a href="../sections/small-business.html">Small Business</a>
+            <a href="../sections/real-estate.html">Real Estate</a>
+            <a href="../sections/sports.html">Sports</a>
+            <a href="../sections/careers.html">Careers</a>
+            <a href="../sections/academia.html">Academia</a>
+            <a href="../sections/arts-music.html">Arts &amp; Music</a>
+            <a href="../sections/regulation.html">Regulation</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="../framework.html">The Framework</a>
+            <a href="../prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="../about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">&copy; 2026 Plainly &middot; readplainly.com &middot; All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>&middot;</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var el=document.getElementById('auto-date');if(el){var now=new Date();var m=['January','February','March','April','May','June','July','August','September','October','November','December'];el.textContent=m[now.getMonth()]+' '+now.getDate()+', '+now.getFullYear();}})();
+    var masthead=document.getElementById('masthead');
+    window.addEventListener('scroll',function(){masthead.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+    function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var b=document.querySelector('.share-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link';},2000);});}
+    function subscribeEmail(){var e=document.getElementById('nl-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';}).catch(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';});}
+    document.getElementById('nl-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeEmail();});
+    function subscribeSidebar(){var e=document.getElementById('sb-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#sb-nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';}).catch(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';});}
+    document.getElementById('sb-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeSidebar();});
+  </script>
+</body>
+</html>

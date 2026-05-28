@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When companies blame AI for layoffs, what are they actually saying? — Plainly</title>
+  <meta name="description" content="Meta cut 8,000 jobs and reassigned 7,000 more to AI teams. The number being passed around in headlines — 54,694 — tells a smaller, stranger story than it looks." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root{--orange:#FF6719;--orange-light:#FFF0E8;--orange-mid:#FFCFB0;--orange-dark:#C44A00;--ink:#1C1A17;--ink-soft:#3A3630;--ink-muted:#6B6560;--ink-faint:#A09890;--paper:#FAF8F4;--paper-warm:#F5F1EA;--paper-rule:#E8E2D8;--serif-display:'Playfair Display',Georgia,serif;--serif-body:'Source Serif 4',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{font-family:var(--serif-body);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .container-narrow{max-width:720px;margin:0 auto;padding:0 28px;}
+    .masthead{padding:22px 0 0;text-align:center;background:var(--paper);position:sticky;top:0;z-index:100;border-bottom:3px double var(--ink);transition:padding .25s ease,box-shadow .25s ease;}
+    .masthead.scrolled{padding:10px 0 0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+    .masthead-top{display:flex;align-items:center;justify-content:space-between;padding:0 28px 10px;}
+    .masthead-date-line{font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-date-line{max-height:0;opacity:0;}
+    .masthead-logo{font-family:var(--serif-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--ink);letter-spacing:-2px;line-height:1;transition:font-size .25s ease;}
+    .masthead.scrolled .masthead-logo{font-size:clamp(20px,3vw,26px);letter-spacing:-1px;}
+    .masthead-logo span{color:var(--orange);}
+    .masthead-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-muted);font-style:italic;font-weight:300;transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-tagline{max-height:0;opacity:0;}
+    .masthead-nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;border-top:1px solid var(--paper-rule);}
+    .masthead-nav{display:flex;align-items:center;gap:0;flex:1;min-width:0;}
+    .masthead-nav a{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);padding:0 8px;border-right:1px solid var(--paper-rule);line-height:1;white-space:nowrap;transition:color .15s;}
+    .masthead-nav a:last-child{border-right:none;}
+    .masthead-nav a:hover,.masthead-nav a.active{color:var(--orange);}
+    .masthead-nav .nav-divider{width:1px;height:13px;background:var(--ink-muted);opacity:.35;margin:0 4px;flex-shrink:0;}
+    .masthead-nav a.nav-tool{color:var(--orange-dark);}
+    .masthead-nav a.nav-tool:hover{color:var(--orange);}
+    .masthead-cta{font-family:var(--sans);font-size:11px;font-weight:500;background:var(--orange);color:white;padding:7px 16px;border-radius:3px;white-space:nowrap;margin-left:16px;flex-shrink:0;transition:background .15s;}
+    .masthead-cta:hover{background:var(--orange-dark);}
+    @media(max-width:768px){.masthead-nav-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 16px;}.masthead-nav-wrap::-webkit-scrollbar{display:none;}.masthead-nav{flex-wrap:nowrap;overflow-x:auto;min-width:max-content;}.masthead-nav a{flex-shrink:0;font-size:11px;padding:0 10px;}}
+    .article-header{padding:52px 0 0;}
+    .article-section-tag{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:18px;background:#FBF0E0;color:#7A4A00;}
+    .article-hed{font-family:var(--serif-display);font-size:clamp(28px,5vw,52px);font-weight:900;color:var(--ink);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;}
+    .article-dek{font-family:var(--serif-body);font-size:20px;color:var(--ink-muted);font-style:italic;font-weight:300;line-height:1.5;margin-bottom:24px;max-width:680px;}
+    .article-meta{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--paper-rule);border-bottom:1px solid var(--paper-rule);margin-bottom:36px;flex-wrap:wrap;}
+    .meta-byline{font-family:var(--sans);font-size:12px;color:var(--ink-soft);font-weight:500;}
+    .meta-byline span{color:var(--orange);}
+    .meta-dot{width:3px;height:3px;background:var(--ink-faint);border-radius:50%;}
+    .meta-date,.meta-time{font-family:var(--sans);font-size:12px;color:var(--ink-faint);}
+    .meta-share{margin-left:auto;}
+    .share-btn{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-muted);border:1px solid var(--paper-rule);padding:5px 12px;border-radius:3px;background:transparent;cursor:pointer;transition:all .15s;}
+    .share-btn:hover{border-color:var(--orange);color:var(--orange);}
+    .article-hero{margin-bottom:40px;}
+    .article-hero img{width:100%;max-height:520px;object-fit:cover;object-position:center;border-radius:3px;display:block;}
+    .hero-caption{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;margin-top:8px;line-height:1.5;}
+    .article-body{padding-bottom:56px;}
+    .article-grid{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start;}
+    .article-copy p{font-family:var(--serif-body);font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:26px;}
+    .article-copy p:first-child::first-letter{font-family:var(--serif-display);font-size:72px;font-weight:900;color:var(--ink);float:left;line-height:.75;margin:8px 10px 0 0;}
+    .article-copy h2{font-family:var(--serif-display);font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.2;margin:40px 0 16px;padding-top:32px;border-top:1px solid var(--paper-rule);}
+    .article-copy strong{color:var(--ink);font-weight:600;}
+    .article-copy a{color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .pull-quote{border-left:3px solid var(--orange);padding:6px 0 6px 24px;margin:36px 0;}
+    .pull-quote p{font-family:var(--serif-display)!important;font-size:22px!important;font-weight:500!important;font-style:italic!important;color:var(--ink)!important;line-height:1.4!important;margin-bottom:0!important;}
+    .pull-quote p::first-letter{all:unset;}
+    .pull-quote cite{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;margin-top:10px;}
+    .article-sidebar{position:sticky;top:120px;display:flex;flex-direction:column;gap:20px;}
+    .sidebar-card{background:var(--paper-warm);border:1px solid var(--paper-rule);border-radius:6px;padding:20px;}
+    .sc-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+    .sc-title{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.2px;line-height:1.3;}
+    .sc-body{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .sc-link{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .nl-inline{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .nl-inline input{font-family:var(--sans);font-size:13px;border:1px solid var(--paper-rule);border-radius:3px;padding:9px 12px;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;}
+    .nl-inline input:focus{border-color:var(--orange);}
+    .nl-inline input::placeholder{color:var(--ink-faint);}
+    .nl-inline button{font-family:var(--sans);font-size:12px;font-weight:500;background:var(--orange);color:white;border:none;border-radius:3px;padding:9px 14px;cursor:pointer;transition:background .15s;}
+    .nl-inline button:hover{background:var(--orange-dark);}
+    .author-section{border-top:2px solid var(--ink);border-bottom:1px solid var(--paper-rule);padding:28px 0;margin-bottom:48px;display:flex;gap:20px;align-items:flex-start;}
+    .author-badge{width:52px;height:52px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .author-badge-logo{font-family:var(--serif-display);font-size:22px;font-weight:900;color:var(--orange);letter-spacing:-1px;}
+    .author-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+    .author-bio{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .author-bio a{color:var(--orange);border-bottom:1px solid var(--orange-mid);}
+    .related-section{padding:40px 0;border-top:1.5px solid var(--ink);}
+    .related-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .related-img{width:100%;height:130px;object-fit:cover;border-radius:3px;margin-bottom:12px;display:block;background:var(--paper-warm);}
+    .related-tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;}
+    .tag-blue{background:#E8F0FB;color:#1A4A8A;}.tag-coral{background:#FAE8E0;color:#8A2800;}.tag-amber{background:#FBF0E0;color:#7A4A00;}.tag-green{background:#E8F5E8;color:#1A6A1A;}.tag-pink{background:#FAE8F0;color:#8A2050;}.tag-orange{background:#FFF0E8;color:#C44A00;}
+    .related-hed{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.28;margin-bottom:6px;}
+    .related-hed a:hover{color:var(--orange);}
+    .related-dek{font-family:var(--sans);font-size:12px;color:var(--ink-muted);line-height:1.55;}
+    .related-meta{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);margin-top:6px;}
+    .related-divider{border-left:1px solid var(--paper-rule);padding-left:24px;}
+    .newsletter{padding:64px 0;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+    .newsletter::before{content:'Plainly.';position:absolute;font-family:var(--serif-display);font-size:260px;font-weight:900;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-8px;}
+    .newsletter-inner{position:relative;z-index:1;}
+    .nl-eyebrow{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .newsletter h2{font-family:var(--serif-display);font-size:clamp(28px,4vw,42px);font-weight:700;color:white;letter-spacing:-1px;line-height:1.1;margin-bottom:12px;}
+    .newsletter h2 em{font-style:italic;color:var(--orange);}
+    .newsletter p{font-family:var(--serif-body);font-size:15px;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 28px;line-height:1.65;font-style:italic;}
+    .nl-form{display:flex;max-width:400px;margin:0 auto 12px;border:1px solid rgba(255,255,255,.15);border-radius:3px;overflow:hidden;}
+    .nl-form input{flex:1;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.06);border:none;padding:0 16px;height:46px;color:white;outline:none;}
+    .nl-form input::placeholder{color:rgba(255,255,255,.3);}
+    .nl-form button{font-family:var(--sans);font-size:13px;font-weight:500;background:var(--orange);color:white;border:none;padding:0 22px;height:46px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+    .nl-form button:hover{background:var(--orange-dark);}
+    .nl-note{font-family:var(--sans);font-size:11.5px;color:rgba(255,255,255,.3);}
+    .footer{border-top:3px double var(--ink);padding:40px 0 24px;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:32px;flex-wrap:wrap;}
+    .footer-logo{font-family:var(--serif-display);font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-1px;margin-bottom:4px;}
+    .footer-logo span{color:var(--orange);}
+    .footer-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-faint);font-style:italic;}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col h5{font-family:var(--sans);font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+    .footer-col a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-muted);margin-bottom:8px;transition:color .15s;}
+    .footer-col a:hover{color:var(--orange);}
+    .footer-bottom{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid var(--paper-rule);flex-wrap:wrap;gap:8px;}
+    .footer-legal,.footer-credit{font-family:var(--sans);font-size:11.5px;color:var(--ink-faint);}
+    .footer-credit span{color:var(--orange);}
+    @media(max-width:860px){.article-grid{grid-template-columns:1fr;}.article-sidebar{position:static;}.related-grid{grid-template-columns:1fr;}.related-divider{border-left:none;padding-left:0;border-top:1px solid var(--paper-rule);padding-top:24px;}}
+    @media(max-width:560px){.container,.container-narrow{padding:0 18px;}.article-hed{font-size:clamp(24px,7vw,36px);}.article-dek{font-size:17px;}.article-copy p{font-size:16px;}.nl-form{flex-direction:column;}.nl-form input,.nl-form button{height:46px;width:100%;border-radius:3px;}}
+  </style>
+</head>
+<body>
+
+  <header class="masthead" id="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News &amp; Education</div>
+      <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
+      <div class="masthead-tagline">AI, put plainly.</div>
+    </div>
+    <div class="masthead-nav-wrap">
+      <nav class="masthead-nav">
+        <a href="../sections/business.html">Business</a>
+        <a href="../sections/law.html">Law</a>
+        <a href="../sections/small-business.html">Small Business</a>
+        <a href="../sections/real-estate.html">Real Estate</a>
+        <a href="../sections/sports.html">Sports</a>
+        <a href="../sections/careers.html" class="active">Careers</a>
+        <a href="../sections/academia.html">Academia</a>
+        <a href="../sections/arts-music.html">Arts &amp; Music</a>
+        <a href="../sections/regulation.html">Regulation</a>
+        <div class="nav-divider"></div>
+        <a href="../about.html" class="nav-tool">About</a>
+        <a href="../framework.html" class="nav-tool">The Framework</a>
+        <a href="../prompts.html" class="nav-tool">Prompts</a>
+      </nav>
+      <a href="#newsletter" class="masthead-cta">Subscribe free &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <div class="article-header">
+        <span class="article-section-tag">Careers</span>
+        <h1 class="article-hed">When companies blame AI for layoffs, what are they actually saying?</h1>
+        <p class="article-dek">Meta cut 8,000 jobs last week and reassigned 7,000 more to AI teams. The number being passed around in headlines &mdash; 54,694 &mdash; tells a smaller, stranger story than it looks.</p>
+        <div class="article-meta">
+          <div class="meta-byline">By <span>Plainly Staff</span></div>
+          <div class="meta-dot"></div>
+          <div class="meta-date">May 27, 2026</div>
+          <div class="meta-dot"></div>
+          <div class="meta-time">7 min read</div>
+          <div class="meta-share"><button class="share-btn" onclick="copyLink()">Copy link</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+      <div class="article-hero">
+        <img loading="lazy" decoding="async" src="../images/meta-layoffs.jpg" alt="A sparsely populated open-plan tech office at dusk — rows of empty desks with monitors still glowing and a few personal items left behind" onerror="this.style.display='none'" />
+        <p class="hero-caption">A tech company office after hours. Meta laid off roughly 8,000 employees on May 20 and reassigned about 7,000 more to newly created AI teams &mdash; part of a wave of restructurings across the industry tied, at least publicly, to AI.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="article-grid">
+          <div class="article-copy">
+
+            <p>On Tuesday, May 20, Meta began notifying roughly 8,000 employees &mdash; about one in 10 of its global workforce &mdash; that they were losing their jobs. On the same day, the company reassigned around 7,000 remaining employees into four newly created AI teams and froze about 6,000 unfilled job openings. CEO Mark Zuckerberg, in an internal memo first reported by The New York Times, told staff that &ldquo;AI is the most consequential technology of our lifetimes&rdquo; and warned that &ldquo;success isn&rsquo;t a given.&rdquo;</p>
+
+            <p>Within hours, a single number began appearing across coverage of the cuts: 54,694. That is the figure published by Challenger, Gray &amp; Christmas &mdash; a Chicago outplacement firm (a company that helps laid-off workers find new jobs) that has tracked announced U.S. layoffs since 1993 and began separately tracking AI-attributed cuts in 2023 &mdash; for jobs that companies themselves said were tied to artificial intelligence.</p>
+
+            <p>What the number actually means is more complicated than the headlines suggest. And so is what happened at Meta.</p>
+
+            <h2>What Meta actually said &mdash; and didn&rsquo;t say</h2>
+
+            <p>Meta has not publicly stated that it is laying off 8,000 people because of AI. That distinction matters.</p>
+
+            <p>In an April 23 internal memo first reported by Bloomberg, Meta Chief People Officer Janelle Gale told staff the company was cutting jobs &ldquo;as part of our continued effort to run the company more efficiently and to allow us to offset the other investments we&rsquo;re making.&rdquo; A second Gale memo dated May 18, obtained by Reuters, said the new team structures used &ldquo;AI native design principles&rdquo; &mdash; meaning teams were being redesigned around the assumption that AI tools would do some of the work, with fewer layers of management.</p>
+
+            <p>Zuckerberg&rsquo;s May 20 memo, quoted by The New York Times and CNBC, framed the moment as a pivotal one in the AI race but did not directly say AI was eliminating the 8,000 jobs. He told employees he did &ldquo;not expect other company-wide layoffs this year.&rdquo;</p>
+
+            <p>The cuts arrive against a striking financial backdrop. On April 29, Meta raised its 2026 capital expenditure guidance &mdash; money spent mostly on AI data centers and computing hardware &mdash; to between $125 billion and $145 billion. That is up from $72.2 billion spent in all of 2025. Meta reported $26.77 billion in net income in the first quarter of 2026 alone.</p>
+
+            <p>The pattern many analysts see is straightforward: AI spending is going up; payroll is coming down.</p>
+
+            <div class="pull-quote">
+              <p>&ldquo;To fund AI infrastructure spending and protect profit margins, Zuckerberg made it clear that Meta needed to cut costs somewhere else. That somewhere else is head count.&rdquo;</p>
+              <cite>Gil Luria, analyst at DA Davidson, to Business Insider</cite>
+            </div>
+
+            <h2>What the 54,694 figure does &mdash; and doesn&rsquo;t &mdash; tell us</h2>
+
+            <p>The number comes from a Challenger, Gray &amp; Christmas report published December 4, 2025. The full sentence reads: &ldquo;Artificial Intelligence (AI) was cited for 6,280 cuts in November. So far this year, AI is responsible for 54,694 layoff plans.&rdquo;</p>
+
+            <p>That phrase &mdash; &ldquo;so far this year&rdquo; &mdash; is doing a lot of work. The 54,694 figure covers January through November of 2025. It is not the full year. It is not 2026. And it does not include the 8,000 jobs Meta just cut. Challenger&rsquo;s later December report revised the 2025 full-year total slightly upward to 54,836.</p>
+
+            <p>There is a more important caveat. Challenger counts what companies say in their own announcements, not what an audit would conclude. The firm&rsquo;s own spokesperson, Andy Challenger, has acknowledged the limitation plainly. &ldquo;Regardless of whether individual jobs are being replaced by AI,&rdquo; he told CBS News in April, &ldquo;the money for those roles is.&rdquo;</p>
+
+            <p>In other words: Challenger&rsquo;s number measures the explanation employers offer. Whether that explanation is the real reason &mdash; or a convenient one &mdash; is a separate question.</p>
+
+            <h2>The &ldquo;AI washing&rdquo; debate</h2>
+
+            <p>Several prominent voices in the industry have argued that some companies are using AI as cover for cuts they would have made anyway.</p>
+
+            <p>Sam Altman, the CEO of OpenAI, told CNBC-TV18 at an AI summit in New Delhi in February: &ldquo;There&rsquo;s some AI washing where people are blaming AI for layoffs that they would otherwise do, and then there&rsquo;s some real displacement by AI of different kinds of jobs.&rdquo;</p>
+
+            <p>Venture capitalist Marc Andreessen put it more bluntly on the 20VC podcast in March, arguing that most large companies are &ldquo;overstaffed by 50%&rdquo; and now &ldquo;have the silver bullet excuse, right? &lsquo;Ah, it&rsquo;s AI.&rsquo;&rdquo;</p>
+
+            <p>Tim Sweeney, CEO of Epic Games, took the unusual step in a March memo of telling staff that 1,000 layoffs at his company were not AI-related. &ldquo;Since it&rsquo;s a thing now,&rdquo; he wrote, &ldquo;I should note that the layoffs aren&rsquo;t related to AI.&rdquo;</p>
+
+            <p>Economists have raised similar questions. Greg Daco, chief economist at EY-Parthenon, told CBS News he is &ldquo;not entirely sure this is a replacement situation where talent is being replaced one-to-one.&rdquo; Daniel Keum, a professor at Columbia Business School, said the bigger AI effect on jobs may not be layoffs at all: &ldquo;The major sort of impact of AI will come from reduced hiring of juniors.&rdquo; That is a quieter, harder-to-measure trend. It does not show up in a Challenger report.</p>
+
+            <h2>What is happening across big tech</h2>
+
+            <p>Whatever the precise cause, the corporate behavior is undeniable. Amazon announced 14,000 corporate cuts in October. Microsoft offered its first-ever voluntary buyout to roughly 8,750 U.S. employees this spring. Cisco announced about 4,000 cuts in May. Salesforce CEO Marc Benioff said the company had cut customer support headcount from 9,000 to around 5,000, citing its AI agents. Oracle is cutting somewhere between 20,000 and 30,000 employees, according to analyst estimates, while spending billions on AI data centers.</p>
+
+            <p>Challenger&rsquo;s data shows that AI was the top single reason cited for U.S. layoff announcements in both March and April of 2026 &mdash; the first time it has led all categories. Through April, the firm has recorded 49,135 AI-attributed cuts for 2026 alone.</p>
+
+            <p>A separate analysis from Goldman Sachs economist Elsie Peng, published April 6, estimated that AI is wiping out roughly 25,000 U.S. jobs per month while creating about 9,000 &mdash; a net loss of around 16,000 monthly. That figure is a model estimate, not a count.</p>
+
+            <h2>What this means for you</h2>
+
+            <p>For readers currently employed at a large company, the pattern at Meta &mdash; rising AI spending paired with falling headcount &mdash; is now common at large public companies. It is worth reading your CEO&rsquo;s recent memos and earnings call transcripts with two specific signals in mind: capital expenditure guidance going up sharply, and language about &ldquo;operating more leanly&rdquo; or running with &ldquo;flatter&rdquo; teams. None of this means a layoff is coming for you, but you are entitled to know how your employer is thinking about the trade-off between AI investment and payroll.</p>
+
+            <p>For those working in tech or an adjacent field, the Challenger data shows tech-sector layoffs up 33% year-over-year through April. The roles most exposed are ones where AI tools can do meaningful parts of the work today: customer support, routine coding, content moderation, recruiting coordination, and some sales and marketing functions. If your job description has not changed in three years, that is worth a hard look. Building fluency with AI tools &mdash; not as a hobby, but in the actual work product you deliver &mdash; increasingly looks like a job expectation rather than a r&eacute;sum&eacute; bonus.</p>
+
+            <p>For anyone job searching right now, pay particular attention to what Daniel Keum at Columbia identified as the quieter shift: companies are not just laying people off, they are hiring fewer junior workers. If you are early in your career, you may find the door narrower than it was two years ago, particularly for entry-level roles at large firms. Ask in interviews how the team uses AI day-to-day. The answer tells you whether you are being hired to work alongside these tools or to be replaced by the next version of them.</p>
+
+            <p>Zuckerberg promised no more company-wide layoffs at Meta this year. But CFO Susan Li told investors the company does not yet know &ldquo;what the optimal size of the company will be in the future&rdquo; &mdash; which CNBC and others have read as a signal that more cuts are possible in the second half of 2026. The harder question &mdash; whether AI is actually doing the jobs people are losing, or whether companies are simply moving money from payroll to data centers &mdash; does not yet have a clean answer. It may not have one for years.</p>
+
+            <div class="author-section">
+              <div class="author-badge"><div class="author-badge-logo">P.</div></div>
+              <div>
+                <div class="author-name">Plainly Staff</div>
+                <div class="author-bio">Plainly covers AI&rsquo;s real-world impact across law, business, real estate, careers, and more &mdash; written for curious people of every age and background. No jargon. No hype. Just AI, put plainly. Questions or tips: <a href="mailto:hello@readplainly.com">hello@readplainly.com</a></div>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="article-sidebar">
+            <div class="sidebar-card">
+              <div class="sc-label">Newsletter</div>
+              <div class="sc-title">Get the week&rsquo;s biggest AI stories &mdash; plainly explained.</div>
+              <div class="nl-inline" id="sb-nl-form">
+                <input type="email" id="sb-email" placeholder="your@email.com" />
+                <button onclick="subscribeSidebar()">Subscribe free &rarr;</button>
+              </div>
+              <div id="sb-success" style="display:none;font-family:var(--sans);font-size:13px;color:var(--orange);font-weight:500;margin-top:8px;">You&rsquo;re in! Welcome to Plainly.</div>
+              <div class="sc-body" style="margin-top:8px;">No spam. Unsubscribe any time.</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">Career Prompts</div>
+              <div class="sc-title">Ready-to-use prompts for your job search</div>
+              <div class="sc-body">CV tailoring, cover letters, salary negotiation, and interview prep. Copy, paste, fill in the brackets.</div>
+              <a href="../prompts.html" class="sc-link">Browse all prompts &rarr;</a>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">New to AI?</div>
+              <div class="sc-title">The Framework &mdash; a plain-English guide to using AI</div>
+              <div class="sc-body">Five stages, no coding required. Learn how to find your best AI tasks and build a workflow that saves real time.</div>
+              <a href="../framework.html" class="sc-link">Start the walkthrough &rarr;</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="related-section">
+        <div class="related-label">More from Plainly</div>
+        <div class="related-grid">
+          <div>
+            <img loading="lazy" src="../images/kpmg-anthropic.jpg" alt="KPMG Anthropic" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Business</span>
+            <div class="related-hed"><a href="kpmg-anthropic.html">KPMG is embedding an AI system into the software 276,000 employees use for client work</a></div>
+            <div class="related-dek">The accounting giant is wiring Claude directly into the platform that handles its global tax work.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/claude-smb.jpg" alt="Claude for Small Business" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-orange">Small Business</span>
+            <div class="related-hed"><a href="claude-small-business.html">Anthropic&rsquo;s new small-business toolkit is free &mdash; if you already pay for Claude</a></div>
+            <div class="related-dek">Here&rsquo;s what it actually does, what it costs, and where the free training tour stops next.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/gemini-spark.jpg" alt="Gemini Spark" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Business</span>
+            <div class="related-hed"><a href="gemini-spark.html">Google&rsquo;s new 24/7 AI assistant can read your Gmail &mdash; but only if you pay $100 a month</a></div>
+            <div class="related-dek">What Gemini Spark actually does and whether non-subscribers are about to fall behind.</div>
+            <div class="related-meta">6 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week&rsquo;s most important AI developments &mdash; broken down clearly, in plain English.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" />
+          <button type="button" onclick="subscribeEmail()">Subscribe &rarr;</button>
+        </div>
+        <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;margin-bottom:14px;">You&rsquo;re in! Welcome to Plainly. &#127881;</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. &middot; readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="../sections/business.html">Business</a>
+            <a href="../sections/law.html">Law</a>
+            <a href="../sections/small-business.html">Small Business</a>
+            <a href="../sections/real-estate.html">Real Estate</a>
+            <a href="../sections/sports.html">Sports</a>
+            <a href="../sections/careers.html">Careers</a>
+            <a href="../sections/academia.html">Academia</a>
+            <a href="../sections/arts-music.html">Arts &amp; Music</a>
+            <a href="../sections/regulation.html">Regulation</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="../framework.html">The Framework</a>
+            <a href="../prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="../about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">&copy; 2026 Plainly &middot; readplainly.com &middot; All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>&middot;</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var el=document.getElementById('auto-date');if(el){var now=new Date();var m=['January','February','March','April','May','June','July','August','September','October','November','December'];el.textContent=m[now.getMonth()]+' '+now.getDate()+', '+now.getFullYear();}})();
+    var masthead=document.getElementById('masthead');
+    window.addEventListener('scroll',function(){masthead.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+    function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var b=document.querySelector('.share-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link';},2000);});}
+    function subscribeEmail(){var e=document.getElementById('nl-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';}).catch(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';});}
+    document.getElementById('nl-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeEmail();});
+    function subscribeSidebar(){var e=document.getElementById('sb-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#sb-nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';}).catch(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';});}
+    document.getElementById('sb-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeSidebar();});
+  </script>
+</body>
+</html>

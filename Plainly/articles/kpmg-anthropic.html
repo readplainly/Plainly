@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KPMG is embedding an AI system into the software 276,000 employees use for client work — Plainly</title>
+  <meta name="description" content="The accounting giant is embedding Anthropic's Claude into the platform that handles its global tax work — raising real questions about accuracy, accountability, and who does the math." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root{--orange:#FF6719;--orange-light:#FFF0E8;--orange-mid:#FFCFB0;--orange-dark:#C44A00;--ink:#1C1A17;--ink-soft:#3A3630;--ink-muted:#6B6560;--ink-faint:#A09890;--paper:#FAF8F4;--paper-warm:#F5F1EA;--paper-rule:#E8E2D8;--serif-display:'Playfair Display',Georgia,serif;--serif-body:'Source Serif 4',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{font-family:var(--serif-body);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .container-narrow{max-width:720px;margin:0 auto;padding:0 28px;}
+    .masthead{padding:22px 0 0;text-align:center;background:var(--paper);position:sticky;top:0;z-index:100;border-bottom:3px double var(--ink);transition:padding .25s ease,box-shadow .25s ease;}
+    .masthead.scrolled{padding:10px 0 0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+    .masthead-top{display:flex;align-items:center;justify-content:space-between;padding:0 28px 10px;}
+    .masthead-date-line{font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-date-line{max-height:0;opacity:0;}
+    .masthead-logo{font-family:var(--serif-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--ink);letter-spacing:-2px;line-height:1;transition:font-size .25s ease;}
+    .masthead.scrolled .masthead-logo{font-size:clamp(20px,3vw,26px);letter-spacing:-1px;}
+    .masthead-logo span{color:var(--orange);}
+    .masthead-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-muted);font-style:italic;font-weight:300;transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-tagline{max-height:0;opacity:0;}
+    .masthead-nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;border-top:1px solid var(--paper-rule);}
+    .masthead-nav{display:flex;align-items:center;gap:0;flex:1;min-width:0;}
+    .masthead-nav a{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);padding:0 8px;border-right:1px solid var(--paper-rule);line-height:1;white-space:nowrap;transition:color .15s;}
+    .masthead-nav a:last-child{border-right:none;}
+    .masthead-nav a:hover,.masthead-nav a.active{color:var(--orange);}
+    .masthead-nav .nav-divider{width:1px;height:13px;background:var(--ink-muted);opacity:.35;margin:0 4px;flex-shrink:0;}
+    .masthead-nav a.nav-tool{color:var(--orange-dark);}
+    .masthead-nav a.nav-tool:hover{color:var(--orange);}
+    .masthead-cta{font-family:var(--sans);font-size:11px;font-weight:500;background:var(--orange);color:white;padding:7px 16px;border-radius:3px;white-space:nowrap;margin-left:16px;flex-shrink:0;transition:background .15s;}
+    .masthead-cta:hover{background:var(--orange-dark);}
+    @media(max-width:768px){.masthead-nav-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 16px;}.masthead-nav-wrap::-webkit-scrollbar{display:none;}.masthead-nav{flex-wrap:nowrap;overflow-x:auto;min-width:max-content;}.masthead-nav a{flex-shrink:0;font-size:11px;padding:0 10px;}}
+    .article-header{padding:52px 0 0;}
+    .article-section-tag{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:18px;background:#E8F0FB;color:#1A4A8A;}
+    .article-hed{font-family:var(--serif-display);font-size:clamp(28px,5vw,52px);font-weight:900;color:var(--ink);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;}
+    .article-dek{font-family:var(--serif-body);font-size:20px;color:var(--ink-muted);font-style:italic;font-weight:300;line-height:1.5;margin-bottom:24px;max-width:680px;}
+    .article-meta{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--paper-rule);border-bottom:1px solid var(--paper-rule);margin-bottom:36px;flex-wrap:wrap;}
+    .meta-byline{font-family:var(--sans);font-size:12px;color:var(--ink-soft);font-weight:500;}
+    .meta-byline span{color:var(--orange);}
+    .meta-dot{width:3px;height:3px;background:var(--ink-faint);border-radius:50%;}
+    .meta-date,.meta-time{font-family:var(--sans);font-size:12px;color:var(--ink-faint);}
+    .meta-share{margin-left:auto;}
+    .share-btn{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-muted);border:1px solid var(--paper-rule);padding:5px 12px;border-radius:3px;background:transparent;cursor:pointer;transition:all .15s;}
+    .share-btn:hover{border-color:var(--orange);color:var(--orange);}
+    .article-hero{margin-bottom:40px;}
+    .article-hero img{width:100%;max-height:520px;object-fit:cover;object-position:center;border-radius:3px;display:block;}
+    .hero-caption{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;margin-top:8px;line-height:1.5;}
+    .article-body{padding-bottom:56px;}
+    .article-grid{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start;}
+    .article-copy p{font-family:var(--serif-body);font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:26px;}
+    .article-copy p:first-child::first-letter{font-family:var(--serif-display);font-size:72px;font-weight:900;color:var(--ink);float:left;line-height:.75;margin:8px 10px 0 0;}
+    .article-copy h2{font-family:var(--serif-display);font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.2;margin:40px 0 16px;padding-top:32px;border-top:1px solid var(--paper-rule);}
+    .article-copy strong{color:var(--ink);font-weight:600;}
+    .article-copy a{color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .pull-quote{border-left:3px solid var(--orange);padding:6px 0 6px 24px;margin:36px 0;}
+    .pull-quote p{font-family:var(--serif-display)!important;font-size:22px!important;font-weight:500!important;font-style:italic!important;color:var(--ink)!important;line-height:1.4!important;margin-bottom:0!important;}
+    .pull-quote p::first-letter{all:unset;}
+    .pull-quote cite{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;margin-top:10px;}
+    .article-sidebar{position:sticky;top:120px;display:flex;flex-direction:column;gap:20px;}
+    .sidebar-card{background:var(--paper-warm);border:1px solid var(--paper-rule);border-radius:6px;padding:20px;}
+    .sc-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+    .sc-title{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.2px;line-height:1.3;}
+    .sc-body{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .sc-link{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .nl-inline{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .nl-inline input{font-family:var(--sans);font-size:13px;border:1px solid var(--paper-rule);border-radius:3px;padding:9px 12px;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;}
+    .nl-inline input:focus{border-color:var(--orange);}
+    .nl-inline input::placeholder{color:var(--ink-faint);}
+    .nl-inline button{font-family:var(--sans);font-size:12px;font-weight:500;background:var(--orange);color:white;border:none;border-radius:3px;padding:9px 14px;cursor:pointer;transition:background .15s;}
+    .nl-inline button:hover{background:var(--orange-dark);}
+    .author-section{border-top:2px solid var(--ink);border-bottom:1px solid var(--paper-rule);padding:28px 0;margin-bottom:48px;display:flex;gap:20px;align-items:flex-start;}
+    .author-badge{width:52px;height:52px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .author-badge-logo{font-family:var(--serif-display);font-size:22px;font-weight:900;color:var(--orange);letter-spacing:-1px;}
+    .author-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+    .author-bio{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .author-bio a{color:var(--orange);border-bottom:1px solid var(--orange-mid);}
+    .related-section{padding:40px 0;border-top:1.5px solid var(--ink);}
+    .related-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .related-img{width:100%;height:130px;object-fit:cover;border-radius:3px;margin-bottom:12px;display:block;background:var(--paper-warm);}
+    .related-tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;}
+    .tag-blue{background:#E8F0FB;color:#1A4A8A;}.tag-coral{background:#FAE8E0;color:#8A2800;}.tag-amber{background:#FBF0E0;color:#7A4A00;}.tag-green{background:#E8F5E8;color:#1A6A1A;}.tag-pink{background:#FAE8F0;color:#8A2050;}.tag-orange{background:#FFF0E8;color:#C44A00;}
+    .related-hed{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.28;margin-bottom:6px;}
+    .related-hed a:hover{color:var(--orange);}
+    .related-dek{font-family:var(--sans);font-size:12px;color:var(--ink-muted);line-height:1.55;}
+    .related-meta{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);margin-top:6px;}
+    .related-divider{border-left:1px solid var(--paper-rule);padding-left:24px;}
+    .newsletter{padding:64px 0;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+    .newsletter::before{content:'Plainly.';position:absolute;font-family:var(--serif-display);font-size:260px;font-weight:900;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-8px;}
+    .newsletter-inner{position:relative;z-index:1;}
+    .nl-eyebrow{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .newsletter h2{font-family:var(--serif-display);font-size:clamp(28px,4vw,42px);font-weight:700;color:white;letter-spacing:-1px;line-height:1.1;margin-bottom:12px;}
+    .newsletter h2 em{font-style:italic;color:var(--orange);}
+    .newsletter p{font-family:var(--serif-body);font-size:15px;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 28px;line-height:1.65;font-style:italic;}
+    .nl-form{display:flex;max-width:400px;margin:0 auto 12px;border:1px solid rgba(255,255,255,.15);border-radius:3px;overflow:hidden;}
+    .nl-form input{flex:1;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.06);border:none;padding:0 16px;height:46px;color:white;outline:none;}
+    .nl-form input::placeholder{color:rgba(255,255,255,.3);}
+    .nl-form button{font-family:var(--sans);font-size:13px;font-weight:500;background:var(--orange);color:white;border:none;padding:0 22px;height:46px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+    .nl-form button:hover{background:var(--orange-dark);}
+    .nl-note{font-family:var(--sans);font-size:11.5px;color:rgba(255,255,255,.3);}
+    .footer{border-top:3px double var(--ink);padding:40px 0 24px;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:32px;flex-wrap:wrap;}
+    .footer-logo{font-family:var(--serif-display);font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-1px;margin-bottom:4px;}
+    .footer-logo span{color:var(--orange);}
+    .footer-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-faint);font-style:italic;}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col h5{font-family:var(--sans);font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+    .footer-col a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-muted);margin-bottom:8px;transition:color .15s;}
+    .footer-col a:hover{color:var(--orange);}
+    .footer-bottom{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid var(--paper-rule);flex-wrap:wrap;gap:8px;}
+    .footer-legal,.footer-credit{font-family:var(--sans);font-size:11.5px;color:var(--ink-faint);}
+    .footer-credit span{color:var(--orange);}
+    @media(max-width:860px){.article-grid{grid-template-columns:1fr;}.article-sidebar{position:static;}.related-grid{grid-template-columns:1fr;}.related-divider{border-left:none;padding-left:0;border-top:1px solid var(--paper-rule);padding-top:24px;}}
+    @media(max-width:560px){.container,.container-narrow{padding:0 18px;}.article-hed{font-size:clamp(24px,7vw,36px);}.article-dek{font-size:17px;}.article-copy p{font-size:16px;}.nl-form{flex-direction:column;}.nl-form input,.nl-form button{height:46px;width:100%;border-radius:3px;}}
+  </style>
+</head>
+<body>
+
+  <header class="masthead" id="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News &amp; Education</div>
+      <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
+      <div class="masthead-tagline">AI, put plainly.</div>
+    </div>
+    <div class="masthead-nav-wrap">
+      <nav class="masthead-nav">
+        <a href="../sections/business.html" class="active">Business</a>
+        <a href="../sections/law.html">Law</a>
+        <a href="../sections/small-business.html">Small Business</a>
+        <a href="../sections/real-estate.html">Real Estate</a>
+        <a href="../sections/sports.html">Sports</a>
+        <a href="../sections/careers.html">Careers</a>
+        <a href="../sections/academia.html">Academia</a>
+        <a href="../sections/arts-music.html">Arts &amp; Music</a>
+        <a href="../sections/regulation.html">Regulation</a>
+        <div class="nav-divider"></div>
+        <a href="../about.html" class="nav-tool">About</a>
+        <a href="../framework.html" class="nav-tool">The Framework</a>
+        <a href="../prompts.html" class="nav-tool">Prompts</a>
+      </nav>
+      <a href="#newsletter" class="masthead-cta">Subscribe free &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <div class="article-header">
+        <span class="article-section-tag">Business</span>
+        <h1 class="article-hed">KPMG is embedding an AI system into the software 276,000 employees use for client work</h1>
+        <p class="article-dek">The accounting giant is embedding Anthropic&rsquo;s Claude into the platform that handles its global tax work &mdash; a shift that raises real questions about accuracy, accountability, and who actually does the math.</p>
+        <div class="article-meta">
+          <div class="meta-byline">By <span>Plainly Staff</span></div>
+          <div class="meta-dot"></div>
+          <div class="meta-date">May 26, 2026</div>
+          <div class="meta-dot"></div>
+          <div class="meta-time">7 min read</div>
+          <div class="meta-share"><button class="share-btn" onclick="copyLink()">Copy link</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+      <div class="article-hero">
+        <img loading="lazy" decoding="async" src="../images/kpmg-anthropic.jpg" alt="An open-plan modern accounting office during working hours — rows of desks with dual-monitor setups and people working at laptops" onerror="this.style.display='none'" />
+        <p class="hero-caption">Inside a Big Four firm, the work of preparing tax memos, reviewing regulations, and drafting client advice is increasingly being handed to AI systems running quietly in the background.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="article-grid">
+          <div class="article-copy">
+
+            <p>On May 19, 2026, KPMG &mdash; one of the world&rsquo;s four largest accounting firms &mdash; announced it is wiring an artificial intelligence system called Claude directly into the software its tax and legal teams use to serve clients. All 276,000 of the firm&rsquo;s employees in 138 countries will get access. The rollout starts with tax and legal work and will reach the firm&rsquo;s advisory business by the end of September.</p>
+
+            <p>This is bigger than another corporate AI announcement. KPMG audits and advises many of the largest companies in the world, and its tax practice is its fastest-growing business. The firm is not handing employees a chatbot to play with on the side. It is rebuilding the platform that handles client work around an AI made by Anthropic, a San Francisco company that competes with OpenAI, the maker of ChatGPT.</p>
+
+            <p>The deal is also part of a pattern. In roughly an eight-month window, every Big Four firm &mdash; KPMG, Deloitte, PwC, and EY &mdash; has announced a major AI alliance. Deloitte gave Claude to roughly 470,000 employees in October. PwC expanded its own Claude deal five days before KPMG&rsquo;s announcement. EY announced a $1 billion AI initiative with Microsoft two days after.</p>
+
+            <p>What KPMG is doing differently, according to the Wall Street Journal, is the depth. Claude is not a tool sitting next to the work. It is being built into the work itself.</p>
+
+            <h2>What KPMG is actually doing</h2>
+
+            <p>KPMG calls its main client-delivery platform the &ldquo;Digital Gateway.&rdquo; Think of it as the internal software where tax accountants pull up client files, look up regulations, draft memos, and prepare filings. Until now, that platform ran on AI models from Microsoft and Google. Claude is being added to it.</p>
+
+            <p>Claude is what&rsquo;s called a large language model &mdash; an AI system trained on enormous amounts of text that can read documents, answer questions, draft writing, and follow multi-step instructions. The version KPMG is using includes a product called Cowork, which puts Claude inside everyday tools like spreadsheets and documents, and another called Managed Agents, which can carry out longer tasks on its own &mdash; for example, reading a new tax regulation, comparing it to a client&rsquo;s situation, and drafting a memo about what to do.</p>
+
+            <p>Rema Serafi, who runs KPMG&rsquo;s US tax practice, said that building an AI agent to help clients adapt to a tax-law change &ldquo;used to take weeks and required teams to switch between multiple tools and chat windows.&rdquo; With the new setup, she said, &ldquo;that same capability takes minutes.&rdquo;</p>
+
+            <div class="pull-quote">
+              <p>&ldquo;This is not a chatbot layered on top of an existing tool.&rdquo;</p>
+              <cite>Rema Serafi, Vice Chair &ndash; Tax, KPMG US</cite>
+            </div>
+
+            <p>The financial terms of the deal have not been disclosed. KPMG and Anthropic have not said what KPMG is paying, how long the contract runs, or how revenue is shared.</p>
+
+            <h2>Why a Big Four firm needs Anthropic &mdash; and why Anthropic needs KPMG</h2>
+
+            <p>Anthropic is growing fast. The company was valued at $380 billion in February. Its annualized run-rate revenue &mdash; a projection of full-year sales based on a recent period &mdash; went from about $1 billion at the start of 2025 to roughly $30 billion by April 2026, according to Reuters. But it is still much smaller than its biggest customers.</p>
+
+            <p>Kate Jensen, who runs Anthropic&rsquo;s Americas business, put it bluntly to the Wall Street Journal: &ldquo;Anthropic is too small to really handhold all of the companies that need the kind of very serious expertise that comes with someone that they&rsquo;ve trusted for a long time, like KPMG.&rdquo;</p>
+
+            <p>That is the trade. Anthropic gets a global sales force of accountants who already sit inside the world&rsquo;s biggest companies. KPMG gets a frontier AI system to plug into a tax business that grew 7.5% last year to $9.3 billion &mdash; the firm&rsquo;s fastest-growing function.</p>
+
+            <p>It is worth being clear about who KPMG actually serves. The firm&rsquo;s tax practice does not file most Americans&rsquo; personal returns. Its clients are large corporations dealing with complex problems: international tax rules, mergers and acquisitions, and a new global minimum corporate tax &mdash; an international agreement requiring large multinational companies to pay at least 15% in tax wherever they operate. But the work KPMG does shapes how much tax large employers pay, which affects prices, hiring, and government revenue. It also sets the template that smaller accounting firms &mdash; including the ones that may handle your return &mdash; tend to follow.</p>
+
+            <h2>What KPMG is claiming versus what is known</h2>
+
+            <p>KPMG and Anthropic describe the alliance using words like &ldquo;trust,&rdquo; &ldquo;accuracy,&rdquo; and &ldquo;responsible AI.&rdquo; Those are aspirations, not measurements. Neither company has released data on how often Claude gets tax questions right, how its outputs are checked, or who is liable when it gets something wrong.</p>
+
+            <p>That last question matters. US tax preparers are governed by an IRS rulebook called Circular 230, which requires &ldquo;diligence as to accuracy&rdquo; regardless of what tools they use. The American Institute of CPAs adopted a new standard in 2024 specifically covering &ldquo;reliance on tools,&rdquo; including AI. Both mean a human accountant remains legally responsible for what gets filed &mdash; even if an AI drafted it.</p>
+
+            <p>There is reason for caution. In October 2025, Deloitte&rsquo;s Australian arm agreed to refund part of a roughly AU$439,000 government contract after a report it delivered contained fabricated citations generated by an AI system. In May 2025, a lawyer at the firm Latham &amp; Watkins told a California court that Claude had produced an inaccurate title and inaccurate authors in a copyright case filing &mdash; what the lawyer called &ldquo;an embarrassing and unintentional mistake.&rdquo;</p>
+
+            <p>When an AI confidently produces something that is false &mdash; a fake court case, a misquoted regulation, a made-up source &mdash; it is called a hallucination. Hallucinations are the central unsolved problem of today&rsquo;s AI. They are especially dangerous in tax work, where a confident-sounding wrong answer can produce real penalties.</p>
+
+            <p>Joshua Blank of UC Irvine Law and Leigh Osofsky of the University of North Carolina, two law professors who study automated tax tools, have written that taxpayers relying on such systems &ldquo;may eventually be responsible not only for the tax she failed to pay, but also for penalties for taking the very position that the automated guidance system advised her to take.&rdquo;</p>
+
+            <h2>What about the people who do this work today?</h2>
+
+            <p>KPMG&rsquo;s announcement is silent on what happens to the accountants whose work the AI will speed up &mdash; or replace. The broader picture is not reassuring.</p>
+
+            <p>Job listings for graduate accounting roles at the UK Big Four fell 44% in 2025, according to the jobs site Adzuna. EY in the US has delayed graduate hire start dates three years running. KPMG laid off about 330 US audit employees in late 2024. The day before the Anthropic deal was announced, Business Insider reported that KPMG had built a separate AI tool called TaxSIM &mdash; explicitly designed, according to KPMG&rsquo;s chief digital officer for tax, to replace the four-year apprenticeship in which junior staff learn the trade by preparing repetitive returns.</p>
+
+            <p>Dario Amodei, Anthropic&rsquo;s chief executive, has publicly warned that AI could eliminate up to half of entry-level office jobs within five years. His company is now selling tools that can perform much of that entry-level work.</p>
+
+            <h2>What this means for you</h2>
+
+            <p>If you file your own taxes or use a service like TurboTax, almost nothing changes in the short term. KPMG does not prepare individual returns for most Americans.</p>
+
+            <p>But three things are worth paying attention to. If you work in or near an office job that involves drafting, reviewing, or compiling documents &mdash; paralegal work, junior accounting, financial analysis, compliance &mdash; the apprenticeship path that traditionally led from entry-level work to senior expertise is the exact thing these systems are designed to compress. KPMG is not hiding this; its own training tool is built around the assumption.</p>
+
+            <p>If you are a corporate employee, a small-business owner, or an investor, the tax advice your company receives &mdash; and the prices, wages, and dividends that flow from it &mdash; is increasingly being shaped by AI systems whose error rates are not publicly disclosed. A reasonable question to ask any professional you hire is what AI tools they use, how they verify the output, and who is liable if those tools are wrong.</p>
+
+            <p>If you are a parent of a college student studying accounting, finance, or law, the entry-level job market in those fields has visibly tightened. That does not mean the careers are gone. It does mean the work the first few years used to consist of is changing fast.</p>
+
+            <p>Three things will tell us whether this deal lives up to its billing. The first is audit: whether and how Claude eventually enters the service that signs off on whether a company&rsquo;s financial statements are accurate will reveal how far regulators are willing to let AI go. The second is errors: sooner or later, an AI-drafted tax position from a Big Four firm will be challenged, and how liability is allocated will set the rules of the road. The third is EY: if the one holdout among the Big Four also signs with Anthropic, Claude will have effectively become the standard AI inside the firms that audit and advise most of the global economy.</p>
+
+            <p>For now, KPMG has made its choice. The question is not whether your accountant will eventually work with an AI co-pilot. It is whether you, your employer, and the regulators meant to police any of this will know when the co-pilot is wrong.</p>
+
+            <div class="author-section">
+              <div class="author-badge"><div class="author-badge-logo">P.</div></div>
+              <div>
+                <div class="author-name">Plainly Staff</div>
+                <div class="author-bio">Plainly covers AI&rsquo;s real-world impact across law, business, real estate, careers, and more &mdash; written for curious people of every age and background. No jargon. No hype. Just AI, put plainly. Questions or tips: <a href="mailto:hello@readplainly.com">hello@readplainly.com</a></div>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="article-sidebar">
+            <div class="sidebar-card">
+              <div class="sc-label">Newsletter</div>
+              <div class="sc-title">Get the week&rsquo;s biggest AI stories &mdash; plainly explained.</div>
+              <div class="nl-inline" id="sb-nl-form">
+                <input type="email" id="sb-email" placeholder="your@email.com" />
+                <button onclick="subscribeSidebar()">Subscribe free &rarr;</button>
+              </div>
+              <div id="sb-success" style="display:none;font-family:var(--sans);font-size:13px;color:var(--orange);font-weight:500;margin-top:8px;">You&rsquo;re in! Welcome to Plainly.</div>
+              <div class="sc-body" style="margin-top:8px;">No spam. Unsubscribe any time.</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">New to AI?</div>
+              <div class="sc-title">The Framework &mdash; a plain-English guide to using AI</div>
+              <div class="sc-body">Five stages, no coding required. Learn how to find your best AI tasks, write prompts that work, and build a workflow that saves real time.</div>
+              <a href="../framework.html" class="sc-link">Start the walkthrough &rarr;</a>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">Prompts Library</div>
+              <div class="sc-title">Ready-to-use prompts for your work</div>
+              <div class="sc-body">48 prompts across law, business, real estate, music, academia, and careers. Copy, paste, fill in the brackets.</div>
+              <a href="../prompts.html" class="sc-link">Browse all prompts &rarr;</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="related-section">
+        <div class="related-label">More from Plainly</div>
+        <div class="related-grid">
+          <div>
+            <img loading="lazy" src="../images/gemini-spark.jpg" alt="Gemini Spark" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Business</span>
+            <div class="related-hed"><a href="gemini-spark.html">Google&rsquo;s new 24/7 AI assistant can read your Gmail &mdash; but only if you pay $100 a month</a></div>
+            <div class="related-dek">What Gemini Spark actually does, what it costs, and whether non-subscribers are about to fall behind.</div>
+            <div class="related-meta">6 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/ai-lawyer-sanctions.jpg" alt="AI lawyer sanctions" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Law</span>
+            <div class="related-hed"><a href="ai-lawyer-sanctions.html">AI hallucinations are now costing lawyers $109,700 in sanctions. Here are three questions to ask yours.</a></div>
+            <div class="related-dek">A federal judge just issued the largest sanction yet for AI-fabricated case citations.</div>
+            <div class="related-meta">6 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/meta-layoffs.jpg" alt="Meta layoffs" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-amber">Careers</span>
+            <div class="related-hed"><a href="meta-layoffs.html">Meta cut 8,000 jobs and called it an AI pivot. Here&rsquo;s what that actually means.</a></div>
+            <div class="related-dek">What companies actually mean when they blame AI for layoffs &mdash; and what the numbers do and don&rsquo;t tell us.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="nl-eyebrow">Free weekly newsletter</div>
+        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
+        <p>The week&rsquo;s most important AI developments &mdash; broken down clearly, in plain English.</p>
+        <div class="nl-form" id="nl-form">
+          <input type="email" id="nl-email" placeholder="your@email.com" />
+          <button type="button" onclick="subscribeEmail()">Subscribe &rarr;</button>
+        </div>
+        <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;margin-bottom:14px;">You&rsquo;re in! Welcome to Plainly. &#127881;</div>
+        <div class="nl-note">No spam. Unsubscribe any time.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. &middot; readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="../sections/business.html">Business</a>
+            <a href="../sections/law.html">Law</a>
+            <a href="../sections/small-business.html">Small Business</a>
+            <a href="../sections/real-estate.html">Real Estate</a>
+            <a href="../sections/sports.html">Sports</a>
+            <a href="../sections/careers.html">Careers</a>
+            <a href="../sections/academia.html">Academia</a>
+            <a href="../sections/arts-music.html">Arts &amp; Music</a>
+            <a href="../sections/regulation.html">Regulation</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="../framework.html">The Framework</a>
+            <a href="../prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="../about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">&copy; 2026 Plainly &middot; readplainly.com &middot; All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>&middot;</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var el=document.getElementById('auto-date');if(el){var now=new Date();var m=['January','February','March','April','May','June','July','August','September','October','November','December'];el.textContent=m[now.getMonth()]+' '+now.getDate()+', '+now.getFullYear();}})();
+    var masthead=document.getElementById('masthead');
+    window.addEventListener('scroll',function(){masthead.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+    function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var b=document.querySelector('.share-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link';},2000);});}
+    function subscribeEmail(){var e=document.getElementById('nl-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';}).catch(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';});}
+    document.getElementById('nl-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeEmail();});
+    function subscribeSidebar(){var e=document.getElementById('sb-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#sb-nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('https://readplainly.beehiiv.com/create',{method:'POST',body:fd}).then(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';}).catch(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';});}
+    document.getElementById('sb-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeSidebar();});
+  </script>
+</body>
+</html>
