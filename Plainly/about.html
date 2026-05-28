@@ -330,7 +330,7 @@
   <!-- MASTHEAD -->
   <header class="masthead" id="masthead">
     <div class="masthead-top">
-      <div class="masthead-date-line">May 27, 2026 &nbsp;·&nbsp; AI News &amp; Education</div>
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News &amp; Education</div>
       <a href="index.html" class="masthead-logo">Plainly<span>.</span></a>
       <div class="masthead-tagline">AI, put plainly.</div>
     </div>
@@ -570,6 +570,16 @@
         masthead.classList.toggle('scrolled', window.scrollY > 80);
       }, { passive: true });
     }
+  </script>
+  <script>
+    (function() {
+      var el = document.getElementById('auto-date');
+      if (el) {
+        var now = new Date();
+        var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        el.textContent = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+      }
+    })();
   </script>
 </body>
 </html>
