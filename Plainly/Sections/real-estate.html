@@ -314,14 +314,14 @@
 
         <article>
           <div class="lead-img-wrap">
-            <img loading="lazy" decoding="async" src="../images/re-lead.jpg" alt="A person reviewing property investment data on a laptop — Fundrise's new RealAI tool gives individual investors access to institutional-grade market intelligence" class="lead-img" onerror="this.style.display='none'" />
-            <p class="lead-img-caption">Fundrise's RealAI queries 3.5 trillion data points covering every property in America — now available to any investor for $69/month.</p>
+            <img loading="lazy" decoding="async" src="../images/realpage-settlement.jpg" alt="A resident holding a lease agreement at a kitchen table with apartment buildings visible through the window" class="lead-img" onerror="this.style.display='none'" />
+            <p class="lead-img-caption">Renters at buildings that used RealPage&rsquo;s pricing software between October 2018 and November 2025 have until January 29, 2027 to file a claim.</p>
           </div>
           <span class="tag tag-section">Real Estate</span>
-          <h2 class="lead-hed"><a href="#">Fundrise just launched an AI tool that gives any investor access to institutional-grade property data. Here's what it does.</a></h2>
-          <p class="lead-dek">Wall Street firms have had this kind of market intelligence for years. Now it's available to anyone for $69 a month — and it queries every property in America.</p>
-          <div class="lead-meta">By Plainly Staff &nbsp;·&nbsp; April 5, 2026 &nbsp;·&nbsp; 6 min read</div>
-          <a href="#" class="read-more">Continue reading →</a>
+          <h2 class="lead-hed"><a href="../articles/realpage-settlement.html">An algorithm may have set your rent. A $360 million settlement could owe you money.</a></h2>
+          <p class="lead-dek">If you rented an apartment almost anywhere in the US since late 2018, a five-minute lookup will tell you whether you can file a claim &mdash; and the clock is already running.</p>
+          <div class="lead-meta">By Plainly Staff &nbsp;·&nbsp; August 5, 2026 &nbsp;·&nbsp; 4 min read</div>
+          <a href="../articles/realpage-settlement.html" class="read-more">Continue reading &rarr;</a>
         </article>
 
         <aside class="lead-sidebar">
@@ -420,7 +420,7 @@
       var btn = document.querySelector('#nl-form button');
       btn.textContent = 'Subscribing...'; btn.disabled = true;
       var fd = new FormData(); fd.append('email', email);
-      fetch('https://readplainly.beehiiv.com/create', { method: 'POST', body: fd })
+      fetch('https://embeds.beehiiv.com/8dc593c0-e603-4429-8275-79ba57d5d6a9', { method: 'POST', body: fd })
         .then(function() { document.getElementById('nl-form').style.display = 'none'; document.getElementById('nl-success').style.display = 'block'; })
         .catch(function() { document.getElementById('nl-form').style.display = 'none'; document.getElementById('nl-success').style.display = 'block'; });
     }
