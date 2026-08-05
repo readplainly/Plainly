@@ -820,6 +820,7 @@
   <!-- TICKER -->
   <div class="topbar" aria-label="News ticker">
     <div class="topbar-scroll">
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Real Estate:</strong> An algorithm may have set your rent &mdash; a $360M settlement could owe you money. Claims due Jan 29, 2027</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> US government orders Claude Fable 5 offline &mdash; and sets the price of its return</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> KPMG is embedding Claude into the software 276,000 employees use for client work</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> Google's Gemini Spark keeps working after you close your laptop — but costs $100 a month</span></div>
@@ -829,6 +830,7 @@
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Sports:</strong> MLB's robot umpire overrules the human 54% of the time</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Careers:</strong> Meta cuts 8,000 jobs and calls it an AI pivot — here's what that number actually means</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Academia:</strong> Stanford first-years pitch "understanding checks" as the answer to AI cheating</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Real Estate:</strong> An algorithm may have set your rent &mdash; a $360M settlement could owe you money. Claims due Jan 29, 2027</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> US government orders Claude Fable 5 offline &mdash; and sets the price of its return</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> KPMG is embedding Claude into the software 276,000 employees use for client work</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> Google's Gemini Spark keeps working after you close your laptop — but costs $100 a month</span></div>
@@ -928,6 +930,15 @@
           </article>
 
           <aside class="lead-sidebar">
+            <article class="sidebar-story">
+              <div class="sb-image-wrap">
+                <img loading="lazy" decoding="async" src="images/realpage-settlement.jpg" alt="A resident holding a lease agreement at a kitchen table" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
+              </div>
+              <span class="tag tag-green">Real Estate</span>
+              <h3><a href="articles/realpage-settlement.html">An algorithm may have set your rent. A $360 million settlement could owe you money.</a></h3>
+              <p>If you rented since October 2018, a five-minute lookup tells you if you can file a claim. The deadline is January 29, 2027.</p>
+              <div class="meta">4 min read</div>
+            </article>
             <article class="sidebar-story">
               <div class="sb-image-wrap">
                 <img loading="lazy" decoding="async" src="images/gemini-spark.jpg" alt="Google Gemini Spark announcement at Google I/O 2026" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
@@ -1112,7 +1123,7 @@
               btn.disabled = true;
               var formData = new FormData();
               formData.append('email', email);
-              fetch('https://readplainly.beehiiv.com/create', {
+              fetch('https://embeds.beehiiv.com/8dc593c0-e603-4429-8275-79ba57d5d6a9', {
                 method: 'POST',
                 body: formData
               })
