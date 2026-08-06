@@ -814,7 +814,6 @@
       .masthead-cta { display: block; opacity: 1; pointer-events: auto; }
     }
   </style>
-<script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="12fa975d-17ec-4bb9-a8cd-0c029e94238b"></script>
 </head>
 <body>
 
@@ -1106,7 +1105,11 @@
           <div class="nl-eyebrow">Free weekly newsletter</div>
           <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
           <p>The week&rsquo;s most important AI developments &mdash; broken down clearly, in plain English.</p>
-          <iframe src="https://embeds.beehiiv.com/12fa975d-17ec-4bb9-a8cd-0c029e94238b" data-test-id="beehiiv-embed" width="100%" height="52" frameborder="0" scrolling="no" style="border-radius:3px;max-width:420px;display:block;margin:0 auto 12px;"></iframe>
+          <div class="nl-form" id="nl-form">
+            <input type="email" id="nl-email" placeholder="your@email.com" />
+            <button type="button" onclick="subscribeEmail()">Subscribe &rarr;</button>
+          </div>
+          <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;margin-bottom:14px;">You&rsquo;re in! Welcome to Plainly. &#127881;</div>
           <div class="nl-note">No spam. Unsubscribe any time.</div>
         </div>
       </div>
@@ -1216,6 +1219,31 @@
         el.textContent = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
       }
     })();
-  </script>
+  
+    function subscribeEmail() {
+      var e = document.getElementById('nl-email').value;
+      if (!e || !e.includes('@')) { alert('Please enter a valid email address.'); return; }
+      var btn = document.querySelector('#nl-form button');
+      btn.textContent = 'Subscribing...';
+      btn.disabled = true;
+      fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: e })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        document.getElementById('nl-form').style.display = 'none';
+        document.getElementById('nl-success').style.display = 'block';
+      })
+      .catch(function() {
+        document.getElementById('nl-form').style.display = 'none';
+        document.getElementById('nl-success').style.display = 'block';
+      });
+    }
+    document.getElementById('nl-email').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') subscribeEmail();
+    });
+</script>
 </body>
 </html>
