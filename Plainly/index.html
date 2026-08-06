@@ -866,7 +866,7 @@
         <div class="sticky-nav-top">
           <div style="width:120px;flex-shrink:0;"></div>
           <a href="index.html" class="masthead-wordmark">Plainly<span>.</span></a>
-          <button data-beehiiv-form="12fa975d-17ec-4bb9-a8cd-0c029e94238b" class="masthead-cta masthead-cta-top">Subscribe free →</button>
+          <a href="#newsletter" class="masthead-cta masthead-cta-top">Subscribe free →</a>
         </div>
         <div class="sticky-nav-sections">
           <div class="masthead-nav">
@@ -884,7 +884,7 @@
             <a href="framework.html" class="nav-tool">The Framework</a>
             <a href="prompts.html" class="nav-tool">Prompts</a>
           </div>
-          <button data-beehiiv-form="12fa975d-17ec-4bb9-a8cd-0c029e94238b" class="masthead-cta masthead-cta-sections">Subscribe free →</button>
+          <a href="#newsletter" class="masthead-cta masthead-cta-sections">Subscribe free →</a>
         </div>
       </div>
     </div>
@@ -1105,42 +1105,9 @@
         <div class="newsletter-inner">
           <div class="nl-eyebrow">Free weekly newsletter</div>
           <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
-          <p>The week's most important AI developments — broken down clearly, sorted by the sector that matters to you.</p>
-          <div class="nl-form" id="nl-form">
-            <input type="email" id="nl-email" placeholder="your@email.com" aria-label="Email address" />
-            <button type="button" onclick="subscribeEmail()">Subscribe →</button>
-          </div>
-          <div id="nl-success" style="display:none; color:#FF6719; font-family:var(--sans); font-size:15px; font-weight:500; margin-bottom:14px;">You're in! Welcome to Plainly. 🎉</div>
-          <div class="nl-note">No spam. Unsubscribe any time. Read by curious people in law, business, and beyond.</div>
-          <script>
-            function subscribeEmail() {
-              var email = document.getElementById('nl-email').value;
-              if (!email || !email.includes('@')) {
-                alert('Please enter a valid email address.');
-                return;
-              }
-              var btn = document.querySelector('#nl-form button');
-              btn.textContent = 'Subscribing...';
-              btn.disabled = true;
-              var formData = new FormData();
-              formData.append('email', email);
-              fetch('https://embeds.beehiiv.com/8dc593c0-e603-4429-8275-79ba57d5d6a9', {
-                method: 'POST',
-                body: formData
-              })
-              .then(function() {
-                document.getElementById('nl-form').style.display = 'none';
-                document.getElementById('nl-success').style.display = 'block';
-              })
-              .catch(function() {
-                document.getElementById('nl-form').style.display = 'none';
-                document.getElementById('nl-success').style.display = 'block';
-              });
-            }
-            document.getElementById('nl-email').addEventListener('keypress', function(e) {
-              if (e.key === 'Enter') subscribeEmail();
-            });
-          </script>
+          <p>The week&rsquo;s most important AI developments &mdash; broken down clearly, in plain English.</p>
+          <iframe src="https://embeds.beehiiv.com/12fa975d-17ec-4bb9-a8cd-0c029e94238b" data-test-id="beehiiv-embed" width="100%" height="52" frameborder="0" scrolling="no" style="border-radius:3px;max-width:420px;display:block;margin:0 auto 12px;"></iframe>
+          <div class="nl-note">No spam. Unsubscribe any time.</div>
         </div>
       </div>
     </section>
