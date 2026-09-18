@@ -310,17 +310,24 @@
 
         <article>
                     <div class="lead-img-wrap">
-            <img loading="lazy" decoding="async" src="../images/fable5-shutdown.jpg" alt="The US Department of Commerce headquarters in Washington DC" class="lead-img" onerror="this.style.display='none'" />
-            <p class="lead-img-caption">The Commerce Department building in Washington. On June 12, the department issued the first-ever export-control order against access to an AI model.</p>
+            <img loading="lazy" decoding="async" src="../images/ai-slowdown.jpg" alt="San Francisco seen from above, its skyline rising out of a blanket of fog in golden light" class="lead-img" onerror="this.style.display='none'" />
+            <p class="lead-img-caption">San Francisco, home to Anthropic, OpenAI, and xAI. Their chief executives all said the industry should slow down. None has named a model it will delay.</p>
           </div>
           <span class="tag tag-section">Regulation</span>
-          <h2 class="lead-hed"><a href="../articles/fable5-shutdown.html">The US government ordered a major AI model offline &mdash; and set the price of its return</a></h2>
-          <p class="lead-dek">Claude Fable 5 went dark worldwide three days after launch. Its return came with strings attached &mdash; not just for its maker, but for the whole AI industry.</p>
-          <div class="lead-meta">By Plainly Staff &nbsp;·&nbsp; July 11, 2026 &nbsp;·&nbsp; 6 min read</div>
-          <a href="../articles/fable5-shutdown.html" class="read-more">Continue reading →</a>
+          <h2 class="lead-hed"><a href="../articles/ai-slowdown.html">The people building AI just asked their industry to slow down. The White House said no.</a></h2>
+          <p class="lead-dek">A researcher quit and called his industry reckless. Four days later, the head of Anthropic said his industry should slow down, and three rivals agreed. The president called the danger a hoax.</p>
+          <div class="lead-meta">By Plainly Staff &nbsp;·&nbsp; September 17, 2026 &nbsp;·&nbsp; 10 min read</div>
+          <a href="../articles/ai-slowdown.html" class="read-more">Continue reading →</a>
         </article>
 
         <aside class="lead-sidebar">
+          <div class="lead-sidebar-story">
+            <img loading="lazy" src="../images/fable5-shutdown.jpg" alt="US Commerce Department" class="lss-img" onerror="this.style.display='none'" />
+            <span class="tag tag-section">Regulation</span>
+            <div class="lss-hed"><a href="../articles/fable5-shutdown.html">The US government ordered a major AI model offline &mdash; and set the price of its return</a></div>
+            <div class="lss-dek">Claude Fable 5 went dark worldwide three days after launch. Its return came with strings attached.</div>
+            <div class="lss-meta">6 min read</div>
+          </div>
           <div class="lead-sidebar-story">
             <img loading="lazy" src="../images/take-it-down.jpg" alt="TAKE IT DOWN Act" class="lss-img" onerror="this.style.display='none'" />
             <span class="tag tag-section">Regulation</span>
@@ -328,7 +335,7 @@
             <div class="lss-dek">The TAKE IT DOWN Act&rsquo;s enforcement mechanism just kicked in. Here&rsquo;s what it means for you.</div>
             <div class="lss-meta">7 min read</div>
           </div>
-          <div class="lead-sidebar-story"><div style="height:90px;border-radius:3px;background:var(--paper-warm);display:flex;align-items:center;justify-content:center;margin-bottom:10px;"><span style="font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);">Story coming soon</span></div></div>
+          
         </aside>
 
       </div>
@@ -422,7 +429,7 @@
       var btn = document.querySelector('#nl-form button');
       btn.textContent = 'Subscribing...'; btn.disabled = true;
       var fd = new FormData(); fd.append('email', email);
-      fetch('https://readplainly.beehiiv.com/create', { method: 'POST', body: fd })
+      fetch('/.netlify/functions/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
         .then(function() { document.getElementById('nl-form').style.display = 'none'; document.getElementById('nl-success').style.display = 'block'; })
         .catch(function() { document.getElementById('nl-form').style.display = 'none'; document.getElementById('nl-success').style.display = 'block'; });
     }
