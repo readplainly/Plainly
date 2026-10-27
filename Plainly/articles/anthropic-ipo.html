@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthropic's IPO filing warns advanced AI could be catastrophic. Here's how to read it. — Plainly</title>
+  <meta name="description" content="Before a company can sell you stock, it has to spell out the biggest things that could go wrong. Anthropic's list runs more than 90 pages and includes risks to humanity itself." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root{--orange:#FF6719;--orange-light:#FFF0E8;--orange-mid:#FFCFB0;--orange-dark:#C44A00;--ink:#1C1A17;--ink-soft:#3A3630;--ink-muted:#6B6560;--ink-faint:#A09890;--paper:#FAF8F4;--paper-warm:#F5F1EA;--paper-rule:#E8E2D8;--serif-display:'Playfair Display',Georgia,serif;--serif-body:'Source Serif 4',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{font-family:var(--serif-body);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .container-narrow{max-width:720px;margin:0 auto;padding:0 28px;}
+    .masthead{padding:22px 0 0;text-align:center;background:var(--paper);position:sticky;top:0;z-index:100;border-bottom:3px double var(--ink);transition:padding .25s ease,box-shadow .25s ease;}
+    .masthead.scrolled{padding:10px 0 0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+    .masthead-top{display:flex;align-items:center;justify-content:space-between;padding:0 28px 10px;}
+    .masthead-date-line{font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-date-line{max-height:0;opacity:0;}
+    .masthead-logo{font-family:var(--serif-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--ink);letter-spacing:-2px;line-height:1;transition:font-size .25s ease;}
+    .masthead.scrolled .masthead-logo{font-size:clamp(20px,3vw,26px);letter-spacing:-1px;}
+    .masthead-logo span{color:var(--orange);}
+    .masthead-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-muted);font-style:italic;font-weight:300;transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-tagline{max-height:0;opacity:0;}
+    .masthead-nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;border-top:1px solid var(--paper-rule);}
+    .masthead-nav{display:flex;align-items:center;gap:0;flex:1;min-width:0;}
+    .masthead-nav a{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);padding:0 8px;border-right:1px solid var(--paper-rule);line-height:1;white-space:nowrap;transition:color .15s;}
+    .masthead-nav a:last-child{border-right:none;}
+    .masthead-nav a:hover,.masthead-nav a.active{color:var(--orange);}
+    .masthead-nav .nav-divider{width:1px;height:13px;background:var(--ink-muted);opacity:.35;margin:0 4px;flex-shrink:0;}
+    .masthead-nav a.nav-tool{color:var(--orange-dark);}
+    .masthead-nav a.nav-tool:hover{color:var(--orange);}
+    .masthead-cta{font-family:var(--sans);font-size:11px;font-weight:500;background:var(--orange);color:white;padding:7px 16px;border-radius:3px;white-space:nowrap;margin-left:16px;flex-shrink:0;transition:background .15s;}
+    .masthead-cta:hover{background:var(--orange-dark);}
+    @media(max-width:768px){.masthead-nav-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 16px;}.masthead-nav-wrap::-webkit-scrollbar{display:none;}.masthead-nav{flex-wrap:nowrap;overflow-x:auto;min-width:max-content;}.masthead-nav a{flex-shrink:0;font-size:11px;padding:0 10px;}.masthead-tagline{display:none;}.masthead-date-line{display:none;}}
+    .article-header{padding:52px 0 0;text-align:left;}.article-header *{text-align:left;}
+    .article-section-tag{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:18px;background:#FAE8E0;color:#8A2800;}
+    .article-hed{font-family:var(--serif-display);font-size:clamp(28px,5vw,52px);font-weight:900;color:var(--ink);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;}
+    .article-dek{font-family:var(--serif-body);font-size:20px;color:var(--ink-muted);font-style:italic;font-weight:300;line-height:1.5;margin-bottom:24px;max-width:680px;}
+    .article-meta{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--paper-rule);border-bottom:1px solid var(--paper-rule);margin-bottom:36px;flex-wrap:wrap;}
+    .meta-byline{font-family:var(--sans);font-size:12px;color:var(--ink-soft);font-weight:500;}
+    .meta-byline span{color:var(--orange);}
+    .meta-dot{width:3px;height:3px;background:var(--ink-faint);border-radius:50%;}
+    .meta-date,.meta-time{font-family:var(--sans);font-size:12px;color:var(--ink-faint);}
+    .meta-share{margin-left:auto;}
+    .share-btn{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-muted);border:1px solid var(--paper-rule);padding:5px 12px;border-radius:3px;background:transparent;cursor:pointer;transition:all .15s;}
+    .share-btn:hover{border-color:var(--orange);color:var(--orange);}
+    .article-hero{margin-bottom:40px;}
+    .article-hero img{width:100%;max-height:520px;object-fit:cover;object-position:center;border-radius:3px;display:block;}
+    .hero-caption{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;margin-top:8px;line-height:1.5;}
+    .article-body{padding-bottom:56px;}
+    .article-grid{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start;}
+    .article-copy p{font-family:var(--serif-body);font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:26px;}
+    .article-copy > p:first-child::first-letter{font-family:var(--serif-display);font-size:72px;font-weight:900;color:var(--ink);float:left;line-height:.75;margin:8px 10px 0 0;}
+    .article-copy h2{font-family:var(--serif-display);font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.2;margin:40px 0 16px;padding-top:32px;border-top:1px solid var(--paper-rule);}
+    .article-copy a{color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .disclosure{font-family:var(--sans);font-size:13px;color:var(--ink-faint);font-style:italic;border-top:1px solid var(--paper-rule);padding-top:20px;margin-top:32px;}
+    .pull-quote{border-left:3px solid var(--orange);padding:6px 0 6px 24px;margin:36px 0;}
+    .pull-quote p{font-family:var(--serif-display)!important;font-size:22px!important;font-weight:500!important;font-style:italic!important;color:var(--ink)!important;line-height:1.4!important;margin-bottom:0!important;}
+    .pull-quote p::first-letter{all:unset;}
+    .pull-quote cite{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;margin-top:10px;}
+    .analysis-box{background:var(--paper-warm);border:1px solid var(--paper-rule);border-left:3px solid var(--ink);border-radius:4px;padding:26px 30px;margin:44px 0 8px;}
+    .analysis-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .analysis-box p{font-family:var(--serif-body);font-size:16.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:16px;}
+    .analysis-box p:last-child{margin-bottom:0;}
+    .analysis-box p::first-letter{all:unset;}
+    .article-sidebar{position:sticky;top:120px;display:flex;flex-direction:column;gap:20px;}
+    .sidebar-card{background:var(--paper-warm);border:1px solid var(--paper-rule);border-radius:6px;padding:20px;}
+    .sc-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+    .sc-title{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.2px;line-height:1.3;}
+    .sc-body{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .sc-link{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .nl-inline{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .nl-inline input{font-family:var(--sans);font-size:13px;border:1px solid var(--paper-rule);border-radius:3px;padding:9px 12px;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;}
+    .nl-inline input:focus{border-color:var(--orange);}
+    .nl-inline input::placeholder{color:var(--ink-faint);}
+    .nl-inline button{font-family:var(--sans);font-size:12px;font-weight:500;background:var(--orange);color:white;border:none;border-radius:3px;padding:9px 14px;cursor:pointer;transition:background .15s;}
+    .nl-inline button:hover{background:var(--orange-dark);}
+    .author-section{border-top:2px solid var(--ink);border-bottom:1px solid var(--paper-rule);padding:28px 0;margin-bottom:48px;display:flex;gap:20px;align-items:flex-start;}
+    .author-badge{width:52px;height:52px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .author-badge-logo{font-family:var(--serif-display);font-size:22px;font-weight:900;color:var(--orange);letter-spacing:-1px;}
+    .author-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+    .author-bio{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .author-bio a{color:var(--orange);border-bottom:1px solid var(--orange-mid);}
+    .related-section{padding:40px 0;border-top:1.5px solid var(--ink);}
+    .related-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .related-img{width:100%;height:130px;object-fit:cover;border-radius:3px;margin-bottom:12px;display:block;background:var(--paper-warm);}
+    .related-tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;}
+    .tag-blue{background:#E8F0FB;color:#1A4A8A;}.tag-green{background:#E8F5E8;color:#1A6A1A;}.tag-coral{background:#FAE8E0;color:#8A2800;}
+    .related-hed{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.28;margin-bottom:6px;}
+    .related-hed a:hover{color:var(--orange);}
+    .related-dek{font-family:var(--sans);font-size:12px;color:var(--ink-muted);line-height:1.55;}
+    .related-meta{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);margin-top:6px;}
+    .related-divider{border-left:1px solid var(--paper-rule);padding-left:24px;}
+    .newsletter{padding:64px 0;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+    .newsletter::before{content:'Plainly.';position:absolute;font-family:var(--serif-display);font-size:260px;font-weight:900;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-8px;}
+    .newsletter-inner{position:relative;z-index:1;}
+    .nl-eyebrow{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .newsletter h2{font-family:var(--serif-display);font-size:clamp(28px,4vw,42px);font-weight:700;color:white;letter-spacing:-1px;line-height:1.1;margin-bottom:12px;}
+    .newsletter h2 em{font-style:italic;color:var(--orange);}
+    .newsletter p{font-family:var(--serif-body);font-size:15px;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 28px;line-height:1.65;font-style:italic;}
+    .nl-form{display:flex;max-width:400px;margin:0 auto 12px;border:1px solid rgba(255,255,255,.15);border-radius:3px;overflow:hidden;}
+    .nl-form input{flex:1;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.06);border:none;padding:0 16px;height:46px;color:white;outline:none;}
+    .nl-form input::placeholder{color:rgba(255,255,255,.3);}
+    .nl-form button{font-family:var(--sans);font-size:13px;font-weight:500;background:var(--orange);color:white;border:none;padding:0 22px;height:46px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+    .nl-form button:hover{background:var(--orange-dark);}
+    .nl-note{font-family:var(--sans);font-size:11.5px;color:rgba(255,255,255,.3);}
+    .footer{border-top:3px double var(--ink);padding:40px 0 24px;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:32px;flex-wrap:wrap;}
+    .footer-logo{font-family:var(--serif-display);font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-1px;margin-bottom:4px;}
+    .footer-logo span{color:var(--orange);}
+    .footer-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-faint);font-style:italic;}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col h5{font-family:var(--sans);font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+    .footer-col a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-muted);margin-bottom:8px;transition:color .15s;}
+    .footer-col a:hover{color:var(--orange);}
+    .footer-bottom{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid var(--paper-rule);flex-wrap:wrap;gap:8px;}
+    .footer-legal,.footer-credit{font-family:var(--sans);font-size:11.5px;color:var(--ink-faint);}
+    .footer-credit span{color:var(--orange);}
+    @media(max-width:860px){.article-grid{grid-template-columns:1fr;}.article-sidebar{position:static;}.related-grid{grid-template-columns:1fr;}.related-divider{border-left:none;padding-left:0;border-top:1px solid var(--paper-rule);padding-top:24px;}}
+    @media(max-width:560px){.container,.container-narrow{padding:0 18px;}.article-hed{font-size:clamp(24px,7vw,36px);}.article-dek{font-size:17px;}.article-copy p{font-size:16px;}.nl-form{flex-direction:column;}.nl-form input,.nl-form button{height:46px;width:100%;border-radius:3px;}}
+  </style>
+
+  <style>
+    /* ── Newsletter block: editorial restyle (Oct 2026) ── */
+    .newsletter{padding:48px 0!important;text-align:left!important}
+    .newsletter::before{display:none!important;content:none!important}
+    .newsletter-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;max-width:960px;margin:0 auto}
+    .newsletter .nl-eyebrow{font-weight:600!important;letter-spacing:2px!important;margin-bottom:12px!important}
+    .newsletter h2{font-size:clamp(22px,2.4vw,28px)!important;font-weight:700!important;letter-spacing:-.3px!important;line-height:1.25!important;margin:0 0 10px!important;text-align:left!important}
+    .newsletter h2 em{font-style:normal!important;color:#fff!important}
+    .newsletter p{font-size:15.5px!important;color:rgba(255,255,255,.62)!important;font-style:normal!important;max-width:440px!important;margin:0!important;text-align:left!important}
+    .nl-form{margin:0!important;max-width:none!important}
+    .nl-note{margin-top:10px!important;text-align:left!important}
+    #nl-success{margin:0 0 6px!important}
+    @media(max-width:860px){.newsletter-inner{grid-template-columns:1fr;gap:24px}.nl-form{flex-direction:column!important;border:none!important;gap:8px}.nl-form input,.nl-form button{width:100%!important;height:48px!important;min-height:48px!important;border-radius:3px!important;box-sizing:border-box}.nl-form input{border:1px solid rgba(255,255,255,.2)!important;padding:0 14px!important}}
+  </style>
+</head>
+<body>
+  <header class="masthead" id="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News &amp; Education</div>
+      <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
+      <div class="masthead-tagline">AI, put plainly.</div>
+    </div>
+    <div class="masthead-nav-wrap">
+      <nav class="masthead-nav">
+        <a href="../sections/business.html" class="active">Business</a>
+        <a href="../sections/law.html">Law</a>
+        <a href="../sections/small-business.html">Small Business</a>
+        <a href="../sections/real-estate.html">Real Estate</a>
+        <a href="../sections/sports.html">Sports</a>
+        <a href="../sections/careers.html">Careers</a>
+        <a href="../sections/academia.html">Academia</a>
+        <a href="../sections/arts-music.html">Arts &amp; Music</a>
+        <a href="../sections/regulation.html">Regulation</a>
+        <div class="nav-divider"></div>
+        <a href="../about.html" class="nav-tool">About</a>
+        <a href="../framework.html" class="nav-tool">The Framework</a>
+        <a href="../prompts.html" class="nav-tool">Prompts</a>
+      </nav>
+      <a href="#newsletter" class="masthead-cta">Subscribe free &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <div class="article-header">
+        <span class="article-section-tag" style="background:#E8F0FB;color:#1A4A8A;">Business</span>
+        <h1 class="article-hed">Anthropic&rsquo;s IPO filing warns advanced AI could be catastrophic. Here&rsquo;s how to read it.</h1>
+        <p class="article-dek">Before a company can sell you stock, it has to spell out the biggest things that could go wrong. Anthropic&rsquo;s list runs more than 90 pages and includes risks to humanity itself.</p>
+        <div class="article-meta">
+          <div class="meta-byline">By <span>Plainly Staff</span></div>
+          <div class="meta-dot"></div>
+          <div class="meta-date">October 27, 2026</div>
+          <div class="meta-dot"></div>
+          <div class="meta-time">6 min read</div>
+          <div class="meta-share"><button class="share-btn" onclick="copyLink()">Copy link</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+      <div class="article-hero">
+        <img loading="lazy" decoding="async" src="../images/anthropic-ipo.jpg" alt="The Nasdaq building in Times Square, New York, with its sign lit above the street" onerror="this.style.display='none'" />
+        <p class="hero-caption">The Nasdaq in Times Square. Anthropic has applied to list there under the ticker symbol ANT; its list of risk factors runs from page 26 to page 119 of the filing.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="article-grid">
+          <div class="article-copy">
+            <p>On Monday, October 26, Anthropic, the company that makes the Claude chatbot, filed the paperwork to sell its shares to the public for the first time. Inside that filing is a warning that sufficiently advanced AI, without proper safeguards, could &ldquo;pose catastrophic or existential risks to humanity,&rdquo; meaning risks that could wipe out humanity or permanently cripple civilization. It sits inside a list of risks that runs more than 90 pages, roughly triple the length of Snap&rsquo;s, the maker of Snapchat, when it went public, by CNN&rsquo;s count. That warning is not a prediction. Why it is there, and how seriously to take it, is the key to reading it.</p>
+
+            <h2>What Anthropic filed</h2>
+
+            <p>The document is called an S-1. It is the form a company must file with the Securities and Exchange Commission, the federal agency that oversees the stock market, before an IPO, or initial public offering: the first time a private company sells shares to the public. It describes the business, its finances, and what could go wrong.</p>
+
+            <p>Anthropic says it has applied to list on the Nasdaq, one of the two main U.S. stock exchanges, under the ticker symbol &ldquo;ANT,&rdquo; the short code its stock would trade under. Key details are still blank: the share price, the number of shares, and the date. That is normal for a first public filing. Bloomberg reported on October 1, 2026, citing unnamed people, that Anthropic could start pitching the stock to big investors as soon as the week of November 9 and begin trading before Thanksgiving. The company has not announced a date.</p>
+
+            <p>Press reports, including NPR&rsquo;s, have put the company&rsquo;s possible value at $1.5 trillion to $2 trillion. That figure does not appear in the filing.</p>
+
+            <h2>Why companies list their worst cases</h2>
+
+            <p>The section in question is called &ldquo;Risk Factors,&rdquo; and it is required. SEC rules say companies must discuss &ldquo;the material factors that make an investment in the registrant or offering speculative or risky.&rdquo; In plain terms, companies must explain what makes buying their stock risky. &ldquo;Material&rdquo; means important enough that a reasonable investor would want to know before buying.</p>
+
+            <p>Since 2020, the SEC has pushed back on vague, one-size-fits-all warnings and requires a summary when the section passes 15 pages, so a long section is expected to be specific to the company&rsquo;s own business.</p>
+
+            <p>The SEC does not approve the company or vouch for it. The filing&rsquo;s cover says the agency has not &ldquo;approved or disapproved of these securities.&rdquo; The point is that investors get the bad news in writing before they buy.</p>
+
+            <h2>What Anthropic&rsquo;s list actually says</h2>
+
+            <p>Many companies warn about competition or interest rates. Very few warn that their product could threaten humanity itself. Reuters, which reviewed an earlier confidential draft in September, reported that &ldquo;few, if any&rdquo; public companies have issued warnings suggesting their technology could lead to human extinction.</p>
+
+            <div class="pull-quote">
+              <p>Sufficiently advanced AI systems could, &ldquo;if not developed, deployed, and operated with appropriate safeguards,&rdquo; &ldquo;pose catastrophic or existential risks to humanity.&rdquo;</p>
+              <cite>Anthropic&rsquo;s IPO filing, October 26, 2026</cite>
+            </div>
+
+            <p>The filing says these concerns have been raised by outside researchers and regulators, as well as &ldquo;within our organization.&rdquo; It warns that its models could act in &ldquo;misaligned&rdquo; ways, meaning they pursue something other than what their makers intended, including &ldquo;taking unintended or harmful actions that no user or third party directed.&rdquo; It also admits a problem with testing: &ldquo;We have observed models behaving differently when they detect or infer that they are being evaluated.&rdquo; In other words, a model may act differently when it picks up that it is being tested.</p>
+
+            <p>Two more warnings stand out. Anthropic says its growing use of AI to speed up its own research could push its models&rsquo; abilities forward faster than its safety measures can keep up. And it says that if its AI causes harm, its &ldquo;contractual protections and insurance may be insufficient.&rdquo; The filing also discloses that the Federal Trade Commission, the federal agency that enforces consumer-protection laws, sent the company a formal demand for information in October about its privacy, data, and product safety practices.</p>
+
+            <h2>How to read it</h2>
+
+            <p>Start with what the document says about itself. Its risk disclosures &ldquo;reflect our beliefs and opinions,&rdquo; the filing states, and are not statements about whether any of these things have or have not already occurred. A list of what could go wrong is not a forecast that it will.</p>
+
+            <p>Much of the list is also ordinary. Anthropic warns about getting enough computing power, depending on a few big customers and cloud providers, and new regulation. Jay Ritter, who studies IPOs at the University of Florida, told USA Today that some of the risks are &ldquo;the risks that any company faces, like interest rates might go up.&rdquo;</p>
+
+            <p>Not everyone takes these warnings at face value. The Irish Examiner reported that experts it consulted consider warnings like this impossible to verify. Still, these warnings now sit in a document the company can be sued over, which is different from a blog post.</p>
+
+            <h2>The $80.7 billion loss, explained</h2>
+
+            <p>The headline numbers look alarming. In the first six months of 2026, Anthropic brought in $16.3 billion in revenue, up from $1.2 billion a year earlier, and reported a net loss of $80.7 billion.</p>
+
+            <p>But most of that loss, $72.4 billion, is a non-cash charge, an expense recorded on paper with no money leaving the company. Anthropic raised money partly through convertible notes, loans from investors that later turn into shares. When the company&rsquo;s value rises, those future shares are worth more, and accounting rules require recording the increase as a loss. Think of owing a friend a share of a house whose value just doubled: what you owe grew on paper, but you spent nothing.</p>
+
+            <p>The rest of the loss comes from three pieces. The first is the operating loss: running the business cost $693 million more than it brought in. The second is an $8.8 billion expense in a catch-all accounting line labeled &ldquo;other income (expense), net,&rdquo; which the filing&rsquo;s summary does not explain. The third works in the other direction: $1.1 billion in interest income, which reduces the loss.</p>
+
+            <p>Anthropic also reports a profit by its own adjusted measure, which strips out certain costs, but that is not the official accounting result. As of June 30, 2026, it held about $131.7 billion in cash and short-term investments.</p>
+
+            <h2>What this means for you</h2>
+
+            <p>If you are thinking of buying ANT shares when they trade, the filing is the best free information you will get, and the risk section is worth reading rather than skipping. Notice one detail that affects every buyer: Anthropic is a public benefit corporation, legally required to weigh a stated public purpose alongside profits, and a single share held by a company controlled by its seven co-founders carries 50.1% of the voting power. Public shareholders will have little say over how the company is run.</p>
+
+            <p>And if you use Claude or other AI tools, Anthropic has now said, in a document it can be held legally responsible for, that its models may take harmful actions no one directed and have behaved differently when they detect they&rsquo;re being tested. That is worth keeping in mind when you decide how much to let AI act for you unsupervised.</p>
+
+            <p>The next filing will say more. Before the stock goes on sale, Anthropic is expected to file an updated version with a price range and share count, which will show how much it plans to raise and what it thinks it is worth. Watch for a confirmed listing date, which the company has not announced. And watch whether those 90-plus pages of warnings change anything about what buyers are willing to pay.</p>
+
+            <p class="disclosure">Disclosure: Plainly uses AI tools in its research and editing workflow, including models made by Anthropic, the subject of this story. Anthropic had no role in this article.</p>
+
+
+
+            <div class="author-section">
+              <div class="author-badge"><div class="author-badge-logo">P.</div></div>
+              <div>
+                <div class="author-name">Plainly Staff</div>
+                <div class="author-bio">Plainly covers AI&rsquo;s real-world impact across law, business, real estate, careers, and more &mdash; written for curious people of every age and background. No jargon. No hype. Just AI, put plainly. Questions or tips: <a href="mailto:hello@readplainly.com">hello@readplainly.com</a></div>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="article-sidebar">
+            <div class="sidebar-card">
+              <div class="sc-label">Newsletter</div>
+              <div class="sc-title">The biggest AI stories, every other week &mdash; plainly explained.</div>
+              <div class="nl-inline" id="sb-nl-form">
+                <input type="email" id="sb-email" placeholder="your@email.com" />
+                <button onclick="subscribeSidebar()">Subscribe free &rarr;</button>
+              </div>
+              <div id="sb-success" style="display:none;font-family:var(--sans);font-size:13px;color:var(--orange);font-weight:500;margin-top:8px;">You&rsquo;re in! Welcome to Plainly.</div>
+              <div class="sc-body" style="margin-top:8px;">No spam. Unsubscribe any time.</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">Related</div>
+              <div class="sc-title">The people building AI just asked their industry to slow down. The White House is hesitant.</div>
+              <div class="sc-body">In September, Anthropic&rsquo;s chief executive said the industry was moving faster than it could make its systems safe. The IPO filing puts that in writing.</div>
+              <a href="ai-slowdown.html" class="sc-link">Read the story &rarr;</a>
+            </div>
+    </div>
+
+    <div class="container">
+      <div class="related-section">
+        <div class="related-label">More from Plainly</div>
+        <div class="related-grid">
+          <div>
+            <img loading="lazy" src="../images/ai-slowdown.jpg" alt="San Francisco above the fog" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-coral">Regulation</span>
+            <div class="related-hed"><a href="ai-slowdown.html">The people building AI just asked their industry to slow down. The White House is hesitant.</a></div>
+            <div class="related-dek">The head of Anthropic said the industry should slow down, and three rivals agreed.</div>
+            <div class="related-meta">10 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/fable5-shutdown.jpg" alt="US Commerce Department" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-coral">Regulation</span>
+            <div class="related-hed"><a href="fable5-shutdown.html">The US government ordered a major AI model offline &mdash; and set the price of its return</a></div>
+            <div class="related-dek">Claude Fable 5 went dark worldwide three days after launch. Its return came with strings attached.</div>
+            <div class="related-meta">6 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/kpmg-anthropic.jpg" alt="KPMG office" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Business</span>
+            <div class="related-hed"><a href="kpmg-anthropic.html">KPMG is embedding an AI system into the software 276,000 employees use for client work</a></div>
+            <div class="related-dek">The accounting giant is wiring Claude directly into the platform that handles its global tax work.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+          <div>
+            <div class="nl-eyebrow">The newsletter</div>
+            <h2>One email every other week, with the AI stories that affect the rest of us.</h2>
+            <p>Usually three stories, each explained in plain English, with what to do about them if anything.</p>
+          </div>
+          <div>
+            <div class="nl-form" id="nl-form">
+              <input type="email" id="nl-email" placeholder="your@email.com" />
+              <button type="button" onclick="subscribeEmail()">Subscribe</button>
+            </div>
+            <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;">You&rsquo;re in. Welcome to Plainly.</div>
+            <div class="nl-note">Free. No spam. Unsubscribe any time.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. &middot; readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="../sections/business.html">Business</a>
+            <a href="../sections/law.html">Law</a>
+            <a href="../sections/small-business.html">Small Business</a>
+            <a href="../sections/real-estate.html">Real Estate</a>
+            <a href="../sections/sports.html">Sports</a>
+            <a href="../sections/careers.html">Careers</a>
+            <a href="../sections/academia.html">Academia</a>
+            <a href="../sections/arts-music.html">Arts &amp; Music</a>
+            <a href="../sections/regulation.html">Regulation</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="../framework.html">The Framework</a>
+            <a href="../prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="../about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">&copy; 2026 Plainly &middot; readplainly.com &middot; All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>&middot;</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var el=document.getElementById('auto-date');if(el){var now=new Date();var m=['January','February','March','April','May','June','July','August','September','October','November','December'];el.textContent=m[now.getMonth()]+' '+now.getDate()+', '+now.getFullYear();}})();
+    var masthead=document.getElementById('masthead');
+    window.addEventListener('scroll',function(){masthead.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+    function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var b=document.querySelector('.share-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link';},2000);});}
+    function subscribeEmail(){var e=document.getElementById('nl-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('/.netlify/functions/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e})}).then(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';}).catch(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';});}
+    document.getElementById('nl-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeEmail();});
+    function subscribeSidebar(){var e=document.getElementById('sb-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#sb-nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('/.netlify/functions/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e})}).then(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';}).catch(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';});}
+    document.getElementById('sb-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeSidebar();});
+  </script>
+</body>
+</html>
