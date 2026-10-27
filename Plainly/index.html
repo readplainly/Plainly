@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="description" content="Plainly is AI news for people with other things to do. What happened, who it affects, and what you can do about it, in plain English." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="theme-color" content="#FAF8F4" />
@@ -784,6 +785,8 @@
   
     /* ─── MOBILE NAV — horizontal swipe ─── */
     @media (max-width: 768px) {
+      .masthead-tagline { display: none; }
+      .masthead-date-line { display: none; }
       .sticky-nav-sections {
         overflow-x: auto;
         overflow-y: hidden;
@@ -814,12 +817,35 @@
       .masthead-cta { display: block; opacity: 1; pointer-events: auto; }
     }
   </style>
+
+  <style>
+    /* ── Newsletter block: editorial restyle (Oct 2026) ── */
+    .newsletter{padding:48px 0!important;text-align:left!important}
+    .newsletter::before{display:none!important;content:none!important}
+    .newsletter-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;max-width:960px;margin:0 auto}
+    .newsletter .nl-eyebrow{font-weight:600!important;letter-spacing:2px!important;margin-bottom:12px!important}
+    .newsletter h2{font-size:clamp(22px,2.4vw,28px)!important;font-weight:700!important;letter-spacing:-.3px!important;line-height:1.25!important;margin:0 0 10px!important;text-align:left!important}
+    .newsletter h2 em{font-style:normal!important;color:#fff!important}
+    .newsletter p{font-size:15.5px!important;color:rgba(255,255,255,.62)!important;font-style:normal!important;max-width:440px!important;margin:0!important;text-align:left!important}
+    .nl-form{margin:0!important;max-width:none!important}
+    .nl-note{margin-top:10px!important;text-align:left!important}
+    #nl-success{margin:0 0 6px!important}
+    @media(max-width:860px){.newsletter-inner{grid-template-columns:1fr;gap:24px}.nl-form{flex-direction:column!important;border:none!important;gap:8px}.nl-form input,.nl-form button{width:100%!important;height:48px!important;min-height:48px!important;border-radius:3px!important;box-sizing:border-box}.nl-form input{border:1px solid rgba(255,255,255,.2)!important;padding:0 14px!important}}
+  </style>
+  <style>
+    /* ── Ticker: light strip (Oct 2026) ── */
+    .topbar{background:#fff!important;border-bottom:1px solid var(--paper-rule)!important}
+    .ticker-item span{color:var(--ink-soft)!important}
+    .ticker-item strong{color:var(--orange-dark)!important;font-weight:600!important}
+    .ticker-dot{background:var(--orange)!important}
+  </style>
 </head>
 <body>
 
   <!-- TICKER -->
   <div class="topbar" aria-label="News ticker">
     <div class="topbar-scroll">
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> Anthropic&rsquo;s IPO filing warns advanced AI could be catastrophic &mdash; here&rsquo;s how to read it</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> The people building AI just asked their industry to slow down. The White House is hesitant.</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Real Estate:</strong> An algorithm may have set your rent &mdash; a $360M settlement could owe you money. Claims due Jan 29, 2027</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> US government orders Claude Fable 5 offline &mdash; and sets the price of its return</span></div>
@@ -831,6 +857,7 @@
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Sports:</strong> MLB's robot umpire overrules the human 54% of the time</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Careers:</strong> Meta cuts 8,000 jobs and calls it an AI pivot — here's what that number actually means</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Academia:</strong> Stanford first-years pitch "understanding checks" as the answer to AI cheating</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> Anthropic&rsquo;s IPO filing warns advanced AI could be catastrophic &mdash; here&rsquo;s how to read it</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> The people building AI just asked their industry to slow down. The White House is hesitant.</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Real Estate:</strong> An algorithm may have set your rent &mdash; a $360M settlement could owe you money. Claims due Jan 29, 2027</span></div>
       <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> US government orders Claude Fable 5 offline &mdash; and sets the price of its return</span></div>
@@ -920,18 +947,27 @@
 
           <article class="lead-main">
             <div class="lead-image-wrap">
-              <img loading="lazy" decoding="async" src="images/ai-slowdown.jpg" alt="San Francisco seen from above, its skyline rising out of a blanket of fog in golden light" class="lead-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
-              <p class="img-caption">San Francisco, home to Anthropic, OpenAI, and xAI. Their chief executives all said the industry should slow down. None has named a model it will delay.</p>
+              <img loading="lazy" decoding="async" src="images/anthropic-ipo.jpg" alt="The Nasdaq building in Times Square, New York" class="lead-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
+              <p class="img-caption">The Nasdaq in Times Square. Anthropic has applied to list there under the ticker symbol ANT; its list of risk factors runs from page 26 to page 119 of the filing.</p>
             </div>
-            <span class="tag tag-coral">Regulation</span>
-            <h2><a href="articles/ai-slowdown.html">The people building AI just asked their industry to slow down. The White House is hesitant.</a></h2>
-            <div class="lead-byline">By <span>Plainly Staff</span> &nbsp;·&nbsp; September 17, 2026 &nbsp;·&nbsp; 10 min read</div>
-            <p>On Saturday, the chief executive of Anthropic published an essay arguing that the companies building the world&rsquo;s most powerful AI, his own included, should deliberately slow down. Within a day, the heads of OpenAI, Google DeepMind, and xAI publicly agreed with him.</p>
-            <p>By Monday, President Trump had called warnings that AI could destroy humanity a &ldquo;HOAX,&rdquo; and the Speaker of the House had ruled out an emergency pause imposed by Congress. No federal bill is moving. The next scheduled step is a meeting.</p>
-            <a href="articles/ai-slowdown.html" class="read-more">Continue reading →</a>
+            <span class="tag tag-blue">Business</span>
+            <h2><a href="articles/anthropic-ipo.html">Anthropic&rsquo;s IPO filing warns advanced AI could be catastrophic. Here&rsquo;s how to read it.</a></h2>
+            <div class="lead-byline">By <span>Plainly Staff</span> &nbsp;·&nbsp; October 27, 2026 &nbsp;·&nbsp; 6 min read</div>
+            <p>On Monday, Anthropic filed the paperwork to sell its shares to the public for the first time. Inside is a warning that sufficiently advanced AI, without proper safeguards, could &ldquo;pose catastrophic or existential risks to humanity&rdquo; &mdash; part of a list of risks that runs more than 90 pages.</p>
+            <p>That warning is not a prediction. Why it is there, how to read the $80.7 billion loss beside it, and what it means if you buy the stock or use the product.</p>
+            <a href="articles/anthropic-ipo.html" class="read-more">Continue reading →</a>
           </article>
 
           <aside class="lead-sidebar">
+            <article class="sidebar-story">
+              <div class="sb-image-wrap">
+                <img loading="lazy" decoding="async" src="images/ai-slowdown.jpg" alt="San Francisco above the fog" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
+              </div>
+              <span class="tag tag-coral">Regulation</span>
+              <h3><a href="articles/ai-slowdown.html">The people building AI just asked their industry to slow down. The White House is hesitant.</a></h3>
+              <p>The head of Anthropic said the industry should slow down, and three rivals agreed. The president called the danger a hoax.</p>
+              <div class="meta">10 min read</div>
+            </article>
             <article class="sidebar-story">
               <div class="sb-image-wrap">
                 <img loading="lazy" decoding="async" src="images/realpage-settlement.jpg" alt="A resident holding a lease agreement at a kitchen table" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
@@ -948,15 +984,6 @@
               <span class="tag tag-coral">Regulation</span>
               <h3><a href="articles/fable5-shutdown.html">The US government ordered a major AI model offline &mdash; and set the price of its return</a></h3>
               <p>Claude Fable 5 went dark worldwide three days after launch. Its return came with strings attached &mdash; not just for its maker, but for the whole AI industry.</p>
-              <div class="meta">6 min read</div>
-            </article>
-            <article class="sidebar-story">
-              <div class="sb-image-wrap">
-                <img loading="lazy" decoding="async" src="images/gemini-spark.jpg" alt="Google Gemini Spark announcement at Google I/O 2026" class="sb-img" onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')" />
-              </div>
-              <span class="tag tag-blue">Business</span>
-              <h3><a href="articles/gemini-spark.html">Google's new 24/7 AI assistant can read your Gmail — but only if you pay $100 a month</a></h3>
-              <p>Gemini Spark keeps working after you close your laptop. The catch: it's locked behind Google's priciest plan and comes with a warning it may act without asking.</p>
               <div class="meta">6 min read</div>
             </article>
             <article class="sidebar-story">
@@ -1027,23 +1054,13 @@
       </div>
     </section>
 
-    <!-- PULL QUOTE -->
-    <div class="pull-quote-section">
-      <div class="container">
-        <div class="pull-quote-text">
-          "AI is moving fast and nobody has all the answers. We say that <strong>plainly</strong> — and cover it anyway."
-        </div>
-        <div class="pull-quote-sub">From the editor &nbsp;·&nbsp; Plainly, Issue 1</div>
-      </div>
-    </div>
-
     <!-- PROMPTS -->
     <section class="prompts-section">
       <div class="container">
         <div class="prompts-head">
           <div>
             <h2>Prompts library</h2>
-            <p>Ready-to-use prompts for your work. Copy, paste, fill in the brackets.</p>
+            <p>Forty-eight starting points for work that doesn&rsquo;t involve code. Copy one, fill in the brackets, edit the result.</p>
           </div>
           <a href="prompts.html" class="prompts-link">View all prompts →</a>
         </div>
@@ -1104,15 +1121,19 @@
     <section class="newsletter" id="newsletter">
       <div class="container">
         <div class="newsletter-inner">
-          <div class="nl-eyebrow">Free weekly newsletter</div>
-          <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
-          <p>The week&rsquo;s most important AI developments &mdash; broken down clearly, in plain English.</p>
-          <div class="nl-form" id="nl-form">
-            <input type="email" id="nl-email" placeholder="your@email.com" />
-            <button type="button" onclick="subscribeEmail()">Subscribe &rarr;</button>
+          <div>
+            <div class="nl-eyebrow">The newsletter</div>
+            <h2>One email every other week, with the AI stories that affect the rest of us.</h2>
+            <p>Usually three stories, each explained in plain English, with what to do about them if anything.</p>
           </div>
-          <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;margin-bottom:14px;">You&rsquo;re in! Welcome to Plainly. &#127881;</div>
-          <div class="nl-note">No spam. Unsubscribe any time.</div>
+          <div>
+            <div class="nl-form" id="nl-form">
+              <input type="email" id="nl-email" placeholder="your@email.com" />
+              <button type="button" onclick="subscribeEmail()">Subscribe</button>
+            </div>
+            <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;">You&rsquo;re in. Welcome to Plainly.</div>
+            <div class="nl-note">Free. No spam. Unsubscribe any time.</div>
+          </div>
         </div>
       </div>
     </section>
@@ -1122,11 +1143,11 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-left">
-            <div class="about-kicker">Why Plainly exists</div>
-            <h2>Written by someone figuring it out alongside you.</h2>
-            <p>I'm a 24-year-old law student who noticed AI was reshaping my field — and every other field — faster than anyone was explaining it clearly. So I started writing about it the way I'd want to read about it: honestly, without jargon, without pretending to have all the answers.</p>
-            <p>Plainly is for curious people who want to understand what's actually happening before the world changes around them.</p>
-            <a href="about.html" class="about-link">Read the full story →</a>
+            <div class="about-kicker">About Plainly</div>
+            <h2>AI news for people with other things to do.</h2>
+            <p>Plainly reports on artificial intelligence the way a newspaper reports on anything else: what happened, who it affects, and what you can do about it. The stories are filed by the part of life they touch &mdash; rent, work, school, the courts &mdash; and every term is explained the first time it appears.</p>
+            <p>It&rsquo;s written and edited by a law student in Los Angeles, with help from AI tools and a disclosure whenever that matters.</p>
+            <a href="about.html" class="about-link">More about Plainly &rarr;</a>
           </div>
           <div class="about-divider"></div>
           <div class="about-right">
@@ -1135,8 +1156,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6719" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               </div>
               <div class="stat-text">
-                <h4>Written for real people</h4>
-                <p>Not engineers, not VCs — curious professionals and students trying to keep up.</p>
+                <h4>Written for everyone</h4>
+                <p>No background in technology is assumed. If a sentence needs one, it gets rewritten.</p>
               </div>
             </div>
             <div class="about-stat">
@@ -1144,8 +1165,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6719" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
               </div>
               <div class="stat-text">
-                <h4>Honest about the chaos</h4>
-                <p>AI is moving fast and nobody has all the answers. We say that — and cover it anyway.</p>
+                <h4>Honest about uncertainty</h4>
+                <p>When something isn&rsquo;t known, the story says so. When a company is the only source, the story says that too.</p>
               </div>
             </div>
             <div class="about-stat">
@@ -1153,8 +1174,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6719" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
               </div>
               <div class="stat-text">
-                <h4>Sector by sector</h4>
-                <p>Law, business, academia, arts, regulation — we follow AI wherever it lands hardest.</p>
+                <h4>Filed by the part of life it touches</h4>
+                <p>Law, housing, work, school, sports, the arts &mdash; sorted by where it lands, not by which company announced it.</p>
               </div>
             </div>
           </div>
@@ -1181,9 +1202,9 @@
             <a href="sections/sports.html">Sports</a>
             <a href="sections/careers.html">Careers</a>
             <a href="sections/academia.html">Academia</a>
-            <a href="sections/arts-music.html">Arts & Music</a>
+            <a href="sections/arts-music.html">Arts &amp; Music</a>
             <a href="sections/regulation.html">Regulation</a>
-          </div>
+            </div>
           <div class="footer-col">
             <h5>Tools</h5>
             <a href="framework.html">The Framework</a>
@@ -1194,7 +1215,6 @@
             <h5>About</h5>
             <a href="about.html">Our story</a>
             <a href="mailto:hello@readplainly.com">Contact</a>
-            <a href="#">Privacy policy</a>
           </div>
         </div>
       </div>

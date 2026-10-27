@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="description" content="Plainly is AI news for people with other things to do, written and edited by a law student in Los Angeles." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Plainly</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -307,12 +308,43 @@
     .masthead-cta { font-family: var(--sans); font-size: 11px; font-weight: 500; background: var(--orange); color: white; padding: 7px 16px; border-radius: 3px; white-space: nowrap; margin-left: 16px; flex-shrink: 0; transition: background 0.15s; }
     .masthead-cta:hover { background: var(--orange-dark); }
     @media (max-width: 768px) {
+      .masthead-tagline { display: none; }
+      .masthead-date-line { display: none; }
       .masthead-nav-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 8px 16px; }
       .masthead-nav-wrap::-webkit-scrollbar { display: none; }
       .masthead-nav { flex-wrap: nowrap; overflow-x: auto; min-width: max-content; }
       .masthead-nav a { flex-shrink: 0; font-size: 11px; padding: 0 10px; }
     }
   </style>
+
+  <style>
+    /* ── Page header: editorial restyle (Oct 2026) ── */
+    .page-header{border-bottom:1px solid var(--ink)!important;padding:44px 0 32px!important;text-align:left!important}
+    .page-header .container{max-width:1100px}
+    .ph-eyebrow{font-family:var(--sans)!important;font-size:10px!important;font-weight:600!important;letter-spacing:2px!important;text-transform:uppercase!important;color:var(--orange)!important;margin:0 0 14px!important;animation:none!important}
+    .ph-title{font-family:var(--serif-display)!important;font-size:clamp(28px,3.4vw,38px)!important;font-weight:700!important;color:var(--ink)!important;letter-spacing:-.5px!important;line-height:1.15!important;margin:0 0 14px!important;max-width:680px;animation:none!important}
+    .ph-title span{color:inherit!important;font-style:normal!important}
+    .ph-sub{font-family:var(--serif-body)!important;font-size:18px!important;color:var(--ink-soft)!important;font-style:normal!important;font-weight:400!important;max-width:620px!important;margin:0!important;line-height:1.6!important;animation:none!important}
+    .ph-byline{font-family:var(--sans);font-size:12px;color:var(--ink-faint);margin-top:18px}
+    .ph-meta{display:none!important}
+    @media(max-width:560px){.ph-title{font-size:26px!important}.ph-sub{font-size:16px!important}}
+  </style>
+
+  <style>
+    /* ── Newsletter block: editorial restyle (Oct 2026) ── */
+    .newsletter{padding:48px 0!important;text-align:left!important}
+    .newsletter::before{display:none!important;content:none!important}
+    .newsletter-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;max-width:960px;margin:0 auto}
+    .newsletter .nl-eyebrow{font-weight:600!important;letter-spacing:2px!important;margin-bottom:12px!important}
+    .newsletter h2{font-size:clamp(22px,2.4vw,28px)!important;font-weight:700!important;letter-spacing:-.3px!important;line-height:1.25!important;margin:0 0 10px!important;text-align:left!important}
+    .newsletter h2 em{font-style:normal!important;color:#fff!important}
+    .newsletter p{font-size:15.5px!important;color:rgba(255,255,255,.62)!important;font-style:normal!important;max-width:440px!important;margin:0!important;text-align:left!important}
+    .nl-form{margin:0!important;max-width:none!important}
+    .nl-note{margin-top:10px!important;text-align:left!important}
+    #nl-success{margin:0 0 6px!important}
+    @media(max-width:860px){.newsletter-inner{grid-template-columns:1fr;gap:24px}.nl-form{flex-direction:column!important;border:none!important;gap:8px}.nl-form input,.nl-form button{width:100%!important;height:48px!important;min-height:48px!important;border-radius:3px!important;box-sizing:border-box}.nl-form input{border:1px solid rgba(255,255,255,.2)!important;padding:0 14px!important}}
+  </style>
+  <style>.section-pill{text-decoration:none;display:inline-block}.essay .pull{display:none}</style>
 </head>
 <body>
 
@@ -351,9 +383,10 @@
   <!-- PAGE HEADER -->
   <header class="page-header">
     <div class="container">
-      <div class="ph-eyebrow">About Plainly</div>
-      <div class="ph-title">Written by someone<br><span>figuring it out.</span></div>
-      <div class="ph-sub">No experts here. Just a curious law student paying attention to the most important thing happening right now.</div>
+      <div class="ph-eyebrow">About</div>
+      <div class="ph-title">Plainly is AI news for people with other things to do.</div>
+      <div class="ph-sub">I started it in the spring of 2026 while in law school, because the AI stories that mattered most to my own life &mdash; the ones about rent, jobs, courts, and contracts &mdash; were being written for engineers. This is my attempt to write them for everyone else.</div>
+      <div class="ph-byline">Ryan Mitchell, editor &nbsp;&middot;&nbsp; Los Angeles</div>
     </div>
   </header>
 
@@ -367,31 +400,26 @@
 
           <div class="essay-section">
             <div class="essay-label">How this started</div>
-            <h2>I'm a 24-year-old law student who started using AI — and couldn't believe what I was missing.</h2>
-            <p>It started simply. I was using AI as a study tool — summarizing dense readings, testing myself on case law, drafting outlines before exams. And it worked. Really well. Better than I expected, and faster than almost anything else I'd tried.</p>
-            <p>So I started reading more about it. What else could it do? Where was it headed? What did it mean for law, for business, for the industries my friends were entering? The more I read, the more frustrated I got — not with AI, but with how it was being written about.</p>
-            <p>Most of what I found felt gatekept. Written by people who seemed to assume you already had a technical background, already understood the terminology, already knew why any of it mattered. The information was out there, but it wasn't for everyone. It was for a specific kind of reader — and that reader wasn't most people.</p>
-            <div class="pull">
-              <p>The truth I kept coming back to: <span>it doesn't take a lot to get a lot out of AI.</span> Most people just haven't been shown how.</p>
-            </div>
-            <p>That gap — between what AI can actually do for ordinary people and what most people think it can do — felt like the real story. So I decided to write it. Plainly, for everyone.</p>
+            <h2>I started using AI to get through law school, and then started reading about it.</h2>
+            <p>In my second year I began using AI tools the way most students eventually do: to summarize a reading I didn&rsquo;t have time for, to quiz myself before an exam, to turn a pile of notes into an outline. It worked better than I expected, and that made me curious about what else it could do and where it was going.</p>
+            <p>So I read. Most of what I found assumed I already worked in technology. It used terms it didn&rsquo;t define, skipped the part about why any of it mattered, and was written for people who had been following the field for years. The information was out there. It just wasn&rsquo;t written for most people.</p>
+            <p>The stories I actually wanted were simpler than that. Not how the models work, but what happens when a landlord&rsquo;s software sets your rent, when a judge fines a lawyer for citing cases that don&rsquo;t exist, when the government orders a product offline that millions of people used that morning. Those are AI stories, and they belong to everyone.</p>
           </div>
 
           <div class="essay-section">
             <div class="essay-label">What Plainly is</div>
-            <h2>A place for every age, every background, every level of curiosity.</h2>
-            <p>Plainly exists to do two things. First, to report on AI developments clearly — tracking the news as it happens and translating it into plain English that actually connects to daily life. Not abstract. Not technical. Just: here's what happened, here's why it matters, here's what it means for you.</p>
-            <p>Second, to help people get more comfortable actually using AI. Because the gap isn't just in understanding the news — it's in realizing how much is already available, right now, that could genuinely help. Small business owners who don't know where to start. Students who could be studying smarter. People trying to get more done in less time who have no idea what tools exist.</p>
-            <p>AI doesn't discriminate by age or technical ability. A 65-year-old running a small business and a 19-year-old in their first semester have equal access to the same tools. <strong>What they often don't have equal access to is a clear explanation of how to use them.</strong> That's what Plainly is here for.</p>
-            <p>We cover the news — law, business, academia, arts, regulation, careers. We report on how AI is reshaping each sector. And alongside that, we offer practical tools: prompts you can copy and use today, a framework for thinking about AI that doesn't require any technical knowledge, and writing that meets you wherever you are.</p>
+            <h2>A news site that covers AI by what it does to ordinary life, not by how it works.</h2>
+            <p>Plainly does two things. It reports on AI the way a newspaper reports on anything else: what happened, who it affects, and what you can do about it. Each story is filed under the part of life it touches &mdash; law, business, real estate, careers, academia, regulation, sports, the arts &mdash; because that is how people actually run into it.</p>
+            <p>It also tries to make the tools themselves less intimidating. Most people have never been shown how to get anything useful out of them. The Framework is a short method for finding out what AI can take off your plate. The prompts library is a set of starting points you can copy and use today. Neither requires technical knowledge.</p>
+            <p>A few rules hold throughout. Every term gets explained the first time it appears. When something is uncertain, the story says so. When a company is the only source for a claim, the story says that too. And a story doesn&rsquo;t run unless it tells you something you can use.</p>
           </div>
 
           <div class="essay-section">
-            <div class="essay-label">A note on anonymity</div>
-            <h2>Why I'm not putting my name on it.</h2>
-            <p>Plainly is about the ideas, not about me. The story — a 24-year-old law student who noticed AI was reshaping his field and every other field, and decided to write about it honestly — is more interesting than any bio I could offer. And being a student means I'm still learning. That's exactly the point.</p>
-            <p>If you want to get in touch, reach out. I read everything.</p>
-            <a href="mailto:hello@readplainly.com" class="contact-link">hello@readplainly.com →</a>
+            <div class="essay-label">Who writes it</div>
+            <h2>One person, for now.</h2>
+            <p>I&rsquo;m a law student in Los Angeles. Every story is researched, drafted, and fact-checked with help from AI tools, then read and edited by me before it runs. Where that matters, the story says so &mdash; including a disclosure whenever Anthropic, whose models I use, is the subject. I&rsquo;m not an expert in artificial intelligence. I&rsquo;m a careful reader who tries to write things down clearly, and that turns out to be most of the job.</p>
+            <p>If I&rsquo;ve gotten something wrong, I&rsquo;d like to know. If you have a story, I&rsquo;d like to hear it.</p>
+            <a href="mailto:hello@readplainly.com" class="contact-link">hello@readplainly.com &rarr;</a>
           </div>
 
         </article>
@@ -405,52 +433,56 @@
             <div class="principles">
               <div class="principle">
                 <div class="pr-num">1</div>
-                <div class="pr-text"><strong>Plain English, always</strong> If a 16-year-old can't follow it, we rewrite it. No jargon without explanation.</div>
+                <div class="pr-text"><strong>Plain English</strong> Every term is explained the first time it appears. If a sentence needs a background in technology to follow, it gets rewritten.</div>
               </div>
               <div class="principle">
                 <div class="pr-num">2</div>
-                <div class="pr-text"><strong>Honest about uncertainty</strong> AI is moving faster than anyone can fully track. We say when we don't know.</div>
+                <div class="pr-text"><strong>Honest about uncertainty</strong> When something isn&rsquo;t known, the story says so. When a company is the only source, the story says that too.</div>
               </div>
               <div class="principle">
                 <div class="pr-num">3</div>
-                <div class="pr-text"><strong>Follow it everywhere</strong> AI doesn't stay in one industry. Neither do we.</div>
+                <div class="pr-text"><strong>Filed by the part of life it touches</strong> Stories are sorted by sector &mdash; law, housing, work, school &mdash; not by which company announced what.</div>
               </div>
               <div class="principle">
                 <div class="pr-num">4</div>
-                <div class="pr-text"><strong>No hype, no doom</strong> Both are lazy. We report what's actually happening.</div>
+                <div class="pr-text"><strong>No hype, no doom</strong> Both are easier to write than an accurate account. Plainly reports what happened and lets you decide what it means.</div>
               </div>
               <div class="principle">
                 <div class="pr-num">5</div>
-                <div class="pr-text"><strong>Practical, not theoretical</strong> Every story should tell you something you can use or act on.</div>
+                <div class="pr-text"><strong>Useful</strong> A story doesn&rsquo;t run unless it tells you something you can act on, even if the action is just knowing.</div>
               </div>
             </div>
           </div>
 
           <div class="sidebar-card">
             <div class="sc-label">What we cover</div>
-            <div class="sc-title">Six sections. One through-line.</div>
-            <div class="sc-body" style="margin-bottom: 14px;">AI is reshaping every major field. We follow it sector by sector.</div>
+            <div class="sc-title">Nine sections</div>
+            <div class="sc-body" style="margin-bottom: 14px;">Each story is filed under the part of life it touches.</div>
             <div class="sections-grid">
-              <div class="section-pill" style="background:#E8F0FB; color:#1A4A8A;">Law & Legal</div>
-              <div class="section-pill" style="background:#FFF0E8; color:#C44A00;">Business</div>
-              <div class="section-pill" style="background:#FBF0E0; color:#7A4A00;">Careers</div>
-              <div class="section-pill" style="background:#E8F5E8; color:#1A6A1A;">Academia</div>
-              <div class="section-pill" style="background:#FAE8F0; color:#8A2050;">Arts & Music</div>
-              <div class="section-pill" style="background:#FAE8E0; color:#8A2800;">Regulation</div>
+              <a href="sections/business.html" class="section-pill" style="background:#E8F0FB; color:#1A4A8A;">Business</a>
+              <a href="sections/law.html" class="section-pill" style="background:#E8F0FB; color:#1A4A8A;">Law</a>
+              <a href="sections/small-business.html" class="section-pill" style="background:#FFF0E8; color:#C44A00;">Small Business</a>
+              <a href="sections/real-estate.html" class="section-pill" style="background:#E8F5E8; color:#1A6A1A;">Real Estate</a>
+              <a href="sections/sports.html" class="section-pill" style="background:#E8F5E8; color:#1A6A1A;">Sports</a>
+              <a href="sections/careers.html" class="section-pill" style="background:#FBF0E0; color:#7A4A00;">Careers</a>
+              <a href="sections/academia.html" class="section-pill" style="background:#E8F5E8; color:#1A6A1A;">Academia</a>
+              <a href="sections/arts-music.html" class="section-pill" style="background:#FAE8F0; color:#8A2050;">Arts &amp; Music</a>
+              <a href="sections/regulation.html" class="section-pill" style="background:#FAE8E0; color:#8A2800;">Regulation</a>
             </div>
+          </div>
           </div>
 
           <div class="sidebar-card">
             <div class="sc-label">The Framework</div>
-            <div class="sc-title">New to AI? Start here.</div>
-            <div class="sc-body">A step-by-step walkthrough for using AI in your work — no coding required. Built for curious people, not engineers.</div>
-            <a href="#" class="contact-link">Start the walkthrough →</a>
+            <div class="sc-title">If you&rsquo;re new to this, start here.</div>
+            <div class="sc-body">A short method for finding the parts of your work worth handing to an AI tool. No technical setup.</div>
+            <a href="framework.html" class="contact-link">Read the Framework &rarr;</a>
           </div>
 
           <div class="sidebar-card">
             <div class="sc-label">Get in touch</div>
-            <div class="sc-title">Questions, tips, or just want to say hi?</div>
-            <div class="sc-body">I read every email. If you have a story tip, a question, or want to tell me I got something wrong — reach out.</div>
+            <div class="sc-title">Get in touch</div>
+            <div class="sc-body">Story tips, corrections, and questions all go to the same place. I read everything.</div>
             <a href="mailto:hello@readplainly.com" class="contact-link">hello@readplainly.com →</a>
           </div>
 
@@ -465,18 +497,22 @@
   <section class="newsletter" id="newsletter">
     <div class="container">
       <div class="newsletter-inner">
-        <div class="nl-eyebrow">Free weekly newsletter</div>
-        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
-        <p>The week's most important AI developments — broken down clearly, sorted by the sector that matters to you.</p>
-        <div class="nl-form" id="nl-form">
-          <input type="email" id="nl-email" placeholder="your@email.com" aria-label="Email address" />
-          <button type="button" onclick="subscribeEmail()">Subscribe →</button>
+          <div>
+            <div class="nl-eyebrow">The newsletter</div>
+            <h2>One email every other week, with the AI stories that affect the rest of us.</h2>
+            <p>Usually three stories, each explained in plain English, with what to do about them if anything.</p>
+          </div>
+          <div>
+            <div class="nl-form" id="nl-form">
+              <input type="email" id="nl-email" placeholder="your@email.com" />
+              <button type="button" onclick="subscribeEmail()">Subscribe</button>
+            </div>
+            <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;">You&rsquo;re in. Welcome to Plainly.</div>
+            <div class="nl-note">Free. No spam. Unsubscribe any time.</div>
+          </div>
         </div>
-        <div id="nl-success" style="display:none; color:#FF6719; font-family:var(--sans); font-size:15px; font-weight:500; margin-bottom:14px;">You're in! Welcome to Plainly. 🎉</div>
-        <div class="nl-note">No spam. Unsubscribe any time.</div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -489,24 +525,26 @@
         <div class="footer-cols">
           <div class="footer-col">
             <h5>Sections</h5>
-            <a href="#">Business</a>
-            <a href="#">Law & Legal</a>
-            <a href="#">Regulation</a>
-            <a href="#">Careers</a>
-            <a href="#">Academia</a>
-            <a href="#">Arts & Music</a>
-          </div>
+            <a href="sections/business.html">Business</a>
+            <a href="sections/law.html">Law</a>
+            <a href="sections/small-business.html">Small Business</a>
+            <a href="sections/real-estate.html">Real Estate</a>
+            <a href="sections/sports.html">Sports</a>
+            <a href="sections/careers.html">Careers</a>
+            <a href="sections/academia.html">Academia</a>
+            <a href="sections/arts-music.html">Arts &amp; Music</a>
+            <a href="sections/regulation.html">Regulation</a>
+            </div>
           <div class="footer-col">
             <h5>Tools</h5>
-            <a href="#">The Framework</a>
-            <a href="#">Prompts Library</a>
-            <a href="#">Newsletter</a>
+            <a href="framework.html">The Framework</a>
+            <a href="prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
           </div>
           <div class="footer-col">
             <h5>About</h5>
             <a href="about.html">Our story</a>
             <a href="mailto:hello@readplainly.com">Contact</a>
-            <a href="#">Privacy policy</a>
           </div>
         </div>
       </div>
@@ -526,7 +564,7 @@
       btn.disabled = true;
       var formData = new FormData();
       formData.append('email', email);
-      fetch('https://readplainly.beehiiv.com/create', { method: 'POST', body: formData })
+      fetch('/.netlify/functions/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
         .then(function() {
           document.getElementById('nl-form').style.display = 'none';
           document.getElementById('nl-success').style.display = 'block';
