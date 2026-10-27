@@ -62,6 +62,8 @@
     .masthead-nav a:last-child { border-right: none; }
     .masthead-nav a:hover { color: var(--orange); }
     .masthead-nav .nav-divider { width: 1px; height: 13px; background: var(--ink-muted); opacity: 0.35; margin: 0 4px; flex-shrink: 0; }
+    .masthead-nav a.nav-home { color: var(--ink); font-weight: 700; }
+    .masthead-nav a.nav-home:hover { color: var(--orange); }
     .masthead-nav a.nav-tool { color: var(--orange-dark); }
     .masthead-nav a.nav-tool:hover { color: var(--orange); }
     .masthead-cta { font-family: var(--sans); font-size: 11px; font-weight: 500; background: var(--orange); color: white; padding: 7px 16px; border-radius: 3px; white-space: nowrap; margin-left: 16px; flex-shrink: 0; transition: background 0.15s; }
@@ -193,6 +195,8 @@
   
     /* ─── MOBILE NAV — horizontal swipe ─── */
     @media (max-width: 768px) {
+      .masthead-tagline { display: none; }
+      .masthead-date-line { display: none; }
       .sticky-nav-sections {
         overflow-x: auto;
         overflow-y: hidden;
@@ -249,18 +253,59 @@
       .masthead-cta { flex-shrink: 0; }
     }
   </style>
+
+  <style>
+    /* ── Newsletter block: editorial restyle (Oct 2026) ── */
+    .newsletter{padding:48px 0!important;text-align:left!important}
+    .newsletter::before{display:none!important;content:none!important}
+    .newsletter-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;max-width:960px;margin:0 auto}
+    .newsletter .nl-eyebrow{font-weight:600!important;letter-spacing:2px!important;margin-bottom:12px!important}
+    .newsletter h2{font-size:clamp(22px,2.4vw,28px)!important;font-weight:700!important;letter-spacing:-.3px!important;line-height:1.25!important;margin:0 0 10px!important;text-align:left!important}
+    .newsletter h2 em{font-style:normal!important;color:#fff!important}
+    .newsletter p{font-size:15.5px!important;color:rgba(255,255,255,.62)!important;font-style:normal!important;max-width:440px!important;margin:0!important;text-align:left!important}
+    .nl-form{margin:0!important;max-width:none!important}
+    .nl-note{margin-top:10px!important;text-align:left!important}
+    #nl-success{margin:0 0 6px!important}
+    @media(max-width:860px){.newsletter-inner{grid-template-columns:1fr;gap:24px}.nl-form{flex-direction:column!important;border:none!important;gap:8px}.nl-form input,.nl-form button{width:100%!important;height:48px!important;min-height:48px!important;border-radius:3px!important;box-sizing:border-box}.nl-form input{border:1px solid rgba(255,255,255,.2)!important;padding:0 14px!important}}
+  </style>
+  <style>
+    /* ── Ticker: light strip (Oct 2026) ── */
+    .topbar{background:#fff!important;border-bottom:1px solid var(--paper-rule)!important}
+    .ticker-item span{color:var(--ink-soft)!important}
+    .ticker-item strong{color:var(--orange-dark)!important;font-weight:600!important}
+    .ticker-dot{background:var(--orange)!important}
+  </style>
 </head>
 <body>
 
   <!-- TICKER -->
   <div class="topbar">
     <div class="topbar-scroll">
-      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> EU AI Act now in force — first compliance deadline passes, fines expected Q3</span></div>
-      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> Utah becomes second state to delegate clinical prescribing authority to an AI system</span></div>
-      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> AnthroPAC: Anthropic forms employee-funded political action committee</span></div>
-      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> EU AI Act now in force — first compliance deadline passes, fines expected Q3</span></div>
-      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> Utah becomes second state to delegate clinical prescribing authority to an AI system</span></div>
-      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> AnthroPAC: Anthropic forms employee-funded political action committee</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> Anthropic&rsquo;s IPO filing warns advanced AI could be catastrophic &mdash; here&rsquo;s how to read it</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> The people building AI just asked their industry to slow down. The White House is hesitant.</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Real Estate:</strong> An algorithm may have set your rent &mdash; a $360M settlement could owe you money. Claims due Jan 29, 2027</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> US government orders Claude Fable 5 offline &mdash; and sets the price of its return</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> KPMG is embedding Claude into the software 276,000 employees use for client work</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> Google's Gemini Spark keeps working after you close your laptop — but costs $100 a month</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> New federal law gives Americans 48 hours to force platforms to remove deepfake nudes</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Small Business:</strong> Anthropic's Claude toolkit now plugs into QuickBooks, PayPal, and HubSpot</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Law:</strong> Federal judge fines two lawyers $110,000 for AI-fabricated citations</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Sports:</strong> MLB's robot umpire overrules the human 54% of the time</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Careers:</strong> Meta cuts 8,000 jobs and calls it an AI pivot — here's what that number actually means</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Academia:</strong> Stanford first-years pitch "understanding checks" as the answer to AI cheating</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> Anthropic&rsquo;s IPO filing warns advanced AI could be catastrophic &mdash; here&rsquo;s how to read it</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> The people building AI just asked their industry to slow down. The White House is hesitant.</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Real Estate:</strong> An algorithm may have set your rent &mdash; a $360M settlement could owe you money. Claims due Jan 29, 2027</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> US government orders Claude Fable 5 offline &mdash; and sets the price of its return</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> KPMG is embedding Claude into the software 276,000 employees use for client work</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Business:</strong> Google's Gemini Spark keeps working after you close your laptop — but costs $100 a month</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Regulation:</strong> New federal law gives Americans 48 hours to force platforms to remove deepfake nudes</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Small Business:</strong> Anthropic's Claude toolkit now plugs into QuickBooks, PayPal, and HubSpot</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Law:</strong> Federal judge fines two lawyers $110,000 for AI-fabricated citations</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Sports:</strong> MLB's robot umpire overrules the human 54% of the time</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Careers:</strong> Meta cuts 8,000 jobs and calls it an AI pivot — here's what that number actually means</span></div>
+      <div class="ticker-item"><div class="ticker-dot"></div><span><strong>Academia:</strong> Stanford first-years pitch "understanding checks" as the answer to AI cheating</span></div>
+    </div>
     </div>
   </div>
 
@@ -274,6 +319,7 @@
     <div class="masthead-nav-wrap">
       
       <nav class="masthead-nav">
+        <a href="../index.html" class="nav-home">Home</a>
         <a href="../sections/business.html">Business</a>
         <a href="../sections/law.html">Law</a>
         <a href="../sections/small-business.html">Small Business</a>
@@ -362,18 +408,22 @@
   <section class="newsletter" id="newsletter">
     <div class="container">
       <div class="newsletter-inner">
-        <div class="nl-eyebrow">Free weekly newsletter</div>
-        <h2>Stay informed.<br><em>Stay plainly ahead.</em></h2>
-        <p>The week's most important AI developments — broken down clearly, in plain English.</p>
-        <div class="nl-form" id="nl-form">
-          <input type="email" id="nl-email" placeholder="your@email.com" />
-          <button type="button" onclick="subscribeEmail()">Subscribe →</button>
+          <div>
+            <div class="nl-eyebrow">The newsletter</div>
+            <h2>One email every other week, with the AI stories that affect the rest of us.</h2>
+            <p>Usually three stories, each explained in plain English, with what to do about them if anything.</p>
+          </div>
+          <div>
+            <div class="nl-form" id="nl-form">
+              <input type="email" id="nl-email" placeholder="your@email.com" />
+              <button type="button" onclick="subscribeEmail()">Subscribe</button>
+            </div>
+            <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;">You&rsquo;re in. Welcome to Plainly.</div>
+            <div class="nl-note">Free. No spam. Unsubscribe any time.</div>
+          </div>
         </div>
-        <div id="nl-success" style="display:none; color:#FF6719; font-family:var(--sans); font-size:15px; font-weight:500; margin-bottom:14px;">You're in! Welcome to Plainly. 🎉</div>
-        <div class="nl-note">No spam. Unsubscribe any time.</div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- FOOTER -->
   <footer class="footer">
