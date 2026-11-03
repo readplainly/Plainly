@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Most votes are counted by tested machines and paper. Here's where AI shows up. — Plainly</title>
+  <meta name="description" content="Tested machines and paper ballots handle nearly all of the count, while AI shows up in chatbot answers, search results, signature checks, election-office posts, and fake images that are getting easier to make." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxQzFBMTciLz4KICA8dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0ZGNjcxOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0yIj5QPC90ZXh0PgogIDxjaXJjbGUgY3g9IjQ2IiBjeT0iNDQiIHI9IjUiIGZpbGw9IiNGRjY3MTkiLz4KPC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    :root{--orange:#FF6719;--orange-light:#FFF0E8;--orange-mid:#FFCFB0;--orange-dark:#C44A00;--ink:#1C1A17;--ink-soft:#3A3630;--ink-muted:#6B6560;--ink-faint:#A09890;--paper:#FAF8F4;--paper-warm:#F5F1EA;--paper-rule:#E8E2D8;--serif-display:'Playfair Display',Georgia,serif;--serif-body:'Source Serif 4',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{font-family:var(--serif-body);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1100px;margin:0 auto;padding:0 28px;}
+    .container-narrow{max-width:720px;margin:0 auto;padding:0 28px;}
+    .masthead{padding:22px 0 0;text-align:center;background:var(--paper);position:sticky;top:0;z-index:100;border-bottom:3px double var(--ink);transition:padding .25s ease,box-shadow .25s ease;}
+    .masthead.scrolled{padding:10px 0 0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+    .masthead-top{display:flex;align-items:center;justify-content:space-between;padding:0 28px 10px;}
+    .masthead-date-line{font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-date-line{max-height:0;opacity:0;}
+    .masthead-logo{font-family:var(--serif-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--ink);letter-spacing:-2px;line-height:1;transition:font-size .25s ease;}
+    .masthead.scrolled .masthead-logo{font-size:clamp(20px,3vw,26px);letter-spacing:-1px;}
+    .masthead-logo span{color:var(--orange);}
+    .masthead-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-muted);font-style:italic;font-weight:300;transition:all .25s ease;overflow:hidden;max-height:30px;opacity:1;}
+    .masthead.scrolled .masthead-tagline{max-height:0;opacity:0;}
+    .masthead-nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;border-top:1px solid var(--paper-rule);}
+    .masthead-nav{display:flex;align-items:center;gap:0;flex:1;min-width:0;}
+    .masthead-nav a{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);padding:0 8px;border-right:1px solid var(--paper-rule);line-height:1;white-space:nowrap;transition:color .15s;}
+    .masthead-nav a:last-child{border-right:none;}
+    .masthead-nav a:hover,.masthead-nav a.active{color:var(--orange);}
+    .masthead-nav .nav-divider{width:1px;height:13px;background:var(--ink-muted);opacity:.35;margin:0 4px;flex-shrink:0;}
+    .masthead-nav a.nav-tool{color:var(--orange-dark);}
+    .masthead-nav a.nav-tool:hover{color:var(--orange);}
+    .masthead-cta{font-family:var(--sans);font-size:11px;font-weight:500;background:var(--orange);color:white;padding:7px 16px;border-radius:3px;white-space:nowrap;margin-left:16px;flex-shrink:0;transition:background .15s;}
+    .masthead-cta:hover{background:var(--orange-dark);}
+    @media(max-width:768px){.masthead-nav-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 16px;}.masthead-nav-wrap::-webkit-scrollbar{display:none;}.masthead-nav{flex-wrap:nowrap;overflow-x:auto;min-width:max-content;}.masthead-nav a{flex-shrink:0;font-size:11px;padding:0 10px;}.masthead-tagline{display:none;}.masthead-date-line{display:none;}}
+    .article-header{padding:52px 0 0;text-align:left;}.article-header *{text-align:left;}
+    .article-section-tag{display:inline-block;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;margin-bottom:18px;background:#FAE8E0;color:#8A2800;}
+    .article-hed{font-family:var(--serif-display);font-size:clamp(28px,5vw,52px);font-weight:900;color:var(--ink);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px;}
+    .article-dek{font-family:var(--serif-body);font-size:20px;color:var(--ink-muted);font-style:italic;font-weight:300;line-height:1.5;margin-bottom:24px;max-width:680px;}
+    .article-meta{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--paper-rule);border-bottom:1px solid var(--paper-rule);margin-bottom:36px;flex-wrap:wrap;}
+    .meta-byline{font-family:var(--sans);font-size:12px;color:var(--ink-soft);font-weight:500;}
+    .meta-byline span{color:var(--orange);}
+    .meta-dot{width:3px;height:3px;background:var(--ink-faint);border-radius:50%;}
+    .meta-date,.meta-time{font-family:var(--sans);font-size:12px;color:var(--ink-faint);}
+    .meta-share{margin-left:auto;}
+    .share-btn{font-family:var(--sans);font-size:11px;font-weight:500;color:var(--ink-muted);border:1px solid var(--paper-rule);padding:5px 12px;border-radius:3px;background:transparent;cursor:pointer;transition:all .15s;}
+    .share-btn:hover{border-color:var(--orange);color:var(--orange);}
+    .article-hero{margin-bottom:40px;}
+    .article-hero img{width:100%;max-height:520px;object-fit:cover;object-position:center;border-radius:3px;display:block;}
+    .hero-caption{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;margin-top:8px;line-height:1.5;}
+    .article-body{padding-bottom:56px;}
+    .article-grid{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start;}
+    .article-copy p{font-family:var(--serif-body);font-size:18px;color:var(--ink-soft);line-height:1.85;margin-bottom:26px;}
+    .article-copy > p:first-child::first-letter{font-family:var(--serif-display);font-size:72px;font-weight:900;color:var(--ink);float:left;line-height:.75;margin:8px 10px 0 0;}
+    .article-copy h2{font-family:var(--serif-display);font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.2;margin:40px 0 16px;padding-top:32px;border-top:1px solid var(--paper-rule);}
+    .article-copy a{color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .disclosure{font-family:var(--sans);font-size:13px;color:var(--ink-faint);font-style:italic;border-top:1px solid var(--paper-rule);padding-top:20px;margin-top:32px;}
+    .pull-quote{border-left:3px solid var(--orange);padding:6px 0 6px 24px;margin:36px 0;}
+    .pull-quote p{font-family:var(--serif-display)!important;font-size:22px!important;font-weight:500!important;font-style:italic!important;color:var(--ink)!important;line-height:1.4!important;margin-bottom:0!important;}
+    .pull-quote p::first-letter{all:unset;}
+    .pull-quote cite{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:normal;margin-top:10px;}
+    .analysis-box{background:var(--paper-warm);border:1px solid var(--paper-rule);border-left:3px solid var(--ink);border-radius:4px;padding:26px 30px;margin:44px 0 8px;}
+    .analysis-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .analysis-box p{font-family:var(--serif-body);font-size:16.5px;color:var(--ink-soft);line-height:1.8;margin-bottom:16px;}
+    .analysis-box p:last-child{margin-bottom:0;}
+    .analysis-box p::first-letter{all:unset;}
+    .article-sidebar{position:sticky;top:120px;display:flex;flex-direction:column;gap:20px;}
+    .sidebar-card{background:var(--paper-warm);border:1px solid var(--paper-rule);border-radius:6px;padding:20px;}
+    .sc-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+    .sc-title{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.2px;line-height:1.3;}
+    .sc-body{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .sc-link{display:inline-block;margin-top:12px;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--orange);border-bottom:1px solid var(--orange-mid);padding-bottom:1px;}
+    .nl-inline{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+    .nl-inline input{font-family:var(--sans);font-size:13px;border:1px solid var(--paper-rule);border-radius:3px;padding:9px 12px;background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s;}
+    .nl-inline input:focus{border-color:var(--orange);}
+    .nl-inline input::placeholder{color:var(--ink-faint);}
+    .nl-inline button{font-family:var(--sans);font-size:12px;font-weight:500;background:var(--orange);color:white;border:none;border-radius:3px;padding:9px 14px;cursor:pointer;transition:background .15s;}
+    .nl-inline button:hover{background:var(--orange-dark);}
+    .author-section{border-top:2px solid var(--ink);border-bottom:1px solid var(--paper-rule);padding:28px 0;margin-bottom:48px;display:flex;gap:20px;align-items:flex-start;}
+    .author-badge{width:52px;height:52px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .author-badge-logo{font-family:var(--serif-display);font-size:22px;font-weight:900;color:var(--orange);letter-spacing:-1px;}
+    .author-name{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+    .author-bio{font-family:var(--sans);font-size:13px;color:var(--ink-muted);line-height:1.6;}
+    .author-bio a{color:var(--orange);border-bottom:1px solid var(--orange-mid);}
+    .related-section{padding:40px 0;border-top:1.5px solid var(--ink);}
+    .related-label{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:24px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .related-img{width:100%;height:130px;object-fit:cover;border-radius:3px;margin-bottom:12px;display:block;background:var(--paper-warm);}
+    .related-tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;}
+    .tag-blue{background:#E8F0FB;color:#1A4A8A;}.tag-green{background:#E8F5E8;color:#1A6A1A;}.tag-coral{background:#FAE8E0;color:#8A2800;}
+    .related-hed{font-family:var(--serif-display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.28;margin-bottom:6px;}
+    .related-hed a:hover{color:var(--orange);}
+    .related-dek{font-family:var(--sans);font-size:12px;color:var(--ink-muted);line-height:1.55;}
+    .related-meta{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);margin-top:6px;}
+    .related-divider{border-left:1px solid var(--paper-rule);padding-left:24px;}
+    .newsletter{padding:64px 0;text-align:center;background:var(--ink);position:relative;overflow:hidden;}
+    .newsletter::before{content:'Plainly.';position:absolute;font-family:var(--serif-display);font-size:260px;font-weight:900;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-8px;}
+    .newsletter-inner{position:relative;z-index:1;}
+    .nl-eyebrow{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+    .newsletter h2{font-family:var(--serif-display);font-size:clamp(28px,4vw,42px);font-weight:700;color:white;letter-spacing:-1px;line-height:1.1;margin-bottom:12px;}
+    .newsletter h2 em{font-style:italic;color:var(--orange);}
+    .newsletter p{font-family:var(--serif-body);font-size:15px;color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 28px;line-height:1.65;font-style:italic;}
+    .nl-form{display:flex;max-width:400px;margin:0 auto 12px;border:1px solid rgba(255,255,255,.15);border-radius:3px;overflow:hidden;}
+    .nl-form input{flex:1;font-family:var(--sans);font-size:14px;background:rgba(255,255,255,.06);border:none;padding:0 16px;height:46px;color:white;outline:none;}
+    .nl-form input::placeholder{color:rgba(255,255,255,.3);}
+    .nl-form button{font-family:var(--sans);font-size:13px;font-weight:500;background:var(--orange);color:white;border:none;padding:0 22px;height:46px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+    .nl-form button:hover{background:var(--orange-dark);}
+    .nl-note{font-family:var(--sans);font-size:11.5px;color:rgba(255,255,255,.3);}
+    .footer{border-top:3px double var(--ink);padding:40px 0 24px;}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:32px;flex-wrap:wrap;}
+    .footer-logo{font-family:var(--serif-display);font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-1px;margin-bottom:4px;}
+    .footer-logo span{color:var(--orange);}
+    .footer-tagline{font-family:var(--serif-body);font-size:13px;color:var(--ink-faint);font-style:italic;}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col h5{font-family:var(--sans);font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;}
+    .footer-col a{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-muted);margin-bottom:8px;transition:color .15s;}
+    .footer-col a:hover{color:var(--orange);}
+    .footer-bottom{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid var(--paper-rule);flex-wrap:wrap;gap:8px;}
+    .footer-legal,.footer-credit{font-family:var(--sans);font-size:11.5px;color:var(--ink-faint);}
+    .footer-credit span{color:var(--orange);}
+    @media(max-width:860px){.article-grid{grid-template-columns:1fr;}.article-sidebar{position:static;}.related-grid{grid-template-columns:1fr;}.related-divider{border-left:none;padding-left:0;border-top:1px solid var(--paper-rule);padding-top:24px;}}
+    @media(max-width:560px){.container,.container-narrow{padding:0 18px;}.article-hed{font-size:clamp(24px,7vw,36px);}.article-dek{font-size:17px;}.article-copy p{font-size:16px;}.nl-form{flex-direction:column;}.nl-form input,.nl-form button{height:46px;width:100%;border-radius:3px;}}
+  </style>
+
+  <style>
+    /* ── Newsletter block: editorial restyle (Oct 2026) ── */
+    .newsletter{padding:48px 0!important;text-align:left!important}
+    .newsletter::before{display:none!important;content:none!important}
+    .newsletter-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;max-width:960px;margin:0 auto}
+    .newsletter .nl-eyebrow{font-weight:600!important;letter-spacing:2px!important;margin-bottom:12px!important}
+    .newsletter h2{font-size:clamp(22px,2.4vw,28px)!important;font-weight:700!important;letter-spacing:-.3px!important;line-height:1.25!important;margin:0 0 10px!important;text-align:left!important}
+    .newsletter h2 em{font-style:normal!important;color:#fff!important}
+    .newsletter p{font-size:15.5px!important;color:rgba(255,255,255,.62)!important;font-style:normal!important;max-width:440px!important;margin:0!important;text-align:left!important}
+    .nl-form{margin:0!important;max-width:none!important}
+    .nl-note{margin-top:10px!important;text-align:left!important}
+    #nl-success{margin:0 0 6px!important}
+    @media(max-width:860px){.newsletter-inner{grid-template-columns:1fr;gap:24px}.nl-form{flex-direction:column!important;border:none!important;gap:8px}.nl-form input,.nl-form button{width:100%!important;height:48px!important;min-height:48px!important;border-radius:3px!important;box-sizing:border-box}.nl-form input{border:1px solid rgba(255,255,255,.2)!important;padding:0 14px!important}}
+  </style>
+</head>
+<body>
+  <header class="masthead" id="masthead">
+    <div class="masthead-top">
+      <div class="masthead-date-line"><span id="auto-date"></span> &nbsp;·&nbsp; AI News &amp; Education</div>
+      <a href="../index.html" class="masthead-logo">Plainly<span>.</span></a>
+      <div class="masthead-tagline">AI, put plainly.</div>
+    </div>
+    <div class="masthead-nav-wrap">
+      <nav class="masthead-nav">
+        <a href="../sections/business.html">Business</a>
+        <a href="../sections/law.html">Law</a>
+        <a href="../sections/small-business.html">Small Business</a>
+        <a href="../sections/real-estate.html">Real Estate</a>
+        <a href="../sections/sports.html">Sports</a>
+        <a href="../sections/careers.html">Careers</a>
+        <a href="../sections/academia.html">Academia</a>
+        <a href="../sections/arts-music.html">Arts &amp; Music</a>
+        <a href="../sections/regulation.html" class="active">Regulation</a>
+        <div class="nav-divider"></div>
+        <a href="../about.html" class="nav-tool">About</a>
+        <a href="../framework.html" class="nav-tool">The Framework</a>
+        <a href="../prompts.html" class="nav-tool">Prompts</a>
+      </nav>
+      <a href="#newsletter" class="masthead-cta">Subscribe free &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <div class="article-header">
+        <span class="article-section-tag">Regulation</span>
+        <h1 class="article-hed">Most votes are counted by tested machines and paper. Here&rsquo;s where AI shows up.</h1>
+        <p class="article-dek">Tested machines and paper ballots handle nearly all of the count, while AI shows up in chatbot answers, search results, signature checks, election-office posts, and fake images that are getting easier to make.</p>
+        <div class="article-meta">
+          <div class="meta-byline">By <span>Plainly Staff</span></div>
+          <div class="meta-dot"></div>
+          <div class="meta-date">November 3, 2026</div>
+          <div class="meta-dot"></div>
+          <div class="meta-time">8 min read</div>
+          <div class="meta-share"><button class="share-btn" onclick="copyLink()">Copy link</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+      <div class="article-hero">
+        <img loading="lazy" decoding="async" src="../images/election-ai.jpg" alt="A voter seated at a cardboard voting booth marked VOTE, with two American flags behind" onerror="this.style.display='none'" />
+        <p class="hero-caption">A voter fills out a ballot behind a privacy screen on Election Day. Nearly all of the count is handled by scanners tested before the election, with paper records to check afterward.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="article-body">
+        <div class="article-grid">
+          <div class="article-copy">
+            <p>If you vote today, your vote will be counted the way most of the country&rsquo;s are: by scanners that are tested before the election, with paper records to check the count afterward. Plainly found no evidence that artificial intelligence (AI) tools are counting votes. AI does show up around the edges of this election, and in recent tests, some of it got basic facts wrong.</p>
+
+            <h2>What this means for you</h2>
+
+            <p>For voting today, start with official sources, not a chatbot or an AI summary at the top of your search results. <a href="https://www.canivote.org" target="_blank" rel="noopener">CanIVote.org</a>, a nonpartisan site built by state election officials, links directly to each state&rsquo;s tools for registration, polling places, and more, and your county election office&rsquo;s website is the other reliable source. Be skeptical, too, of dramatic images or &ldquo;official&rdquo; documents about the election, especially ones that appear in your feed without a clear source, because AI tools can now make convincing fakes.</p>
+
+            <p>And if you voted by mail, track your ballot on your state&rsquo;s official site; California&rsquo;s &ldquo;Where&rsquo;s My Ballot?&rdquo; service is one example. If your signature is flagged, your state&rsquo;s site explains how to fix it, a process called curing. The rules differ by state.</p>
+
+            <p>The rest of this story explains why that advice holds.</p>
+
+            <h2>How your vote actually gets counted</h2>
+
+            <p>Most of the country votes on a paper ballot, or on a touchscreen machine that prints a paper ballot the voter can review, according to FactCheck.org. A scanner, also called a tabulator, then reads the marks and adds up the votes. According to Verified Voting, only 1.3% of registered voters, in Louisiana, vote on machines that produce no paper ballot.</p>
+
+            <p>Before a scanner is used, it may need to be certified, meaning officially approved after passing required tests. The U.S. Election Assistance Commission, created by Congress in 2002, sets the federal standards. Independent, federally accredited labs test equipment against them. Testing can include reviews of the instructions the software is built from (its source code) and checks of how machines handle electrical and environmental stress.</p>
+
+            <p>Federal certification is voluntary, but states can adopt the standards and make them mandatory.</p>
+
+            <p>Then, before every election, every state requires what&rsquo;s called logic and accuracy testing, according to a University of Michigan review of all 50 states. Officials run test ballots with known results through the machines and confirm the totals match. The researchers found that the rigor and transparency of that testing vary widely by state.</p>
+
+            <div class="pull-quote">
+              <p>Machines are tested before every election with ballots whose results are already known, and paper ballots give officials a way to check the count by hand.</p>
+            </div>
+
+            <p>After the election, audits check the machine count against the paper. In Connecticut, for example, officials randomly select 5% of tabulators, about 50 machines, after every election, and those ballots are recounted by hand or manually with software assistance, WSHU reported.</p>
+
+            <p>So how does a scanner read your ballot? It takes a picture, finds each bubble using the ballot layout programmed for that election, and checks whether enough of the bubble is dark. That cutoff is set in advance and checked in pre-election testing. In a 2021 study, University of Michigan researchers described the scanners in use as relying on simple cutoffs like this, and tested machine learning, a type of AI that learns patterns from examples, only as a research alternative.</p>
+
+            <p>ES&amp;S, a major scanner maker, says its voting systems use no AI, including machine learning. VotingWorks, a smaller nonprofit maker that publishes its technical documentation, shows its scanners count a mark as a vote when enough of the bubble is filled. Plainly could not find statements on AI from other major makers, including Liberty Vote (formerly Dominion), Hart InterCivic, Clear Ballot, and Unisyn.</p>
+
+            <p>Either way, the safeguards don&rsquo;t depend on trusting the machine. They come from the testing beforehand and the paper afterward.</p>
+
+            <h2>Where AI shows up: chatbots and search</h2>
+
+            <p>No one knows for sure how many people use AI for election information, and the surveys disagree sharply. A Pew Research Center survey of 5,273 U.S. adults, conducted October 12&ndash;18, found 8% said they&rsquo;re using AI chatbots for election information this year, and 11% of adults under 50 said so. A survey for the National Conference on Citizenship, conducted in October, found 40% of adults had used an AI chat program for at least one of four election tasks, such as learning about candidates or finding out when and where to vote. The surveys asked different questions: Pew asked one general question, while the other survey asked about four specific tasks and counted anyone who said yes to any of them.</p>
+
+            <p>Among the chatbot users in Pew&rsquo;s survey, 40% looked up registration, polling places, or mail voting.</p>
+
+            <p>Both surveys mostly measure people who chose to use AI. Others run into it without asking. Google&rsquo;s AI Overviews are AI-written summaries that appear automatically at the top of a regular search results page. The National Conference on Citizenship found that some people who said they&rsquo;d used an AI chat program were actually describing AI summaries in search results.</p>
+
+            <p>There may be a limit on how often that happens, at least for now. Independent tests by States United Democracy Center and Tech Policy Press, and one small test by the marketing-analytics firm Evertune, all found that Google&rsquo;s regular search often shows no AI summary for election questions and returns links instead. Plainly found no Google announcement of such a limit this year, so the behavior could change, and other AI tools may not hold back at all.</p>
+
+            <p>Voters who do ask a chatbot may be getting bad answers. The Washington Post asked six popular chatbots to make voter guides for an address in every U.S. county and analyzed more than 3,000 of them. Nearly half the time, the chatbots didn&rsquo;t tell voters which congressional district they live in, and when they did, they got it wrong about one in five times. Some guides invented races or misidentified candidates.</p>
+
+            <p>Claude, made by Anthropic, and Amazon&rsquo;s Alexa+ were wrong most often, each on more than one in five of the addresses tested. ChatGPT, Perplexity, and Google&rsquo;s AI Mode, a chat-style search tab you have to choose to use, were wrong least often, mainly because they usually named no district at all. Many errors traced back to chatbots citing websites that themselves appeared to be AI-built and contained wrong information. The Post noted that OpenAI and Anthropic had both promoted partnerships to supply trusted election information, but those efforts did not prevent significant errors.</p>
+
+            <p>Earlier testing raised related concerns. In tests from late 2025 and early 2026, States United, which describes itself as nonpartisan, found that ChatGPT mentioned an official state election website in only 39.4% of its answers. Thania Sanchez, the group&rsquo;s senior vice president of research and analytics, told CyberScoop that this is an election &ldquo;where AI is just everywhere.&rdquo;</p>
+
+            <p>Two caveats matter. No study has shown that an AI tool&rsquo;s mistakes changed anyone&rsquo;s vote. And each test covered specific versions of these products on specific dates; many of the companies said they made changes after the Post contacted them, the Post reported on November 3, 2026.</p>
+
+            <h2>Signature checks, office posts, and fake images</h2>
+
+            <p>In states that check signatures on mail ballots, the signature on your envelope is compared with the one on file to confirm it&rsquo;s you. Some counties use software for the first pass. In Orange County, California, the software approves only signatures it rates as very likely to match, LAist reported. Everything else goes to trained staff, and three officials must agree a signature differs significantly before it&rsquo;s challenged.</p>
+
+            <p>Plainly found no national count of how many counties use this kind of software.</p>
+
+            <p>Election offices are using AI too, mostly for low-risk work. According to the National Conference of State Legislatures, administrators are starting to use tools like ChatGPT and Microsoft Copilot to draft communications, translate materials, and proofread ballots, tasks a person can easily check. In a Brennan Center survey of 834 local election officials, conducted in January and February 2026, 16% said they use AI at work, most often for social media posts and graphics, up from 5% in 2024.</p>
+
+            <p>Fake images are another risk, and the tools that make them are changing quickly. A deepfake is a realistic picture, video, or audio clip made with AI. When the Brennan Center, which describes itself as nonpartisan, retested six AI image generators in October, it found one company, OpenAI, had significantly strengthened its safeguards. Two others, Google&rsquo;s Gemini and Meta AI, had made convincing fakes easier to produce, and the rest showed little change.</p>
+
+            <p>Meta AI produced a realistic fake executive order on mail voting in October, after refusing the same request in April. Runway, another image tool, again refused none of the requests outright. Google also removed Gemini&rsquo;s visible watermark, the label that marks an image as AI-made. An invisible digital watermark remains, but most chatbots the researchers tested didn&rsquo;t check for it.</p>
+
+            <p>What won&rsquo;t change today is how the count works: machines tested in advance, and paper kept as a record that officials can check against the machine count. The open questions sit at the edges. Plainly found no survey of all adults that measures how many people see AI-written election answers without asking for them, and no national count of counties using signature software. Search engines and image makers could also tighten or loosen their safeguards before the next election. Plainly will take a closer look at signature-checking software later this week.</p>
+
+            <p class="disclosure">Disclosure: Plainly&rsquo;s editorial tools use models made by Anthropic, whose Claude chatbot is among those tested in the Washington Post analysis cited in this story.</p>
+
+
+
+            <div class="author-section">
+              <div class="author-badge"><div class="author-badge-logo">P.</div></div>
+              <div>
+                <div class="author-name">Plainly Staff</div>
+                <div class="author-bio">Plainly covers AI&rsquo;s real-world impact across law, business, real estate, careers, and more &mdash; written for curious people of every age and background. No jargon. No hype. Just AI, put plainly. Questions or tips: <a href="mailto:hello@readplainly.com">hello@readplainly.com</a></div>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="article-sidebar">
+            <div class="sidebar-card">
+              <div class="sc-label">Newsletter</div>
+              <div class="sc-title">The biggest AI stories, every other week &mdash; plainly explained.</div>
+              <div class="nl-inline" id="sb-nl-form">
+                <input type="email" id="sb-email" placeholder="your@email.com" />
+                <button onclick="subscribeSidebar()">Subscribe free &rarr;</button>
+              </div>
+              <div id="sb-success" style="display:none;font-family:var(--sans);font-size:13px;color:var(--orange);font-weight:500;margin-top:8px;">You&rsquo;re in! Welcome to Plainly.</div>
+              <div class="sc-body" style="margin-top:8px;">No spam. Unsubscribe any time.</div>
+            </div>
+            <div class="sidebar-card">
+              <div class="sc-label">Related</div>
+              <div class="sc-title">The 48-hour rule: a new federal law lets you force websites to remove deepfake nudes</div>
+              <div class="sc-body">The TAKE IT DOWN Act&rsquo;s enforcement mechanism is now live. What it covers, and how to file.</div>
+              <a href="take-it-down-act.html" class="sc-link">Read the story &rarr;</a>
+            </div>
+    </div>
+
+    <div class="container">
+      <div class="related-section">
+        <div class="related-label">More from Plainly</div>
+        <div class="related-grid">
+          <div>
+            <img loading="lazy" src="../images/ai-slowdown.jpg" alt="San Francisco above the fog" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-coral">Regulation</span>
+            <div class="related-hed"><a href="ai-slowdown.html">The people building AI just asked their industry to slow down. The White House is hesitant.</a></div>
+            <div class="related-dek">The head of Anthropic said the industry should slow down, and three rivals agreed.</div>
+            <div class="related-meta">10 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/anthropic-ipo.jpg" alt="The Nasdaq sign" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-blue">Business</span>
+            <div class="related-hed"><a href="anthropic-ipo.html">Anthropic&rsquo;s IPO filing warns advanced AI could be catastrophic. Here&rsquo;s how to read it.</a></div>
+            <div class="related-dek">Before a company can sell you stock, it has to spell out the biggest things that could go wrong.</div>
+            <div class="related-meta">6 min read</div>
+          </div>
+          <div class="related-divider">
+            <img loading="lazy" src="../images/take-it-down.jpg" alt="TAKE IT DOWN Act" class="related-img" onerror="this.style.background='var(--paper-warm)';this.removeAttribute('src')" />
+            <span class="related-tag tag-coral">Regulation</span>
+            <div class="related-hed"><a href="take-it-down-act.html">The 48-hour rule: a new federal law lets you force websites to remove deepfake nudes</a></div>
+            <div class="related-dek">The TAKE IT DOWN Act&rsquo;s enforcement mechanism just kicked in. Here&rsquo;s what it means for you.</div>
+            <div class="related-meta">7 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+          <div>
+            <div class="nl-eyebrow">The newsletter</div>
+            <h2>One email every other week, with the AI stories that affect the rest of us.</h2>
+            <p>Usually three stories, each explained in plain English, with what to do about them if anything.</p>
+          </div>
+          <div>
+            <div class="nl-form" id="nl-form">
+              <input type="email" id="nl-email" placeholder="your@email.com" />
+              <button type="button" onclick="subscribeEmail()">Subscribe</button>
+            </div>
+            <div id="nl-success" style="display:none;color:#FF6719;font-family:var(--sans);font-size:15px;font-weight:500;">You&rsquo;re in. Welcome to Plainly.</div>
+            <div class="nl-note">Free. No spam. Unsubscribe any time.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Plainly<span>.</span></div>
+          <div class="footer-tagline">AI, put plainly. &middot; readplainly.com</div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Sections</h5>
+            <a href="../sections/business.html">Business</a>
+            <a href="../sections/law.html">Law</a>
+            <a href="../sections/small-business.html">Small Business</a>
+            <a href="../sections/real-estate.html">Real Estate</a>
+            <a href="../sections/sports.html">Sports</a>
+            <a href="../sections/careers.html">Careers</a>
+            <a href="../sections/academia.html">Academia</a>
+            <a href="../sections/arts-music.html">Arts &amp; Music</a>
+            <a href="../sections/regulation.html">Regulation</a>
+          </div>
+          <div class="footer-col">
+            <h5>Tools</h5>
+            <a href="../framework.html">The Framework</a>
+            <a href="../prompts.html">Prompts Library</a>
+            <a href="#newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h5>About</h5>
+            <a href="../about.html">Our story</a>
+            <a href="mailto:hello@readplainly.com">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">&copy; 2026 Plainly &middot; readplainly.com &middot; All rights reserved.</div>
+        <div class="footer-credit">Made with curiosity <span>&middot;</span> No jargon. Just AI.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var el=document.getElementById('auto-date');if(el){var now=new Date();var m=['January','February','March','April','May','June','July','August','September','October','November','December'];el.textContent=m[now.getMonth()]+' '+now.getDate()+', '+now.getFullYear();}})();
+    var masthead=document.getElementById('masthead');
+    window.addEventListener('scroll',function(){masthead.classList.toggle('scrolled',window.scrollY>80);},{passive:true});
+    function copyLink(){navigator.clipboard.writeText(window.location.href).then(function(){var b=document.querySelector('.share-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link';},2000);});}
+    function subscribeEmail(){var e=document.getElementById('nl-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('/.netlify/functions/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e})}).then(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';}).catch(function(){document.getElementById('nl-form').style.display='none';document.getElementById('nl-success').style.display='block';});}
+    document.getElementById('nl-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeEmail();});
+    function subscribeSidebar(){var e=document.getElementById('sb-email').value;if(!e||!e.includes('@')){alert('Please enter a valid email address.');return;}var b=document.querySelector('#sb-nl-form button');b.textContent='Subscribing...';b.disabled=true;var fd=new FormData();fd.append('email',e);fetch('/.netlify/functions/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e})}).then(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';}).catch(function(){document.getElementById('sb-nl-form').style.display='none';document.getElementById('sb-success').style.display='block';});}
+    document.getElementById('sb-email').addEventListener('keypress',function(e){if(e.key==='Enter')subscribeSidebar();});
+  </script>
+</body>
+</html>
